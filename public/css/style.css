@@ -15,3 +15,34 @@ margin: 10px;
 margin: 10px;
 }
 
+#home > h2 {
+margin-top: 100px;
+}
+
+#home > .row {
+position: relative;
+padding-bottom: 50px;
+}
+
+#home .buttons {
+position: absolute;
+bottom: 0;
+}
+
+#home .buttons > :first-child {
+margin-left: 0;
+}
+
+
+.footer {
+margin-top: 50px;
+padding: 10px 0px;
+background: #303030;
+color: #999999;
+border-top: 1px solid #444;
+border-bottom: 1px solid #444;
+}
+
+.footer h3 {
+color: white;
+}
