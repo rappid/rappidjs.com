@@ -28,6 +28,7 @@ define(['js/core/Module', "rAppid"], function(Module, rAppid) {
                     text = text.replace(rLinks, "[$1](#/wiki/$1)");
 
                     self.set("text", text);
+
                     routeContext.callback();
                 } else {
 
