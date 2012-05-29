@@ -1,7 +1,6 @@
 define(["js/core/TextElement", 'md/lib/Markdown.Converter'], function (TextElement, Converter) {
 
-        var converter = new Converter.Converter(),
-            rDos = /\r\n/g,
+        var rDos = /\r\n/g,
             rMac = /\r/g,
             rUnix = /\n/,
             hasContent = /\S/,
@@ -14,6 +13,8 @@ define(["js/core/TextElement", 'md/lib/Markdown.Converter'], function (TextEleme
                     this._initialize(this.$creationPolicy);
                 }
 
+                this.$converter = new Converter.Converter();
+
                 this.$el = this.$systemManager.$document.createElement(this.$tagName);
                 if (!_.isUndefined(this.$.textContent)) {
                     this._renderTextContent(this.$.textContent);
@@ -23,11 +24,6 @@ define(["js/core/TextElement", 'md/lib/Markdown.Converter'], function (TextEleme
             },
 
             normalizeIndent: function(text) {
-
-                // Standardize line endings
-
-                text = text.replace(rDos, "\n"); // DOS to Unix
-                text = text.replace(rMac, "\n"); // Mac to Unix
 
                 var lines = text.split(rUnix),
                     indentSize = null,
@@ -67,11 +63,18 @@ define(["js/core/TextElement", 'md/lib/Markdown.Converter'], function (TextEleme
 
             _renderTextContent: function (textContent) {
 
+                // Standardize line endings
+
+                textContent = textContent.replace(rDos, "\n"); // DOS to Unix
+                textContent = textContent.replace(rMac, "\n"); // Mac to Unix
+
                 if (this.$.normalizeIndent === true) {
                     textContent = this.normalizeIndent(textContent);
                 }
 
-                this.$el.innerHTML = converter.makeHtml(textContent.trim());
+                // Indent code between ``` ``` blocks
+
+                this.$el.innerHTML = this.$converter.makeHtml(textContent.trim());
             }
         });
     }
