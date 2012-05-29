@@ -1,4 +1,4 @@
-define(["js/core/TextElement", 'md/lib/Markdown.Converter'], function (TextElement, Converter) {
+define(["js/core/TextElement", 'md/lib/marked'], function (TextElement, marked) {
 
         var rDos = /\r\n/g,
             rMac = /\r/g,
@@ -12,8 +12,6 @@ define(["js/core/TextElement", 'md/lib/Markdown.Converter'], function (TextEleme
                 if (!this.$initialized) {
                     this._initialize(this.$creationPolicy);
                 }
-
-                this.$converter = new Converter.Converter();
 
                 this.$el = this.$systemManager.$document.createElement(this.$tagName);
                 if (!_.isUndefined(this.$.textContent)) {
@@ -74,7 +72,8 @@ define(["js/core/TextElement", 'md/lib/Markdown.Converter'], function (TextEleme
 
                 // Indent code between ``` ``` blocks
 
-                this.$el.innerHTML = this.$converter.makeHtml(textContent.trim());
+//                this.$el.innerHTML = this.$converter.makeHtml(textContent.trim());
+                this.$el.innerHTML = marked(textContent.trim());
             }
         });
     }
