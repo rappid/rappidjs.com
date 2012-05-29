@@ -1,0 +1,82 @@
+<js:Module xmlns="http://www.w3.org/1999/xhtml"
+           xmlns:js="js.core" xmlns:ui="js.ui"
+           xmlns:module="app.module"
+           xmlns:md="md" xmlns:conf="js.conf">
+
+    <js:Content name="main">
+
+        <h1>Vereinbarungen</h1>
+
+        <h2>Verweise und Links</h2>
+
+        <p>Bei direkten oder indirekten Verweisen auf fremde Internetseiten
+            ("Hyperlinks"), die außerhalb des Verantwortungsbereiches des Autors
+            liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in
+            Kraft treten, in dem der Autor von den Inhalten Kenntnis hat und es
+            ihm technisch möglich und zumutbar wäre, die Nutzung im Falle
+            rechtswidriger Inhalte zu verhindern. Der Autor erklärt daher
+            ausdrücklich, dass zum Zeitpunkt der Linksetzung die entsprechenden
+            verlinkten Seiten frei von illegalen Inhalten waren. Der Autor hat
+            keinerlei Einfluss auf die aktuelle und zukünftige Gestaltung und auf
+            die Inhalte der gelinkten/verknüpften Seiten. Deshalb distanziert er
+            sich hiermit ausdrücklich von allen Inhalten aller gelinkten
+            /verknüpften Seiten, die nach der Linksetzung verändert wurden. Diese
+            Feststellung gilt für alle innerhalb des eigenen Internetangebotes
+            gesetzten Links und Verweise sowie für Fremdeinträge in vom Autor
+            eingerichteten Gästebüchern, Diskussionsforen und Mailinglisten. Für
+            illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für
+            Schäden, die aus der Nutzung oder Nichtnutzung solcherart dargebotener
+            Informationen entstehen, haftet allein der Anbieter der Seite, auf
+            welche verwiesen wurde, nicht derjenige, der über Links auf die
+            jeweilige Veröffentlichung lediglich verweist.
+        </p>
+
+        <h1>Urheber- und Kennzeichenrecht</h1>
+
+        <p>Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der
+            verwendeten Materialien zu beachten, von ihm selbst erstellte
+            Materialien zu nutzen oder auf lizenzfreie Materialien
+            zurückzugreifen. Alle innerhalb des Internetangebotes genannten und
+            ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen
+            uneingeschränkt den Bestimmungen des jeweils gültigen
+            Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen
+            Eigentümer. Allein aufgrund der bloßen Nennung ist nicht der Schluß zu
+            ziehen, dass Markenzeichen nicht durch Rechte Dritter geschützt sind!
+            Das Copyright für veröffentlichte, vom Autor selbst erstellte Objekte
+            bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder
+            Verwendung solcher Materialien in anderen elektronischen oder
+            gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors
+            nicht gestattet.
+        </p>
+
+        <h1>Eigenschutz</h1>
+
+        <p>Die Nutzung der im Rahmen des Impressums oder vergleichbarer Angaben
+            veröffentlichten Kontaktdaten wie Postanschriften, Telefon- und
+            Faxnummern sowie Emailadressen durch Dritte zur Übersendung von nicht
+            ausdrücklich angeforderten Informationen ist nicht gestattet.
+            Rechtliche Schritte gegen die Versender von so genannten Spam-Mails
+            bei Verstößen gegen dieses Verbot sind ausdrücklich vorbehalten.
+        </p>
+
+        <h1>Nutzungsbedingungen</h1>
+
+        <p>Die auf diesen Seiten zum Download angebotene Programme sowie die
+            veröffentlichen Quelltexte sind soweit nicht anders angegeben frei und
+            uneingeschränkt verfügbar („Public Domain“). Ich gebe keine Garantie,
+            auch nicht auf Lauffähigkeit oder Benutzbarkeit. Die Nutzung erfolgt
+            auf eigene Gefahr, ich hafte nicht für Schäden, die durch sachgemäßen
+            oder unsachgemäßen Gebrauch dieses Programms entstehen.
+        </p>
+        <h2>Rechtswirksamkeit dieses Haftungsausschlusses</h2>
+
+        <p>Dieser Haftungsausschluss ist als Teil des Internetangebotes zu
+            betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile
+            oder einzelne Formulierungen dieses Textes der geltenden Rechtslage
+            nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben
+            die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit
+            davon unberührt.
+        </p>
+
+    </js:Content>
+</js:Module>

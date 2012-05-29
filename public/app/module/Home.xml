@@ -1,0 +1,188 @@
+<js:Module xmlns:js="js.core" xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="js.ui" xmlns:md="md">
+    <js:Content name="main">
+        <div id="home">
+            <div class="hero-unit center">
+                <h1>&lt;rAppid:js /&gt;</h1>
+                <h2 class="sub" style="text-align: center;">the Rich Internet
+                    Application Javascript MVC Framework
+                </h2>
+                <p>the way you want to do it</p>
+                <p>
+                    <a class="btn btn-large" href="https://github.com/it-ony/rAppid.js">
+                        <em class="icon-github-sign"></em>
+                        View on GitHub
+                    </a>
+                    <a class="btn btn-large dropdown-toggle btn-primary">
+                        <em class="icon-download"></em>
+                        Download
+                    </a>
+                </p>
+                <ul class="quick-links">
+                    <li>
+                        <a href="http://docs.rappidjs.com" target="_blank">
+                            Documentation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://rappidjs.com/blog">Read the blog</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/it-ony/rAppid.js/issues/new" target="_blank">
+                            Submit issues
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://trello.com/b/KZIYvyUQ" target="_blank">
+                            Roadmap and changelog
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="row">
+                <div class="span4">
+                    <h2>Why rAppid.js?</h2>
+                    <p>
+                        HTML is great for defining views, CSS is great for styling
+                        those. But, don't repeat yourself, by writing many tags to
+                        define your view. rAppidjs let you encapsulate complexity into
+                        components which can be easy used in your application. The
+                        result is a clean, readable mark-up offering a quick
+                        development and reuse of code.
+                    </p>
+                    <p class="buttons">
+                        <a class="btn" href="#">View details</a>
+                    </p>
+                </div>
+                <div class="span4">
+                    <h2>Another MVC Framework</h2>
+                    <p>
+                        Well, because other frameworks tries to abstract the
+                        MV-pattern by extending the HTML language within the
+                        document markup in a dirty. rAppid.js solved that issue by
+                        introducing XAML for defining the application, MV-Bindings
+                        and event handling.
+                    </p>
+                    <p class="buttons">
+                        <a class="btn" href="#">XAML</a>
+                    </p>
+                </div>
+                <div class="span4">
+                    <h2>Extensibility</h2>
+                    <p>
+                        rAppid.js is a framework to encapsulate complexity into
+                        components which can be used beside HTML. The application is
+                        written in a Shadow DOM and rendered valid HTML on the
+                        client-side into the Document. It is completly extendable and
+                        works well with other libraries.
+                    </p>
+                    <p class="buttons">
+                        <a class="btn" href="#">More about the Shadow DOM</a>
+                    </p>
+
+                </div>
+            </div>
+
+            <h2>Quick start</h2>
+
+            <div class="row">
+                <div class="span4">
+                    <h3>Installation</h3>
+                    <p>
+                        rAppid.js is installed using npm with just one line.
+                    </p>
+                    <pre>npm install -d -g rAppid.js</pre>
+                    <p class="buttons">
+                        <a class="btn" href="#">Installation</a>
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>Setup Project</h3>
+                    <p>
+                        rappidjs is a command-line interface shipped with rAppid.js
+                        helping you to create new projects.
+                    </p>
+                    <pre>rappidjs create app &lt;Name&gt; [&lt;Directory&gt;]</pre>
+                    <p class="buttons">
+                        <a class="btn" href="project structure">Project structure</a>
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>Deployment</h3>
+                    <p>
+                        Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
+                        egestas eget quam. Vestibulum id ligula porta felis euismod
+                        semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                        condimentum nibh, ut fermentum massa justo sit amet risus.
+                    </p>
+                    <p class="buttons">
+                        <a class="btn" href="#">Optimization</a>
+                    </p>
+                </div>
+            </div>
+
+            <h1>The basics</h1>
+
+            <div class="row">
+                <div class="span4">
+                    <h3>Start file</h3>
+                    <p>
+                        Bootstrap -&gt; Start -&gt; Render
+                    </p>
+                    <p>
+                        The <code>index.html</code>
+                    </p>
+                    <p>
+                        <a class="btn" href="#">View details</a>
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>Application Markup</h3>
+                    <p>
+                        Inherits from AppClass.js, defines the shadow dom
+                    </p>
+                    <p><a class="btn" href="#">XAML</a>Bindings
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>Application Code-Behind</h3>
+                    <p>
+                        rAppid.js is a framework to encapsulate complexity into
+                        components which can be used beside HTML. The application is
+                        written in a Shadow DOM and rendered valid HTML on the
+                        client-side into the Document. It is completly extendable and
+                        works well with other libraries.
+                    </p>
+                    <p>
+                        <a class="btn" href="#">More about the Shadow DOM</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span8">
+                    <div class="tabtable">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#">index.html</a>
+                            </li>
+                            <li>
+                                <a href="#">App.xml</a>
+                            </li>
+                            <li>
+                                <a href="#">AppClass.xml</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <md:View>
+            # Markdown View
+            This text is formatted with **Markdown**.
+        </md:View>
+
+
+    </js:Content>
+</js:Module>

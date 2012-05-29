@@ -1,0 +1,17 @@
+#container {
+margin-top: 70px;
+}
+
+.center {
+text-align: center;
+}
+
+#home .quick-links li {
+display: inline-block;
+margin: 10px;
+}
+
+#home .btn {
+margin: 10px;
+}
+

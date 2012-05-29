@@ -1,0 +1,18 @@
+<module:WikiClass xmlns="http://www.w3.org/1999/xhtml"
+                  xmlns:js="js.core" xmlns:ui="js.ui"
+                  xmlns:module="app.module"
+                  xmlns:md="md" xmlns:conf="js.conf">
+
+    <js:Router>
+        <conf:Route onexec="defaultRoute" route="^wiki\/?$" />
+        <conf:Route onexec="showPage" route="^wiki\/(.+)$"/>
+    </js:Router>
+
+    <js:Content name="main">
+        <div id="wiki">
+            <md:View>
+                {text}
+            </md:View>
+        </div>
+    </js:Content>
+</module:WikiClass>
