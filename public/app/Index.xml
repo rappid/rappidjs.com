@@ -13,17 +13,13 @@
                     &lt;rAppid:js /&gt;
                 </a>
                 <nav>
-                    <ul class="nav">
-                        <li class="active">
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="/wiki">Wiki</a>
-                        </li>
-                        <li>
-                            <a href="/license">License</a>
-                        </li>
-                    </ul>
+                    <ui:SelectionView items="{modules}" tagName="ul" class="nav" needsSelection="true">
+                        <js:Template name="item">
+                            <li class="active">
+                                <a href="/${$item}">${$item}</a>
+                            </li>
+                        </js:Template>
+                    </ui:SelectionView>
                 </nav>
             </div>
         </div>
