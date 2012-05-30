@@ -1,4 +1,4 @@
-define(["js/core/TextElement", 'md/lib/marked'], function (TextElement, marked) {
+define(["js/core/TextElement", 'md/lib/marked', 'underscore'], function (TextElement, marked, _) {
 
         var rDos = /\r\n/g,
             rMac = /\r/g,
@@ -13,7 +13,7 @@ define(["js/core/TextElement", 'md/lib/marked'], function (TextElement, marked) 
                     this._initialize(this.$creationPolicy);
                 }
 
-                this.$el = this.$systemManager.$document.createElement(this.$tagName);
+                this.$el = this.$systemManager.$document.createElement('span');
                 if (!_.isUndefined(this.$.textContent)) {
                     this._renderTextContent(this.$.textContent);
                 }
