@@ -9,7 +9,7 @@ define(['js/core/Module', "rAppid"], function(Module, rAppid) {
         },
 
         defaultRoute: function(routeContext) {
-            routeContext.router.navigate('wiki/Home');
+            routeContext.navigate('wiki/Home');
         }.async(),
 
         showPage: function(routeContext, page) {
