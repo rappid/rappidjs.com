@@ -165,20 +165,8 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                 <html>
                 <head>
                     <title>MyApp</title>
-
-                    <link rel="stylesheet" href="http://demo.rappidjs.com/addressbook.css"/>
-
                     <script type="text/javascript" src="js/lib/require.js"></script>
-                    <script type="text/javascript" src="js/lib/inherit.js"></script>
-                    <script type="text/javascript" src="js/lib/underscore-min.js"></script>
-                    <script type="text/javascript" src="js/lib/flow.js"></script>
                     <script type="text/javascript" src="js/lib/rAppid.js"></script>
-
-                    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-                    <!--[if lt IE 9]>
-                    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-                    <![endif]-->
-
                 </head>
                 <body>
                 <script type="text/javascript" data-usage="bootStrap">
@@ -188,13 +176,23 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                                 application.start(null, function () {
                                     application.render(document.body);
                                 });
-                            } else {
-                                console.warn(err);
                             }
                         });
                 </script>
                 </body>
                 </html>
+                ]]>
+            </ui:CodeView>
+            <ui:CodeView>
+                <![CDATA[
+                    rAppid.bootStrap("app/AddressBook.xml", "config.json",
+                    function (err, systemManager, application) {
+                        if (!err) {
+                            application.start(null, function () {
+                                application.render(document.body);
+                            });
+                        }
+                    });
                 ]]>
             </ui:CodeView>
             <div class="row">
