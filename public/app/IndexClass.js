@@ -16,14 +16,11 @@ define(
              * @param callback
              */
             start:function (parameter, callback) {
-                // false - disables autostart
-                this.callBase(parameter, false);
-
-                callback();
+                this.callBase(parameter, callback);
             },
 
             defaultRoute: function(routeContext) {
-                routeContext.router.navigate('home');
+                routeContext.navigate('home');
             }.async()
         });
     }

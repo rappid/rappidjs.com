@@ -6,15 +6,11 @@
                 <h2 class="sub" style="text-align: center;">the Rich Internet
                     Application Javascript MVC Framework
                 </h2>
-                <p>the way you want to do it</p>
+                <p>- the way you want to do it -</p>
                 <p>
-                    <a class="btn btn-large" href="https://github.com/it-ony/rAppid.js">
-                        <em class="icon-github-sign"></em>
+                    <a class="btn btn-large btn-primary" href="https://github.com/it-ony/rAppid.js">
+                        <em class="icon-download"/>
                         View on GitHub
-                    </a>
-                    <a class="btn btn-large dropdown-toggle btn-primary">
-                        <em class="icon-download"></em>
-                        Download
                     </a>
                 </p>
                 <ul class="quick-links">
@@ -38,7 +34,6 @@
                     </li>
                 </ul>
             </div>
-
 
             <div class="row">
                 <div class="span4">
@@ -78,7 +73,7 @@
                         works well with other libraries.
                     </p>
                     <p class="buttons">
-                        <a class="btn" href="#">More about the Shadow DOM</a>
+                        <a class="btn" href="/wiki/ShadowDOM">More about the Shadow DOM</a>
                     </p>
 
                 </div>
@@ -90,39 +85,42 @@
                 <div class="span4">
                     <h3>Installation</h3>
                     <p>
-                        rAppid.js is installed using npm with just one line.
+                        rAppid.js is installed using npm with just one command. After the installation succeed the command-line interface is ready to setup projects.
                     </p>
                     <pre>npm install -d -g rAppid.js</pre>
+                    <p>Download
+                        <a href="http://nodejs.org">node</a> with <a href="http://npmjs.org">npm</a>.
+                    </p>
                     <p class="buttons">
-                        <a class="btn" href="#">Installation</a>
+                        <a class="btn" href="/wiki/Installation">Installation</a>
                     </p>
                 </div>
                 <div class="span4">
-                    <h3>Setup Project</h3>
+                    <h3>Setup a project</h3>
                     <p>
-                        rappidjs is a command-line interface shipped with rAppid.js
-                        helping you to create new projects.
+                        <code>rappidjs</code> is a command-line interface shipped with rAppid.js
+                        helping to manage projects.
                     </p>
-                    <pre>rappidjs create app &lt;Name&gt; [&lt;Directory&gt;]</pre>
+                    <pre>rappidjs create app &lt;Name&gt;
+[&lt;targetDirectory&gt;]</pre>
                     <p class="buttons">
-                        <a class="btn" href="project structure">Project structure</a>
+                        <a class="btn" href="/wiki/Project">Project structure</a>
                     </p>
                 </div>
                 <div class="span4">
-                    <h3>Deployment</h3>
+                    <h3>Run the application</h3>
                     <p>
-                        Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-                        egestas eget quam. Vestibulum id ligula porta felis euismod
-                        semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                        condimentum nibh, ut fermentum massa justo sit amet risus.
+                        Simply execute the index.html in Firefox or make the public directory available in your web-server.
                     </p>
-                    <p class="buttons">
-                        <a class="btn" href="#">Optimization</a>
+                    <pre>cd /var/www
+sudo ln -s &lt;project dir&gt;/public myApp</pre>
+                    <p>
+                        Than open <a href="http://localhost/myApp">http://localhost/myApp</a> from a browser.
                     </p>
                 </div>
             </div>
 
-            <h1>The basics</h1>
+            <h2>The basics</h2>
 
             <div class="row">
                 <div class="span4">
@@ -133,7 +131,7 @@
                     <p>
                         The <code>index.html</code>
                     </p>
-                    <p>
+                    <p class="buttons">
                         <a class="btn" href="#">View details</a>
                     </p>
                 </div>
@@ -142,7 +140,9 @@
                     <p>
                         Inherits from AppClass.js, defines the shadow dom
                     </p>
-                    <p><a class="btn" href="#">XAML</a>Bindings
+                    <p class="buttons">
+                        <a class="btn" href="#">XAML</a>
+                        <a class="btn" href="#">Bindings</a>
                     </p>
                 </div>
                 <div class="span4">
@@ -154,7 +154,7 @@
                         client-side into the Document. It is completly extendable and
                         works well with other libraries.
                     </p>
-                    <p>
+                    <p class="buttons">
                         <a class="btn" href="#">More about the Shadow DOM</a>
                     </p>
                 </div>

@@ -1,5 +1,7 @@
 define(['js/core/Module', "rAppid"], function(Module, rAppid) {
 
+    var rLinks = /\[{2}(.+?)\]{2}/gi;
+
     return Module.inherit("app.module.WikiClass", {
 
         defaults: {
@@ -7,25 +9,34 @@ define(['js/core/Module', "rAppid"], function(Module, rAppid) {
         },
 
         defaultRoute: function(routeContext) {
-            routeContext.router.navigate('wiki/Home');
+            routeContext.navigate('wiki/Home');
         }.async(),
 
         showPage: function(routeContext, page) {
 
-            console.log("showpage", page);
-            var url = "wiki/" + page + ".md",
+            var url = decodeURIComponent("wiki/" + page + ".md"),
                 self = this;
 
+            url = url.replace('%20', '-');
+
             rAppid.ajax(url, null, function(err, xhr) {
-                if (err) {
+                if (!err && (xhr.status === 200 || xhr.status === 304)) {
+                    // process links
+                    var text = xhr.responses.text;
+
+                    // replace [[Links]] to [Links](#/wiki/Links)
+                    text = text.replace(rLinks, "[$1](#/wiki/$1)");
+
+                    self.set("text", text);
+
+                    routeContext.callback();
+                } else {
+
                     if (page !== "Home") {
                         routeContext.router.navigate('wiki/Home');
                     } else {
                         routeContext.callback(err);
                     }
-                } else {
-                    self.set("text", xhr.responses.text);
-                    routeContext.callback();
                 }
 
             });
