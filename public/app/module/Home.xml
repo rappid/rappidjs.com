@@ -159,56 +159,106 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                     </p>
                 </div>
             </div>
-            <view:CodeView>
-                <![CDATA[
-                <!DOCTYPE HTML>
-                <html>
-                <head>
-                    <title>MyApp</title>
-                    <script type="text/javascript" src="js/lib/require.js"></script>
-                    <script type="text/javascript" src="js/lib/rAppid.js"></script>
-                </head>
-                <body>
-                <script type="text/javascript" data-usage="bootStrap">
-                    rAppid.bootStrap("app/AddressBook.xml", "config.json",
-                        function (err, systemManager, application) {
-                            if (!err) {
-                                application.start(null, function () {
-                                    application.render(document.body);
-                                });
-                            }
-                        });
-                </script>
-                </body>
-                </html>
-                ]]>
-            </view:CodeView>
-            <view:CodeView>
-                <![CDATA[
-                    rAppid.bootStrap("app/AddressBook.xml", "config.json",
-                    function (err, systemManager, application) {
-                        if (!err) {
-                            application.start(null, function () {
-                                application.render(document.body);
-                            });
-                        }
-                    });
-                ]]>
-            </view:CodeView>
             <div class="row">
                 <div class="span8">
                     <div class="tabtable">
-                        <ul class="nav nav-tabs">
-                            <li class="active">
-                                <a href="#">index.html</a>
-                            </li>
-                            <li>
-                                <a href="#">App.xml</a>
-                            </li>
-                            <li>
-                                <a href="#">AppClass.xml</a>
-                            </li>
-                        </ul>
+                        <ui:TabView>
+                            <div title="index.html">
+                                <view:CodeView>
+                                    <![CDATA[
+                                        <!DOCTYPE HTML>
+                                        <html>
+                                        <head>
+                                            <title>MyApp</title>
+                                            <script type="text/javascript" src="js/lib/require.js"></script>
+                                            <script type="text/javascript" src="js/lib/rAppid.js"></script>
+                                        </head>
+                                        <body>
+                                        <script type="text/javascript" data-usage="bootStrap">
+                                            rAppid.bootStrap("app/AddressBook.xml", "config.json",
+                                                function (err, systemManager, application) {
+                                                    if (!err) {
+                                                        application.start(null, function () {
+                                                            application.render(document.body);
+                                                        });
+                                                    }
+                                                });
+                                        </script>
+                                        </body>
+                                        </html>
+                                    ]]>
+                                </view:CodeView>
+                            </div>
+                            <div title="App.xml">
+                                <view:CodeView>
+                                    <![CDATA[
+                                    <?xml version="1.0"?>
+                                    <app:AddressBookClass xmlns="http://www.w3.org/1999/xhtml"
+                                                          xmlns:js="js.core" xmlns:ui="js.ui" xmlns:app="app" xmlns:view="app.view">
+                                        <h1>Address Book</h1>
+                                        <h2>New Contact</h2>
+                                        <fieldset>
+                                            <label>Firstname</label>
+                                            <input type="text" value="{{person.firstname}}"/>
+                                            <label>Lastname</label>
+                                            <input type="text" value="{{person.lastname}}"/>
+                                            <label>Phone </label>
+                                            <input type="text" value="{{person.phone}}"/>
+
+                                            <button onclick="addPerson">Add</button>
+                                        </fieldset>
+                                        <h2>Contacts</h2>
+
+                                        <ui:ItemsView items="{contacts}" itemKey="person" tagName="ul" id="contacts">
+                                            <js:Template name="item">
+                                                <view:Card tagName="li" person="{$person}" class="yeah"/>
+                                            </js:Template>
+                                        </ui:ItemsView>
+
+
+                                    </app:AddressBookClass>
+                                    ]]>
+                                </view:CodeView>
+                            </div>
+                            <div title="AppClass.js">
+                                <view:CodeView>
+                                    <![CDATA[
+                                    define(
+                                        ["js/core/Application", "app/model/Person", "js/core/List"],
+                                        function (Application, Person, List) {
+
+                                            return Application.inherit({
+                                                /**
+                                                 *  initializes the application variables
+                                                 */
+                                                initialize:function () {
+                                                    this.set('contacts', new List());
+                                                    this.set('person',new Person());
+                                                },
+
+                                                addPerson: function(){
+                                                    this.$.contacts.add(this.$.person);
+                                                    this.set('person', new Person());
+                                                },
+
+                                                /***
+                                                 * Starts the application
+                                                 * @param parameter
+                                                 * @param callback
+                                                 */
+                                                start:function (parameter, callback) {
+                                                    // false - disables autostart
+                                                    this.callBase(parameter, false);
+
+                                                    callback();
+                                                }
+                                            });
+                                        }
+                                    );
+                                    ]]>
+                                </view:CodeView>
+                            </div>
+                        </ui:TabView>
                     </div>
                 </div>
             </div>
