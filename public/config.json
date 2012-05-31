@@ -1,13 +1,13 @@
 {
     "shim": {
-        "js/lib/highlight/highlight": {
+        "app/lib/highlight/highlight": {
             "exports": "hljs"
         },
-        "js/lib/highlight/languages/xml": {
-            "deps": ["js/lib/highlight/highlight"]
+        "app/lib/highlight/languages/xml": {
+            "deps": ["app/lib/highlight/highlight"]
         },
-        "js/lib/highlight/languages/javascript": {
-            "deps": ["js/lib/highlight/highlight"]
+        "app/lib/highlight/languages/javascript": {
+            "deps": ["app/lib/highlight/highlight"]
         }
     },
     "xamlClasses":["app/Docu","app/module/Home","app/module/Imprint","app/module/License","app/module/Wiki","js/ui/ButtonGroup","js/ui/Link","js/ui/MenuButton","js/ui/ScrollView","js/ui/SplitButton","js/ui/TabView"],"namespaceMap":null,"rewriteMap":null}

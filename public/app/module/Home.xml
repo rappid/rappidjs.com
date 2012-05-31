@@ -1,4 +1,4 @@
-<js:Module xmlns:js="js.core" xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="js.ui" xmlns:md="md">
+<js:Module xmlns:js="js.core" xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="js.ui" xmlns:md="md" xmlns:view="app.view">
     <js:Content name="main">
         <div id="home">
             <div class="hero-unit center">
@@ -159,7 +159,7 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                     </p>
                 </div>
             </div>
-            <ui:CodeView>
+            <view:CodeView>
                 <![CDATA[
                 <!DOCTYPE HTML>
                 <html>
@@ -182,8 +182,8 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                 </body>
                 </html>
                 ]]>
-            </ui:CodeView>
-            <ui:CodeView>
+            </view:CodeView>
+            <view:CodeView>
                 <![CDATA[
                     rAppid.bootStrap("app/AddressBook.xml", "config.json",
                     function (err, systemManager, application) {
@@ -194,7 +194,7 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                         }
                     });
                 ]]>
-            </ui:CodeView>
+            </view:CodeView>
             <div class="row">
                 <div class="span8">
                     <div class="tabtable">
