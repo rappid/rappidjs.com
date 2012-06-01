@@ -4,14 +4,11 @@
     <title>rAppid.js - the Rich Internet Application Javascript MVC Framework</title>
 
     <script type="text/javascript" src="js/lib/require.js" data-usage="lib"></script>
-    <script type="text/javascript" src="js/lib/inherit.js" data-usage="lib"></script>
-    <script type="text/javascript" src="js/lib/underscore-min.js" data-usage="lib"></script>
-    <script type="text/javascript" src="js/lib/flow.js" data-usage="lib"></script>
     <script type="text/javascript" src="js/lib/rAppid.js" data-usage="lib"></script>
 
     <meta name="fragment" content="!">
 
-    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/codestyle.css"/>
 
@@ -23,8 +20,8 @@
 </head>
 <body>
 <script type="text/javascript" data-usage="bootstrap">
-    rAppid.bootStrap("app/Index.xml", "config.json",
-            function (err, systemManager, application) {
+
+    rAppid.bootStrap("app/Index.xml", "config.json", function (err, systemManager, application) {
                 if (!err) {
                     application.start(null, function (err) {
                         if (!err) {
@@ -37,6 +34,7 @@
                     console.warn(err);
                 }
             });
+
 </script>
 </body>
 </html>
