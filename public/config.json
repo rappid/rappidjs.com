@@ -1,5 +1,21 @@
 {
+    "paths": {
+        "xaml": "js/plugins/xaml",
+        "json": "js/plugins/json",
+        "flow": "js/lib/flow",
+        "inherit": "js/lib/inherit",
+        "underscore": "js/lib/underscore"
+    },
     "shim": {
+        "inherit": {
+            "exports": "inherit"
+        },
+        "flow": {
+            "exports": "flow"
+        },
+        "underscore": {
+            "exports": "_"
+        },
         "app/lib/highlight/highlight": {
             "exports": "hljs"
         },
