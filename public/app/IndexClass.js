@@ -8,7 +8,6 @@ define(
              */
             initialize:function () {
                 this.set('modules', ['home', 'wiki', 'license', 'imprint']);
-                this.set('appName','Docu');
             },
             /***
              * Starts the application
