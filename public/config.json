@@ -1,29 +1,26 @@
-{
-    "paths": {
-        "xaml": "js/plugins/xaml",
-        "json": "js/plugins/json",
-        "flow": "js/lib/flow",
-        "inherit": "js/lib/inherit",
-        "underscore": "js/lib/underscore"
+{"paths": {
+    "xaml": "js/plugins/xaml",
+    "json": "js/plugins/json",
+    "inherit": "js/lib/inherit",
+    "underscore": "js/lib/underscore",
+    "flow": "js/lib/flow"
+}, "shim": {
+    "inherit": {
+        "exports": "inherit"
     },
-    "shim": {
-        "inherit": {
-            "exports": "inherit"
-        },
-        "flow": {
-            "exports": "flow"
-        },
-        "underscore": {
-            "exports": "_"
-        },
-        "app/lib/highlight/highlight": {
-            "exports": "hljs"
-        },
-        "app/lib/highlight/languages/xml": {
-            "deps": ["app/lib/highlight/highlight"]
-        },
-        "app/lib/highlight/languages/javascript": {
-            "deps": ["app/lib/highlight/highlight"]
-        }
+    "flow": {
+        "exports": "flow"
     },
-    "xamlClasses":["app/Docu","app/module/Home","app/module/Imprint","app/module/License","app/module/Wiki","js/ui/ButtonGroup","js/ui/Link","js/ui/MenuButton","js/ui/ScrollView","js/ui/SplitButton","js/ui/TabView"],"namespaceMap":null,"rewriteMap":null}
+    "underscore": {
+        "exports": "_"
+    },
+    "app/lib/highlight/highlight": {
+        "exports": "hljs"
+    },
+    "app/lib/highlight/languages/xml": {
+        "deps": ["app/lib/highlight/highlight"]
+    },
+    "app/lib/highlight/languages/javascript": {
+        "deps": ["app/lib/highlight/highlight"]
+    }
+}, "xamlClasses": ["js.ui.Link", "js.ui.MenuButton", "js.ui.SplitButton", "js.ui.TabView", "app/module/Wiki", "js/ui/ButtonGroup", "js/ui/Link", "js/ui/MenuButton", "js/ui/Modal", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView"], "namespaceMap": null, "rewriteMap": null}
