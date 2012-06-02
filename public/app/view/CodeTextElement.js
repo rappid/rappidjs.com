@@ -1,5 +1,5 @@
 define(
-    ["js/core/TextElement", "app/lib/highlight/highlight", "app/lib/highlight/languages/xml", "app/lib/highlight/languages/javascript"], function (TextElement, hljs) {
+    ["js/core/TextElement", "app/lib/highlight/highlight"], function (TextElement, hljs) {
         return TextElement.inherit("md.MarkdownTextElement", {
 
             _initializeBindings: function(){
