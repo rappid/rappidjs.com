@@ -1,6 +1,8 @@
 define(
-    ["js/core/Application"],
-    function (Application) {
+    ["js/core/Application",
+    "example/todo/model/TodoList",
+    "example/todo/model/Todo"],
+    function (Application, TodoList, Todo) {
 
         return Application.inherit({
             /**
@@ -8,18 +10,17 @@ define(
              */
             initialize:function () {
                 this.set('appName','Simple App');
-                this.set('name','');
+                this.set('todoList',new TodoList());
+                this.set('newTodo',new Todo());
             },
-            /***
-             * Starts the application
-             * @param parameter
-             * @param callback
-             */
-            start:function (parameter, callback) {
-                // false - disables autostart
-                this.callBase(parameter, false);
+            archive: function(){
+                 this.$.todoList.clearCompleted();
+            },
+            add: function(e){
+                this.$.todoList.add(this.$.newTodo);
+                this.set('newTodo',new Todo());
 
-                callback();
+                e.$.preventDefault();
             }
         });
     }

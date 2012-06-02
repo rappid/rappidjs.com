@@ -5,7 +5,8 @@
         xmlns:md="md"
         xmlns:view="app.view"
         xmlns:module="app.module"
-        xmlns:basic="example.basic">
+        xmlns:basic="example.basic"
+        xmlns:todo="example.todo">
     <js:Content name="main">
         <div id="home">
             <div class="hero-unit center">
@@ -225,14 +226,16 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                 <div class="span8">
                     <div class="tabtable">
                         <ui:TabView>
-                            <view:Code data-title="App.xml">${example.basic.App}</view:Code>
-                            <view:Code data-title="AppClass.js">${example.basic.AppClass}</view:Code>
+                            <view:Code data-title="App.xml">${example.todo.App}</view:Code>
+                            <view:Code data-title="AppClass.js">${example.todo.AppClass}</view:Code>
+                            <view:Code data-title="model/Todo.js">${example.todo.TodoModel}</view:Code>
+                            <view:Code data-title="model/TodoList.js">${example.todo.TodoList}</view:Code>
                         </ui:TabView>
                     </div>
                 </div>
                 <div class="span4">
                     <div class="well">
-                        <basic:App/>
+                        <todo:App/>
                     </div>
                 </div>
             </div>

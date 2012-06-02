@@ -1,14 +1,26 @@
 <?xml version="1.0"?>
 <app:AppClass xmlns="http://www.w3.org/1999/xhtml"
                xmlns:js="js.core" xmlns:ui="js.ui" xmlns:app="example.todo">
-    <h2>{appName}</h2>
+    <h2>Todo</h2>
+
     <div>
-        <p>
-            <label>Name:</label>
-            <input value="{{name}}" placeholder="Enter your name"/>
-        </p>
-        <h3>
-            Hello {name}!
-        </h3>
+        <span>{todoList.numOpenTodos()} of {todoList.size()} remaining</span>
+        (<a href="" onclick="archive">archive</a>)
+        <ui:ItemsView items="{todoList}" itemKey="todo"
+                tagName="ul" class="unstyled">
+            <js:Template name="item">
+                <li>
+                    <label class="checkbox">
+                        <input type="checkbox" checked="{{$todo.completed}}"/>
+                        <span class="{$todo.status()}">{$todo.title}</span>
+                    </label>
+                </li>
+            </js:Template>
+        </ui:ItemsView>
+        <form onsubmit="add" action="">
+            <input type="text" size="30" placeholder="add new todo here"
+                   value="{{newTodo.title}}"/>
+            <input class="btn-primary" type="submit" value="add"/>
+        </form>
     </div>
 </app:AppClass>
