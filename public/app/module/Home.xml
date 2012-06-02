@@ -165,14 +165,75 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                 <div class="span8">
                     <div class="tabtable">
                         <ui:TabView>
-                            <view:CodeView data-title="index.html">${example.basic.Index}</view:CodeView>
-                            <view:CodeView data-title="App.xml">${example.basic.App}</view:CodeView>
-                            <view:CodeView data-title="AppClass.js">${example.basic.AppClass}</view:CodeView>
+                            <div data-title="index.html">
+                                <p>
+                                    Bootstrap -&gt; Start -&gt; Render
+                                </p>
+                                <view:Code data-title="index.html">${example.basic.Index}</view:Code>
+                            </div>
+                            <view:Code data-title="App.xml">${example.basic.App}</view:Code>
+                            <view:Code data-title="AppClass.js">${example.basic.AppClass}</view:Code>
                         </ui:TabView>
                     </div>
                 </div>
                 <div class="span4">
-                    <basic:App/>
+                    <div class="well">
+                        <basic:App/>
+                    </div>
+                </div>
+            </div>
+            <h2>Foo Bar</h2>
+            <div class="row">
+                <div class="span4">
+                    <h3>Start file</h3>
+                    <p>
+                        Bootstrap -&gt; Start -&gt; Render
+                    </p>
+                    <p>
+                        The
+                        <code>index.html</code>
+                    </p>
+                    <p class="buttons">
+                        <a class="btn" href="#">View details</a>
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>Application Markup</h3>
+                    <p>
+                        Inherits from AppClass.js, defines the shadow dom
+                    </p>
+                    <p class="buttons">
+                        <a class="btn" href="#">XAML</a>
+                        <a class="btn" href="#">Bindings</a>
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>Application Code-Behind</h3>
+                    <p>
+                        rAppid.js is a framework to encapsulate complexity into
+                        components which can be used beside HTML. The application is
+                        written in a Shadow DOM and rendered valid HTML on the
+                        client-side into the Document. It is completly extendable and
+                        works well with other libraries.
+                    </p>
+                    <p class="buttons">
+                        <a class="btn" href="#">More about the Shadow DOM</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span8">
+                    <div class="tabtable">
+                        <ui:TabView>
+                            <view:Code data-title="App.xml">${example.basic.App}</view:Code>
+                            <view:Code data-title="AppClass.js">${example.basic.AppClass}</view:Code>
+                        </ui:TabView>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="well">
+                        <basic:App/>
+                    </div>
                 </div>
             </div>
         </div>

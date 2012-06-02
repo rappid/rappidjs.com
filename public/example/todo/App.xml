@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <app:AppClass xmlns="http://www.w3.org/1999/xhtml"
-               xmlns:js="js.core" xmlns:ui="js.ui" xmlns:app="example.basic">
+               xmlns:js="js.core" xmlns:ui="js.ui" xmlns:app="example.todo">
     <h2>{appName}</h2>
     <div>
         <p>
