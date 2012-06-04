@@ -1,6 +1,7 @@
 define(
     ["js/core/TextElement", "app/lib/highlight/highlight"], function (TextElement, hljs) {
-        return TextElement.inherit("md.MarkdownTextElement", {
+        return TextElement.inherit("app/view/CodeTextElement", {
+
 
             _initializeBindings: function(){
                 if(this.$descriptor.nodeType !== 4){
@@ -24,6 +25,11 @@ define(
             },
             _renderTextContent: function (textContent) {
                 textContent = hljs.highlightAuto(textContent).value;
+
+                if (this.$.preRenderText) {
+                    textContent = this.$.preRenderText(textContent);
+                }
+
                 var lines = textContent.split('\n'), j = 1, k = 0;
                 while(lines.length > k && !lines[k].trim().length){k++;}
                 if(lines.length > k){
@@ -31,6 +37,7 @@ define(
                         j++;
                     }
                 }
+
 
 
                 var li, line;

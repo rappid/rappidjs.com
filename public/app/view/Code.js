@@ -1,18 +1,45 @@
 define(
-    ["js/ui/View", "app/view/CodeTextElement"], function (View) {
+    ["js/ui/View", "app/view/CodeTextElement", "app/view/Explanation"], function (View, CodeTextElement, Explanation) {
         return View.inherit({
             defaults: {
                 tagName: 'pre'
             },
             _createTextElement: function(node,rootScope){
+
+                var self = this;
+
                 return this.$systemManager.$applicationContext.createInstance('app/view/CodeTextElement', [
-                    null,
+                    {
+                        preRenderText: function(text) {
+                            return self.renderExplanations(text);
+                        }
+                    },
                     node,
                     this.$systemManager,
                     this,
                     rootScope
                 ]);
+            },
+
+            render: function() {
+                return this.callBase();
+            },
+
+            renderExplanations: function(text) {
+
+                if (this.$children) {
+                    for (var i = 0; i < this.$children.length; i++) {
+                        var child = this.$children[i];
+                        if (child instanceof Explanation) {
+                            text = child.execute(text);
+                        }
+                    }
+                }
+
+
+                return text;
             }
+
         });
     }
 );

@@ -16,12 +16,21 @@ margin: 10px;
 }
 
 #home > h2 {
-margin-top: 100px;
+margin-top: 80px;
 }
 
-#home > .row {
+h3 {
+margin: 20px 0 10px 0;
+}
+
+.with-buttons {
 position: relative;
 padding-bottom: 50px;
+margin-bottom: 30px;
+}
+
+.app {
+margin-top: 54px;
 }
 
 #home .buttons {
