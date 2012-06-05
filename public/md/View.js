@@ -1,7 +1,7 @@
-define(['js/html/DomElement', 'md/MarkdownTextElement'], function(DomElement) {
+define(['js/html/HtmlElement', 'md/MarkdownTextElement'], function(HtmlElement) {
 
 
-    return DomElement.inherit('md/View', {
+    return HtmlElement.inherit('md/View', {
 
         defaults: {
             tagName: 'span',
