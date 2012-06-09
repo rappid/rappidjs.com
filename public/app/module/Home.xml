@@ -50,7 +50,7 @@
                         development and reuse of code.
                     </p>
                     <p class="buttons">
-                        <a class="btn btn-info" href="#">View details</a>
+                        <a class="btn btn-info" href="/wiki/Home">View details</a>
                     </p>
                 </div>
                 <div class="span4">
@@ -58,12 +58,12 @@
                     <p>
                         Well, because other frameworks tries to abstract the
                         MV-pattern by extending the HTML language within the
-                        document markup in a dirty. rAppid.js solved that issue by
+                        document markup, which is a dirty style. rAppid.js solved that issue by
                         introducing XAML for defining the application, MV-Bindings
                         and event handling.
                     </p>
                     <p class="buttons">
-                        <a class="btn btn-info" href="#">XAML</a>
+                        <a class="btn btn-info" href="/wiki/XAML">XAML</a>
                     </p>
                 </div>
                 <div class="span4">
@@ -108,12 +108,13 @@
 [&lt;targetDirectory&gt;]</pre>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Project">Project structure</a>
+                        <a class="btn btn-info" href="/wiki/Command-Line-Interface">Commmand-line</a>
                     </p>
                 </div>
                 <div class="span4">
                     <h3>Run the application</h3>
                     <p>
-                        Simply execute the index.html in Firefox or make the public directory available in your web-server.
+                        Simply execute the index.html or make the public directory available in your web-server.
                     </p>
                     <pre>cd /var/www
 sudo ln -s &lt;project dir&gt;/public myApp</pre>
@@ -200,7 +201,7 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                         <li>Two-Way-Binding</li>
                         <li>Model-View-Binding</li>
                     </ul>
-                    <p>It is possible to chain bindings and also bind functions.</p>
+                    <p>It's possible to chain bindings and bind functions.</p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Bindings">Bindings</a>
                     </p>
@@ -208,16 +209,26 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                 <div class="span4">
                     <h3>Business logic</h3>
                     <p>
-
+                        The complex business logic of an application is split and encapsulated into small pieces of easy to understandable code - the
+                        <code>Entity</code>.
+                    </p>
+                    <p>
+                        Entities are storing data which could be bound to components. Entities, that can be loaded and persistent are called
+                        <code>Model</code>s.
                     </p>
                     <p class="buttons">
-                        <a class="btn btn-info" href="/wiki/Bindable">Model</a>
+                        <a class="btn btn-info" href="/wiki/Bindable">Bindable</a>
+                        <a class="btn btn-info" href="/wiki/Bindable">Entity</a>
                     </p>
                 </div>
                 <div class="span4">
                     <h3>Event handler</h3>
                     <p>
-
+                        In XAML an event handler is registered declarative with an on<code>eventname</code> attribute.
+                        In Javascript the handler is bound by calling a bind function on the target passing the eventname and the handler as arguments.
+                    </p>
+                    <p>
+                        rAppid.js also supports late binding and events on chained paths.
                     </p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Events">Events</a>
