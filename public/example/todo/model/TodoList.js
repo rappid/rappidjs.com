@@ -1,21 +1,5 @@
 define(["js/core/List"], function (List) {
     return List.inherit("app.collection.TodoList", {
-        markAll: function (done) {
-            this.each(function (todo) {
-                todo.setCompleted(done);
-            });
-        },
-        areAllComplete: function () {
-            if (this.$items.length === 0) {
-                return false;
-            }
-            for (var i = 0; i < this.$items.length; i++) {
-                if (!this.$items[i].isCompleted()) {
-                    return false;
-                }
-            }
-            return true;
-        }.on('change', 'add', 'remove'),
         clearCompleted: function () {
             for (var i = this.$items.length - 1; i >= 0; i--) {
                 if (this.$items[i].isCompleted()) {

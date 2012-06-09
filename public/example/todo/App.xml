@@ -4,20 +4,20 @@
     <h2>Todo</h2>
 
     <div>
-        <span>{todoList.numOpenTodos()} of {todoList.size()} remaining</span>
-        (<a href="" onclick="archive">archive</a>)
-        <ui:ItemsView items="{todoList}" itemKey="todo"
-                tagName="ul" class="unstyled">
+        <span>{todoList.numOpenTodos()} of {todoList.size()} remaining </span>
+        <span visible="{todoList.hasCompletedTodos()}">
+            (<a href="" onclick="archiveCompletedItems">archive</a>)
+        </span>
+
+        <ui:ListView items="{todoList}" itemKey="todo" class="unstyled">
             <js:Template name="item">
-                <li>
-                    <label class="checkbox">
-                        <input type="checkbox" checked="{{$todo.completed}}"/>
-                        <span class="{$todo.status()}">{$todo.title}</span>
-                    </label>
-                </li>
+                <label class="checkbox">
+                    <input type="checkbox" checked="{{$todo.completed}}"/>
+                    <span class="{$todo.status()}">{$todo.title}</span>
+                </label>
             </js:Template>
-        </ui:ItemsView>
-        <form onsubmit="add" action="">
+        </ui:ListView>
+        <form onsubmit="addTodoItem" action="">
             <input type="text" size="30" placeholder="add new todo here"
                    value="{{newTodo.title}}"/>
             <input class="btn-primary" type="submit" value="add"/>
