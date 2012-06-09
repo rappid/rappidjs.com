@@ -14,8 +14,10 @@ define(["js/core/Application",
             },
             // event handler for form submit
             addTodoItem: function (e) {
-                this.$.todoList.add(this.$.newTodo);
-                this.set('newTodo', new Todo());
+                if (this.$.newTodo.hasTitle()) {
+                    this.$.todoList.add(this.$.newTodo);
+                    this.set('newTodo', new Todo());
+                }
 
                 e.$.preventDefault();
             }
