@@ -30,7 +30,7 @@
         <conf:Module name="home" moduleClass="app.module.Home" route="^home.*$"/>
         <conf:Module name="wiki" moduleClass="app.module.Wiki" route="^wiki.*$"/>
         <conf:Module name="license" moduleClass="app.module.License" route="^license$"/>
-        <conf:Module name="imprint" moduleClass="app.module.Imprint" route="^imprint$"/>
+        <conf:Module name="disclaimer" moduleClass="app.module.Disclaimer" route="^disclaimer$"/>
 
         <div id="container" class="container">
             <ui:ContentPlaceHolder name="main"/>
@@ -48,7 +48,6 @@
                         <a href="https://github.com/krebbl">Marcus Krejpowicz</a>.
                         <br/>
                         Licensed under the <a href="/license">MIT License</a>.
-                        <a href="/imprint">Imprint</a>.
                     </p>
                 </div>
                 <div class="span4">
@@ -74,6 +73,13 @@
                         <a href="http://npmjs.org/" target="blank">npm</a>
                         and
                         <a href="http://nodejs.org" target="blank">node</a>.
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>Imprint</h3>
+                    <p>
+                        <img src="img/imprint.png"/>
+                        <a href="/disclaimer">Disclaimer</a>.
                     </p>
                 </div>
 

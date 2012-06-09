@@ -21,4 +21,4 @@
     "js/lib/parser": {
         "exports": "parser"
     }
-}, "xamlClasses": ["app/Index", "app/module/Home", "app/module/Imprint", "app/module/License", "app/module/Wiki", "example/basic/App", "example/todo/App", "js/ui/ButtonGroup", "js/ui/Link", "js/ui/MenuButton", "js/ui/Modal", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView"], "namespaceMap": null, "rewriteMap": null}
+}, "xamlClasses": ["app/Index", "app/module/Home", "app/module/Disclaimer", "app/module/License", "app/module/Wiki", "example/basic/App", "example/todo/App", "js/ui/ButtonGroup", "js/ui/Link", "js/ui/MenuButton", "js/ui/Modal", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView"], "namespaceMap": null, "rewriteMap": null}
