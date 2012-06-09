@@ -252,6 +252,51 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                     </div>
                 </div>
             </div>
+
+
+            <h2>About this site</h2>
+            <div class="row with-buttons">
+                <div class="span4">
+                    <h3>Developed with rAppid.js</h3>
+                    <p>
+                        This project site has been developed completely with rAppid.js to show how powerful it is.
+                    </p>
+                    <p>
+                        The site uses the<code>raw</code>-Plugin to require the source code
+                        of our examples which is shown highlighted in a <code>CodeView</code> Component.
+                    </p>
+                    <p>
+                        It dynamically loads markdown files from our wiki which is parsed and renderer on the client.
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>Search Engine Optimizing</h3>
+                    <p>
+                        View the
+                        <a href="view-source:http://rappid.www/#/home" target="_blank">source code</a>
+                        of this page (<code>Ctrl + u</code>) and you'll see what a crawler sees. Almost noting!
+                    </p>
+                    <p>
+                        Because this is an ajax page, we use hash-bang urls to tell the crawler the ajax parts of the site.
+                        The crawler transforms theses urls to special requests, which are handled by our
+                        <a href="https://github.com/it-ony/rAppid.js-server">rAppid.js-server</a>.
+                    </p>
+                    <p>
+                        See this page <a href="http://www.rappidjs.com/?fragment=/home">rendered</a> on node with rAppid.js.
+                    </p>
+                    <p class="buttons">
+                        <a class="btn btn-info" href="/wiki/Node-Rendering">Node Rendering</a>
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>License</h3>
+                    <p>
+                        This site has been developed by Tony Findeisen and Marcus Krejpowicz using rAppid.js.
+                        The source code of this website is licensed under the MIT License and available at
+                        <a href="https://github.com/it-ony/rappidjs.com">Github</a>.
+                    </p>
+                </div>
+            </div>
         </div>
 
     </js:Content>
