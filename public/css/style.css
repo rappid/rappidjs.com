@@ -55,3 +55,40 @@ border-bottom: 1px solid #444;
 .footer h3 {
 color: white;
 }
+
+.contact-app ul:after,
+.contact-app form:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.contact-app .card {
+border: 1px solid lightgray;
+border-radius: 5px;
+margin: 0 10px 10px 0;
+padding: 5px 10px;
+float: left;
+background: white;
+}
+
+.contact-app .preview {
+opacity: 0.5;
+float: none;
+border-style: dashed;
+}
+
+.contact-app .card p {
+margin: 0;
+}
+
+.contact-app input {
+float: left;
+margin: 5px 10px 5px 0;
+width: 110px;
+}
+
+.contact-app .btn-primary {
+width: 50px;
+margin-left: 70px;
+}

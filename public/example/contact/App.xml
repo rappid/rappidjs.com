@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<app:AppClass xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:js="js.core" xmlns:ui="js.ui"
+              xmlns:view="example/contact/view" xmlns:app="example/contact">
+    <h2>Contacts</h2>
+
+    <form onsubmit="addContact" action="#">
+        <input type="text" placeholder="First name" value="{{p.firstName}}"/>
+        <input type="text" placeholder="Last name" value="{{p.lastName}}"/>
+        <input type="text" placeholder="Phone" value="{{p.phone}}"/>
+
+        <input class="btn-primary" type="submit" value="add"/>
+    </form>
+
+    <view:Card person="{p}" class="preview" visible="{p.hasContent()}"/>
+
+    <ui:ListView items="{contacts}" itemKey="contact" class="unstyled">
+        <js:Template name="item">
+            <view:Card person="{$contact}" />
+        </js:Template>
+    </ui:ListView>
+
+</app:AppClass>

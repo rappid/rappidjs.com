@@ -6,7 +6,7 @@
         xmlns:view="app.view"
         xmlns:module="app.module"
         xmlns:basic="example.basic"
-        xmlns:todo="example.todo">
+        xmlns:todo="example.todo" xmlns:contact="example.contact">
     <js:Content name="main">
         <div id="home">
             <div class="hero-unit center">
@@ -254,6 +254,44 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
             </div>
 
 
+            <h2>Components</h2>
+            <div class="row with-buttons">
+                <div class="span4">
+                    <h3>Create Components</h3>
+                    <p>
+                        A component is a class defined in a package which inherits from <code>js.core.Component</code>. It can be declared either in Javascript or with XAML.
+                    </p>
+                    <p>
+                        Components can be either visible at runtime and interact with the user or invisible providing services like <code>I18n</code> or <code>RestDataSource</code>.
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>Use Components</h3>
+
+                </div>
+                <div class="span4">
+                    <h3>Publish</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span8">
+                    <div class="tabtable">
+                        <ui:TabView>
+                            <view:Code data-title="view/Card.xml">${example.contact.Card}</view:Code>
+                            <view:Code data-title="App.xml">${example.contact.App}</view:Code>
+                            <view:Code data-title="AppClass.js">${example.contact.AppClass}</view:Code>
+                            <view:Code data-title="model/Person.js">${example.contact.PersonModel}</view:Code>
+                        </ui:TabView>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="well app contact-app">
+                        <contact:App/>
+                    </div>
+                </div>
+            </div>
+
             <h2>About this site</h2>
             <div class="row with-buttons">
                 <div class="span4">
@@ -263,7 +301,7 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                     </p>
                     <p>
                         The site uses the<code>raw</code>-Plugin to require the source code
-                        of our examples which is shown highlighted in a <code>CodeView</code> Component.
+                        of our examples which is shown highlighted in a <code>CodeView</code> component.
                     </p>
                     <p>
                         It dynamically loads markdown files from our wiki which is parsed and renderer on the client.
@@ -274,11 +312,11 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                     <p>
                         View the
                         <a href="view-source:http://rappid.www/#/home" target="_blank">source code</a>
-                        of this page (<code>Ctrl + u</code>) and you'll see what a crawler sees. Almost noting!
+                        of this page (<code>Ctrl + u</code>) and you'll see what a crawler sees. Almost nothing!
                     </p>
                     <p>
                         Because this is an ajax page, we use hash-bang urls to tell the crawler the ajax parts of the site.
-                        The crawler transforms theses urls to special requests, which are handled by our
+                        The crawler transforms these urls to special requests, which are handled by our
                         <a href="https://github.com/it-ony/rAppid.js-server">rAppid.js-server</a>.
                     </p>
                     <p>
