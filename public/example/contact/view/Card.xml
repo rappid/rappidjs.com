@@ -2,11 +2,13 @@
          xmlns:js="js.core" xmlns:ui="js.ui"
          componentClass="card">
     <js:Script>
+        <![CDATA[
         (function () {
             return {
                 $classAttributes: ['person']
             }
         })
+        ]]>
     </js:Script>
     <p>
         <small>Name:</small> {person.fullName()}
