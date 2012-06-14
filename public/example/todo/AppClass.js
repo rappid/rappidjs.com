@@ -19,7 +19,7 @@ define(["js/core/Application",
                     this.set('newTodo', new Todo());
                 }
 
-                e.$.preventDefault();
+                e.preventDefault();
             }
         });
     }
