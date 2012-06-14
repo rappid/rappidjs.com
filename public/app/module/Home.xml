@@ -23,7 +23,7 @@
                 </p>
                 <ul class="quick-links">
                     <li>
-                        <a href="http://rappidjs.com/blog">Read the blog</a>
+                        <a href="http://blog.rappidjs.com">Read the blog</a>
                     </li>
                     <li>
                         <a href="https://github.com/it-ony/rAppid.js/issues/new" target="_blank">
@@ -267,7 +267,9 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                 </div>
                 <div class="span4">
                     <h3>Use Components</h3>
-
+                    <p>
+                        Components
+                    </p>
                 </div>
                 <div class="span4">
                     <h3>Publish</h3>
@@ -332,6 +334,10 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                         This site has been developed by Tony Findeisen and Marcus Krejpowicz using rAppid.js.
                         The source code of this website is licensed under the MIT License and available at
                         <a href="https://github.com/it-ony/rappidjs.com">Github</a>.
+                    </p>
+                    <p>
+                        Inspired by <a href="http://angularjs.org">angularjs</a>. Styled with
+                        <a href="http://twitter.github.com/bootstrap/">bootstrap</a>.
                     </p>
                 </div>
             </div>
