@@ -16,7 +16,7 @@ define(["js/core/Application", "js/core/List", "example/contact/model/Person"],
                     this.set('p', new Person());
                 }
 
-                e.$.preventDefault();
+                e.preventDefault();
             }
         });
     }
