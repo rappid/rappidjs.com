@@ -320,7 +320,7 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                         <a href="https://github.com/it-ony/rAppid.js-server">rAppid.js-server</a>.
                     </p>
                     <p>
-                        See this page <a href="http://www.rappidjs.com/?fragment=/home">rendered</a> on node with rAppid.js.
+                        See this page <a href="http://www.rappidjs.com/?_escaped_fragment_=/home">rendered</a> on node with rAppid.js.
                     </p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Node-Rendering">Node Rendering</a>
