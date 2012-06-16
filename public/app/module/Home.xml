@@ -6,7 +6,7 @@
         xmlns:view="app.view"
         xmlns:module="app.module"
         xmlns:basic="example.basic"
-        xmlns:todo="example.todo" xmlns:contact="example.contact" xmlns:google="google">
+        xmlns:todo="example.todo" xmlns:contact="example.contact" xmlns:google="google" xmlns:twitter="twitter">
     <js:Content name="main">
         <div id="home">
             <div class="hero-unit center">
@@ -39,6 +39,12 @@
                 <ul class="follow">
                     <li>
                         <google:PlusOne size="small" href="http://www.rappidjs.com/#/home" />
+                    </li>
+                    <li>
+                        <twitter:Follow user="rappidjs" />
+                    </li>
+                    <li>
+                        <twitter:Share via="rappidjs" url="http://www.rappidjs.com/#!/"/>
                     </li>
                 </ul>
             </div>
@@ -276,7 +282,7 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                         Components can be created either declarative using XAML or at runtime with Javascript.
                     </p>
                     <p>
-                        In XAML simply write <code>&lt;prefix:Component /&gt;</code> to create and add a new instance of the component.</p>
+                        In XAML simply write <code>&lt;prefix:Component /&gt;</code> t9o create and add a new instance of the component.</p>
                     <p>
                         At runtime use the <code>createComponent</code>
                         command to instantiate the component and add it with the <code>addChild</code> method.
