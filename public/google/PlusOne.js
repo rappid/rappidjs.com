@@ -1,4 +1,4 @@
-define(['js/html/HtmlElement', 'google/plusone'], function (HtmlElement, gapi) {
+define(['require', 'js/html/HtmlElement'], function (require, HtmlElement) {
 
     return HtmlElement.inherit({
 
@@ -9,11 +9,17 @@ define(['js/html/HtmlElement', 'google/plusone'], function (HtmlElement, gapi) {
         },
 
         applicationRendered: function (e) {
-            if (gapi && gapi.plusone) {
-                gapi.plusone.go();
+            if (this.runsInBrowser()) {
+                require(['google/plusone'], function(gapi) {
+                    if (gapi && gapi.plusone) {
+                        gapi.plusone.go();
+                    }
+                });
             }
         }.bus('Application.Rendered')
 
     })
 
 });
+
+
