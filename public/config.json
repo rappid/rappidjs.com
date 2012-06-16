@@ -6,7 +6,8 @@
     "flow": "js/lib/flow",
     "raw": "js/plugins/raw",
     "JSON": "js/lib/json2.js",
-    "google/plusone": "https://apis.google.com/js/plusone"
+    "google/plusone": "https://apis.google.com/js/plusone",
+    "twitter/widgets": "https://platform.twitter.com/widgets"
 }, "shim": {
     "inherit": {
         "exports": "inherit"
@@ -19,6 +20,9 @@
     },
     "google/plusone": {
         "exports": "gapi"
+    },
+    "twitter/widgets": {
+        "exports": "twttr"
     },
     "app/lib/highlight/highlight": {
         "exports": "hljs"
