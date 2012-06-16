@@ -2,7 +2,8 @@ define(
     ["js/ui/View", "app/view/CodeTextElement", "app/view/Explanation"], function (View, CodeTextElement, Explanation) {
         return View.inherit({
             defaults: {
-                tagName: 'pre'
+                tagName: 'pre',
+                "class": 'prettyprint linenums'
             },
             _createTextElement: function(node,rootScope){
 
