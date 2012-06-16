@@ -6,7 +6,7 @@
         xmlns:view="app.view"
         xmlns:module="app.module"
         xmlns:basic="example.basic"
-        xmlns:todo="example.todo" xmlns:contact="example.contact">
+        xmlns:todo="example.todo" xmlns:contact="example.contact" xmlns:google="google">
     <js:Content name="main">
         <div id="home">
             <div class="hero-unit center">
@@ -34,6 +34,11 @@
                         <a href="https://trello.com/b/KZIYvyUQ" target="_blank">
                             Roadmap and changelog
                         </a>
+                    </li>
+                </ul>
+                <ul class="follow">
+                    <li>
+                        <google:PlusOne size="small" href="http://www.rappidjs.com/#/home" />
                     </li>
                 </ul>
             </div>
@@ -255,9 +260,9 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
 
 
             <h2>Components</h2>
-            <div class="row with-buttons">
+            <div class="row">
                 <div class="span4">
-                    <h3>Create Components</h3>
+                    <h3>Create</h3>
                     <p>
                         A component is a class defined in a package which inherits from <code>js.core.Component</code>. It can be declared either in Javascript or with XAML.
                     </p>
@@ -266,13 +271,28 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                     </p>
                 </div>
                 <div class="span4">
-                    <h3>Use Components</h3>
+                    <h3>Use</h3>
                     <p>
-                        Components
+                        Components can be created either declarative using XAML or at runtime with Javascript.
                     </p>
+                    <p>
+                        In XAML simply write <code>&lt;prefix:Component /&gt;</code> to create and add a new instance of the component.</p>
+                    <p>
+                        At runtime use the <code>createComponent</code>
+                        command to instantiate the component and add it with the <code>addChild</code> method.
+                    </p>
+
                 </div>
                 <div class="span4">
                     <h3>Publish</h3>
+                    <p>
+                        Components can be easily published as rAppid.js module using <code>
+                        <a href="http://npmjs.org/doc/publish.html">npm publish</a></code> command.
+                    </p>
+                    <p>
+                        Creating a <a href="wiki/Project">library project</a>, add the components into a unique package structure and provide the required information in the
+                        <code>package.json</code> file.
+                    </p>
                 </div>
             </div>
 
