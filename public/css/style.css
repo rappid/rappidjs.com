@@ -1,94 +1,93 @@
 #container {
-margin-top: 70px;
+    margin-top: 70px;
 }
 
 .center {
-text-align: center;
+    text-align: center;
 }
 
-#home .quick-links li {
-display: inline-block;
-margin: 10px;
+#home .hero-unit li {
+    display: inline-block;
+    margin: 10px;
 }
 
 #home .btn {
-margin: 10px;
+    margin: 10px;
 }
 
 #home > h2 {
-margin-top: 80px;
+    margin-top: 80px;
 }
 
 h3 {
-margin: 20px 0 10px 0;
+    margin: 20px 0 10px 0;
 }
 
 .with-buttons {
-position: relative;
-padding-bottom: 50px;
-margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .app {
-margin-top: 54px;
+    margin-top: 54px;
 }
 
 #home .buttons {
-position: absolute;
-bottom: 0;
+    position: absolute;
+    bottom: 0;
 }
 
 #home .buttons > :first-child {
-margin-left: 0;
+    margin-left: 0;
 }
 
-
 .footer {
-margin-top: 50px;
-padding: 10px 0px;
-background: #303030;
-color: #999999;
-border-top: 1px solid #444;
-border-bottom: 1px solid #444;
+    margin-top: 50px;
+    padding: 10px 0px;
+    background: #303030;
+    color: #999999;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
 }
 
 .footer h3 {
-color: white;
+    color: white;
 }
 
 .contact-app ul:after,
 .contact-app form:after {
-  display: table;
-  content: "";
-  clear: both;
+    display: table;
+    content: "";
+    clear: both;
 }
 
 .contact-app .card {
-border: 1px solid lightgray;
-border-radius: 5px;
-margin: 0 10px 10px 0;
-padding: 5px 10px;
-float: left;
-background: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 0 10px 10px 0;
+    padding: 5px 10px;
+    float: left;
+    background: white;
 }
 
 .contact-app .preview {
-opacity: 0.5;
-float: none;
-border-style: dashed;
+    opacity: 0.5;
+    float: none;
+    border-style: dashed;
 }
 
 .contact-app .card p {
-margin: 0;
+    margin: 0;
 }
 
 .contact-app input {
-float: left;
-margin: 5px 10px 5px 0;
-width: 110px;
+    float: left;
+    margin: 5px 10px 5px 0;
+    width: 110px;
 }
 
 .contact-app .btn-primary {
-width: 50px;
-margin-left: 70px;
+    width: 50px;
+    margin-left: 70px;
 }
