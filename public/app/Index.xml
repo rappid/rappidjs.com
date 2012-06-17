@@ -6,7 +6,7 @@
         <conf:Route route="^$" onexec="defaultRoute" />
     </js:Router>
 
-    <piwik:Tracker piwikUrl="http://piwik.rappidjs.com" baseUrl="http://piwik.rappidjs.com" />
+    <piwik:Tracker piwikUrl="http://piwik.rappidjs.com" baseUrl="http://www.rappidjs.com" />
 
     <header id="header" class="navbar navbar-fixed-top">
         <div class="navbar-inner">
