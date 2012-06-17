@@ -15,10 +15,10 @@
                     &lt;rAppid:js /&gt;
                 </a>
                 <nav>
-                    <ui:SelectionView items="{modules}" tagName="ul" class="nav" needsSelection="true">
+                    <ui:SelectionView items="{moduleLoader.moduleNames()}" tagName="ul" class="nav" needsSelection="true" selectedItem="{moduleLoader.currentModuleName}">
                         <js:Template name="item">
                             <li class="active">
-                                <a href="/${$item}">${$item}</a>
+                                <a href="/${$item}">{firstCharToUpper(${$item})}</a>
                             </li>
                         </js:Template>
                     </ui:SelectionView>
@@ -27,7 +27,7 @@
         </div>
     </header>
 
-    <js:ModuleLoader router="{router}">
+    <js:ModuleLoader router="{router}" cid="moduleLoader">
 
         <conf:Module name="home" moduleClass="app.module.Home" route="^home.*$"/>
         <conf:Module name="wiki" moduleClass="app.module.Wiki" route="^wiki.*$"/>

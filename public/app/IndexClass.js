@@ -7,7 +7,7 @@ define(
              *  initializes the application variables
              */
             initialize:function () {
-                this.set('modules', ['home', 'wiki', 'license', 'imprint']);
+                this.set('pages', ['home', 'wiki', 'license', 'disclaimer']);
             },
             /***
              * Starts the application
@@ -17,10 +17,12 @@ define(
             start:function (parameter, callback) {
                 this.callBase(parameter, callback);
             },
-
             defaultRoute: function(routeContext) {
                 routeContext.navigate('home');
-            }.async()
+            }.async(),
+            firstCharToUpper: function(name){
+                return name.charAt(0).toUpperCase() + name.substr(1);
+            }
         });
     }
 );
