@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
 <app:IndexClass xmlns="http://www.w3.org/1999/xhtml"
-               xmlns:js="js.core" xmlns:ui="js.ui" xmlns:app="app" xmlns:conf="js.conf">
+                xmlns:js="js.core" xmlns:ui="js.ui" xmlns:app="app" xmlns:conf="js.conf" xmlns:piwik="piwik">
 
     <js:Router cid="router">
         <conf:Route route="^$" onexec="defaultRoute" />
     </js:Router>
+
+    <piwik:Tracker piwikUrl="http://piwik.rappidjs.com" baseUrl="http://piwik.rappidjs.com" />
 
     <header id="header" class="navbar navbar-fixed-top">
         <div class="navbar-inner">
