@@ -1,11 +1,15 @@
 define(['js/core/Component', 'js/core/Base', 'js/core/History', 'flow'], function(Component, Base, History, flow) {
 
+    // TODO: build an own implementation
+    // see http://piwik.org/docs/tracking-api/reference/
+
     return Component.inherit('piwik.Tracker', {
 
         defaults: {
             siteId: 1,
             piwikUrl: null,
-            baseUrl: null
+            baseUrl: null,
+            enableLinkTracking: true
         },
 
         initialize: function () {
@@ -14,15 +18,21 @@ define(['js/core/Component', 'js/core/Base', 'js/core/History', 'flow'], functio
             this.$trackQueue = [];
             this.$tracker = null;
 
-            var history = this.$systemManager.$application.history;
+            var history = this.$systemManager.$application.history,
+                piwikUrl = this.$.piwikUrl;
+
             if (!history) {
                 this.log("History not found.", Base.LOGLEVEL.ERROR);
                 return;
             }
 
-            if (!this.$.piwikUrl) {
+            if (!piwikUrl) {
                 this.log("PiwikUrl not defined", Base.LOGLEVEL.WARN);
                 return;
+            }
+
+            if (!/^.*\.php$/i.test(piwikUrl)) {
+                piwikUrl = piwikUrl.replace(/\/$/, '')  + '/piwik.php';
             }
 
             if (this.runsInBrowser()) {
@@ -32,7 +42,8 @@ define(['js/core/Component', 'js/core/Base', 'js/core/History', 'flow'], functio
                 history.bind(History.EVENTS.NAVIGATION_COMPLETE, function(e) {
                     if (e.$.triggerRoute && e.$.createHistoryEntry) {
                         // track this fragment
-                        this.track(e.$.fragment)
+                        this.track(e.$.fragment);
+                        this._checkLinkTracking();
                     }
                 }, this);
 
@@ -42,10 +53,12 @@ define(['js/core/Component', 'js/core/Base', 'js/core/History', 'flow'], functio
                         var tracker = Piwik.getAsyncTracker();
                         if (tracker) {
                             tracker.setSiteId(self.$.siteId);
-                            tracker.setTrackerUrl(self.$.piwikUrl);
+                            tracker.setTrackerUrl(piwikUrl);
 
                             self.$tracker = tracker;
                             self.trackQueue();
+
+                            self._checkLinkTracking();
                         }
                     }
                 })
@@ -53,9 +66,13 @@ define(['js/core/Component', 'js/core/Base', 'js/core/History', 'flow'], functio
         },
 
         track: function(fragment) {
-            if (this.$tracker) {
-                this.$tracker.setCustomUrl(fragment, this.$.baseUrl + "/#!/" + fragment);
-                this.$tracker.trackPageView()
+            var tracker = this.$tracker;
+
+            if (tracker) {
+                tracker.setCustomUrl(fragment, this.$.baseUrl + "?fragment=" + fragment);
+                // Workaround as long as we do not have a HeadManager
+                tracker.setDocumentTitle(fragment);
+                tracker.trackPageView()
             } else {
                 this.$trackQueue.push(fragment);
             }
@@ -72,7 +89,17 @@ define(['js/core/Component', 'js/core/Base', 'js/core/History', 'flow'], functio
                     }, 500);
                 })
                 .exec();
-        }
+        },
+
+        _checkLinkTracking: function() {
+            if (this.$tracker && this.$.enableLinkTracking) {
+                this.$tracker.enableLinkTracking();
+            }
+        },
+
+        applicationRendered: function() {
+            this._checkLinkTracking();
+        }.bus('Application.Rendered')
     });
 
 });
