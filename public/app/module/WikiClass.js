@@ -33,7 +33,7 @@ define(['js/core/Module', "rAppid"], function(Module, rAppid) {
                 } else {
 
                     if (page !== "Home") {
-                        routeContext.router.navigate('wiki/Home');
+                        routeContext.navigate('wiki/Home', false);
                     } else {
                         routeContext.callback(err);
                     }
