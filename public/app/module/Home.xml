@@ -282,7 +282,7 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                         Components can be created either declarative using XAML or at runtime with Javascript.
                     </p>
                     <p>
-                        In XAML simply write <code>&lt;prefix:Component /&gt;</code> t9o create and add a new instance of the component.</p>
+                        In XAML simply write <code>&lt;prefix:Component /&gt;</code> to create and add a new instance of the component.</p>
                     <p>
                         At runtime use the <code>createComponent</code>
                         command to instantiate the component and add it with the <code>addChild</code> method.
@@ -319,6 +319,43 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                     </div>
                 </div>
             </div>
+
+            <h2>Data</h2>
+            <div class="row with-buttons">
+                <div class="span4">
+                    <h3>DataSource</h3>
+                    <p>
+                        Data sources are designed asynchronous to access every source in the same way.
+                        Data is loaded, updated and deleted with the Active-Record-Pattern via methods of the model.
+                    </p>
+                    <p>
+                        rAppid.js support Single-Instance-Pattern, schemas, format processors and provides an interface to define how to handle sub-models.
+                    </p>
+                    <p class="buttons">
+                        <a class="btn btn-info" href="/wiki/Datasource">Data source</a>
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>REST</h3>
+                    <p>
+                        The RestDataSource is a common implementation to access RESTful web-services. Configure the target API, define
+                        your models paths and start accessing remote data.
+                    </p>
+                    <p>
+                        Define processors for special serializing and deserializing of the model data or choose between JSON and XML as exchange format.
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>LocalStorage</h3>
+                    <p>
+                        Modern web applications are storing local data on the client-side - without sending them with each request to the server.
+                    </p>
+                    <p>
+                        The LocalStorage-DataSource makes it easy to persistent models, even with a complex schema.
+                    </p>
+                </div>
+            </div>
+
 
             <h2>About this site</h2>
             <div class="row with-buttons">
