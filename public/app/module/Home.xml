@@ -356,6 +356,60 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                 </div>
             </div>
 
+            <h2>Fragmental navigation</h2>
+            <div class="row with-buttons">
+                <div class="span4">
+                    <h3>History</h3>
+                    <p>
+                        Navigate back and forth, do internal redirects and process deeplinks from outside - that's what the history do.
+                    </p>
+                    <p>
+                        The history listen to hash-change-events from the browser and does a fallback polling mechanism for older browsers.
+                    </p>
+                    <p class="buttons">
+                        <a class="btn btn-info" href="/wiki/History">History</a>
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>Router</h3>
+                    <p>
+                        The router processes changes from the history using routes and executes handler functions, which also can be asynchronous or interrupted.
+                    </p>
+                    <p>
+                        The idea is to pass a callback from the application start to all
+                        routes and redirects to get notified when the application is
+                        completely started.
+                    </p>
+                    <p class="buttons">
+                        <a class="btn btn-info" href="/wiki/Router">Router</a>
+                    </p>
+                </div>
+                <div class="span4">
+                    <h3>ModuleLoader</h3>
+
+                    <p>
+                        With the ModuleLoader - modules can loaded dynamically when the are needed to reduce the size and loading time of a complex application.
+                    </p>
+                    <p>
+                        The ModuleLoader interacts with the <code>Router</code> and also executes routes defined in a loaded module after it has been started. This is modularization!
+                    </p>
+                    <p class="buttons">
+                        <a class="btn btn-info" href="/wiki/ModuleLoader">ModuleLoader</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <!--
+            TODO
+
+            * Injection
+            * I18n
+
+            * Node Rendering
+            * SVG
+
+            -->
 
             <h2>About this site</h2>
             <div class="row with-buttons">
