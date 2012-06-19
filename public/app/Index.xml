@@ -3,10 +3,10 @@
                 xmlns:js="js.core" xmlns:ui="js.ui" xmlns:app="app" xmlns:conf="js.conf" xmlns:piwik="piwik">
 
     <js:Router cid="router">
-        <conf:Route route="^$" onexec="defaultRoute" />
+        <conf:Route route="^$" onexec="defaultRoute"/>
     </js:Router>
 
-    <piwik:Tracker piwikUrl="http://piwik.rappidjs.com" baseUrl="http://www.rappidjs.com" />
+    <piwik:Tracker piwikUrl="http://piwik.rappidjs.com" baseUrl="http://www.rappidjs.com"/>
 
     <header id="header" class="navbar navbar-fixed-top">
         <div class="navbar-inner">
@@ -15,7 +15,8 @@
                     &lt;rAppid:js /&gt;
                 </a>
                 <nav>
-                    <ui:SelectionView items="{moduleLoader.moduleNames()}" tagName="ul" class="nav" needsSelection="true" selectedItem="{moduleLoader.currentModuleName}">
+                    <ui:SelectionView items="{moduleLoader.moduleNames()}" tagName="ul" class="nav"
+                                      needsSelection="true" selectedItem="{moduleLoader.currentModuleName}">
                         <js:Template name="item">
                             <li class="active">
                                 <a href="/${$item}">{firstCharToUpper(${$item})}</a>
@@ -46,8 +47,7 @@
                 <div class="span4">
                     <h3>idea &amp; development</h3>
                     <p>
-                        <a href="http://tonyfindeisen.de">Tony Findeisen</a> and
-                        <a href="https://github.com/krebbl">Marcus Krejpowicz</a>.
+                        <a href="http://tonyfindeisen.de">Tony Findeisen</a> and <a href="https://github.com/krebbl">Marcus Krejpowicz</a>.
                         <br/>
                         Licensed under the <a href="/license">MIT License</a>.
                     </p>
@@ -55,26 +55,13 @@
                 <div class="span4">
                     <h3>thanks</h3>
                     <p>
-                        Developed with the use of
-                        <a href="http://requirejs.org/" target="_blank">requirejs</a>,
-                        <a href="https://github.com/it-ony/flow.js">flow.js</a>,
-                        <a href="http://underscorejs.org/" target="_blank">
-                            underscore.js</a>,
-                        <a href="https://github.com/it-ony/inherit.js" target="blank">
-                            inherit.js
-                        </a>
-                        and
-                        <a href="http://search.npmjs.org/#/ejs" target="blank">ejs</a>.
-                        Tested with
+                        Developed with the use of <a href="http://requirejs.org/" target="_blank">requirejs</a>
+                        , <a href="https://github.com/it-ony/flow.js">flow.js</a>
+                        , <a href="http://underscorejs.org/" target="_blank">underscore.js</a>
+                        , <a href="https://github.com/it-ony/inherit.js" target="blank">inherit.js</a> and <a href="http://search.npmjs.org/#/ejs" target="blank">ejs</a>. Tested with
                         <a href="http://visionmedia.github.com/mocha/" target="blank">
                             mocha
-                        </a>
-                        and
-                        <a href="http://chaijs.com/" target="blank">chai</a>. Distributed
-                        with
-                        <a href="http://npmjs.org/" target="blank">npm</a>
-                        and
-                        <a href="http://nodejs.org" target="blank">node</a>.
+                        </a> and <a href="http://chaijs.com/" target="blank">chai</a>. Distributed with <a href="http://npmjs.org/" target="blank">npm</a> and <a href="http://nodejs.org" target="blank">node</a>.
                     </p>
                 </div>
                 <div class="span4">
