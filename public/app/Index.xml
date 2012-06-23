@@ -32,6 +32,7 @@
 
         <conf:Module name="home" moduleClass="app.module.Home" route="^home.*$"/>
         <conf:Module name="wiki" moduleClass="app.module.Wiki" route="^wiki.*$"/>
+        <conf:Module name="documentation" moduleClass="app.module.Documentation" route="^api.*$"/>
         <conf:Module name="license" moduleClass="app.module.License" route="^license$"/>
         <conf:Module name="disclaimer" moduleClass="app.module.Disclaimer" route="^disclaimer$"/>
 
