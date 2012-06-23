@@ -1,0 +1,26 @@
+<module:DocumentationClass xmlns="http://www.w3.org/1999/xhtml"
+                           xmlns:js="js.core" xmlns:ui="js.ui"
+                           xmlns:conf="js.conf" xmlns:data="js.data"
+                           xmlns:module="app.module"
+                           xmlns:md="md" >
+
+    <data:RestDataSource cid="api">
+        <conf:Configuration path="doc" alias="Documentation" />
+    </data:RestDataSource>
+
+    <js:Router>
+        <!--<conf:Route onexec="defaultRoute" route="^api\/?$" />-->
+        <!--<conf:Route onexec="showPage" route="^api\/(.+)$"/>-->
+    </js:Router>
+
+    <js:Content name="main">
+        <div id="documentation">
+            <div class="classes">
+
+            </div>
+            <div class="content">
+
+            </div>
+        </div>
+    </js:Content>
+</module:DocumentationClass>
