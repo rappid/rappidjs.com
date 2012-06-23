@@ -9,9 +9,9 @@ define(['js/html/HtmlElement', 'md/MarkdownTextElement'], function(HtmlElement) 
         },
 
         _createTextElement: function (node, rootScope) {
-            return this.$systemManager.$applicationContext.createInstance('md/MarkdownTextElement', [{
+            return this.$stage.$applicationContext.createInstance('md/MarkdownTextElement', [{
                 normalizeIndent: this.$.normalizeIndent
-            }, node, this.$systemManager, this, rootScope]);
+            }, node, this.$stage, this, rootScope]);
         }
 
     });

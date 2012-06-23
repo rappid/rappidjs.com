@@ -13,7 +13,7 @@ define(["js/core/TextElement", 'md/lib/marked', 'underscore'], function (TextEle
                     this._initialize(this.$creationPolicy);
                 }
 
-                this.$el = this.$systemManager.$document.createElement('span');
+                this.$el = this.$stage.$document.createElement('span');
                 if (!_.isUndefined(this.$.textContent)) {
                     this._renderTextContent(this.$.textContent);
                 }

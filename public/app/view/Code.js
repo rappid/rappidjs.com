@@ -9,14 +9,14 @@ define(
 
                 var self = this;
 
-                return this.$systemManager.$applicationContext.createInstance('app/view/CodeTextElement', [
+                return this.$stage.$applicationContext.createInstance('app/view/CodeTextElement', [
                     {
                         preRenderText: function(text) {
                             return self.renderExplanations(text);
                         }
                     },
                     node,
-                    this.$systemManager,
+                    this.$stage,
                     this,
                     rootScope
                 ]);
