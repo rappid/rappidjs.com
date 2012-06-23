@@ -23,6 +23,9 @@
                 </p>
                 <ul class="quick-links">
                     <li>
+                        <a href="mailto:support@rappidjs.com" target="external">Contact us</a>
+                    </li>
+                    <li>
                         <a href="http://blog.rappidjs.com">Read the blog</a>
                     </li>
                     <li>
