@@ -31,8 +31,8 @@ define(['js/data/Model', 'underscore'], function(Model, _) {
 
         /***
          *
-         * @param {String} [type=all]
-         * @param {Boolean} [showInherit=true]
+         * @param {String} [type=all] shows either 'all' or 'protected' or 'public' methods
+         * @param {Boolean} [showInherit=false]
          * @return {Array}
          */
         getMethods: function(type, showInherit) {
@@ -49,9 +49,10 @@ define(['js/data/Model', 'underscore'], function(Model, _) {
             if (methods) {
                 for (method in methods) {
                     if (methods.hasOwnProperty(method)) {
-                        var isPublic = method.substr(0, 1) !== '_';
+                        var methodType = method.substr(0, 1) === '_' || methods[method].hasOwnProperty('private')  ? 'protected' : 'public';
 
-                        if (type === 'all' || (isPublic && type === 'public') || (!isPublic && type === 'protected')) {
+                        if (type === 'all' || methodType === type) {
+                            if (showInherit || (!showInherit && !methods[method].hasOwnProperty('definedBy')))
                             // method for requested type
                             methodNames.push(method);
                         }
