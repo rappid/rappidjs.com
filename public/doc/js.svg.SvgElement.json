@@ -1,0 +1,73 @@
+{
+    "fqClassName": "js.svg.SvgElement",
+    "methods": {
+        "ctor": {
+            "type": "Method",
+            "parameter": []
+        },
+        "resetTransform": {
+            "type": "Method",
+            "parameter": []
+        },
+        "addTransform": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "transform"
+                }
+            ]
+        },
+        "translate": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "x"
+                },
+                {
+                    "name": "y"
+                }
+            ]
+        },
+        "rotate": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "r"
+                },
+                {
+                    "name": "x"
+                },
+                {
+                    "name": "y"
+                }
+            ]
+        },
+        "_refreshTransform": {
+            "type": "Method",
+            "parameter": []
+        },
+        "_renderHref": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "href"
+                },
+                {
+                    "name": "oldHref"
+                }
+            ]
+        },
+        "_renderClass": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "value"
+                }
+            ]
+        }
+    },
+    "inherit": "js.core.DomElement",
+    "inheritancePath": [
+        "js.core.DomElement"
+    ]
+}

@@ -1,0 +1,467 @@
+{
+    "fqClassName": "js.core.Imports",
+    "methods": {
+        "ctor": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes",
+                    "types": [
+                        "Object"
+                    ],
+                    "optional": true,
+                    "description": "the default attributes which will be set during instantiation"
+                },
+                {
+                    "name": "descriptor"
+                },
+                {
+                    "name": "systemManager"
+                },
+                {
+                    "name": "parentScope"
+                },
+                {
+                    "name": "rootScope"
+                }
+            ],
+            "definedBy": "js.core.Base",
+            "overwritesMethod": true
+        },
+        "_getAttributesFromDescriptor": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "descriptor"
+                }
+            ],
+            "definedBy": "js.core.Element"
+        },
+        "_getLocalNameFromNode": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "node"
+                }
+            ],
+            "definedBy": "js.core.Element"
+        },
+        "_initializeAttributes": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                }
+            ],
+            "definedBy": "js.core.Element"
+        },
+        "_initializeDescriptors": {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Element"
+        },
+        "_initialize": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "creationPolicy",
+                    "optional": false,
+                    "description": "undefinedauto - do not overwrite (default),all - create all childrenTODO none?"
+                },
+                {
+                    "name": "withBindings"
+                }
+            ],
+            "description": "",
+            "definedBy": "js.core.Element"
+        },
+        "_initializeBindings": {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Element"
+        },
+        "initialize": {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Element"
+        },
+        "find": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "definedBy": "js.core.Element"
+        },
+        "getScopeForKey": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "definedBy": "js.core.Element"
+        },
+        "getScopeForFncName": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "fncName"
+                }
+            ],
+            "definedBy": "js.core.Element"
+        },
+        "_preinitialize": {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Element"
+        },
+        "_initializationComplete": {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Element"
+        },
+        "_getTextContentFromDescriptor": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "desc"
+                }
+            ],
+            "definedBy": "js.core.Element"
+        },
+        "_defaultAttributes": {
+            "type": "Method",
+            "parameter": [],
+            "description": "",
+            "returns": {
+                "types": [
+                    "Object"
+                ],
+                "description": "returns the default attributes and includes the defaults from base classes"
+            },
+            "private": "",
+            "definedBy": "js.core.Bindable"
+        },
+        "_generateDefaultsChain": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "property",
+                    "optional": false,
+                    "description": "the name of the static property used to find defaults"
+                }
+            ],
+            "description": "generates a default chain containing the values from this instance and base classes",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "private": "",
+            "definedBy": "js.core.Bindable"
+        },
+        "set": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "key",
+                    "optional": false,
+                    "description": "The attribute key"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "value",
+                    "optional": false,
+                    "description": "The attribute value"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "A hash of options"
+                }
+            ],
+            "description": "Sets new values for attributes and notify about changes",
+            "definedBy": "js.core.Bindable"
+        },
+        "get": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true,
+                    "defaultValue": "this",
+                    "description": "the scope where the path is evaluated"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "key",
+                    "optional": false
+                }
+            ],
+            "description": "evaluates a path to retrieve a value",
+            "returns": {
+                "types": null,
+                "description": "the value for the path or undefined"
+            },
+            "definedBy": "js.core.Bindable"
+        },
+        "has": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "path",
+                    "optional": false,
+                    "description": "to get the value"
+                }
+            ],
+            "description": "determinate if a attribute is available",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if attribute is not undefined"
+            },
+            "definedBy": "js.core.Bindable"
+        },
+        "_commitChangedAttributes": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "attributes",
+                    "optional": false,
+                    "description": "contains the changed attributes"
+                }
+            ],
+            "description": "called after attributes has set and some of the has been changed",
+            "private": "",
+            "definedBy": "js.core.Bindable"
+        },
+        "unset": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String",
+                        "Object"
+                    ],
+                    "name": "key",
+                    "optional": false,
+                    "description": "the attribute or attributes to unset"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                }
+            ],
+            "description": "Unset attribute on $",
+            "returns": {
+                "types": [
+                    "this"
+                ]
+            },
+            "definedBy": "js.core.Bindable"
+        },
+        "clear": {
+            "type": "Method",
+            "parameter": [],
+            "description": "Clears all attributes",
+            "returns": {
+                "types": [
+                    "this"
+                ]
+            },
+            "definedBy": "js.core.Bindable"
+        },
+        "bind": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "path",
+                    "optional": false,
+                    "description": "a binding path e.g. a.b.c"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "event",
+                    "optional": false,
+                    "description": "the type of the event which should be bound"
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false,
+                    "description": "the event handler function"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "thisArg",
+                    "optional": true,
+                    "description": "the thisArg used for calling the event handler"
+                }
+            ],
+            "description": "Binds an event handler function to an EventDispatcher",
+            "definedBy": "js.core.EventDispatcher",
+            "overwritesMethod": true
+        },
+        "unbind": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "path",
+                    "optional": true,
+                    "description": "the path from which the event should be unbound"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "event",
+                    "optional": false,
+                    "description": "the type of the event"
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false,
+                    "description": "the event handler which is currently boundTODO: why a scope is passed here?"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true
+                }
+            ],
+            "description": "Unbinds an bound event handler from an EventDispatcher.",
+            "definedBy": "js.core.EventDispatcher",
+            "overwritesMethod": true
+        },
+        "destroy": {
+            "type": "Method",
+            "parameter": [],
+            "description": "Destroys all event bindings and triggers a destroy event",
+            "returns": {
+                "types": [
+                    "this"
+                ]
+            },
+            "definedBy": "js.core.EventDispatcher",
+            "overwritesMethod": true
+        },
+        "trigger": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "eventType",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "EventDispatcher.Event",
+                        "Object"
+                    ],
+                    "name": "event",
+                    "optional": false,
+                    "description": "If you use an Object the object is wrapped in an Event"
+                },
+                {
+                    "types": null,
+                    "name": "target",
+                    "optional": false
+                }
+            ],
+            "description": "Triggers an event",
+            "definedBy": "js.core.EventDispatcher"
+        },
+        "runsInBrowser": {
+            "type": "Method",
+            "parameter": [],
+            "description": "determinate if the application runs in the browser or on node",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if the application runs in a browser"
+            },
+            "definedBy": "js.core.Base"
+        },
+        "log": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String",
+                        "Array"
+                    ],
+                    "name": "message",
+                    "optional": false,
+                    "description": "the message to log"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "level",
+                    "optional": true,
+                    "defaultValue": "\"info\"",
+                    "description": "the service level of (debug, info, warn, error)"
+                }
+            ],
+            "description": "logs messages to configured logging functions",
+            "definedBy": "js.core.Base"
+        }
+    },
+    "inherit": "js.core.Element",
+    "inheritancePath": [
+        "js.core.Element",
+        "js.core.Bindable",
+        "js.core.EventDispatcher",
+        "js.core.Base"
+    ]
+}

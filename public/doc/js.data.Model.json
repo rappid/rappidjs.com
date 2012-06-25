@@ -1,0 +1,84 @@
+{
+    "fqClassName": "js.data.Model",
+    "methods": {
+        "ctor": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                }
+            ]
+        },
+        "save": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "options",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "callback",
+                    "optional": false
+                }
+            ],
+            "description": "persistent the model over the data-source in which it was created"
+        },
+        "prepare": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "action"
+                }
+            ]
+        },
+        "compose": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "action"
+                },
+                {
+                    "name": "options"
+                }
+            ]
+        },
+        "fetch": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "options",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false,
+                    "description": "function(err, model, options)"
+                }
+            ]
+        },
+        "remove": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "options"
+                },
+                {
+                    "name": "callback"
+                }
+            ]
+        }
+    },
+    "inherit": "js.data.Entity",
+    "inheritancePath": [
+        "js.data.Entity"
+    ]
+}

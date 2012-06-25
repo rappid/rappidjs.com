@@ -1,0 +1,135 @@
+{
+    "fqClassName": "js.core.Bus",
+    "methods": {
+        "ctor": {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base"
+        },
+        "bind": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "eventType",
+                    "optional": false,
+                    "description": "The name of the event"
+                },
+                {
+                    "name": "callback"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true,
+                    "description": "This sets the scope for the callback function"
+                }
+            ],
+            "description": "Binds a callback and a scope to a given eventType",
+            "definedBy": "js.core.EventDispatcher"
+        },
+        "trigger": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "eventType",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "EventDispatcher.Event",
+                        "Object"
+                    ],
+                    "name": "event",
+                    "optional": false,
+                    "description": "If you use an Object the object is wrapped in an Event"
+                },
+                {
+                    "types": null,
+                    "name": "target",
+                    "optional": false
+                }
+            ],
+            "description": "Triggers an event",
+            "definedBy": "js.core.EventDispatcher"
+        },
+        "unbind": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "eventType",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false
+                },
+                {
+                    "name": "scope"
+                }
+            ],
+            "description": "Unbinds callbacks for events",
+            "definedBy": "js.core.EventDispatcher"
+        },
+        "destroy": {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher"
+        },
+        "runsInBrowser": {
+            "type": "Method",
+            "parameter": [],
+            "description": "determinate if the application runs in the browser or on node",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if the application runs in a browser"
+            },
+            "definedBy": "js.core.Base"
+        },
+        "log": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String",
+                        "Array"
+                    ],
+                    "name": "message",
+                    "optional": false,
+                    "description": "the message to log"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "level",
+                    "optional": true,
+                    "defaultValue": "\"info\"",
+                    "description": "the service level of (debug, info, warn, error)"
+                }
+            ],
+            "description": "logs messages to configured logging functions",
+            "definedBy": "js.core.Base"
+        }
+    },
+    "inherit": "js.core.EventDispatcher",
+    "inheritancePath": [
+        "js.core.EventDispatcher",
+        "js.core.Base"
+    ]
+}

@@ -1,0 +1,135 @@
+{
+    "fqClassName": "js.core.ModuleLoader",
+    "methods": {
+        "ctor": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                }
+            ]
+        },
+        "_initializationComplete": {
+            "type": "Method",
+            "parameter": []
+        },
+        "addModule": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "module"
+                }
+            ]
+        },
+        "_startModule": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "moduleName"
+                },
+                {
+                    "name": "moduleInstance"
+                },
+                {
+                    "name": "callback"
+                },
+                {
+                    "name": "routeContext"
+                },
+                {
+                    "name": "cachedInstance"
+                }
+            ]
+        },
+        "loadModule": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "module"
+                },
+                {
+                    "name": "callback"
+                },
+                {
+                    "name": "routeContext"
+                }
+            ]
+        },
+        "removeChild": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ]
+        },
+        "moduleNames": {
+            "type": "Method",
+            "parameter": []
+        },
+        "render": {
+            "type": "Method",
+            "parameter": []
+        },
+        "_renderVisible": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "visible"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderHidden": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hidden"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderSelected": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selected"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderSelectable": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selectable"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderWidth": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "width"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderHeight": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "height"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
+    "inherit": "js.core.UIComponent",
+    "inheritancePath": [
+        "js.core.UIComponent",
+        "js.html.HtmlElement",
+        "js.core.DomElement"
+    ]
+}

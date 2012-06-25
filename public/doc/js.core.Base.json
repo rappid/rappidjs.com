@@ -1,0 +1,44 @@
+{
+    "fqClassName": "js.core.Base",
+    "methods": {
+        "ctor": {
+            "type": "Method",
+            "parameter": []
+        },
+        "runsInBrowser": {
+            "type": "Method",
+            "parameter": [],
+            "description": "determinate if the application runs in the browser or on node",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if the application runs in a browser"
+            }
+        },
+        "log": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String",
+                        "Array"
+                    ],
+                    "name": "message",
+                    "optional": false,
+                    "description": "the message to log"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "level",
+                    "optional": true,
+                    "defaultValue": "\"info\"",
+                    "description": "the service level of (debug, info, warn, error)"
+                }
+            ],
+            "description": "logs messages to configured logging functions"
+        }
+    }
+}

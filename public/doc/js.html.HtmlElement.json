@@ -1,0 +1,57 @@
+{
+    "fqClassName": "js.html.HtmlElement",
+    "methods": {
+        "_renderVisible": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "visible"
+                }
+            ]
+        },
+        "_renderHidden": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hidden"
+                }
+            ]
+        },
+        "_renderSelected": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selected"
+                }
+            ]
+        },
+        "_renderSelectable": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selectable"
+                }
+            ]
+        },
+        "_renderWidth": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "width"
+                }
+            ]
+        },
+        "_renderHeight": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "height"
+                }
+            ]
+        }
+    },
+    "inherit": "js.core.DomElement",
+    "inheritancePath": [
+        "js.core.DomElement"
+    ]
+}

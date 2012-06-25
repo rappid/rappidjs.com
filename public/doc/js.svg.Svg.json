@@ -1,0 +1,99 @@
+{
+    "fqClassName": "js.svg.Svg",
+    "methods": {
+        "setViewBox": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "x"
+                },
+                {
+                    "name": "y"
+                },
+                {
+                    "name": "width"
+                },
+                {
+                    "name": "height"
+                }
+            ]
+        },
+        "ctor": {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.svg.SvgElement"
+        },
+        "resetTransform": {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.svg.SvgElement"
+        },
+        "addTransform": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "transform"
+                }
+            ],
+            "definedBy": "js.svg.SvgElement"
+        },
+        "translate": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "x"
+                },
+                {
+                    "name": "y"
+                }
+            ],
+            "definedBy": "js.svg.SvgElement"
+        },
+        "rotate": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "r"
+                },
+                {
+                    "name": "x"
+                },
+                {
+                    "name": "y"
+                }
+            ],
+            "definedBy": "js.svg.SvgElement"
+        },
+        "_refreshTransform": {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.svg.SvgElement"
+        },
+        "_renderHref": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "href"
+                },
+                {
+                    "name": "oldHref"
+                }
+            ],
+            "definedBy": "js.svg.SvgElement"
+        },
+        "_renderClass": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.svg.SvgElement"
+        }
+    },
+    "inherit": "js.svg.SvgElement",
+    "inheritancePath": [
+        "js.svg.SvgElement",
+        "js.core.DomElement"
+    ]
+}

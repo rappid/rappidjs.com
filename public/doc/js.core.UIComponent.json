@@ -1,0 +1,64 @@
+{
+    "fqClassName": "js.core.UIComponent",
+    "methods": {
+        "_renderVisible": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "visible"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderHidden": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hidden"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderSelected": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selected"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderSelectable": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selectable"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderWidth": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "width"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderHeight": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "height"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
+    "inherit": "js.html.HtmlElement",
+    "inheritancePath": [
+        "js.html.HtmlElement",
+        "js.core.DomElement"
+    ]
+}

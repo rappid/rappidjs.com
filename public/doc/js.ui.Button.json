@@ -1,0 +1,31 @@
+{
+    "fqClassName": "js.ui.Button",
+    "methods": {
+        "_renderType": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "type"
+                },
+                {
+                    "name": "oldType"
+                }
+            ]
+        },
+        "_renderSize": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "size"
+                },
+                {
+                    "name": "oldSize"
+                }
+            ]
+        }
+    },
+    "inherit": "xaml!js.ui.Link",
+    "inheritancePath": [
+        "xaml!js.ui.Link"
+    ]
+}

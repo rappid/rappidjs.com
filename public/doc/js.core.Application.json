@@ -1,0 +1,172 @@
+{
+    "fqClassName": "js.core.Application",
+    "methods": {
+        "ctor": {
+            "type": "Method",
+            "parameter": []
+        },
+        "_inject": {
+            "type": "Method",
+            "parameter": []
+        },
+        "_initializeDescriptors": {
+            "type": "Method",
+            "parameter": []
+        },
+        "start": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "parameter",
+                    "optional": false,
+                    "description": "parameter configuring the application"
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false
+                }
+            ],
+            "description": "Starts the application after the application is bootstrapped"
+        },
+        "_startHistory": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": true,
+                    "description": "callback function, which is invoked after the history has started"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "initialHash",
+                    "optional": true,
+                    "defaultValue": "null",
+                    "description": "starts the history with this fragment"
+                }
+            ],
+            "description": "Starts the history, which is responsible for navigation",
+            "private": ""
+        },
+        "render": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "target"
+                }
+            ]
+        },
+        "show": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Boolean"
+                    ],
+                    "name": "modal",
+                    "optional": true,
+                    "defaultValue": "false",
+                    "description": "undefined"
+                }
+            ],
+            "description": "shows the window by adding it to the WindowManager",
+            "see": "js.core.WindowManager",
+            "definedBy": "js.core.Window"
+        },
+        "showModal": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "callback"
+                }
+            ],
+            "definedBy": "js.core.Window"
+        },
+        "close": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "state"
+                }
+            ],
+            "definedBy": "js.core.Window"
+        },
+        "_renderVisible": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "visible"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderHidden": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hidden"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderSelected": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selected"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderSelectable": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selectable"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderWidth": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "width"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "_renderHeight": {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "height"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
+    "inherit": "js.core.Window",
+    "inheritancePath": [
+        "js.core.Window",
+        "js.html.HtmlElement",
+        "js.core.DomElement"
+    ]
+}
