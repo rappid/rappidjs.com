@@ -52,6 +52,10 @@
                         </div>
 
                         <h2>public Methods</h2>
+                        <label class="checkbox">
+                            <input type="checkbox" cid="showInheritPublic"/> show inherit methods
+                        </label>
+
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -59,7 +63,7 @@
                                     <th>Defined by</th>
                                 </tr>
                             </thead>
-                            <ui:ItemsView items="{doc.getMethods('public')}" itemKey="method" tagName="tbody">
+                            <ui:ItemsView items="{doc.getMethods('public',{showInheritPublic.checked})}" itemKey="method" tagName="tbody">
                                 <js:Template name="item">
                                     <tr>
                                         <td>
@@ -67,7 +71,9 @@
                                             <strong>${$method.name}()</strong><br />
                                             ${$method.description}
                                         </td>
-                                        <td><!-- TODO --></td>
+                                        <td>
+                                            <a href="api/${$method.definedBy}">${$method.definedBy}</a>
+                                        </td>
                                     </tr>
                                 </js:Template>
                             </ui:ItemsView>
