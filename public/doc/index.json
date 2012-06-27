@@ -13,6 +13,8 @@
     "js.core.Element",
     "js.core.Entity",
     "js.core.EventDispatcher",
+    "js.core.Head",
+    "js.core.HeadManager",
     "js.core.History",
     "js.core.I18n",
     "js.core.Imports",

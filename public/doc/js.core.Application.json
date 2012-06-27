@@ -62,9 +62,21 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "target"
+                    "types": [
+                        "Element"
+                    ],
+                    "name": "target",
+                    "optional": true,
+                    "description": "the native Element where the rendered element will be appended"
                 }
-            ]
+            ],
+            "description": "",
+            "returns": {
+                "types": [
+                    "Element"
+                ],
+                "description": "the rendered Element"
+            }
         },
         "show": {
             "type": "Method",
