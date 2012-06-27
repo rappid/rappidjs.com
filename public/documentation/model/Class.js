@@ -49,7 +49,7 @@ define(['js/data/Model', 'underscore'], function(Model, _) {
             if (methods) {
                 for (method in methods) {
                     if (methods.hasOwnProperty(method)) {
-                        var methodType = method.substr(0, 1) === '_' || methods[method].hasOwnProperty('private')  ? 'protected' : 'public';
+                        var methodType = (method.substr(0, 1) === '_' || methods[method].hasOwnProperty('private')) && !methods[method].hasOwnProperty('public')  ? 'protected' : 'public';
 
                         if (type === 'all' || methodType === type) {
                             if (showInherit || (!showInherit && !methods[method].hasOwnProperty('definedBy')))
