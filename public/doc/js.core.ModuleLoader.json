@@ -17,9 +17,14 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "module"
+                    "types": [
+                        "js.conf.Module"
+                    ],
+                    "name": "module",
+                    "optional": false
                 }
-            ]
+            ],
+            "description": "adds a module to the list of known modules"
         },
         "_startModule": {
             "type": "Method",
@@ -45,27 +50,39 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "module"
+                    "types": [
+                        "js.conf.Module"
+                    ],
+                    "name": "module",
+                    "optional": false,
+                    "description": "the module to load"
                 },
                 {
-                    "name": "callback"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": true,
+                    "description": "a callback function which gets invoked after the module is loaded or an error occurred"
                 },
                 {
-                    "name": "routeContext"
+                    "types": [
+                        "js.core.Router.RouteContext"
+                    ],
+                    "name": "routeContext",
+                    "optional": true
                 }
-            ]
-        },
-        "removeChild": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "child"
-                }
-            ]
+            ],
+            "description": "loads an module instance into the module loader and starts the module"
         },
         "moduleNames": {
             "type": "Method",
-            "parameter": []
+            "parameter": [],
+            "returns": {
+                "types": [
+                    "Array"
+                ]
+            }
         },
         "render": {
             "type": "Method",
