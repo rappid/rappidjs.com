@@ -1,4 +1,4 @@
-define(['js/core/Module', "json!doc/index", "js/core/List", "documentation/model/Class"], function(Module, classIndex, List, Class) {
+define(['js/core/Module', "json!doc/index", "js/core/List", "documentation/model/Class", "underscore"], function(Module, classIndex, List, Class, _) {
 
     return Module.inherit("app.module.DocumentationClass", {
 
@@ -18,6 +18,7 @@ define(['js/core/Module', "json!doc/index", "js/core/List", "documentation/model
                 return !filterList.$.searchString || doc.$.id.toLowerCase().indexOf(filterList.$.searchString.toLowerCase()) > -1;
             });
         },
+
         hasCurrentDocumentation: function() {
             return !!this.$.doc;
         }.onChange('doc'),
@@ -26,7 +27,8 @@ define(['js/core/Module', "json!doc/index", "js/core/List", "documentation/model
 
             var self = this;
             this.$.api.createEntity(Class, fqClassName).fetch(null, function(err, classDoc) {
-                self.set('doc', classDoc);
+
+                self.set('doc', err ? null : classDoc);
                 routeContext.callback(err);
 
                 if (self.runsInBrowser()) {

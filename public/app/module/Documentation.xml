@@ -54,7 +54,7 @@
                             {doc.description}
                         </div>
 
-                        <h2>public Methods</h2>
+                        <h2>Public Methods</h2>
                         <label class="checkbox">
                             <input type="checkbox" cid="showInheritPublic"/> show inherit methods
                         </label>
@@ -66,12 +66,31 @@
                                     <th>Defined by</th>
                                 </tr>
                             </thead>
-                            <ui:ItemsView items="{doc.getMethods('public',{showInheritPublic.checked})}" itemKey="method" tagName="tbody">
+                            <ui:ItemsView items="{doc.getMethods('public',{showInheritPublic.checked})}" itemKey="method" tagName="tbody" class="method-summery">
                                 <js:Template name="item">
                                     <tr>
                                         <td>
-                                            <!-- TODO: show parameter list and return type -->
-                                            <strong>${$method.name}()</strong><br />
+                                            <strong>${$method.name}(
+                                                <ui:ItemsView items="${$method.parameter}" itemKey="parameter" class="parameter-list" tagName="span">
+                                                    <js:Template name="item">
+                                                        <span>
+                                                            ${$parameter.name}
+                                                            <span visible="${$parameter.hasTypeDefinition()}">
+                                                                :
+                                                                <a href="api/${$parameter.types[0]}">
+                                                                    ${$parameter.getFirstTypeName()}
+                                                                </a>
+                                                            </span>
+                                                        </span>
+
+                                                    </js:Template>
+                                                </ui:ItemsView>
+                                                )
+                                                <span visible="${$method.hasReturnType()}">
+                                                    :
+                                                    <a href="api/${$method.returns.types[0]}">${$method.getFirstReturnTypeName()}</a>
+                                                </span>
+                                            </strong><br />
                                             ${$method.description}
                                         </td>
                                         <td>
@@ -81,6 +100,8 @@
                                 </js:Template>
                             </ui:ItemsView>
                         </table>
+
+                        <h2>Details</h2>
 
                         <ui:ItemsView items="{doc.getMethods()}" itemKey="method">
                             <js:Template name="item">
