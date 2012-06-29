@@ -1,4 +1,4 @@
-define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function(Model, Method, _) {
+define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function (Model, Method, _) {
 
     var stripTrainingUnderscore = /^_/;
 
@@ -8,7 +8,7 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function(
             methods: [Method]
         },
 
-        packageName: function() {
+        packageName: function () {
             var path = this.$.id.split('.');
             path.pop();
             return path.join('.');
@@ -18,7 +18,7 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function(
             return this.$.id.split('.').pop();
         },
 
-        inheritancePath: function() {
+        inheritancePath: function () {
 
             var ret = [];
 
@@ -37,18 +37,16 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function(
 
         /***
          *
-         * @param {String} [type=all] shows either 'all' or 'protected' or 'public' methods
+         * @param {String} [type=''] shows either 'all' or 'protected' or 'public' methods
          * @param {Boolean} [showInherit=false]
          * @return {Array}
          */
-        getMethods: function(type, showInherit) {
-
-            type = type || 'all';
+        getMethods: function (type, showInherit) {
 
             var ret = [],
                 ctor = null;
 
-            this.$.methods.each(function(method) {
+            this.$.methods.each(function (method) {
                 if ((type === 'all' || type === method.$.visibility)) {
 
                     if (showInherit || (!showInherit && !method.$.hasOwnProperty('definedBy'))) {
@@ -63,12 +61,12 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function(
                 }
             });
 
-            ret.sort(function(a, b) {
+            ret.sort(function (a, b) {
 
-                a.name = (a.name || "").replace(stripTrainingUnderscore, '');
-                b.name = (b.name || "").replace(stripTrainingUnderscore, '');
+                a = (a.$.name || "").replace(stripTrainingUnderscore, '');
+                b = (b.$.name || "").replace(stripTrainingUnderscore, '');
 
-                return a.name > b.name;
+                return a > b ? 1 : -1;
             });
 
             if (ctor) {
