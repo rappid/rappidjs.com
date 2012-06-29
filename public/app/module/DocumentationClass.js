@@ -4,7 +4,8 @@ define(['js/core/Module', "json!doc/index", "js/core/List", "documentation/model
 
         defaults: {
             classes: List,
-            doc: null
+            doc: null,
+            searchString: ""
         },
 
         _initializationComplete: function() {
@@ -12,7 +13,11 @@ define(['js/core/Module', "json!doc/index", "js/core/List", "documentation/model
                 this.$.classes.add(this.$.api.createEntity(Class, classIndex[i]));
             }
         },
-
+        initialize: function(){
+            this.set('filterDocs', function(doc, index, filterList){
+                return !filterList.$.searchString || doc.$.id.toLowerCase().indexOf(filterList.$.searchString.toLowerCase()) > -1;
+            });
+        },
         hasCurrentDocumentation: function() {
             return !!this.$.doc;
         }.onChange('doc'),
