@@ -8,6 +8,14 @@ define(['js/core/Module', "json!doc/index", "js/core/List", "documentation/model
             searchString: ""
         },
 
+        showMethodTypes: function() {
+
+            var type = (this.get('showPublic.checked') ? 2 : 0) + (this.get('showProtected.checked') ? 1 : 0);
+
+            return ['', 'protected', 'public', 'all'][type];
+
+        }.on(['showPublic', 'change:checked'], ['showProtected', 'change:checked']),
+
         _initializationComplete: function() {
             for (var i = 0; i < classIndex.length; i++) {
                 this.$.classes.add(this.$.api.createEntity(Class, classIndex[i]));
