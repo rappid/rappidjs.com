@@ -6,9 +6,6 @@ define(
             inject: {
                 history : History
             },
-            defaults: {
-                fragment : '{history.getFragment()}'
-            },
             /**
              *  initializes the application variables
              */
@@ -45,12 +42,17 @@ define(
                 routeContext.navigate('home');
             }.async(),
             currentPage: function(){
+
+                var fragment = this.get('history.fragment()');
+                if(!fragment){
+                    return null;
+                }
                 for(var i = 0; i < this.$.pages.length; i++){
-                    if(this.$.fragment.indexOf(this.$.pages[i].link) > -1){
+                    if(fragment.indexOf(this.$.pages[i].link) > -1){
                         return this.$.pages[i];
                     }
                 }
-            }
+            }.on(['history', 'change:fragment'])
         });
     }
 );
