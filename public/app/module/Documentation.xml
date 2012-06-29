@@ -10,7 +10,6 @@
     <data:FilterDataView baseList="{classes}" cid="filteredClasses" filterFnc="{filterDocs}" searchString="{searchString}"/>
 
     <js:Router>
-        <!--<conf:Route onexec="defaultRoute" route="^api\/?$" />-->
         <conf:Route onexec="showClass" route="^api\/(.+)$"/>
     </js:Router>
 
@@ -54,10 +53,36 @@
                             {doc.description}
                         </div>
 
-                        <h2>Public Methods</h2>
-                        <label class="checkbox">
-                            <input type="checkbox" cid="showInheritPublic"/> show inherit methods
-                        </label>
+                        <div class="row">
+                            <div class="span7">
+                                <h2>Methods</h2>
+                                <blockquote>
+                                    <p>
+                                        A method is a piece of code that is called by name that is associated with an object.
+                                    </p>
+                                    <small>
+                                        Andrew Edgecombe
+                                    </small>
+                                </blockquote>
+                            </div>
+                            <div class="span2">
+                                <fieldset class="well">
+                                    <label class="checkbox">
+                                        <input type="checkbox" cid="showPublic" checked="checked"/>
+                                        public
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" cid="showProtected"/>
+                                        protected
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" cid="showInherit"/>
+                                        inherit
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+
 
                         <table class="table table-striped">
                             <thead>
@@ -66,7 +91,7 @@
                                     <th>Defined by</th>
                                 </tr>
                             </thead>
-                            <ui:ItemsView items="{doc.getMethods('public',{showInheritPublic.checked})}" itemKey="method" tagName="tbody" class="method-summery">
+                            <ui:ItemsView items="{doc.getMethods({showMethodTypes()},{showInherit.checked})}" itemKey="method" tagName="tbody">
                                 <js:Template name="item">
                                     <tr>
                                         <td>
@@ -101,41 +126,41 @@
                             </ui:ItemsView>
                         </table>
 
-                        <h2>Details</h2>
+                        <!--<h2>Details</h2>-->
 
-                        <ui:ItemsView items="{doc.getMethods()}" itemKey="method">
-                            <js:Template name="item">
-                                <div>
-                                    <h3>${$method.name}</h3>
-                                    <p>
-                                        ${$method.description}
-                                    </p>
-                                    <h4>Parameter</h4>
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Types</th>
-                                                <th>Default</th>
-                                                <th>Description</th>
-                                            </tr>
-                                        </thead>
-                                        <ui:ItemsView items="${$method.parameter}" itemKey="parameter" tagName="tbody">
-                                            <js:Template name="item">
-                                                <tr>
-                                                    <td>
-                                                        ${$parameter.name}
-                                                    </td>
-                                                    <td>${$parameter.types}</td>
-                                                    <td>${$parameter.defaultValue}</td>
-                                                    <td>${$parameter.description}</td>
-                                                </tr>
-                                            </js:Template>
-                                        </ui:ItemsView>
-                                    </table>
-                                </div>
-                            </js:Template>
-                        </ui:ItemsView>
+                        <!--<ui:ItemsView items="{doc.getMethods()}" itemKey="method">-->
+                            <!--<js:Template name="item">-->
+                                <!--<div>-->
+                                    <!--<h3>${$method.name}</h3>-->
+                                    <!--<p>-->
+                                        <!--${$method.description}-->
+                                    <!--</p>-->
+                                    <!--<h4>Parameter</h4>-->
+                                    <!--<table class="table">-->
+                                        <!--<thead>-->
+                                            <!--<tr>-->
+                                                <!--<th>Name</th>-->
+                                                <!--<th>Types</th>-->
+                                                <!--<th>Default</th>-->
+                                                <!--<th>Description</th>-->
+                                            <!--</tr>-->
+                                        <!--</thead>-->
+                                        <!--<ui:ItemsView items="${$method.parameter}" itemKey="parameter" tagName="tbody">-->
+                                            <!--<js:Template name="item">-->
+                                                <!--<tr>-->
+                                                    <!--<td>-->
+                                                        <!--${$parameter.name}-->
+                                                    <!--</td>-->
+                                                    <!--<td>${$parameter.types}</td>-->
+                                                    <!--<td>${$parameter.defaultValue}</td>-->
+                                                    <!--<td>${$parameter.description}</td>-->
+                                                <!--</tr>-->
+                                            <!--</js:Template>-->
+                                        <!--</ui:ItemsView>-->
+                                    <!--</table>-->
+                                <!--</div>-->
+                            <!--</js:Template>-->
+                        <!--</ui:ItemsView>-->
 
                     </div>
                 </div>
