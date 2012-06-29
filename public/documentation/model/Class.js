@@ -1,6 +1,12 @@
-define(['js/data/Model', 'underscore'], function(Model, _) {
+define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function(Model, Method, _) {
+
+    var stripTrainingUnderscore = /^_/;
 
     var Class = Model.inherit('documentation.model.Class', {
+
+        $schema: {
+            methods: [Method]
+        },
 
         packageName: function() {
             var path = this.$.id.split('.');
@@ -40,46 +46,37 @@ define(['js/data/Model', 'underscore'], function(Model, _) {
             type = type || 'all';
 
             var ret = [],
-                methodNames = [],
-                methods = this.$.methods,
-                method;
+                ctor = null;
 
-            // TODO: show inherit methods
+            this.$.methods.each(function(method) {
+                if ((type === 'all' || type === method.$.visibility)) {
 
-            if (methods) {
-                for (method in methods) {
-                    if (methods.hasOwnProperty(method)) {
-                        var methodType = (method.substr(0, 1) === '_' || methods[method].hasOwnProperty('private')) && !methods[method].hasOwnProperty('public')  ? 'protected' : 'public';
+                    if (showInherit || (!showInherit && !method.$.hasOwnProperty('definedBy'))) {
 
-                        if (type === 'all' || methodType === type) {
-                            if (showInherit || (!showInherit && !methods[method].hasOwnProperty('definedBy')))
-                            // method for requested type
-                            methodNames.push(method);
-                        }
-                    }
-                }
-
-                methodNames.sort();
-
-                for (var i = 0; i < methodNames.length; i++) {
-                    var methodName = methodNames[i];
-                    method = methods[methodName];
-
-                    if (method) {
-                        method.name = methodName;
-
-                        if (methodName === 'ctor') {
-                            ret.unshift(method);
+                        if (method.$.name === 'ctor') {
+                            // save ctor and add later
+                            ctor = method;
                         } else {
                             ret.push(method);
                         }
                     }
-
                 }
+            });
 
+            ret.sort(function(a, b) {
+
+                a.name = (a.name || "").replace(stripTrainingUnderscore, '');
+                b.name = (b.name || "").replace(stripTrainingUnderscore, '');
+
+                return a.name > b.name;
+            });
+
+            if (ctor) {
+                ret.unshift(ctor);
             }
 
             return ret;
+
         }
 
     });
