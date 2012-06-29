@@ -18,7 +18,7 @@ define(['js/core/Component', 'js/core/Base', 'js/core/History', 'flow'], functio
             this.$trackQueue = [];
             this.$tracker = null;
 
-            var history = this.$stage.$application.history,
+            var history = this.$stage.$history,
                 piwikUrl = this.$.piwikUrl;
 
             if (!history) {
