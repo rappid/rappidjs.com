@@ -79,9 +79,10 @@ var config = {
         "flow": "js/lib/flow",
         "inherit": "js/lib/inherit",
         "underscore": "js/lib/underscore",
-        "JSON": "js/lib/json2"
+        "JSON": "js/lib/JSON"
     },
     onBuildRead: function (moduleName, path, contents) {
+
         if(moduleName == "app/module/Documentation"){
             console.log(moduleName, contents);
         }
@@ -117,10 +118,22 @@ var config = {
         new Rewrite(/^js\/html\/(option)$/, "js/html/Option"),
         new Rewrite(/^js\/html\/(.+)$/, "js/html/HtmlElement")
     ],
-    xamlClasses: ["example/basic/App", "example/contact/App", "example/contact/view/Card", "example/todo/App", "js/ui/ButtonGroup", "js/ui/Link", "js/ui/MenuButton", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView"]
+    xamlClasses: ["example/basic/App", "example/contact/App", "example/contact/view/Card", "example/todo/App", "js/ui/ButtonGroup", "js/ui/Link", "js/ui/MenuButton", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView"],
+
+    logLevel: 1
 };
 
 global.libxml = require("libxml");
+
+var buildContext = requirejs.config({
+    context: 'build'
+});
+//
+//buildContext(['require'], function(require) {
+//    define('JSON', function () {
+//        return JSON;
+//    });
+//});
 
 requirejs.optimize(config, function (results) {
     console.log(results);
