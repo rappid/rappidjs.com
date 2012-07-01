@@ -92,6 +92,14 @@ h3 {
     margin-left: 70px;
 }
 
+.parameter-list > span:after {
+    content: ','
+}
+
+.parameter-list > span:last-child:after {
+    content: '';
+    display: none;
+}
 
 /*
     http://code.google.com/p/google-code-prettify/prettify.css
