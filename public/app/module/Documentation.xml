@@ -36,7 +36,6 @@
                             {doc.description}
                         </p>
 
-
                         <dl class="dl-horizontal">
                             <dt>Package</dt>
                             <dd>{doc.packageName()}</dd>
@@ -52,8 +51,15 @@
                                     </js:Template>
                                 </ui:ListView>
                             </dd>
+                            <dt visible="{doc.hasSee()}">See</dt>
+                            <dd visible="{doc.hasSee()}">
+                                <ui:ListView items="{doc.getSees()}">
+                                    <js:Template name="item">
+                                        <a href="api/{$item.id}">{$item.className()}</a>
+                                    </js:Template>
+                                </ui:ListView>
+                            </dd>
                         </dl>
-
 
                         <div class="row">
                             <div class="span7">
