@@ -12,6 +12,9 @@ var config = {
             name: 'app/Index',
             create: true,
             include: [
+                'inherit',
+                'flow',
+                'underscore',
                 'js/lib/parser',
                 'js/plugins/json',
                 'js/core/Bus',
@@ -31,8 +34,8 @@ var config = {
             exclude: [
                 'app/Index'
             ]
-        },
-        {
+        }
+        ,{
             name: 'app/module/Documentation',
             create: true,
             include: [
@@ -53,8 +56,17 @@ var config = {
             ],
             exclude: [
                 'app/Index'
+            ]
+        },
+        {
+            name: 'app/module/Disclaimer',
+            create: true,
+            include: [
+                'xaml!app/module/Disclaimer'
             ],
-            insertDefine: ["app/module/License"]
+            exclude: [
+                'app/Index'
+            ]
         }
     ],
     dir: 'public-build',
@@ -62,14 +74,15 @@ var config = {
     nodeRequire: require,
     findNestedDependencies: false,
     optimizeAllPluginResources: true,
-    preserveLicenseComments: true,
+    preserveLicenseComments: false,
     //If using UglifyJS for script optimization, these config options can be
     //used to pass configuration values to UglifyJS.
     //See https://github.com/mishoo/UglifyJS for the possible values.
     uglify: {
         toplevel: true,
         ascii_only: true,
-        beautify: false
+        beautify: true,
+        except: ['/Users/mkre/dev/git/rappidjs.com/public-build/example/basic/AppClass.js']
     },
     "paths": {
         "text" : 'js/plugins/text',
@@ -120,20 +133,10 @@ var config = {
     ],
     xamlClasses: ["example/basic/App", "example/contact/App", "example/contact/view/Card", "example/todo/App", "js/ui/ButtonGroup", "js/ui/Link", "js/ui/MenuButton", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView"],
 
-    logLevel: 1
+    logLevel: 0
 };
 
 global.libxml = require("libxml");
-
-var buildContext = requirejs.config({
-    context: 'build'
-});
-//
-//buildContext(['require'], function(require) {
-//    define('JSON', function () {
-//        return JSON;
-//    });
-//});
 
 requirejs.optimize(config, function (results) {
     console.log(results);
