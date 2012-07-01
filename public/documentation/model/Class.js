@@ -18,6 +18,23 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function 
             return this.$.id.split('.').pop();
         },
 
+        hasSee: function() {
+            return !!(this.$.see && this.$.see.length > 0);
+        },
+
+        getSees: function() {
+            var ret = [],
+                self = this;
+
+            if (this.$.see) {
+                _.each(this.$.see, function(value) {
+                    ret.push(self.$context.createEntity(Class, value));
+                });
+            }
+
+            return ret;
+        },
+
         inheritancePath: function () {
 
             var ret = [];
