@@ -32,6 +32,11 @@
                     <div visible="{hasCurrentDocumentation()}">
                         <h1>{doc.id}</h1>
 
+                        <p class="lead">
+                            {doc.description}
+                        </p>
+
+
                         <dl class="dl-horizontal">
                             <dt>Package</dt>
                             <dd>{doc.packageName()}</dd>
@@ -49,9 +54,6 @@
                             </dd>
                         </dl>
 
-                        <div class="description">
-                            {doc.description}
-                        </div>
 
                         <div class="row">
                             <div class="span7">
@@ -107,7 +109,6 @@
                                                                 </a>
                                                             </span>
                                                         </span>
-
                                                     </js:Template>
                                                 </ui:ItemsView>
                                                 )
