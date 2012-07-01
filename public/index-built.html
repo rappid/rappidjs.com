@@ -3,7 +3,10 @@
 <head>
     <title>rAppid.js - the Rich Internet Application Javascript MVC Framework</title>
 
-    <script type="text/javascript" src="package/rappidjs.min.js" data-usage="lib"></script>
+    <script type="text/javascript" src="js/lib/require.js" data-usage="lib"></script>
+    <script type="text/javascript" src="js/lib/rAppid.js" data-usage="lib"></script>
+    <script type="text/javascript" src="app/Index.js" data-usage="lib"></script>
+
     <meta name="fragment" content="!">
 
     <link rel="stylesheet" href="css/bootstrap.css"/>
@@ -19,19 +22,7 @@
 <body>
 <script type="text/javascript" data-usage="bootstrap">
 
-    rAppid.bootStrap("app/Index.xml", "config.json", function (err, systemManager, application) {
-                if (!err) {
-                    application.start(null, function (err) {
-                        if (!err) {
-                            application.render(document.body);
-                        } else {
-                            console.warn(err);
-                        }
-                    });
-                } else {
-                    console.warn(err);
-                }
-            });
+    rAppid.bootStrap("app/Index.xml");
 
 </script>
 </body>

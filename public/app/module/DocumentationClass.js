@@ -1,4 +1,4 @@
-define(['js/core/Module', "json!doc/index", "js/core/List", "documentation/model/Class", "underscore"], function(Module, classIndex, List, Class, _) {
+define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/model/Class", "underscore"], function(Module, classIndex, List, Class, _) {
 
     return Module.inherit("app.module.DocumentationClass", {
 
