@@ -81,8 +81,7 @@ var config = {
     uglify: {
         toplevel: true,
         ascii_only: true,
-        beautify: true,
-        except: ['/Users/mkre/dev/git/rappidjs.com/public-build/example/basic/AppClass.js']
+        beautify: true
     },
     "paths": {
         "text" : 'js/plugins/text',
