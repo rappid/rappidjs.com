@@ -1,18 +1,7 @@
 {
     "fqClassName": "js.ui.Button",
-    "methods": {
-        "_renderType": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "type"
-                },
-                {
-                    "name": "oldType"
-                }
-            ]
-        },
-        "_renderSize": {
+    "methods": [
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -21,9 +10,24 @@
                 {
                     "name": "oldSize"
                 }
-            ]
+            ],
+            "name": "_renderSize",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "type"
+                },
+                {
+                    "name": "oldType"
+                }
+            ],
+            "name": "_renderType",
+            "visibility": "protected"
         }
-    },
+    ],
     "inherit": "xaml!js.ui.Link",
     "inheritancePath": [
         "xaml!js.ui.Link"

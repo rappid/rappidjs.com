@@ -1,42 +1,7 @@
 {
     "fqClassName": "js.data.Model",
-    "methods": {
-        "ctor": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "attributes"
-                }
-            ]
-        },
-        "save": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
-                    "name": "options",
-                    "optional": false
-                },
-                {
-                    "types": null,
-                    "name": "callback",
-                    "optional": false
-                }
-            ],
-            "description": "persistent the model over the data-source in which it was created"
-        },
-        "prepare": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "attributes"
-                },
-                {
-                    "name": "action"
-                }
-            ]
-        },
-        "compose": {
+    "methods": [
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -45,9 +10,21 @@
                 {
                     "name": "options"
                 }
-            ]
+            ],
+            "name": "compose",
+            "visibility": "public"
         },
-        "fetch": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                }
+            ],
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -63,9 +40,24 @@
                     "optional": false,
                     "description": "function(err, model, options)"
                 }
-            ]
+            ],
+            "name": "fetch",
+            "visibility": "public"
         },
-        "remove": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "action"
+                }
+            ],
+            "name": "prepare",
+            "visibility": "public"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -74,9 +66,29 @@
                 {
                     "name": "callback"
                 }
-            ]
+            ],
+            "name": "remove",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "options",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "callback",
+                    "optional": false
+                }
+            ],
+            "description": "persistent the model over the data-source in which it was created",
+            "name": "save",
+            "visibility": "public"
         }
-    },
+    ],
     "inherit": "js.data.Entity",
     "inheritancePath": [
         "js.data.Entity"

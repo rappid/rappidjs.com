@@ -1,7 +1,40 @@
 {
     "fqClassName": "js.html.Option",
-    "methods": {
-        "_renderSelected": {
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "height"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHeight",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hidden"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHidden",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selectable"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelectable",
+            "visibility": "protected"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -9,54 +42,33 @@
                 }
             ],
             "definedBy": "js.html.HtmlElement",
-            "overwritesMethod": true
+            "overwritesMethod": true,
+            "name": "_renderSelected",
+            "visibility": "protected"
         },
-        "_renderVisible": {
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "visible"
                 }
             ],
-            "definedBy": "js.html.HtmlElement"
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderVisible",
+            "visibility": "protected"
         },
-        "_renderHidden": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "hidden"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelectable": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selectable"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderWidth": {
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "width"
                 }
             ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderHeight": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "height"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidth",
+            "visibility": "protected"
         }
-    },
+    ],
     "inherit": "js.html.HtmlElement",
     "inheritancePath": [
         "js.html.HtmlElement",

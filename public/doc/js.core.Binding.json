@@ -1,107 +1,51 @@
 {
     "fqClassName": "js.core.Binding",
-    "methods": {
-        "ctor": {
+    "methods": [
+        {
             "type": "Method",
-            "parameter": [
-                {
-                    "name": "attributes"
-                }
-            ],
-            "definedBy": "js.core.Base",
-            "overwritesMethod": true
+            "parameter": [],
+            "name": "_callback",
+            "visibility": "protected"
         },
-        "transform": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "val"
-                }
-            ]
-        },
-        "transformBack": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "val"
-                }
-            ]
-        },
-        "initialize": {
-            "type": "Method",
-            "parameter": []
-        },
-        "_checkAttributes": {
-            "type": "Method",
-            "parameter": []
-        },
-        "_createSubBinding": {
-            "type": "Method",
-            "parameter": []
-        },
-        "_revCallback": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "e"
-                }
-            ]
-        },
-        "_changeCallback": {
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "event"
                 }
-            ]
+            ],
+            "name": "_changeCallback",
+            "visibility": "protected"
         },
-        "_callback": {
-            "type": "Method",
-            "parameter": []
-        },
-        "destroy": {
+        {
             "type": "Method",
             "parameter": [],
-            "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true
+            "name": "_checkAttributes",
+            "visibility": "protected"
         },
-        "_getFncParameters": {
-            "type": "Method",
-            "parameter": []
-        },
-        "getValue": {
-            "type": "Method",
-            "parameter": []
-        },
-        "getContextValue": {
-            "type": "Method",
-            "parameter": []
-        },
-        "trigger": {
+        {
             "type": "Method",
             "parameter": [],
-            "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true
+            "name": "_createSubBinding",
+            "visibility": "protected"
         },
-        "toString": {
+        {
             "type": "Method",
-            "parameter": []
+            "parameter": [],
+            "name": "_getFncParameters",
+            "visibility": "protected"
         },
-        "create": {
+        {
             "type": "Method",
             "parameter": [
                 {
-                    "name": "bindingDef"
-                },
-                {
-                    "name": "target"
-                },
-                {
-                    "name": "callback"
+                    "name": "e"
                 }
-            ]
+            ],
+            "name": "_revCallback",
+            "visibility": "protected"
         },
-        "bind": {
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -125,45 +69,65 @@
                 }
             ],
             "description": "Binds a callback and a scope to a given eventType",
-            "definedBy": "js.core.EventDispatcher"
+            "definedBy": "js.core.EventDispatcher",
+            "name": "bind",
+            "visibility": "public"
         },
-        "unbind": {
+        {
             "type": "Method",
             "parameter": [
                 {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "eventType",
-                    "optional": false
+                    "name": "bindingDef"
                 },
                 {
-                    "types": [
-                        "Function"
-                    ],
-                    "name": "callback",
-                    "optional": false
+                    "name": "target"
                 },
                 {
-                    "name": "scope"
+                    "name": "callback"
                 }
             ],
-            "description": "Unbinds callbacks for events",
-            "definedBy": "js.core.EventDispatcher"
+            "name": "create",
+            "visibility": "public"
         },
-        "runsInBrowser": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                }
+            ],
+            "definedBy": "js.core.Base",
+            "overwritesMethod": true,
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
             "type": "Method",
             "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
-            "returns": {
-                "types": [
-                    "Boolean"
-                ],
-                "description": "true if the application runs in a browser"
-            },
-            "definedBy": "js.core.Base"
+            "definedBy": "js.core.EventDispatcher",
+            "overwritesMethod": true,
+            "name": "destroy",
+            "visibility": "public"
         },
-        "log": {
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "getContextValue",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "getValue",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "initialize",
+            "visibility": "public"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -186,10 +150,87 @@
                 }
             ],
             "description": "logs messages to configured logging functions",
-            "definedBy": "js.core.Base"
+            "definedBy": "js.core.Base",
+            "name": "log",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "determinate if the application runs in the browser or on node",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if the application runs in a browser"
+            },
+            "definedBy": "js.core.Base",
+            "name": "runsInBrowser",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "toString",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "val"
+                }
+            ],
+            "name": "transform",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "val"
+                }
+            ],
+            "name": "transformBack",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "overwritesMethod": true,
+            "name": "trigger",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "eventType",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false
+                },
+                {
+                    "name": "scope"
+                }
+            ],
+            "description": "Unbinds callbacks for events",
+            "definedBy": "js.core.EventDispatcher",
+            "name": "unbind",
+            "visibility": "public"
         }
-    },
+    ],
     "inherit": "js.core.EventDispatcher",
+    "description": "Returns false if path includes function",
     "inheritancePath": [
         "js.core.EventDispatcher",
         "js.core.Base"

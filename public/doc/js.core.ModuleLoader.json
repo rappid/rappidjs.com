@@ -1,32 +1,79 @@
 {
     "fqClassName": "js.core.ModuleLoader",
-    "methods": {
-        "ctor": {
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_initializationComplete",
+            "visibility": "protected"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
-                    "name": "attributes"
-                }
-            ]
-        },
-        "_initializationComplete": {
-            "type": "Method",
-            "parameter": []
-        },
-        "addModule": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "js.conf.Module"
-                    ],
-                    "name": "module",
-                    "optional": false
+                    "name": "height"
                 }
             ],
-            "description": "adds a module to the list of known modules"
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHeight",
+            "visibility": "protected"
         },
-        "_startModule": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hidden"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHidden",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selectable"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelectable",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selected"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelected",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "visible"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderVisible",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "width"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidth",
+            "visibility": "protected"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -44,9 +91,36 @@
                 {
                     "name": "cachedInstance"
                 }
-            ]
+            ],
+            "name": "_startModule",
+            "visibility": "protected"
         },
-        "loadModule": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "js.conf.Module"
+                    ],
+                    "name": "module",
+                    "optional": false
+                }
+            ],
+            "description": "adds a module to the list of known modules",
+            "name": "addModule",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                }
+            ],
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -73,76 +147,29 @@
                     "optional": true
                 }
             ],
-            "description": "loads an module instance into the module loader and starts the module"
+            "description": "loads an module instance into the module loader and starts the module",
+            "name": "loadModule",
+            "visibility": "public"
         },
-        "moduleNames": {
+        {
             "type": "Method",
             "parameter": [],
+            "deprecated": "will be removed soon",
             "returns": {
                 "types": [
                     "Array"
                 ]
-            }
+            },
+            "name": "moduleNames",
+            "visibility": "public"
         },
-        "render": {
+        {
             "type": "Method",
-            "parameter": []
-        },
-        "_renderVisible": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderHidden": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "hidden"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelected": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selected"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelectable": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selectable"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderWidth": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "width"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderHeight": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "height"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
+            "parameter": [],
+            "name": "render",
+            "visibility": "public"
         }
-    },
+    ],
     "inherit": "js.core.UIComponent",
     "inheritancePath": [
         "js.core.UIComponent",

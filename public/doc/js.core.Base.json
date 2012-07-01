@@ -1,22 +1,13 @@
 {
     "fqClassName": "js.core.Base",
-    "methods": {
-        "ctor": {
-            "type": "Method",
-            "parameter": []
-        },
-        "runsInBrowser": {
+    "methods": [
+        {
             "type": "Method",
             "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
-            "returns": {
-                "types": [
-                    "Boolean"
-                ],
-                "description": "true if the application runs in a browser"
-            }
+            "name": "ctor",
+            "visibility": "public"
         },
-        "log": {
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -38,7 +29,22 @@
                     "description": "the service level of (debug, info, warn, error)"
                 }
             ],
-            "description": "logs messages to configured logging functions"
+            "description": "logs messages to configured logging functions",
+            "name": "log",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "determinate if the application runs in the browser or on node",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if the application runs in a browser"
+            },
+            "name": "runsInBrowser",
+            "visibility": "public"
         }
-    }
+    ]
 }

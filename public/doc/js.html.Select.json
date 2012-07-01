@@ -1,79 +1,193 @@
 {
     "fqClassName": "js.html.Select",
-    "methods": {
-        "_renderMultiSelect": {
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_bindDomEvents",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_checkOptions",
+            "visibility": "protected"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
-                    "name": "multiSelect"
+                    "name": "item"
+                },
+                {
+                    "name": "i"
                 }
-            ]
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_createComponentForItem",
+            "visibility": "protected"
         },
-        "_renderSelectedItems": {
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_getIndexKey",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_getItemKey",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "children"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_initializeLayoutChildren",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "item"
+                },
+                {
+                    "name": "i"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_innerRenderItem",
+            "visibility": "protected"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "items"
                 }
             ],
-            "definedBy": "js.ui.SelectionView",
-            "overwritesMethod": true
+            "definedBy": "js.ui.ItemsView",
+            "name": "_innerRenderItems",
+            "visibility": "protected"
         },
-        "_bindDomEvents": {
-            "type": "Method",
-            "parameter": []
-        },
-        "_checkOptions": {
-            "type": "Method",
-            "parameter": []
-        },
-        "hasSelectedItems": {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.ui.SelectionView"
-        },
-        "_renderChild": {
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "child"
                 }
             ],
-            "definedBy": "js.ui.View"
+            "definedBy": "js.ui.SelectionView",
+            "name": "_onChildSelected",
+            "visibility": "protected"
         },
-        "_renderSelectedItem": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_onItemAdd",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_onItemRemove",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_onReset",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_onSort",
+            "visibility": "protected"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "item"
                 }
             ],
-            "definedBy": "js.ui.SelectionView"
+            "definedBy": "js.ui.ItemsView",
+            "name": "_removeRenderedItem",
+            "visibility": "protected"
         },
-        "_renderSelectedIndex": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "i"
-                }
-            ],
-            "definedBy": "js.ui.SelectionView"
-        },
-        "_onChildSelected": {
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "child"
                 }
             ],
-            "definedBy": "js.ui.SelectionView"
+            "definedBy": "js.ui.View",
+            "name": "_renderChild",
+            "visibility": "protected"
         },
-        "render": {
+        {
             "type": "Method",
-            "parameter": [],
-            "definedBy": "js.ui.View"
+            "parameter": [
+                {
+                    "name": "height"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHeight",
+            "visibility": "protected"
         },
-        "_renderItems": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hidden"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHidden",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "id"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderId",
+            "visibility": "protected"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -83,115 +197,11 @@
                     "name": "oldItems"
                 }
             ],
-            "definedBy": "js.ui.ItemsView"
+            "definedBy": "js.ui.ItemsView",
+            "name": "_renderItems",
+            "visibility": "protected"
         },
-        "_onSort": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "e"
-                }
-            ],
-            "definedBy": "js.ui.ItemsView"
-        },
-        "_onReset": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "e"
-                }
-            ],
-            "definedBy": "js.ui.ItemsView"
-        },
-        "_onItemAdd": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "e"
-                }
-            ],
-            "definedBy": "js.ui.ItemsView"
-        },
-        "_onItemRemove": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "e"
-                }
-            ],
-            "definedBy": "js.ui.ItemsView"
-        },
-        "_innerRenderItems": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "items"
-                }
-            ],
-            "definedBy": "js.ui.ItemsView"
-        },
-        "_createComponentForItem": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "item"
-                },
-                {
-                    "name": "i"
-                }
-            ],
-            "definedBy": "js.ui.ItemsView"
-        },
-        "_innerRenderItem": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "item"
-                },
-                {
-                    "name": "i"
-                }
-            ],
-            "definedBy": "js.ui.ItemsView"
-        },
-        "_getItemKey": {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.ui.ItemsView"
-        },
-        "_getIndexKey": {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.ui.ItemsView"
-        },
-        "_removeRenderedItem": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "item"
-                }
-            ],
-            "definedBy": "js.ui.ItemsView"
-        },
-        "getComponentForItem": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "item"
-                }
-            ],
-            "definedBy": "js.ui.ItemsView"
-        },
-        "_initializeLayoutChildren": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "children"
-                }
-            ],
-            "definedBy": "js.ui.View"
-        },
-        "_renderLayoutClass": {
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -201,9 +211,77 @@
                     "name": "oldLayoutClass"
                 }
             ],
-            "definedBy": "js.ui.View"
+            "definedBy": "js.ui.View",
+            "name": "_renderLayoutClass",
+            "visibility": "protected"
         },
-        "_renderTemplateToPlaceHolder": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "multiSelect"
+                }
+            ],
+            "name": "_renderMultiSelect",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selectable"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelectable",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selected"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelected",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "i"
+                }
+            ],
+            "definedBy": "js.ui.SelectionView",
+            "name": "_renderSelectedIndex",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "item"
+                }
+            ],
+            "definedBy": "js.ui.SelectionView",
+            "name": "_renderSelectedItem",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "items"
+                }
+            ],
+            "definedBy": "js.ui.SelectionView",
+            "overwritesMethod": true,
+            "name": "_renderSelectedItems",
+            "visibility": "protected"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -216,72 +294,58 @@
                     "name": "attributes"
                 }
             ],
-            "definedBy": "js.ui.View"
+            "definedBy": "js.ui.View",
+            "name": "_renderTemplateToPlaceHolder",
+            "visibility": "protected"
         },
-        "_renderId": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "id"
-                }
-            ],
-            "definedBy": "js.ui.View"
-        },
-        "_renderVisible": {
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "visible"
                 }
             ],
-            "definedBy": "js.html.HtmlElement"
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderVisible",
+            "visibility": "protected"
         },
-        "_renderHidden": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "hidden"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelected": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selected"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelectable": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selectable"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderWidth": {
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "width"
                 }
             ],
-            "definedBy": "js.html.HtmlElement"
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidth",
+            "visibility": "protected"
         },
-        "_renderHeight": {
+        {
             "type": "Method",
             "parameter": [
                 {
-                    "name": "height"
+                    "name": "item"
                 }
             ],
-            "definedBy": "js.html.HtmlElement"
+            "definedBy": "js.ui.ItemsView",
+            "name": "getComponentForItem",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.SelectionView",
+            "name": "hasSelectedItems",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.View",
+            "name": "render",
+            "visibility": "public"
         }
-    },
+    ],
     "inherit": "js.ui.SelectionView",
     "inheritancePath": [
         "js.ui.SelectionView",

@@ -1,40 +1,85 @@
 {
     "fqClassName": "js.core.Application",
-    "methods": {
-        "ctor": {
+    "methods": [
+        {
             "type": "Method",
-            "parameter": []
+            "parameter": [],
+            "name": "_initializeDescriptors",
+            "visibility": "protected"
         },
-        "_inject": {
+        {
             "type": "Method",
-            "parameter": []
+            "parameter": [],
+            "name": "_inject",
+            "visibility": "protected"
         },
-        "_initializeDescriptors": {
-            "type": "Method",
-            "parameter": []
-        },
-        "start": {
+        {
             "type": "Method",
             "parameter": [
                 {
-                    "types": [
-                        "Object"
-                    ],
-                    "name": "parameter",
-                    "optional": false,
-                    "description": "parameter configuring the application"
-                },
-                {
-                    "types": [
-                        "Function"
-                    ],
-                    "name": "callback",
-                    "optional": false
+                    "name": "height"
                 }
             ],
-            "description": "Starts the application after the application is bootstrapped"
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHeight",
+            "visibility": "protected"
         },
-        "_startHistory": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hidden"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHidden",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selectable"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelectable",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selected"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelected",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "visible"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderVisible",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "width"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidth",
+            "visibility": "protected"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -56,9 +101,28 @@
                 }
             ],
             "description": "Starts the history, which is responsible for navigation",
-            "private": ""
+            "private": "",
+            "name": "_startHistory",
+            "visibility": "protected"
         },
-        "render": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "state"
+                }
+            ],
+            "definedBy": "js.core.Window",
+            "name": "close",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -76,9 +140,11 @@
                     "Element"
                 ],
                 "description": "the rendered Element"
-            }
+            },
+            "name": "render",
+            "visibility": "public"
         },
-        "show": {
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -99,83 +165,53 @@
                 }
             ],
             "description": "shows the window by adding it to the WindowManager",
-            "see": "js.core.WindowManager",
-            "definedBy": "js.core.Window"
+            "see": [
+                "js.core.WindowManager"
+            ],
+            "definedBy": "js.core.Window",
+            "name": "show",
+            "visibility": "public"
         },
-        "showModal": {
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "callback"
                 }
             ],
-            "definedBy": "js.core.Window"
+            "definedBy": "js.core.Window",
+            "name": "showModal",
+            "visibility": "public"
         },
-        "close": {
+        {
             "type": "Method",
             "parameter": [
                 {
-                    "name": "state"
-                }
-            ],
-            "definedBy": "js.core.Window"
-        },
-        "_renderVisible": {
-            "type": "Method",
-            "parameter": [
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "parameter",
+                    "optional": false,
+                    "description": "parameter configuring the application"
+                },
                 {
-                    "name": "visible"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false
                 }
             ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderHidden": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "hidden"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelected": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selected"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelectable": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selectable"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderWidth": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "width"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderHeight": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "height"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
+            "description": "Starts the application after the application is bootstrapped",
+            "name": "start",
+            "visibility": "public"
         }
-    },
+    ],
     "inherit": "js.core.Window",
+    "description": "An application is a Window, which gets bootstrapped and started by rAppid.js and is attached to the WindowManager.",
+    "see": [
+        "js.core.WindowManager"
+    ],
     "inheritancePath": [
         "js.core.Window",
         "js.html.HtmlElement",

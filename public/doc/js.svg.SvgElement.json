@@ -1,34 +1,58 @@
 {
     "fqClassName": "js.svg.SvgElement",
-    "methods": {
-        "ctor": {
+    "methods": [
+        {
             "type": "Method",
-            "parameter": []
+            "parameter": [],
+            "name": "_refreshTransform",
+            "visibility": "protected"
         },
-        "resetTransform": {
+        {
             "type": "Method",
-            "parameter": []
+            "parameter": [
+                {
+                    "name": "value"
+                }
+            ],
+            "name": "_renderClass",
+            "visibility": "protected"
         },
-        "addTransform": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "href"
+                },
+                {
+                    "name": "oldHref"
+                }
+            ],
+            "name": "_renderHref",
+            "visibility": "protected"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "transform"
                 }
-            ]
+            ],
+            "name": "addTransform",
+            "visibility": "public"
         },
-        "translate": {
+        {
             "type": "Method",
-            "parameter": [
-                {
-                    "name": "x"
-                },
-                {
-                    "name": "y"
-                }
-            ]
+            "parameter": [],
+            "name": "ctor",
+            "visibility": "public"
         },
-        "rotate": {
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "resetTransform",
+            "visibility": "public"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -40,32 +64,24 @@
                 {
                     "name": "y"
                 }
-            ]
+            ],
+            "name": "rotate",
+            "visibility": "public"
         },
-        "_refreshTransform": {
-            "type": "Method",
-            "parameter": []
-        },
-        "_renderHref": {
+        {
             "type": "Method",
             "parameter": [
                 {
-                    "name": "href"
+                    "name": "x"
                 },
                 {
-                    "name": "oldHref"
+                    "name": "y"
                 }
-            ]
-        },
-        "_renderClass": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "value"
-                }
-            ]
+            ],
+            "name": "translate",
+            "visibility": "public"
         }
-    },
+    ],
     "inherit": "js.core.DomElement",
     "inheritancePath": [
         "js.core.DomElement"

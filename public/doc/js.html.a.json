@@ -1,77 +1,93 @@
 {
     "fqClassName": "js.html.a",
-    "methods": {
-        "_renderHref": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "href"
-                }
-            ]
-        },
-        "_renderTarget": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "target"
-                }
-            ]
-        },
-        "_renderVisible": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderHidden": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "hidden"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelected": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selected"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelectable": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selectable"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderWidth": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "width"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderHeight": {
+    "methods": [
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "height"
                 }
             ],
-            "definedBy": "js.html.HtmlElement"
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHeight",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hidden"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHidden",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "href"
+                }
+            ],
+            "name": "_renderHref",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selectable"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelectable",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selected"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelected",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "target"
+                }
+            ],
+            "name": "_renderTarget",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "visible"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderVisible",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "width"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidth",
+            "visibility": "protected"
         }
-    },
+    ],
     "inherit": "js.html.HtmlElement",
     "inheritancePath": [
         "js.html.HtmlElement",

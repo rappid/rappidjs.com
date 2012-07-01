@@ -1,7 +1,83 @@
 {
     "fqClassName": "js.core.Window",
-    "methods": {
-        "show": {
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "height"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHeight",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hidden"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHidden",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selectable"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelectable",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selected"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelected",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "visible"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderVisible",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "width"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidth",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "state"
+                }
+            ],
+            "name": "close",
+            "visibility": "public"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -22,79 +98,23 @@
                 }
             ],
             "description": "shows the window by adding it to the WindowManager",
-            "see": "js.core.WindowManager"
+            "see": [
+                "js.core.WindowManager"
+            ],
+            "name": "show",
+            "visibility": "public"
         },
-        "showModal": {
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "callback"
                 }
-            ]
-        },
-        "close": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "state"
-                }
-            ]
-        },
-        "_renderVisible": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "visible"
-                }
             ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderHidden": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "hidden"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelected": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selected"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelectable": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selectable"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderWidth": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "width"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderHeight": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "height"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
+            "name": "showModal",
+            "visibility": "public"
         }
-    },
+    ],
     "inherit": "js.html.HtmlElement",
     "inheritancePath": [
         "js.html.HtmlElement",

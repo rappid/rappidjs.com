@@ -1,80 +1,117 @@
 {
     "fqClassName": "js.core.WindowManager",
-    "methods": {
-        "ctor": {
-            "type": "Method",
-            "parameter": []
-        },
-        "show": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "window"
-                },
-                {
-                    "name": "callback"
-                },
-                {
-                    "name": "modal"
-                }
-            ]
-        },
-        "_renderVisible": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderHidden": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "hidden"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelected": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selected"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderSelectable": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "selectable"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderWidth": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "width"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "_renderHeight": {
+    "methods": [
+        {
             "type": "Method",
             "parameter": [
                 {
                     "name": "height"
                 }
             ],
-            "definedBy": "js.html.HtmlElement"
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHeight",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hidden"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHidden",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selectable"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelectable",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "selected"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelected",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "visible"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderVisible",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "width"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidth",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "js.core.Window"
+                    ],
+                    "name": "window",
+                    "optional": false,
+                    "description": "window instance to show"
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "windowCloseCallback",
+                    "optional": true,
+                    "description": "callback function invoked after the window the is closed"
+                },
+                {
+                    "types": [
+                        "Boolean"
+                    ],
+                    "name": "modal",
+                    "optional": true,
+                    "defaultValue": "false",
+                    "description": "if true a modal window in front of all other windows will be shown"
+                }
+            ],
+            "description": "Adds a window to the WindowManager and shows it",
+            "name": "show",
+            "visibility": "public"
         }
-    },
+    ],
     "inherit": "js.html.HtmlElement",
+    "description": "The WindowManager manages Windows on the Stage.",
+    "see": [
+        "js.core.Stage"
+    ],
     "inheritancePath": [
         "js.html.HtmlElement",
         "js.core.DomElement"

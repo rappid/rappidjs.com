@@ -1,7 +1,81 @@
 {
     "fqClassName": "js.svg.Svg",
-    "methods": {
-        "setViewBox": {
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.svg.SvgElement",
+            "name": "_refreshTransform",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.svg.SvgElement",
+            "name": "_renderClass",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "href"
+                },
+                {
+                    "name": "oldHref"
+                }
+            ],
+            "definedBy": "js.svg.SvgElement",
+            "name": "_renderHref",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "transform"
+                }
+            ],
+            "definedBy": "js.svg.SvgElement",
+            "name": "addTransform",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.svg.SvgElement",
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.svg.SvgElement",
+            "name": "resetTransform",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "r"
+                },
+                {
+                    "name": "x"
+                },
+                {
+                    "name": "y"
+                }
+            ],
+            "definedBy": "js.svg.SvgElement",
+            "name": "rotate",
+            "visibility": "public"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -16,28 +90,11 @@
                 {
                     "name": "height"
                 }
-            ]
-        },
-        "ctor": {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.svg.SvgElement"
-        },
-        "resetTransform": {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.svg.SvgElement"
-        },
-        "addTransform": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "transform"
-                }
             ],
-            "definedBy": "js.svg.SvgElement"
+            "name": "setViewBox",
+            "visibility": "public"
         },
-        "translate": {
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -47,50 +104,11 @@
                     "name": "y"
                 }
             ],
-            "definedBy": "js.svg.SvgElement"
-        },
-        "rotate": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "r"
-                },
-                {
-                    "name": "x"
-                },
-                {
-                    "name": "y"
-                }
-            ],
-            "definedBy": "js.svg.SvgElement"
-        },
-        "_refreshTransform": {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.svg.SvgElement"
-        },
-        "_renderHref": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "href"
-                },
-                {
-                    "name": "oldHref"
-                }
-            ],
-            "definedBy": "js.svg.SvgElement"
-        },
-        "_renderClass": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "value"
-                }
-            ],
-            "definedBy": "js.svg.SvgElement"
+            "definedBy": "js.svg.SvgElement",
+            "name": "translate",
+            "visibility": "public"
         }
-    },
+    ],
     "inherit": "js.svg.SvgElement",
     "inheritancePath": [
         "js.svg.SvgElement",

@@ -1,43 +1,7 @@
 {
     "fqClassName": "js.core.BindingCreator",
-    "methods": {
-        "create": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "bindingDef"
-                },
-                {
-                    "name": "targetScope"
-                },
-                {
-                    "name": "attrKey"
-                },
-                {
-                    "name": "context"
-                }
-            ]
-        },
-        "evaluate": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "text"
-                },
-                {
-                    "name": "scope"
-                },
-                {
-                    "name": "attrKey"
-                }
-            ]
-        },
-        "ctor": {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.core.Base"
-        },
-        "bind": {
+    "methods": [
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -61,9 +25,101 @@
                 }
             ],
             "description": "Binds a callback and a scope to a given eventType",
-            "definedBy": "js.core.EventDispatcher"
+            "definedBy": "js.core.EventDispatcher",
+            "name": "bind",
+            "visibility": "public"
         },
-        "trigger": {
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "bindingDef"
+                },
+                {
+                    "name": "targetScope"
+                },
+                {
+                    "name": "attrKey"
+                },
+                {
+                    "name": "context"
+                }
+            ],
+            "name": "create",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base",
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "destroy",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "text"
+                },
+                {
+                    "name": "scope"
+                },
+                {
+                    "name": "attrKey"
+                }
+            ],
+            "name": "evaluate",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String",
+                        "Array"
+                    ],
+                    "name": "message",
+                    "optional": false,
+                    "description": "the message to log"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "level",
+                    "optional": true,
+                    "defaultValue": "\"info\"",
+                    "description": "the service level of (debug, info, warn, error)"
+                }
+            ],
+            "description": "logs messages to configured logging functions",
+            "definedBy": "js.core.Base",
+            "name": "log",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "determinate if the application runs in the browser or on node",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if the application runs in a browser"
+            },
+            "definedBy": "js.core.Base",
+            "name": "runsInBrowser",
+            "visibility": "public"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -89,9 +145,11 @@
                 }
             ],
             "description": "Triggers an event",
-            "definedBy": "js.core.EventDispatcher"
+            "definedBy": "js.core.EventDispatcher",
+            "name": "trigger",
+            "visibility": "public"
         },
-        "unbind": {
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -113,51 +171,11 @@
                 }
             ],
             "description": "Unbinds callbacks for events",
-            "definedBy": "js.core.EventDispatcher"
-        },
-        "destroy": {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.core.EventDispatcher"
-        },
-        "runsInBrowser": {
-            "type": "Method",
-            "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
-            "returns": {
-                "types": [
-                    "Boolean"
-                ],
-                "description": "true if the application runs in a browser"
-            },
-            "definedBy": "js.core.Base"
-        },
-        "log": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "String",
-                        "Array"
-                    ],
-                    "name": "message",
-                    "optional": false,
-                    "description": "the message to log"
-                },
-                {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "level",
-                    "optional": true,
-                    "defaultValue": "\"info\"",
-                    "description": "the service level of (debug, info, warn, error)"
-                }
-            ],
-            "description": "logs messages to configured logging functions",
-            "definedBy": "js.core.Base"
+            "definedBy": "js.core.EventDispatcher",
+            "name": "unbind",
+            "visibility": "public"
         }
-    },
+    ],
     "inherit": "js.core.EventDispatcher",
     "inheritancePath": [
         "js.core.EventDispatcher",

@@ -1,7 +1,7 @@
 {
     "fqClassName": "js.core.Bindable",
-    "methods": {
-        "ctor": {
+    "methods": [
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -9,15 +9,17 @@
                         "Object"
                     ],
                     "name": "attributes",
-                    "optional": true,
-                    "description": "the default attributes which will be set during instantiation"
+                    "optional": false,
+                    "description": "contains the changed attributes"
                 }
             ],
-            "description": "creates a new instance of bindable, which can be bound to components",
-            "definedBy": "js.core.Base",
-            "overwritesMethod": true
+            "description": "called after attributes has set and some of the has been changed",
+            "abstract": "",
+            "private": "",
+            "name": "_commitChangedAttributes",
+            "visibility": "protected"
         },
-        "_defaultAttributes": {
+        {
             "type": "Method",
             "parameter": [],
             "description": "",
@@ -27,9 +29,11 @@
                 ],
                 "description": "returns the default attributes and includes the defaults from base classes"
             },
-            "private": ""
+            "private": "",
+            "name": "_defaultAttributes",
+            "visibility": "protected"
         },
-        "_generateDefaultsChain": {
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -47,137 +51,11 @@
                     "*"
                 ]
             },
-            "private": ""
+            "private": "",
+            "name": "_generateDefaultsChain",
+            "visibility": "protected"
         },
-        "set": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "key",
-                    "optional": false,
-                    "description": "The attribute key"
-                },
-                {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "value",
-                    "optional": false,
-                    "description": "The attribute value"
-                },
-                {
-                    "types": [
-                        "Object"
-                    ],
-                    "name": "options",
-                    "optional": false,
-                    "description": "A hash of options"
-                }
-            ],
-            "description": "Sets new values for attributes and notify about changes"
-        },
-        "get": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "Object"
-                    ],
-                    "name": "scope",
-                    "optional": true,
-                    "defaultValue": "this",
-                    "description": "the scope where the path is evaluated"
-                },
-                {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "key",
-                    "optional": false
-                }
-            ],
-            "description": "evaluates a path to retrieve a value",
-            "returns": {
-                "types": null,
-                "description": "the value for the path or undefined"
-            }
-        },
-        "has": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "path",
-                    "optional": false,
-                    "description": "to get the value"
-                }
-            ],
-            "description": "determinate if a attribute is available",
-            "returns": {
-                "types": [
-                    "Boolean"
-                ],
-                "description": "true if attribute is not undefined"
-            }
-        },
-        "_commitChangedAttributes": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "Object"
-                    ],
-                    "name": "attributes",
-                    "optional": false,
-                    "description": "contains the changed attributes"
-                }
-            ],
-            "description": "called after attributes has set and some of the has been changed",
-            "private": ""
-        },
-        "unset": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "String",
-                        "Object"
-                    ],
-                    "name": "key",
-                    "optional": false,
-                    "description": "the attribute or attributes to unset"
-                },
-                {
-                    "types": [
-                        "Object"
-                    ],
-                    "name": "options",
-                    "optional": true
-                }
-            ],
-            "description": "Unset attribute on $",
-            "returns": {
-                "types": [
-                    "this"
-                ]
-            }
-        },
-        "clear": {
-            "type": "Method",
-            "parameter": [],
-            "description": "Clears all attributes",
-            "returns": {
-                "types": [
-                    "this"
-                ]
-            }
-        },
-        "bind": {
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -215,9 +93,208 @@
             ],
             "description": "Binds an event handler function to an EventDispatcher",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true
+            "overwritesMethod": true,
+            "name": "bind",
+            "visibility": "public"
         },
-        "unbind": {
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Clears all attributes",
+            "returns": {
+                "types": [
+                    "this"
+                ]
+            },
+            "name": "clear",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "attributes",
+                    "optional": true,
+                    "description": "the default attributes which will be set during instantiation"
+                }
+            ],
+            "description": "creates a new instance of bindable, which can be bound to components",
+            "definedBy": "js.core.Base",
+            "overwritesMethod": true,
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Destroys all event bindings and triggers a destroy event",
+            "returns": {
+                "types": [
+                    "this"
+                ]
+            },
+            "definedBy": "js.core.EventDispatcher",
+            "overwritesMethod": true,
+            "name": "destroy",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true,
+                    "defaultValue": "this",
+                    "description": "the scope where the path is evaluated"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "key",
+                    "optional": false
+                }
+            ],
+            "description": "evaluates a path to retrieve a value",
+            "returns": {
+                "types": null,
+                "description": "the value for the path or undefined"
+            },
+            "name": "get",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "path",
+                    "optional": false,
+                    "description": "to get the value"
+                }
+            ],
+            "description": "determinate if a attribute is available",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if attribute is not undefined"
+            },
+            "name": "has",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String",
+                        "Array"
+                    ],
+                    "name": "message",
+                    "optional": false,
+                    "description": "the message to log"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "level",
+                    "optional": true,
+                    "defaultValue": "\"info\"",
+                    "description": "the service level of (debug, info, warn, error)"
+                }
+            ],
+            "description": "logs messages to configured logging functions",
+            "definedBy": "js.core.Base",
+            "name": "log",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "determinate if the application runs in the browser or on node",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if the application runs in a browser"
+            },
+            "definedBy": "js.core.Base",
+            "name": "runsInBrowser",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "key",
+                    "optional": false,
+                    "description": "The attribute key"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "value",
+                    "optional": false,
+                    "description": "The attribute value"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "A hash of options"
+                }
+            ],
+            "description": "Sets new values for attributes and notify about changes",
+            "name": "set",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "eventType",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "EventDispatcher.Event",
+                        "Object"
+                    ],
+                    "name": "event",
+                    "optional": false,
+                    "description": "If you use an Object the object is wrapped in an Event"
+                },
+                {
+                    "types": null,
+                    "name": "target",
+                    "optional": false
+                }
+            ],
+            "description": "Triggers an event",
+            "definedBy": "js.core.EventDispatcher",
+            "name": "trigger",
+            "visibility": "public"
+        },
+        {
             "type": "Method",
             "parameter": [
                 {
@@ -254,86 +331,40 @@
             ],
             "description": "Unbinds an bound event handler from an EventDispatcher.",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true
+            "overwritesMethod": true,
+            "name": "unbind",
+            "visibility": "public"
         },
-        "destroy": {
-            "type": "Method",
-            "parameter": [],
-            "description": "Destroys all event bindings and triggers a destroy event",
-            "returns": {
-                "types": [
-                    "this"
-                ]
-            },
-            "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true
-        },
-        "trigger": {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "eventType",
-                    "optional": false
-                },
-                {
-                    "types": [
-                        "EventDispatcher.Event",
-                        "Object"
-                    ],
-                    "name": "event",
-                    "optional": false,
-                    "description": "If you use an Object the object is wrapped in an Event"
-                },
-                {
-                    "types": null,
-                    "name": "target",
-                    "optional": false
-                }
-            ],
-            "description": "Triggers an event",
-            "definedBy": "js.core.EventDispatcher"
-        },
-        "runsInBrowser": {
-            "type": "Method",
-            "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
-            "returns": {
-                "types": [
-                    "Boolean"
-                ],
-                "description": "true if the application runs in a browser"
-            },
-            "definedBy": "js.core.Base"
-        },
-        "log": {
+        {
             "type": "Method",
             "parameter": [
                 {
                     "types": [
                         "String",
-                        "Array"
+                        "Object"
                     ],
-                    "name": "message",
+                    "name": "key",
                     "optional": false,
-                    "description": "the message to log"
+                    "description": "the attribute or attributes to unset"
                 },
                 {
                     "types": [
-                        "String"
+                        "Object"
                     ],
-                    "name": "level",
-                    "optional": true,
-                    "defaultValue": "\"info\"",
-                    "description": "the service level of (debug, info, warn, error)"
+                    "name": "options",
+                    "optional": true
                 }
             ],
-            "description": "logs messages to configured logging functions",
-            "definedBy": "js.core.Base"
+            "description": "Unset attribute on $",
+            "returns": {
+                "types": [
+                    "this"
+                ]
+            },
+            "name": "unset",
+            "visibility": "public"
         }
-    },
+    ],
     "inherit": "js.core.EventDispatcher",
     "inheritancePath": [
         "js.core.EventDispatcher",
