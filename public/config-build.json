@@ -1,0 +1,45 @@
+{"paths": {
+    "text": "js/plugins/text",
+    "json": "js/plugins/text",
+    "xaml": "js/plugins/xaml",
+    "inherit": "js/lib/inherit",
+    "underscore": "js/lib/underscore",
+    "flow": "js/lib/flow",
+    "raw": "js/plugins/raw",
+    "JSON": "js/lib/json2.js",
+    "google/plusone": "https://apis.google.com/js/plusone",
+    "twitter/widgets": "https://platform.twitter.com/widgets",
+    "Piwik": "http://piwik.rappidjs.com/piwik",
+    "js/core/Bus": "app/Index",
+    "js/core/Stage": "app/Index"
+}, "shim": {
+    "inherit": {
+        "exports": "inherit"
+    },
+    "flow": {
+        "exports": "flow"
+    },
+    "underscore": {
+        "exports": "_"
+    },
+    "google/plusone": {
+        "exports": "gapi"
+    },
+    "twitter/widgets": {
+        "exports": "twttr"
+    },
+    "Piwik": {
+        "exports": "Piwik"
+    },
+    "app/lib/highlight/highlight": {
+        "exports": "hljs"
+    },
+    "js/lib/parser": {
+        "exports": "parser"
+    },
+    "JSON": {
+        "exports": "JSON"
+    }
+}, "xamlClasses": ["app/Index", "app/module/Disclaimer", "app/module/Documentation", "app/module/Home", "app/module/License", "app/module/Wiki", "example/basic/App", "example/contact/App", "example/contact/view/Card", "example/todo/App", "js/ui/ButtonGroup", "js/ui/Link", "js/ui/MenuButton", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView"],
+    "optimizedXAML": ["app/Index","app/module/Home","app/module/Documentation", "app/module/License"],
+    "namespaceMap": null, "rewriteMap": null}

@@ -15,7 +15,7 @@
 
     <js:Content name="main">
         <div id="documentation">
-
+            <ui:Link label="Hallo"/>
             <div class="row">
                 <div class="span3 classes">
                     <input type="text" placeholder="Filter" value="{{searchString}}"/>

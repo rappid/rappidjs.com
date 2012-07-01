@@ -13,13 +13,23 @@ var config = {
             create: true,
             include: [
                 'js/lib/parser',
-                'xaml!app/Index',
-                'app/IndexClass',
+                'js/plugins/json',
                 'js/core/Bus',
                 'js/core/Stage',
                 'js/core/WindowManager',
                 'js/core/HeadManager',
-                'js/core/Injection'
+                'js/core/Injection',
+                'xaml!app/Index'
+            ]
+        },
+        {
+            name: 'app/module/Home',
+            create: true,
+            include: [
+                'xaml!app/module/Home'
+            ],
+            exclude: [
+                'app/Index'
             ]
         },
         {
@@ -27,7 +37,12 @@ var config = {
             create: true,
             include: [
                 'xaml!app/module/Documentation',
-                'app/module/DocumentationClass'
+                'js/data/RestDataSource',
+                'js/data/FilterDataView',
+                'js/data/Model'
+            ],
+            exclude: [
+                'app/Index'
             ]
         },
         {
@@ -35,7 +50,11 @@ var config = {
             create: true,
             include: [
                 'xaml!app/module/License'
-            ]
+            ],
+            exclude: [
+                'app/Index'
+            ],
+            insertDefine: ["app/module/License"]
         }
     ],
     dir: 'public-build',
@@ -62,6 +81,12 @@ var config = {
         "underscore": "js/lib/underscore",
         "JSON": "js/lib/json2"
     },
+    onBuildRead: function (moduleName, path, contents) {
+        if(moduleName == "app/module/Documentation"){
+            console.log(moduleName, contents);
+        }
+        return contents;
+    },
     onBuildWrite: function (moduleName, path, contents) {
         if (moduleName == "inherit") {
             contents = "define('inherit', function () { "+ contents + "; return inherit; });"
@@ -75,9 +100,12 @@ var config = {
             contents = "define('JSON', function () { " + contents + "; return JSON; });"
         } else if (moduleName == "app/lib/highlight/highlight") {
             contents = "define('app/lib/highlight/highlight', function() { " + contents + "; return hljs; });"
+        } else if(moduleName == "app/module/Documentation"){
+            console.log(contents);
         }
         return contents;
     },
+    skipModuleInsertion: false,
     namespaceMap: {
         "http://www.w3.org/1999/xhtml": "js.html"
     },
