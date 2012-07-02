@@ -7,6 +7,10 @@
         xmlns:module="app.module"
         xmlns:basic="example.basic"
         xmlns:todo="example.todo" xmlns:contact="example.contact" xmlns:google="google" xmlns:twitter="twitter">
+
+
+    <js:Head title="rAppid.js - the Rich Internet Application Javascript MVC Framework" author="Tony Findeisen &amp; Marcus Krejpowicz" />
+
     <js:Content name="main">
         <div id="home">
             <div class="hero-unit center">

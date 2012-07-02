@@ -3,6 +3,9 @@
            xmlns:module="app.module"
            xmlns:md="md" xmlns:conf="js.conf">
 
+    <js:Head title="rAppid.js - License"
+             author="Tony Findeisen &amp; Marcus Krejpowicz"/>
+
     <js:Content name="main">
 
         <h1>License</h1>
