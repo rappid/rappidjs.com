@@ -1,0 +1,58 @@
+<js:Module xmlns="http://www.w3.org/1999/xhtml"
+           xmlns:js="js.core" xmlns:ui="js.ui"
+           xmlns:module="app.module"
+           xmlns:md="md" xmlns:conf="js.conf">
+
+    <js:Content name="main">
+
+        <section>
+            <div class="page-header">
+                <h1>
+                    VirtualItemsView
+                    <small>Display huge amounts of data in high-performance</small>
+                </h1>
+            </div>
+
+            <blockquote>
+                <p>
+                    They just render data that is visible in the current view-port and also fetches only necessary data-pages from the server.
+                </p>
+                <small>Tony Findeisen</small>
+            </blockquote>
+
+
+            <h2>DataGrid</h2>
+            <div class="row">
+                <div class="span6">
+                    <h3>Overview</h3>
+                    <p>
+                        The DataGrid is a table based component rendering bindable data in columns.
+                        Each column is set up with a <code>Template</code> defining how to render the data.
+                    </p>
+                    <p>
+                        <!--TODO: place grid example here -->
+                    </p>
+                    <p>
+                        <em>Have a look to the DOM and network-monitor and see that only necessary items are rendered and requested.</em>
+                    </p>
+                </div>
+                <div class="span6">
+                    <h3>Code example</h3>
+                    <!--TODO: embed source here -->
+                </div>
+            </div>
+
+            <br />
+            <h2>TileList</h2>
+            <div class="row">
+                <div class="span6">
+                    <h3>Overview</h3>
+                </div>
+                <div class="span6">
+                    <h3>Code example</h3>
+                </div>
+            </div>
+        </section>
+
+    </js:Content>
+</js:Module>

@@ -18,6 +18,9 @@ define(
                     },{
                         label: 'Wiki',
                         link: 'wiki'
+                    }, {
+                        label: 'UI',
+                        link: 'ui'
                     },{
                         label: 'API',
                         link: 'api'
