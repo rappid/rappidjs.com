@@ -124,15 +124,8 @@
                       <ui:Checkbox label="A simple checkbox" cid="$checkbox"/>
                   </div>
                   <div>
-                      <label class="radio">
-                          <input type="radio" name="radio"/>
-                          Option 1
-                      </label>
-                      <label class="radio">
-                          <input type="radio" name="radio"/>
-                          Option 2
-                      </label>
-
+                      <ui:Radio label="Option 1" name="radio"/>
+                      <ui:Radio label="Option 2" name="radio"/>
                   </div>
               </div>
             <div class="span3">
