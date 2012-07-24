@@ -10,12 +10,9 @@
         </span>
 
         <ui:ListView items="{todoList}" itemKey="todo" class="unstyled">
-            <js:Template name="item">
-                <label class="checkbox">
-                    <input type="checkbox" checked="{{$todo.completed}}"/>
-                    <span class="{$todo.status()}">{$todo.title}</span>
-                </label>
-            </js:Template>
+            <ui:Checkbox label="{$todo.title}"
+                         selected="{{$todo.completed}}"
+                         class="{$todo.status()}"/>
         </ui:ListView>
         <form onsubmit="addTodoItem" action="">
             <input type="text" size="30" placeholder="add new todo here"
