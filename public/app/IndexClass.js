@@ -22,6 +22,9 @@ define(
                         label: 'API',
                         link: 'api'
                     },{
+                        label: 'Samples',
+                        link: 'samples'
+                    },{
                         label: 'License',
                         link: 'license'
                     },{

@@ -1,0 +1,157 @@
+<module:HomeClass
+        xmlns:js="js.core"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="js.ui"
+        xmlns:md="md"
+        xmlns:view="app.view"
+        xmlns:module="app.module"
+        xmlns:basic="example.basic"
+        xmlns:todo="example.todo" xmlns:contact="example.contact" xmlns:google="google" xmlns:twitter="twitter">
+
+    <js:Head title="rAppid.js - the Rich Internet Application Javascript MVC Framework"
+             author="Tony Findeisen &amp; Marcus Krejpowicz"/>
+
+    <js:Content name="main">
+        <h1>
+            Component examples
+        </h1>
+        <p>
+            rAppidjs comes with a bunch of UI components based on the popular bootstrap framework.
+            This page shows some examples of how to use this components.
+        </p>
+        <h1>Buttons</h1>
+        <hr/>
+        <h2>Simple Buttons</h2>
+        <div class="row">
+            <div class="span4">
+                <h3>Examples</h3>
+                <div class="btn-toolbar">
+                    <ui:Button label="Action"/>
+                    <ui:Button label="Danger" type="danger"/>
+                    <ui:Button label="Success" type="success"/>
+                    <ui:Button label="Info" type="info" iconClass="icon-white icon-info-sign"/>
+                </div>
+            </div>
+            <div class="span8">
+                <h3>Example Markup</h3>
+                <view:Code data-title="App.xml">
+                    <![CDATA[
+                        <ui:Button label="Info" iconClass="icon-white icon-remove" type="info" />
+                    ]]>
+                </view:Code>
+            </div>
+        </div>
+
+        <h2>Menu Buttons</h2>
+        <div class="row">
+            <div class="span4">
+                <h3>Examples</h3>
+                <div class="btn-toolbar">
+                    <ui:MenuButton label="Show" type="info">
+                        <div>
+                            Hello Menu Button :)
+                        </div>
+                    </ui:MenuButton>
+                    <ui:MenuButton label="Click Me" type="inverse">
+                        <ul class="unstyled">
+                            <li>
+                                <a href="#">Action</a>
+                            </li>
+                            <li>
+                                <a href="#">Another action</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li class="divider"/>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                        </ul>
+                    </ui:MenuButton>
+                </div>
+            </div>
+            <div class="span8">
+                <h3>Example Markup</h3>
+                <view:Code data-title="App.xml">
+                    <![CDATA[
+                        <ui:MenuButton label="Show" type="info">
+                            <div>
+                                Hello Menu Button :)
+                            </div>
+                        </ui:MenuButton>
+                    ]]>
+                </view:Code>
+            </div>
+        </div>
+
+        <h2>Split Menu Buttons</h2>
+        <div class="row">
+            <div class="span4">
+                <h3>Examples</h3>
+                <div class="btn-toolbar">
+                    <ui:SplitButton label="Account">
+                        Some account options
+                    </ui:SplitButton>
+                    <ui:SplitButton label="Show" type="info" iconClass="icon-info-sign icon-white">
+                        Some Menu content
+                    </ui:SplitButton>
+
+                </div>
+            </div>
+            <div class="span8">
+                <h3>Example Markup</h3>
+                <view:Code data-title="App.xml">
+                    <![CDATA[
+                       <ui:SplitButton label="Show" type="info" iconClass="icon-add">
+                            Some Menu content
+                        </ui:SplitButton>
+                    ]]>
+                </view:Code>
+            </div>
+        </div>
+        <h1>Forms and Bindings</h1>
+        <hr/>
+        <h2>Basic Form Elements</h2>
+        <div class="row">
+              <div class="span4">
+                  <h3>Examples</h3>
+                  <div>
+                      <label>Text input</label>
+                      <input cid="$textInput" type="text" value="some text"/>
+                  </div>
+                  <div>
+                      <ui:Checkbox label="A simple checkbox" cid="$checkbox"/>
+                  </div>
+                  <div>
+                      <label class="radio">
+                          <input type="radio" name="radio"/>
+                          Option 1
+                      </label>
+                      <label class="radio">
+                          <input type="radio" name="radio"/>
+                          Option 2
+                      </label>
+
+                  </div>
+              </div>
+            <div class="span3">
+                <h3>Binding Values</h3>
+                <p>
+                    <strong>Text Input:</strong>
+                    {$textInput.value}
+                </p>
+                <p>
+                    <strong>Checkbox Checked:</strong>
+                    {$checkbox.selected}
+                </p>
+            </div>
+        </div>
+        <h1>Virtual Item Views</h1>
+        <hr/>
+        <h2>Data Grid</h2>
+
+        <h2>Tile List</h2>
+
+    </js:Content>
+</module:HomeClass>
