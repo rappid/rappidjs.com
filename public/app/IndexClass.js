@@ -18,12 +18,12 @@ define(
                     },{
                         label: 'Wiki',
                         link: 'wiki'
+                    }, {
+                        label: 'UI Components',
+                        link: 'ui'
                     },{
                         label: 'API',
                         link: 'api'
-                    },{
-                        label: 'Samples',
-                        link: 'samples'
                     },{
                         label: 'License',
                         link: 'license'
