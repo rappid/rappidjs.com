@@ -35,7 +35,6 @@
         <conf:Module name="ui" moduleClass="app.module.Ui" route="^ui.*$"/>
         <conf:Module name="documentation" moduleClass="app.module.Documentation" route="^api.*$"/>
         <conf:Module name="license" moduleClass="app.module.License" route="^license$"/>
-        <conf:Module name="samples" moduleClass="app.module.Samples" route="^samples$"/>
         <conf:Module name="disclaimer" moduleClass="app.module.Disclaimer" route="^disclaimer$"/>
 
         <div id="container" class="container">
