@@ -1,0 +1,457 @@
+{
+    "fqClassName": "js.ui.TileListClass",
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "renderer"
+                },
+                {
+                    "name": "pos"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_addRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "el"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_bindDomEvents",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "data"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_commitData",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.VirtualItemsView",
+            "overwritesMethod": true,
+            "name": "_createRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "",
+            "abstract": "",
+            "returns": {
+                "types": [
+                    "js.core.DomElement"
+                ]
+            },
+            "private": "",
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_getScrollContainer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_initializationComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "children"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_initializeLayoutChildren",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "$el"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_initializeRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_itemsCountChanged",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_onDomAdded",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                },
+                {
+                    "name": "renderer"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_onRendererClick",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                },
+                {
+                    "name": "renderer"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_onRendererDblClick",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "renderer"
+                },
+                {
+                    "name": "addedRenderer"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_positionRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderChild",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "height",
+                    "optional": false,
+                    "description": "the width in pixel if not a string"
+                }
+            ],
+            "description": "renders the height of the element if the update-policy allows out-going",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHeight",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "policy",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHeightUpdatePolicy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "id"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderId",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "layoutClass"
+                },
+                {
+                    "name": "oldLayoutClass"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderLayoutClass",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "name",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "value",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderPolicyValue",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "position",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderPosition",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "selectable",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelectable",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "selected",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelected",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "templateName"
+                },
+                {
+                    "name": "placeholderName"
+                },
+                {
+                    "name": "attributes"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderTemplateToPlaceHolder",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "visible"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderVisible",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "width",
+                    "optional": false,
+                    "description": "the width in pixel if not a string"
+                }
+            ],
+            "description": "renders the width of the element if the update-policy allows out-going",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidth",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "policy",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidthUpdatePolicy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_reserveRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "key",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "value",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_setAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_updateVisibleItems",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "startIndex",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "endIndex",
+                    "optional": false
+                }
+            ],
+            "abstract": "",
+            "private": "",
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_updatedVisibleItems",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "x"
+                },
+                {
+                    "name": "y"
+                },
+                {
+                    "name": "gapHPos"
+                },
+                {
+                    "name": "gapVPos"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "getIndexFromPoint",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "index"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "getPointFromIndex",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "count"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "getSizeForItemsCount",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.View",
+            "name": "render",
+            "visibility": "public"
+        }
+    ],
+    "inherit": "js.ui.VirtualItemsView",
+    "inheritancePath": [
+        "js.ui.VirtualItemsView",
+        "js.ui.View",
+        "js.html.HtmlElement",
+        "js.core.DomElement"
+    ]
+}

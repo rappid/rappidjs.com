@@ -1,0 +1,282 @@
+{
+    "fqClassName": "js.ui.DataGridClass",
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "children"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_initializeLayoutChildren",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_onDomAdded",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                },
+                {
+                    "name": "row"
+                }
+            ],
+            "name": "_propagateDblClick",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderChild",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "height",
+                    "optional": false,
+                    "description": "the width in pixel if not a string"
+                }
+            ],
+            "description": "renders the height of the element if the update-policy allows out-going",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHeight",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "policy",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderHeightUpdatePolicy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "id"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderId",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "layoutClass"
+                },
+                {
+                    "name": "oldLayoutClass"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderLayoutClass",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "name",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "value",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderPolicyValue",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "position",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderPosition",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "selectable",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelectable",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "selected",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderSelected",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "templateName"
+                },
+                {
+                    "name": "placeholderName"
+                },
+                {
+                    "name": "attributes"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderTemplateToPlaceHolder",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "visible"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderVisible",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "width",
+                    "optional": false,
+                    "description": "the width in pixel if not a string"
+                }
+            ],
+            "description": "renders the width of the element if the update-policy allows out-going",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidth",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "policy",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidthUpdatePolicy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "key",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "value",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_setAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ],
+            "name": "addChild",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ],
+            "name": "removeChild",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.View",
+            "name": "render",
+            "visibility": "public"
+        }
+    ],
+    "inherit": "js.ui.View",
+    "inheritancePath": [
+        "js.ui.View",
+        "js.html.HtmlElement",
+        "js.core.DomElement"
+    ]
+}

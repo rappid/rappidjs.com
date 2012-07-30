@@ -1,0 +1,15 @@
+{
+    "fqClassName": "js.ui.DataGridDateColumn",
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "getFormatFnc",
+            "visibility": "public"
+        }
+    ],
+    "inherit": "xaml!js.ui.DataGridColumn",
+    "inheritancePath": [
+        "xaml!js.ui.DataGridColumn"
+    ]
+}
