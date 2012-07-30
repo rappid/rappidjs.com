@@ -19,7 +19,7 @@
     margin-top: 80px;
 }
 
-h3 {
+#home h3 {
     margin: 20px 0 10px 0;
 }
 
@@ -77,6 +77,10 @@ h3 {
     border-style: dashed;
 }
 
+.app .done{
+    text-decoration: line-through;
+}
+
 .contact-app .card p {
     margin: 0;
 }
@@ -130,3 +134,20 @@ ol.linenums li {
 }
 
 /**/
+
+.jumbotron {
+    position: relative;
+}
+
+.jumbotron h1 {
+    margin-bottom: 9px;
+    font-size: 54px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.jumbotron p {
+    margin-bottom: 18px;
+    font-weight: 300;
+}

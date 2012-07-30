@@ -90,6 +90,15 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_onDomAdded",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
                     "name": "e"
@@ -158,9 +167,14 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "height"
+                    "types": null,
+                    "name": "height",
+                    "optional": false,
+                    "description": "the width in pixel if not a string"
                 }
             ],
+            "description": "renders the height of the element if the update-policy allows out-going",
+            "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_renderHeight",
             "visibility": "protected"
@@ -169,11 +183,15 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "hidden"
+                    "types": null,
+                    "name": "policy",
+                    "optional": false
                 }
             ],
+            "description": "",
+            "private": "",
             "definedBy": "js.html.HtmlElement",
-            "name": "_renderHidden",
+            "name": "_renderHeightUpdatePolicy",
             "visibility": "protected"
         },
         {
@@ -229,9 +247,48 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "selectable"
+                    "types": null,
+                    "name": "name",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "value",
+                    "optional": false
                 }
             ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderPolicyValue",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "position",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderPosition",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "selectable",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_renderSelectable",
             "visibility": "protected"
@@ -240,9 +297,13 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "selected"
+                    "types": null,
+                    "name": "selected",
+                    "optional": false
                 }
             ],
+            "description": "",
+            "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_renderSelected",
             "visibility": "protected"
@@ -313,11 +374,51 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "width"
+                    "types": null,
+                    "name": "width",
+                    "optional": false,
+                    "description": "the width in pixel if not a string"
                 }
             ],
+            "description": "renders the width of the element if the update-policy allows out-going",
+            "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_renderWidth",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "policy",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderWidthUpdatePolicy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "key",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "value",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.html.HtmlElement",
+            "name": "_setAttribute",
             "visibility": "protected"
         },
         {

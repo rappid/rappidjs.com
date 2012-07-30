@@ -1,5 +1,5 @@
 {
-    "fqClassName": "js.core.TextElement",
+    "fqClassName": "js.core.HeadManager",
     "methods": [
         {
             "type": "Method",
@@ -25,16 +25,18 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "attributes",
                     "types": [
                         "Object"
                     ],
+                    "name": "attributes",
                     "optional": false,
                     "description": "contains the changed attributes"
                 }
             ],
+            "description": "called after attributes has set and some of the has been changed",
+            "abstract": "",
+            "private": "",
             "definedBy": "js.core.Bindable",
-            "overwritesMethod": true,
             "name": "_commitChangedAttributes",
             "visibility": "protected"
         },
@@ -85,115 +87,8 @@
         },
         {
             "type": "Method",
-            "parameter": [
-                {
-                    "name": "descriptor"
-                }
-            ],
-            "definedBy": "js.core.Element",
-            "name": "_getAttributesFromDescriptor",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "node"
-                }
-            ],
-            "definedBy": "js.core.Element",
-            "name": "_getLocalNameFromNode",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "desc"
-                }
-            ],
-            "definedBy": "js.core.Element",
-            "name": "_getTextContentFromDescriptor",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
             "parameter": [],
-            "definedBy": "js.core.Element",
-            "name": "_initializationComplete",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
-                    "name": "creationPolicy",
-                    "optional": false,
-                    "description": "undefinedauto - do not overwrite (default),all - create all childrenTODO none?"
-                },
-                {
-                    "name": "withBindings"
-                }
-            ],
-            "description": "",
-            "definedBy": "js.core.Element",
-            "name": "_initialize",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "attributes"
-                }
-            ],
-            "definedBy": "js.core.Element",
-            "name": "_initializeAttributes",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.core.Element",
-            "overwritesMethod": true,
-            "name": "_initializeBindings",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.core.Element",
-            "overwritesMethod": true,
-            "name": "_initializeDescriptors",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "attribute"
-                }
-            ],
-            "definedBy": "js.core.Element",
-            "name": "_initializeEventAttributes",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.core.Element",
-            "name": "_preinitialize",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "textContent"
-                }
-            ],
-            "name": "_renderTextContent",
+            "name": "_render",
             "visibility": "protected"
         },
         {
@@ -267,24 +162,7 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "attributes",
-                    "types": [
-                        "Object"
-                    ],
-                    "optional": true,
-                    "description": "the default attributes which will be set during instantiation"
-                },
-                {
-                    "name": "descriptor"
-                },
-                {
-                    "name": "systemManager"
-                },
-                {
-                    "name": "parentScope"
-                },
-                {
-                    "name": "rootScope"
+                    "name": "document"
                 }
             ],
             "definedBy": "js.core.Base",
@@ -304,17 +182,6 @@
             "definedBy": "js.core.EventDispatcher",
             "overwritesMethod": true,
             "name": "destroy",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "key"
-                }
-            ],
-            "definedBy": "js.core.Element",
-            "name": "find",
             "visibility": "public"
         },
         {
@@ -350,28 +217,6 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "fncName"
-                }
-            ],
-            "definedBy": "js.core.Element",
-            "name": "getScopeForFncName",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "key"
-                }
-            ],
-            "definedBy": "js.core.Element",
-            "name": "getScopeForKey",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
                     "types": [
                         "String"
                     ],
@@ -389,13 +234,6 @@
             },
             "definedBy": "js.core.Bindable",
             "name": "has",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.core.Element",
-            "name": "initialize",
             "visibility": "public"
         },
         {
@@ -423,31 +261,6 @@
             "description": "logs messages to configured logging functions",
             "definedBy": "js.core.Base",
             "name": "log",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
-                    "name": "value",
-                    "optional": false
-                }
-            ],
-            "description": "Binding helper to negate a Boolean value",
-            "returns": {
-                "types": [
-                    "Boolean"
-                ]
-            },
-            "definedBy": "js.core.Element",
-            "name": "not",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [],
-            "name": "render",
             "visibility": "public"
         },
         {
@@ -621,9 +434,8 @@
             "visibility": "public"
         }
     ],
-    "inherit": "js.core.Element",
+    "inherit": "js.core.Bindable",
     "inheritancePath": [
-        "js.core.Element",
         "js.core.Bindable",
         "js.core.EventDispatcher",
         "js.core.Base"

@@ -3,6 +3,8 @@
                            xmlns:conf="js.conf" xmlns:data="js.data"
                            xmlns:module="app.module">
 
+
+
     <data:RestDataSource cid="api" endPoint="http://rappidjs.com/doc" gateway="." suffix="json">
         <conf:Configuration path="doc" modelClassName="documentation.model.Class" />
     </data:RestDataSource>
@@ -12,6 +14,9 @@
     <js:Router>
         <conf:Route onexec="showClass" route="^api\/(.+)$"/>
     </js:Router>
+
+    <js:Head title="{doc.id} - API Reference - rAppid.js"
+             author="Tony Findeisen &amp; Marcus Krejpowicz"/>
 
     <js:Content name="main">
         <div id="documentation">

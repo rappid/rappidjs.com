@@ -1,6 +1,34 @@
 {
-    "fqClassName": "js.ui.ContentPlaceHolder",
+    "fqClassName": "js.ui.TabViewClass",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "item"
+                },
+                {
+                    "name": "i"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_createComponentForItem",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_getIndexKey",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_getItemKey",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -9,7 +37,33 @@
                 }
             ],
             "definedBy": "js.ui.View",
+            "overwritesMethod": true,
             "name": "_initializeLayoutChildren",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "item"
+                },
+                {
+                    "name": "i"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_innerRenderItem",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "items"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_innerRenderItems",
             "visibility": "protected"
         },
         {
@@ -25,21 +79,77 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "child"
+                    "name": "e"
                 }
             ],
-            "definedBy": "js.ui.View",
-            "name": "_renderChild",
+            "definedBy": "js.ui.ItemsView",
+            "name": "_onItemAdd",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [
                 {
-                    "name": "content"
+                    "name": "e"
                 }
             ],
-            "name": "_renderContent",
+            "definedBy": "js.ui.ItemsView",
+            "name": "_onItemRemove",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_onReset",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_onSort",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "name": "_onTabChange",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "item"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_removeRenderedItem",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "overwritesMethod": true,
+            "name": "_renderChild",
             "visibility": "protected"
         },
         {
@@ -82,6 +192,20 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderId",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "items"
+                },
+                {
+                    "name": "oldItems"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "_renderItems",
             "visibility": "protected"
         },
         {
@@ -167,6 +291,26 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "index"
+                }
+            ],
+            "name": "_renderSelectedIndex",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "view"
+                }
+            ],
+            "name": "_renderSelectedView",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "templateName"
                 },
                 {
@@ -244,14 +388,27 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "item"
+                }
+            ],
+            "definedBy": "js.ui.ItemsView",
+            "name": "getComponentForItem",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "definedBy": "js.ui.View",
+            "overwritesMethod": true,
             "name": "render",
             "visibility": "public"
         }
     ],
-    "inherit": "js.ui.View",
+    "inherit": "js.ui.ItemsView",
     "inheritancePath": [
+        "js.ui.ItemsView",
         "js.ui.View",
         "js.html.HtmlElement",
         "js.core.DomElement"

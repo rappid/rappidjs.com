@@ -1,6 +1,69 @@
 {
-    "fqClassName": "js.ui.ContentPlaceHolder",
+    "fqClassName": "js.ui.VirtualItemsView",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "renderer"
+                },
+                {
+                    "name": "pos"
+                }
+            ],
+            "name": "_addRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "el"
+                }
+            ],
+            "name": "_bindDomEvents",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "data"
+                }
+            ],
+            "name": "_commitData",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                }
+            ],
+            "name": "_createRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "",
+            "abstract": "",
+            "returns": {
+                "types": [
+                    "js.core.DomElement"
+                ]
+            },
+            "private": "",
+            "name": "_getScrollContainer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_initializationComplete",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -14,11 +77,65 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "$el"
+                }
+            ],
+            "name": "_initializeRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
-            "description": "",
-            "private": "",
+            "name": "_itemsCountChanged",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
             "definedBy": "js.html.HtmlElement",
+            "overwritesMethod": true,
             "name": "_onDomAdded",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                },
+                {
+                    "name": "renderer"
+                }
+            ],
+            "name": "_onRendererClick",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                },
+                {
+                    "name": "renderer"
+                }
+            ],
+            "name": "_onRendererDblClick",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "renderer"
+                },
+                {
+                    "name": "addedRenderer"
+                }
+            ],
+            "name": "_positionRenderer",
             "visibility": "protected"
         },
         {
@@ -30,16 +147,6 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderChild",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "content"
-                }
-            ],
-            "name": "_renderContent",
             "visibility": "protected"
         },
         {
@@ -224,6 +331,12 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "name": "_reserveRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
                     "types": null,
@@ -245,12 +358,83 @@
         {
             "type": "Method",
             "parameter": [],
+            "name": "_updateVisibleItems",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "startIndex",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "endIndex",
+                    "optional": false
+                }
+            ],
+            "abstract": "",
+            "private": "",
+            "name": "_updatedVisibleItems",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "x"
+                },
+                {
+                    "name": "y"
+                },
+                {
+                    "name": "gapHPos"
+                },
+                {
+                    "name": "gapVPos"
+                }
+            ],
+            "name": "getIndexFromPoint",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "index"
+                }
+            ],
+            "name": "getPointFromIndex",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "count"
+                }
+            ],
+            "name": "getSizeForItemsCount",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
             "definedBy": "js.ui.View",
             "name": "render",
             "visibility": "public"
         }
     ],
     "inherit": "js.ui.View",
+    "description": "defines an ItemsView which can show parts of data",
     "inheritancePath": [
         "js.ui.View",
         "js.html.HtmlElement",

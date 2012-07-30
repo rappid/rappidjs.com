@@ -1,0 +1,272 @@
+<js:Module xmlns="http://www.w3.org/1999/xhtml"
+           xmlns:js="js.core" xmlns:ui="js.ui"
+           xmlns:view="app.view">
+    <js:Content name="main">
+
+        <header class="jumbotron subhead" id="overview">
+            <h1>UI Components</h1>
+            <p class="lead">
+                rAppid:js encapsulates the most common UI components based on the popular
+                bootstrap framework.
+            </p>
+        </header>
+
+        <section>
+            <div class="page-header">
+                <h1>
+                    Buttons
+                </h1>
+            </div>
+
+            <h2>Simple Buttons</h2>
+            <div class="row">
+                <div class="span4">
+                    <h3>Overview and examples</h3>
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <ui:Button label="Action"/>
+                        </div>
+
+                        <div class="btn-group">
+                            <ui:Button label="Danger" type="danger"/>
+                        </div>
+                        <div class="btn-group">
+                            <ui:Button label="Success" type="success"/>
+                        </div>
+                        <div class="btn-group">
+                            <ui:Button label="Info" type="info" iconClass="icon-white icon-info-sign"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="span8">
+                    <h3>Example markup</h3>
+                    <view:Code data-title="App.xml">
+                        <![CDATA[
+                            <ui:Button label="Info" iconClass="icon-white icon-info" type="info" />
+                        ]]>
+                    </view:Code>
+                </div>
+            </div>
+
+            <br/>
+            <h2>Menu Buttons</h2>
+            <div class="row">
+                <div class="span4">
+                    <h3>Overview and examples</h3>
+                    <div class="btn-toolbar">
+                        <ui:MenuButton label="Show" type="info">
+                            <div>
+                                Hello Menu Button :)
+                            </div>
+                        </ui:MenuButton>
+                        <ui:MenuButton label="Click Me" type="inverse">
+                            <ul class="unstyled">
+                                <li>
+                                    <a href="#">Action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Something else here</a>
+                                </li>
+                                <li class="divider"/>
+                                <li>
+                                    <a href="#">Separated link</a>
+                                </li>
+                            </ul>
+                        </ui:MenuButton>
+                    </div>
+                </div>
+                <div class="span8">
+                    <h3>Example markup</h3>
+                    <view:Code data-title="App.xml">
+                        <![CDATA[
+                        <ui:MenuButton label="Show" type="info">
+                            <div>
+                                Hello Menu Button :)
+                            </div>
+                        </ui:MenuButton>
+                    ]]>
+                    </view:Code>
+                </div>
+            </div>
+
+            <br/>
+            <h2>Split Menu Buttons</h2>
+            <div class="row">
+                <div class="span4">
+                    <h3>Overview and examples</h3>
+                    <div class="btn-toolbar">
+                        <ui:SplitButton label="Account">
+                            Some account options
+                        </ui:SplitButton>
+                        <ui:SplitButton label="Show" type="info" iconClass="icon-info-sign icon-white">
+                            Some Menu content
+                        </ui:SplitButton>
+
+                    </div>
+                </div>
+                <div class="span8">
+                    <h3>Example markup</h3>
+                    <view:Code data-title="App.xml">
+                        <![CDATA[
+                       <ui:SplitButton label="Show" type="info" iconClass="icon-add">
+                            Some Menu content
+                        </ui:SplitButton>
+                    ]]>
+                    </view:Code>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="page-header">
+                <h1>
+                    Forms
+                    <small>Create clear forms - in code and UI</small>
+                </h1>
+            </div>
+
+            <blockquote>
+                <p>
+                    Write a few tags, annotate some bindings and it works.
+                </p>
+                <small>Marcus Krejpowicz</small>
+            </blockquote>
+
+            <h2>Html Elements</h2>
+            <div class="row">
+                <div class="span3">
+                    <h3>Text fields</h3>
+                    <ui:Field label="Text">
+                        <input cid="textInput" type="text" value="some text"/>
+                    </ui:Field>
+                    <ui:Field label="Password">
+                        <input cid="passwordInput" type="password" value="rAppid:js"/>
+                    </ui:Field>
+                </div>
+                <div class="span3">
+                    <h3>Output</h3>
+                    <p>
+                        <strong>Text Input:</strong>
+                        {textInput.value}
+                    </p>
+                    <p>
+                        <strong>Password Input:</strong>
+                        {passwordInput.value}
+                    </p>
+                </div>
+                <div class="span6">
+                    <h3>Example markup</h3>
+                    <view:Code data-title="App.xml">
+                        <![CDATA[
+                            <ui:Field label="Text">
+                                <input type="text" value="some text"/>
+                            </ui:Field>
+                            <ui:Field label="Password">
+                                <input type="password" value="rAppid:js"/>
+                            </ui:Field>
+                        ]]>
+                    </view:Code>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span3">
+                    <h3>Selections</h3>
+
+                    <p>
+                        <ui:Checkbox label="I like rAppidJs" cid="chkLike" selected="true"/>
+                    </p>
+                    <p>
+                        <ui:Radio label="Male" name="radio" value="m"/>
+                        <ui:Radio label="Female" name="radio" selected="true" value="w"/>
+                    </p>
+
+                </div>
+                <div class="span3">
+                    <h3>Output</h3>
+                    <p visible="{chkLike.selected}">
+                        Thanks for liking us.
+                    </p>
+                    <p visible="{not({chkLike.selected})}">
+                        We are sorry. Please try plain Javascript.
+                    </p>
+                </div>
+                <div class="span6">
+                    <h3>Example markup</h3>
+                    <view:Code data-title="App.xml">
+                        <![CDATA[
+                            <ui:Checkbox label="I like rAppidJs" selected="true" />
+                            <ui:Radio label="Male" name="radio"/>
+                            <ui:Radio label="Female" name="radio" selected="true"/>
+                        ]]>
+                    </view:Code>
+                </div>
+            </div>
+
+            <!--<div class="row">-->
+            <!--<div class="span3">-->
+            <!--<h3>Lists</h3>-->
+            <!--</div>-->
+            <!--<div class="span3">-->
+            <!--<h3>Output</h3>-->
+            <!--</div>-->
+            <!--<div class="span6">-->
+            <!--<h3>Example markup</h3>-->
+            <!--<view:Code data-title="App.xml">-->
+            <!--<![CDATA[-->
+            <!--]]>-->
+            <!--</view:Code>-->
+            <!--</div>-->
+            <!--</div>-->
+
+        </section>
+
+        <section>
+            <div class="page-header">
+                <h1>
+                    TabView
+                    <small>A simple way to use Tabs</small>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="span4">
+                    <h3>Simple Tab View</h3>
+                    <ui:TabView>
+                        <div data-title="Tab A">
+                            <p>A Tab View renders it's children as Tabs.</p>
+                        </div>
+                        <div data-title="Tab B">
+                            Tab Content B
+                        </div>
+                        <div data-title="Tab C">
+                            Tab Content C
+                        </div>
+                    </ui:TabView>
+                </div>
+                <div class="span8">
+                    <h3>Example Markup</h3>
+                    <view:Code>
+                        <![CDATA[
+                            <ui:TabView>
+                                <div data-title="Tab A">
+                                    <p>A Tab View renders it's children as Tabs.</p>
+                                </div>
+                                <div data-title="Tab B">
+                                    Tab Content B
+                                </div>
+                                <div data-title="Tab C">
+                                    Tab Content C
+                                </div>
+                            </ui:TabView>
+                         ]]>
+                    </view:Code>
+                </div>
+            </div>
+        </section>
+
+    </js:Content>
+</js:Module>

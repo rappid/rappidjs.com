@@ -1,6 +1,54 @@
 {
-    "fqClassName": "js.core.TextElement",
+    "fqClassName": "js.core.Head",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "config"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_addConfiguration",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "template"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_addTemplate",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Component",
+            "name": "_bindBus",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "private": "This method is called after all children are initialized",
+            "definedBy": "js.core.Component",
+            "name": "_childrenInitialized",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "desc"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_cleanUpDescriptor",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -25,16 +73,18 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "attributes",
                     "types": [
                         "Object"
                     ],
+                    "name": "attributes",
                     "optional": false,
                     "description": "contains the changed attributes"
                 }
             ],
+            "description": "called after attributes has set and some of the has been changed",
+            "abstract": "",
+            "private": "",
             "definedBy": "js.core.Bindable",
-            "overwritesMethod": true,
             "name": "_commitChangedAttributes",
             "visibility": "protected"
         },
@@ -43,6 +93,45 @@
             "parameter": [],
             "definedBy": "js.core.Bindable",
             "name": "_commitInvalidatedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "DOM"
+                    ],
+                    "name": "node",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "attributes",
+                    "optional": true,
+                    "description": "for new Component"
+                },
+                {
+                    "name": "rootScope"
+                }
+            ],
+            "description": "Create {@link Component} for DOM Node with given attributes",
+            "definedBy": "js.core.Component",
+            "name": "_createComponentForNode",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "node"
+                },
+                {
+                    "name": "rootScope"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_createTextElement",
             "visibility": "protected"
         },
         {
@@ -98,6 +187,45 @@
             "type": "Method",
             "parameter": [
                 {
+                    "types": null,
+                    "name": "descriptor",
+                    "optional": false
+                },
+                {
+                    "name": "rootScope"
+                }
+            ],
+            "description": "Converts all child nodes of a descriptor to instances of Components or TextElement",
+            "definedBy": "js.core.Component",
+            "name": "_getChildrenFromDescriptor",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "eventDefinition"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_getEventName",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "eventName"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_getEventTypeForAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "node"
                 }
             ],
@@ -145,16 +273,21 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "attributes"
+                    "types": null,
+                    "name": "attributes",
+                    "optional": false
                 }
             ],
+            "description": "",
             "definedBy": "js.core.Element",
+            "overwritesMethod": true,
             "name": "_initializeAttributes",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "description": "Initialize all Binding and Event attributes",
             "definedBy": "js.core.Element",
             "overwritesMethod": true,
             "name": "_initializeBindings",
@@ -162,7 +295,19 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "childComponents"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_initializeChildren",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
+            "description": "Initializes all internal and external descriptors",
             "definedBy": "js.core.Element",
             "overwritesMethod": true,
             "name": "_initializeDescriptors",
@@ -181,8 +326,87 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "rootScope"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_initializeXamlEventAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Component",
+            "name": "_inject",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Component",
+            "name": "_injectChain",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "event",
+                    "optional": false
+                }
+            ],
+            "description": "Returns true if event is defined in Component event list",
+            "definedBy": "js.core.Component",
+            "name": "_isComponentEvent",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributeName"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_isEventAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributeName"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_isXamlEventAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "domNode",
+                    "optional": false
+                }
+            ],
+            "description": "IE8 FIXES",
+            "definedBy": "js.core.Component",
+            "name": "_localNameFromDomNode",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "definedBy": "js.core.Element",
+            "overwritesMethod": true,
             "name": "_preinitialize",
             "visibility": "protected"
         },
@@ -190,11 +414,20 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "textContent"
+                    "types": [
+                        "js.core.Element"
+                    ],
+                    "name": "child",
+                    "optional": false
+                },
+                {
+                    "name": "options"
                 }
             ],
-            "name": "_renderTextContent",
-            "visibility": "protected"
+            "description": "adds a children",
+            "definedBy": "js.core.Component",
+            "name": "addChild",
+            "visibility": "public"
         },
         {
             "type": "Method",
@@ -267,26 +500,63 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "attributes",
+                    "name": "path"
+                },
+                {
+                    "name": "callback"
+                },
+                {
+                    "name": "callbackScope"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "createBinding",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Component",
+            "name": "createChildren",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "factory",
+                    "optional": false
+                },
+                {
                     "types": [
                         "Object"
                     ],
+                    "name": "attributes",
+                    "optional": true
+                },
+                {
+                    "types": null,
+                    "name": "descriptor",
                     "optional": true,
-                    "description": "the default attributes which will be set during instantiation"
-                },
-                {
-                    "name": "descriptor"
-                },
-                {
-                    "name": "systemManager"
-                },
-                {
-                    "name": "parentScope"
-                },
-                {
-                    "name": "rootScope"
+                    "defaultValue": "false"
                 }
             ],
+            "description": "",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "definedBy": "js.core.Component",
+            "name": "createComponent",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -372,6 +642,17 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "name"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "getTemplate",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "String"
                     ],
@@ -393,8 +674,16 @@
         },
         {
             "type": "Method",
-            "parameter": [],
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "scope",
+                    "optional": false
+                }
+            ],
+            "description": "This method should overridden by custom components to set initial variables",
             "definedBy": "js.core.Element",
+            "overwritesMethod": true,
             "name": "initialize",
             "visibility": "public"
         },
@@ -442,6 +731,17 @@
             },
             "definedBy": "js.core.Element",
             "name": "not",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "removeChild",
             "visibility": "public"
         },
         {
@@ -621,8 +921,9 @@
             "visibility": "public"
         }
     ],
-    "inherit": "js.core.Element",
+    "inherit": "js.core.Component",
     "inheritancePath": [
+        "js.core.Component",
         "js.core.Element",
         "js.core.Bindable",
         "js.core.EventDispatcher",

@@ -1,5 +1,5 @@
 {
-    "fqClassName": "js.ui.ContentPlaceHolder",
+    "fqClassName": "js.ui.DataItemRenderer",
     "methods": [
         {
             "type": "Method",
@@ -30,16 +30,6 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderChild",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "content"
-                }
-            ],
-            "name": "_renderContent",
             "visibility": "protected"
         },
         {

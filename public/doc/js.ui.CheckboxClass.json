@@ -1,5 +1,5 @@
 {
-    "fqClassName": "js.ui.ContentPlaceHolder",
+    "fqClassName": "js.ui.CheckboxClass",
     "methods": [
         {
             "type": "Method",
@@ -30,16 +30,6 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderChild",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "content"
-                }
-            ],
-            "name": "_renderContent",
             "visibility": "protected"
         },
         {
@@ -82,6 +72,19 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderId",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "label"
+                },
+                {
+                    "name": "oldLabel"
+                }
+            ],
+            "name": "_renderLabel",
             "visibility": "protected"
         },
         {

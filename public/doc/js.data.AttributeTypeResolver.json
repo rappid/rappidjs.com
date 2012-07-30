@@ -1,0 +1,85 @@
+{
+    "fqClassName": "js.data.AttributeTypeResolver",
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "options"
+                }
+            ],
+            "definedBy": "js.core.Base",
+            "overwritesMethod": true,
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String",
+                        "Array"
+                    ],
+                    "name": "message",
+                    "optional": false,
+                    "description": "the message to log"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "level",
+                    "optional": true,
+                    "defaultValue": "\"info\"",
+                    "description": "the service level of (debug, info, warn, error)"
+                }
+            ],
+            "description": "logs messages to configured logging functions",
+            "definedBy": "js.core.Base",
+            "name": "log",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "value",
+                    "types": [
+                        "Object"
+                    ],
+                    "optional": false,
+                    "description": "the data from which the Entity-factory should be determined"
+                },
+                {
+                    "name": "type",
+                    "types": null,
+                    "optional": false
+                }
+            ],
+            "definedBy": "js.data.TypeResolver",
+            "overwritesMethod": true,
+            "name": "resolve",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "determinate if the application runs in the browser or on node",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if the application runs in a browser"
+            },
+            "definedBy": "js.core.Base",
+            "name": "runsInBrowser",
+            "visibility": "public"
+        }
+    ],
+    "inherit": "js.data.TypeResolver",
+    "inheritancePath": [
+        "js.data.TypeResolver",
+        "js.core.Base"
+    ]
+}

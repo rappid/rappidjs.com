@@ -5,6 +5,25 @@
             "type": "Method",
             "parameter": [
                 {
+                    "types": null,
+                    "name": "attribute",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "key",
+                    "optional": false
+                }
+            ],
+            "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
+            "private": "",
+            "name": "_cloneAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "Object"
                     ],
@@ -17,6 +36,12 @@
             "abstract": "",
             "private": "",
             "name": "_commitChangedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_commitInvalidatedAttributes",
             "visibility": "protected"
         },
         {
@@ -107,6 +132,17 @@
                 ]
             },
             "name": "clear",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "This method returns a copy of the Object",
+            "returns": {
+                "types": null,
+                "description": "js.core.Bindable a fresh copy of the Bindable"
+            },
+            "name": "clone",
             "visibility": "public"
         },
         {
@@ -262,6 +298,26 @@
             ],
             "description": "Sets new values for attributes and notify about changes",
             "name": "set",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            "name": "setLater",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Writes attributes back to the source",
+            "name": "sync",
             "visibility": "public"
         },
         {

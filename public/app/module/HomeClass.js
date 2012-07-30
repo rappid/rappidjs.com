@@ -20,7 +20,7 @@ define(['js/core/Module',
             TodoAppXML, TodoAppClassText, TodoModelText, TodoListText,
             ContactAppXML, ContactAppClass, ContactCardXML, ContactPersonModel) {
 
-    return Module.inherit("app.module.WikiClass", {
+    return Module.inherit("app.module.HomeClass", {
 
         initialize: function () {
             this.set('example', {

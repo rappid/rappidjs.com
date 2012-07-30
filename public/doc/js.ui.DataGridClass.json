@@ -1,5 +1,5 @@
 {
-    "fqClassName": "js.ui.ContentPlaceHolder",
+    "fqClassName": "js.ui.DataGridClass",
     "methods": [
         {
             "type": "Method",
@@ -25,21 +25,24 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "child"
+                    "name": "e"
+                },
+                {
+                    "name": "row"
                 }
             ],
-            "definedBy": "js.ui.View",
-            "name": "_renderChild",
+            "name": "_propagateDblClick",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [
                 {
-                    "name": "content"
+                    "name": "child"
                 }
             ],
-            "name": "_renderContent",
+            "definedBy": "js.ui.View",
+            "name": "_renderChild",
             "visibility": "protected"
         },
         {
@@ -241,6 +244,26 @@
             "definedBy": "js.html.HtmlElement",
             "name": "_setAttribute",
             "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ],
+            "name": "addChild",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ],
+            "name": "removeChild",
+            "visibility": "public"
         },
         {
             "type": "Method",

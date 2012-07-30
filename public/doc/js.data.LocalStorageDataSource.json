@@ -53,6 +53,26 @@
             "type": "Method",
             "parameter": [
                 {
+                    "types": null,
+                    "name": "attribute",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "key",
+                    "optional": false
+                }
+            ],
+            "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_cloneAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "Object"
                     ],
@@ -66,6 +86,13 @@
             "private": "",
             "definedBy": "js.core.Bindable",
             "name": "_commitChangedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_commitInvalidatedAttributes",
             "visibility": "protected"
         },
         {
@@ -190,6 +217,17 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "eventDefinition"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_getEventName",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "eventName"
                 }
             ],
@@ -298,6 +336,17 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "attribute"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "_initializeEventAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "attributes"
                 },
                 {
@@ -305,7 +354,7 @@
                 }
             ],
             "definedBy": "js.core.Component",
-            "name": "_initializeEventAttributes",
+            "name": "_initializeXamlEventAttributes",
             "visibility": "protected"
         },
         {
@@ -343,9 +392,19 @@
                     "name": "attributeName"
                 }
             ],
-            "description": "an array of attributes names, which will expect handler functions",
             "definedBy": "js.core.Component",
             "name": "_isEventAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributeName"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_isXamlEventAttribute",
             "visibility": "protected"
         },
         {
@@ -385,6 +444,9 @@
                     ],
                     "name": "child",
                     "optional": false
+                },
+                {
+                    "name": "options"
                 }
             ],
             "description": "adds a children",
@@ -461,6 +523,35 @@
         {
             "type": "Method",
             "parameter": [],
+            "description": "This method returns a copy of the Object",
+            "returns": {
+                "types": null,
+                "description": "js.core.Bindable a fresh copy of the Bindable"
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "clone",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "path"
+                },
+                {
+                    "name": "callback"
+                },
+                {
+                    "name": "callbackScope"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "createBinding",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
             "definedBy": "js.core.Component",
             "name": "createChildren",
             "visibility": "public"
@@ -489,12 +580,32 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "factory"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "factory",
+                    "optional": false
                 },
                 {
-                    "name": "attributes"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "attributes",
+                    "optional": true
+                },
+                {
+                    "types": null,
+                    "name": "descriptor",
+                    "optional": true,
+                    "defaultValue": "false"
                 }
             ],
+            "description": "",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "definedBy": "js.core.Component",
             "name": "createComponent",
             "visibility": "public"
@@ -901,6 +1012,25 @@
             "type": "Method",
             "parameter": [
                 {
+                    "types": null,
+                    "name": "value",
+                    "optional": false
+                }
+            ],
+            "description": "Binding helper to negate a Boolean value",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ]
+            },
+            "definedBy": "js.core.Element",
+            "name": "not",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "child"
                 }
             ],
@@ -1036,6 +1166,28 @@
             "description": "Sets new values for attributes and notify about changes",
             "definedBy": "js.core.Bindable",
             "name": "set",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "setLater",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Writes attributes back to the source",
+            "definedBy": "js.core.Bindable",
+            "name": "sync",
             "visibility": "public"
         },
         {
