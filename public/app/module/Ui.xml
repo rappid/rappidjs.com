@@ -1,8 +1,6 @@
 <js:Module xmlns="http://www.w3.org/1999/xhtml"
            xmlns:js="js.core" xmlns:ui="js.ui"
-           xmlns:view="app.view"
-        >
-
+           xmlns:view="app.view">
     <js:Content name="main">
 
         <header class="jumbotron subhead" id="overview">
@@ -210,21 +208,64 @@
             </div>
 
             <!--<div class="row">-->
-                <!--<div class="span3">-->
-                    <!--<h3>Lists</h3>-->
-                <!--</div>-->
-                <!--<div class="span3">-->
-                    <!--<h3>Output</h3>-->
-                <!--</div>-->
-                <!--<div class="span6">-->
-                    <!--<h3>Example markup</h3>-->
-                    <!--<view:Code data-title="App.xml">-->
-                        <!--<![CDATA[-->
-                        <!--]]>-->
-                    <!--</view:Code>-->
-                <!--</div>-->
+            <!--<div class="span3">-->
+            <!--<h3>Lists</h3>-->
+            <!--</div>-->
+            <!--<div class="span3">-->
+            <!--<h3>Output</h3>-->
+            <!--</div>-->
+            <!--<div class="span6">-->
+            <!--<h3>Example markup</h3>-->
+            <!--<view:Code data-title="App.xml">-->
+            <!--<![CDATA[-->
+            <!--]]>-->
+            <!--</view:Code>-->
+            <!--</div>-->
             <!--</div>-->
 
+        </section>
+
+        <section>
+            <div class="page-header">
+                <h1>
+                    TabView
+                    <small>A simple way to use Tabs</small>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="span4">
+                    <h3>Simple Tab View</h3>
+                    <ui:TabView>
+                        <div data-title="Tab A">
+                            <p>A Tab View renders it's children as Tabs.</p>
+                        </div>
+                        <div data-title="Tab B">
+                            Tab Content B
+                        </div>
+                        <div data-title="Tab C">
+                            Tab Content C
+                        </div>
+                    </ui:TabView>
+                </div>
+                <div class="span8">
+                    <h3>Example Markup</h3>
+                    <view:Code>
+                        <![CDATA[
+                            <ui:TabView>
+                                <div data-title="Tab A">
+                                    <p>A Tab View renders it's children as Tabs.</p>
+                                </div>
+                                <div data-title="Tab B">
+                                    Tab Content B
+                                </div>
+                                <div data-title="Tab C">
+                                    Tab Content C
+                                </div>
+                            </ui:TabView>
+                         ]]>
+                    </view:Code>
+                </div>
+            </div>
         </section>
 
         <section>
