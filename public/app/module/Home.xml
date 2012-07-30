@@ -98,38 +98,6 @@
                     </p>
 
                 </div>
-                <div class="span4">
-                    <h2>Leightweight and Fast</h2>
-                    <p>
-
-                    </p>
-                    <p class="buttons">
-                        <a class="btn btn-info" href="/wiki/Home">View details</a>
-                    </p>
-                </div>
-                <div class="span4">
-                    <h2>Intuitive and readable</h2>
-                    <p>
-
-                    </p>
-                    <p class="buttons">
-                        <a class="btn btn-info" href="/wiki/XAML">XAML</a>
-                    </p>
-                </div>
-                <div class="span4">
-                    <h2>Extensibility</h2>
-                    <p>
-                        rAppid.js is a framework to encapsulate complexity into
-                        components which can be used beside HTML. The application is
-                        written in a Shadow DOM and rendered valid HTML on the
-                        client-side into the Document. It is completly extendable and
-                        works well with other libraries.
-                    </p>
-                    <p class="buttons">
-                        <a class="btn btn-info" href="/wiki/ShadowDOM">More about the Shadow DOM</a>
-                    </p>
-
-                </div>
             </div>
 
             <h2>Quick start</h2>
