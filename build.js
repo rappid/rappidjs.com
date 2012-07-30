@@ -50,6 +50,16 @@ var config = {
             ]
         },
         {
+            name: 'app/module/Ui',
+            create: true,
+            include: [
+                'xaml!app/module/Ui'
+            ],
+            exclude: [
+                'app/Index'
+            ]
+        },
+        {
             name: 'app/module/License',
             create: true,
             include: [
@@ -142,7 +152,20 @@ var config = {
         new Rewrite(/^js\/html\/(option)$/, "js/html/Option"),
         new Rewrite(/^js\/html\/(.+)$/, "js/html/HtmlElement")
     ],
-    xamlClasses: ["example/basic/App", "example/contact/App", "example/contact/view/Card", "example/todo/App", "js/ui/ButtonGroup", "js/ui/Link", "js/ui/MenuButton", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView"],
+    xamlClasses: [
+        "example/basic/App",
+        "example/contact/App",
+        "example/contact/view/Card",
+        "example/todo/App",
+        "js/ui/ButtonGroup",
+        "js/ui/Checkbox",
+        "js/ui/Radio",
+        'js/ui/Field',
+        "js/ui/Link",
+        "js/ui/MenuButton",
+        "js/ui/ScrollView",
+        "js/ui/SplitButton",
+        "js/ui/TabView"],
 
     logLevel: 0
 };
