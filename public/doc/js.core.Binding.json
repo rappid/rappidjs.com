@@ -4,6 +4,8 @@
         {
             "type": "Method",
             "parameter": [],
+            "description": "This method is called, when the value of the current binding changes.It recreates the the subBinding and triggers the binding",
+            "private": "",
             "name": "_callback",
             "visibility": "protected"
         },
@@ -11,9 +13,13 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "event"
+                    "types": null,
+                    "name": "event",
+                    "optional": false
                 }
             ],
+            "description": "This method is called, when the a change event of an function binding is triggered",
+            "private": "",
             "name": "_changeCallback",
             "visibility": "protected"
         },
@@ -32,6 +38,13 @@
         {
             "type": "Method",
             "parameter": [],
+            "description": "Returns an array with values of all function parameters",
+            "returns": {
+                "types": [
+                    "Array"
+                ]
+            },
+            "private": "",
             "name": "_getFncParameters",
             "visibility": "protected"
         },
@@ -104,6 +117,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "description": "Unbinds all events and destroys subBinding...",
             "definedBy": "js.core.EventDispatcher",
             "overwritesMethod": true,
             "name": "destroy",
@@ -112,12 +126,24 @@
         {
             "type": "Method",
             "parameter": [],
+            "description": "Returns the value in the context of the surrounding bindings",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "name": "getContextValue",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "description": "Returns the transformed value of the binding or null, if the binding path is not present",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "name": "getValue",
             "visibility": "public"
         },
@@ -197,6 +223,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "description": "This method triggers the binding and syncs the target with the scope",
             "definedBy": "js.core.EventDispatcher",
             "overwritesMethod": true,
             "name": "trigger",

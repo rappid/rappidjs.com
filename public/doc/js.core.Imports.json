@@ -5,6 +5,26 @@
             "type": "Method",
             "parameter": [
                 {
+                    "types": null,
+                    "name": "attribute",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "key",
+                    "optional": false
+                }
+            ],
+            "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_cloneAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "Object"
                     ],
@@ -18,6 +38,13 @@
             "private": "",
             "definedBy": "js.core.Bindable",
             "name": "_commitChangedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_commitInvalidatedAttributes",
             "visibility": "protected"
         },
         {
@@ -143,6 +170,17 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "attribute"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "_initializeEventAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "definedBy": "js.core.Element",
             "name": "_preinitialize",
@@ -201,6 +239,18 @@
             },
             "definedBy": "js.core.Bindable",
             "name": "clear",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "This method returns a copy of the Object",
+            "returns": {
+                "types": null,
+                "description": "js.core.Bindable a fresh copy of the Bindable"
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "clone",
             "visibility": "public"
         },
         {
@@ -367,6 +417,25 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "value",
+                    "optional": false
+                }
+            ],
+            "description": "Binding helper to negate a Boolean value",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ]
+            },
+            "definedBy": "js.core.Element",
+            "name": "not",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "description": "determinate if the application runs in the browser or on node",
             "returns": {
@@ -410,6 +479,28 @@
             "description": "Sets new values for attributes and notify about changes",
             "definedBy": "js.core.Bindable",
             "name": "set",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "setLater",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Writes attributes back to the source",
+            "definedBy": "js.core.Bindable",
+            "name": "sync",
             "visibility": "public"
         },
         {

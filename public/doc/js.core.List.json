@@ -5,6 +5,26 @@
             "type": "Method",
             "parameter": [
                 {
+                    "types": null,
+                    "name": "attribute",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "key",
+                    "optional": false
+                }
+            ],
+            "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_cloneAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "Object"
                     ],
@@ -18,6 +38,13 @@
             "private": "",
             "definedBy": "js.core.Bindable",
             "name": "_commitChangedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_commitInvalidatedAttributes",
             "visibility": "protected"
         },
         {
@@ -62,12 +89,18 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "e"
+                    "types": null,
+                    "name": "e",
+                    "optional": false
                 },
                 {
-                    "name": "item"
+                    "types": null,
+                    "name": "item",
+                    "optional": false
                 }
             ],
+            "description": "",
+            "private": "",
             "name": "_onItemChange",
             "visibility": "protected"
         },
@@ -75,12 +108,17 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "items"
+                    "types": null,
+                    "name": "items",
+                    "optional": false
                 },
                 {
-                    "name": "options"
+                    "types": null,
+                    "name": "options",
+                    "optional": false
                 }
             ],
+            "description": "This method adds one ore items to the array.",
             "name": "add",
             "visibility": "public"
         },
@@ -88,9 +126,17 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "index"
+                    "types": null,
+                    "name": "index",
+                    "optional": false
                 }
             ],
+            "description": "Returns item at a specific index",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "name": "at",
             "visibility": "public"
         },
@@ -139,9 +185,23 @@
         {
             "type": "Method",
             "parameter": [],
+            "description": "Clears all items and triggers reset event",
             "definedBy": "js.core.Bindable",
             "overwritesMethod": true,
             "name": "clear",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Returns a fresh copy of the List",
+            "returns": {
+                "types": null,
+                "description": "List a fresh copy of the list"
+            },
+            "definedBy": "js.core.Bindable",
+            "overwritesMethod": true,
+            "name": "clone",
             "visibility": "public"
         },
         {
@@ -159,6 +219,7 @@
                     "description": "the default attributes which will be set during instantiation"
                 }
             ],
+            "description": "List constructor",
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -188,6 +249,7 @@
                     "name": "scope"
                 }
             ],
+            "description": "Iterates over all items with given callback",
             "name": "each",
             "visibility": "public"
         },
@@ -273,6 +335,12 @@
         {
             "type": "Method",
             "parameter": [],
+            "description": "Removes last item  of the list",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "name": "pop",
             "visibility": "public"
         },
@@ -280,9 +348,12 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "item"
+                    "types": null,
+                    "name": "item",
+                    "optional": false
                 }
             ],
+            "description": "Pushes one item to the list",
             "name": "push",
             "visibility": "public"
         },
@@ -293,9 +364,12 @@
                     "name": "items"
                 },
                 {
-                    "name": "options"
+                    "types": null,
+                    "name": "options",
+                    "optional": false
                 }
             ],
+            "description": "Removes an Array or just one item from the list. Triggers remove events.",
             "name": "remove",
             "visibility": "public"
         },
@@ -303,12 +377,22 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "index"
+                    "types": null,
+                    "name": "index",
+                    "optional": false
                 },
                 {
-                    "name": "options"
+                    "types": null,
+                    "name": "options",
+                    "optional": false
                 }
             ],
+            "description": "Removes one item a specific index and triggers remove event",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "name": "removeAt",
             "visibility": "public"
         },
@@ -316,9 +400,12 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "items"
+                    "types": null,
+                    "name": "items",
+                    "optional": false
                 }
             ],
+            "description": "Resets the list with the given items and triggers reset event",
             "name": "reset",
             "visibility": "public"
         },
@@ -371,7 +458,27 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "setLater",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [],
+            "description": "Removes first item of list",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "name": "shift",
             "visibility": "public"
         },
@@ -379,10 +486,21 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "fnc"
+                    "types": null,
+                    "name": "fnc",
+                    "optional": false
                 }
             ],
+            "description": "Sorts the list by the given function and triggers sort event",
             "name": "sort",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "overwritesMethod": true,
+            "name": "sync",
             "visibility": "public"
         },
         {
@@ -490,9 +608,12 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "item"
+                    "types": null,
+                    "name": "item",
+                    "optional": false
                 }
             ],
+            "description": "Adds item to first position of list",
             "name": "unshift",
             "visibility": "public"
         }

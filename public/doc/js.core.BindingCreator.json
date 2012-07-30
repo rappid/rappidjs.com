@@ -33,18 +33,46 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "bindingDef"
-                },
-                {
-                    "name": "targetScope"
-                },
-                {
-                    "name": "attrKey"
-                },
-                {
-                    "name": "context"
+                    "name": "bindingDefinitions"
                 }
             ],
+            "name": "containsBindingDefinition",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "bindingDef",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "targetScope",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String",
+                        "Function"
+                    ],
+                    "name": "attrKey",
+                    "optional": false,
+                    "description": "key where to bind, or callback function"
+                },
+                {
+                    "types": null,
+                    "name": "context",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "name": "create",
             "visibility": "public"
         },
@@ -66,15 +94,32 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "text"
+                    "types": null,
+                    "name": "text",
+                    "optional": false
                 },
                 {
-                    "name": "scope"
+                    "types": null,
+                    "name": "scope",
+                    "optional": false
                 },
                 {
-                    "name": "attrKey"
+                    "types": null,
+                    "name": "attrKey",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "bindingDefinitions",
+                    "optional": true
                 }
             ],
+            "description": "",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "name": "evaluate",
             "visibility": "public"
         },
@@ -103,6 +148,16 @@
             "description": "logs messages to configured logging functions",
             "definedBy": "js.core.Base",
             "name": "log",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "text"
+                }
+            ],
+            "name": "parse",
             "visibility": "public"
         },
         {
