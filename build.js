@@ -141,7 +141,7 @@ var config = {
         }
         return contents;
     },
-    skipModuleInsertion: false,
+    skipModuleInsertion: true,
     namespaceMap: {
         "http://www.w3.org/1999/xhtml": "js.html"
     },
