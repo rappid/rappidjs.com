@@ -37,5 +37,8 @@
     },
     "JSON": {
         "exports": "JSON"
+    },
+    "js/lib/moment": {
+        "exports": "moment"
     }
-}, "xamlClasses": ["app/Index", "app/module/Disclaimer", "app/module/Documentation", "app/module/Home", "app/module/License", "app/module/Wiki", "example/basic/App", "example/contact/App", "example/contact/view/Card", "example/todo/App", "js/ui/ButtonGroup", "js/ui/Link", "js/ui/MenuButton", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView"], "namespaceMap": null, "rewriteMap": null}
+}, "xamlClasses": ["app/Index", "app/module/Disclaimer", "app/module/Documentation", "app/module/Home", "app/module/License", "app/module/Samples", "app/module/Ui", "app/module/Wiki", "example/basic/App", "example/contact/App", "example/contact/view/Card", "example/todo/App", "js/ui/ButtonGroup", "js/ui/Checkbox", "js/ui/DataGrid", "js/ui/DataGridColumn", "js/ui/DataGridItemsView", "js/ui/Field", "js/ui/GalleryList", "js/ui/Link", "js/ui/MenuButton", "js/ui/Radio", "js/ui/Scrollable", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView", "js/ui/TileList"], "namespaceMap": null, "rewriteMap": null}
