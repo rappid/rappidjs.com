@@ -60,12 +60,11 @@
                 <div class="span4">
                     <h2>Why rAppid.js?</h2>
                     <p>
-                        HTML is great for defining views, CSS is great for styling
-                        those. But, don't repeat yourself, by writing many tags to
+                        HTML is great for defining views and CSS is great for styling. But don't repeat yourself by writing many tags to
                         define your view. rAppidjs let you encapsulate complexity into
-                        components which can be easy used in your application. The
+                        components which can be easy used like HTML elements in your application. The
                         result is a clean, readable mark-up offering a quick
-                        development and reuse of code.
+                        development and high reuse of code.
                     </p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Home">View details</a>
@@ -74,10 +73,9 @@
                 <div class="span4">
                     <h2>Another MVC Framework</h2>
                     <p>
-                        Well, because other frameworks tries to abstract the
-                        MV-pattern by extending the HTML language within the
-                        document markup, which is a dirty style. rAppid.js solved that issue by
-                        introducing XAML for defining the application, MV-Bindings
+                        Most frameworks use templates to describe their views or try to extend the HTML language within the
+                        document markup, which is a dirty style. rAppid.js solves that issue by
+                        introducing an eXtendable Application Markup Language (XAML) for defining the application, MV-Bindings
                         and event handling.
                     </p>
                     <p class="buttons">
@@ -87,10 +85,9 @@
                 <div class="span4">
                     <h2>Extensibility</h2>
                     <p>
-                        rAppid.js is a framework to encapsulate complexity into
-                        components which can be used beside HTML. The application is
-                        written in a Shadow DOM and rendered valid HTML on the
-                        client-side into the Document. It is completly extendable and
+                        rAppid.js allows you to encapsulate complexity into
+                        components which can be used beside HTML. Therefor rAppid.js uses a Shadow DOM, which is rendered as valid HTML in the document body or a specific target.
+                        It is completely extendable and
                         works well with other libraries.
                     </p>
                     <p class="buttons">
