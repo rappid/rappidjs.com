@@ -6,6 +6,11 @@ define(['require', 'js/html/HtmlElement'], function (require, HtmlElement) {
             size: "medium",
             "class": "g-plusone"
         },
+        _renderHref: function (href) {
+            if (href) {
+                this.$el.setAttribute('data-href', href);
+            }
+        },
         _onDomAdded: function (e) {
             if (this.runsInBrowser()) {
                 require(['google/plusone'], function(gapi) {
