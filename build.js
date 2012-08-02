@@ -40,10 +40,7 @@ var config = {
             name: 'app/module/Documentation',
             create: true,
             include: [
-                'xaml!app/module/Documentation',
-                'js/data/RestDataSource',
-                'js/data/FilterDataView',
-                'js/data/Model'
+                'xaml!app/module/Documentation'
             ],
             exclude: [
                 'app/Index'
@@ -91,7 +88,7 @@ var config = {
         }
     ],
     dir: 'public-build',
-    optimize: 'none',
+    optimize: 'uglify',
     nodeRequire: require,
     findNestedDependencies: false,
     optimizeAllPluginResources: true,
@@ -102,7 +99,7 @@ var config = {
     uglify: {
         toplevel: true,
         ascii_only: true,
-        beautify: true
+        beautify: false
     },
     "paths": {
         "rAppid" : "js/lib/rAppid",
@@ -137,7 +134,7 @@ var config = {
         } else if(moduleName == "rAppid"){
             // rollback content changes
             contents = contents.replace(/EMPTYDEFINE/g, 'define');
-            contents += "define('rAppid', function() { return rAppid; });"
+            //contents += "define('rAppid', function() { return rAppid; });"
         }
         return contents;
     },
