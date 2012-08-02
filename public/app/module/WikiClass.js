@@ -1,6 +1,6 @@
-define(['js/core/Module', "rAppid"], function(Module, rAppid) {
+define(['js/core/Module'], function(Module) {
 
-    var rLinks = /\[{2}(.+?)\]{2}/gi;
+    var rLinks = /\[{2}(.+?)\]{2}/gi, rLinkHrefs = /\]\((.+?)\)/gi;
 
     return Module.inherit("app.module.WikiClass", {
 
@@ -19,19 +19,21 @@ define(['js/core/Module', "rAppid"], function(Module, rAppid) {
 
             url = url.replace('%20', '-');
 
-            rAppid.ajax(url, null, function(err, xhr) {
+            this.$stage.$applicationContext.ajax(url, null, function(err, xhr) {
                 if (!err && (xhr.status === 200 || xhr.status === 304)) {
                     // process links
                     var text = xhr.responses.text;
 
                     // replace [[Links]] to [Links](#/wiki/Links)
                     text = text.replace(rLinks, "[$1](#/wiki/$1)");
-
+                    // replace [A LONG LINK](A LONG LINK) to [A LONG LINK](A-LONG-LINK)
+                    text = text.replace(rLinkHrefs, function ($0) {
+                        return $0.replace(/\s/g, "-")
+                    });
                     self.set("text", text);
 
                     routeContext.callback();
                 } else {
-
                     if (page !== "Home") {
                         routeContext.navigate('wiki/Home', false);
                     } else {
