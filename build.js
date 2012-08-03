@@ -118,7 +118,7 @@ var config = {
         }
     ],
     dir: 'public-build',
-    optimize: 'uglify',
+    optimize: 'none',
     nodeRequire: require,
     findNestedDependencies: false,
     optimizeAllPluginResources: true,
