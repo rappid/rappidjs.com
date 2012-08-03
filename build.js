@@ -1,4 +1,34 @@
-var requirejs = require('requirejs');
+var fs = require("fs"),
+    path = require('path'),
+    requirejs = require('requirejs');
+
+    fs.existsSync || (fs.existsSync = path.existsSync);
+
+// Thanks to [liangzan's gist](https://gist.github.com/807712)
+function rmdirSyncForce(path) {
+    var files, file, fileStats, i, filesLength;
+    if (path[path.length - 1] !== '/') {
+        path = path + '/';
+    }
+
+    files = fs.readdirSync(path);
+    filesLength = files.length;
+
+    if (filesLength) {
+        for (i = 0; i < filesLength; i += 1) {
+            file = files[i];
+
+            fileStats = fs.statSync(path + file);
+            if (fileStats.isFile()) {
+                fs.unlinkSync(path + file);
+            }
+            if (fileStats.isDirectory()) {
+                rmdirSyncForce(path + file);
+            }
+        }
+    }
+    fs.rmdirSync(path);
+}
 
 var Rewrite = function (from, to) {
     this.$from = from;
@@ -88,7 +118,7 @@ var config = {
         }
     ],
     dir: 'public-build',
-    optimize: 'uglify',
+    optimize: 'none',
     nodeRequire: require,
     findNestedDependencies: false,
     optimizeAllPluginResources: true,
@@ -134,7 +164,6 @@ var config = {
         } else if(moduleName == "rAppid"){
             // rollback content changes
             contents = contents.replace(/EMPTYDEFINE/g, 'define');
-            //contents += "define('rAppid', function() { return rAppid; });"
         }
         return contents;
     },
@@ -169,6 +198,14 @@ var config = {
 };
 
 global.libxml = require("libxml");
+
+var buildDir = path.join(process.cwd(), config.dir);
+
+
+// remove the build dir
+if (path.existsSync(buildDir)) {
+    rmdirSyncForce(buildDir);
+}
 
 requirejs.optimize(config, function (results) {
     console.log(results);
