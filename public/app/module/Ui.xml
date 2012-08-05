@@ -178,50 +178,40 @@
                     <h3>Selections</h3>
 
                     <p>
-                        <ui:Checkbox label="I like rAppidJs" cid="chkLike" selected="true"/>
+                        <ui:Checkbox label="I like rAppidJs" cid="chkLike" checked="true"/>
                     </p>
                     <p>
-                        <ui:Radio label="Male" name="radio" value="m"/>
-                        <ui:Radio label="Female" name="radio" selected="true" value="w"/>
+                        <ui:RadioGroup cid="radioGender" value="male">
+                            <ui:Radio label="Male" value="male"/>
+                            <ui:Radio label="Female" value="female"/>
+                        </ui:RadioGroup>
                     </p>
 
                 </div>
                 <div class="span3">
                     <h3>Output</h3>
-                    <p visible="{chkLike.selected}">
+                    <p visible="{chkLike.checked}">
                         Thanks for liking us.
                     </p>
-                    <p visible="{not({chkLike.selected})}">
+                    <p visible="{not({chkLike.checked})}">
                         We are sorry. Please try plain Javascript.
+                    </p>
+                    <p>
+                        You're a {radioGender.value}.
                     </p>
                 </div>
                 <div class="span6">
                     <h3>Example markup</h3>
                     <view:Code data-title="App.xml">
                         <![CDATA[
-                            <ui:Checkbox label="I like rAppidJs" selected="true" />
-                            <ui:Radio label="Male" name="radio"/>
-                            <ui:Radio label="Female" name="radio" selected="true"/>
+                            <ui:RadioGroup cid="radioGender" value="male">
+                                <ui:Radio label="Male" value="male"/>
+                                <ui:Radio label="Female" value="female"/>
+                            </ui:RadioGroup>
                         ]]>
                     </view:Code>
                 </div>
             </div>
-
-            <!--<div class="row">-->
-            <!--<div class="span3">-->
-            <!--<h3>Lists</h3>-->
-            <!--</div>-->
-            <!--<div class="span3">-->
-            <!--<h3>Output</h3>-->
-            <!--</div>-->
-            <!--<div class="span6">-->
-            <!--<h3>Example markup</h3>-->
-            <!--<view:Code data-title="App.xml">-->
-            <!--<![CDATA[-->
-            <!--]]>-->
-            <!--</view:Code>-->
-            <!--</div>-->
-            <!--</div>-->
 
         </section>
 
@@ -236,15 +226,15 @@
                 <div class="span4">
                     <h3>Simple Tab View</h3>
                     <ui:TabView>
-                        <div data-title="Tab A">
+                        <ui:Tab title="Tab A">
                             <p>A Tab View renders it's children as Tabs.</p>
-                        </div>
-                        <div data-title="Tab B">
+                        </ui:Tab>
+                        <ui:Tab title="Tab B">
                             Tab Content B
-                        </div>
-                        <div data-title="Tab C">
+                        </ui:Tab>
+                        <ui:Tab title="Tab C">
                             Tab Content C
-                        </div>
+                        </ui:Tab>
                     </ui:TabView>
                 </div>
                 <div class="span8">
@@ -252,21 +242,23 @@
                     <view:Code>
                         <![CDATA[
                             <ui:TabView>
-                                <div data-title="Tab A">
+                                <ui:Tab title="Tab A">
                                     <p>A Tab View renders it's children as Tabs.</p>
-                                </div>
-                                <div data-title="Tab B">
+                                </ui:Tab>
+                                <ui:Tab title="Tab B">
                                     Tab Content B
-                                </div>
-                                <div data-title="Tab C">
+                                </ui:Tab>
+                                <ui:Tab title="Tab C">
                                     Tab Content C
-                                </div>
+                                </ui:Tab>
                             </ui:TabView>
                          ]]>
                     </view:Code>
                 </div>
             </div>
         </section>
+
+
 
     </js:Content>
 </js:Module>
