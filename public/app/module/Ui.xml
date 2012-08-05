@@ -1,6 +1,9 @@
-<js:Module xmlns="http://www.w3.org/1999/xhtml"
-           xmlns:js="js.core" xmlns:ui="js.ui"
-           xmlns:view="app.view">
+<module:UiClass xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:js="js.core" xmlns:ui="js.ui"
+                xmlns:view="app.view" xmlns:sprd="sprd.data" xmlns:module="app.module">
+
+    <sprd:SprdApiDataSource cid="api" gateway="api/v1" endPoint="http://api.spreadshirt.net/api/v1"/>
+
     <js:Content name="main">
 
         <header class="jumbotron subhead" id="overview">
@@ -258,7 +261,88 @@
             </div>
         </section>
 
+        <section>
+            <div class="page-header">
+                <h1>
+                    VirtualItemsView
+                    <small>Display huge amounts of data in high-performance</small>
+                </h1>
+            </div>
+
+            <blockquote>
+                <p>
+                    They just render data that is visible in the current view-port and
+                    also fetches only necessary data-pages from the server.
+                </p>
+                <small>Tony Findeisen</small>
+            </blockquote>
+
+
+            <h2>DataGrid</h2>
+            <div class="row">
+                <div class="span4">
+                    <h3>Overview</h3>
+                    <p>
+                        The DataGrid is a table based component rendering bindable data in
+                        columns.
+                        Each column is set up with a
+                        <code>Template</code>
+                        defining how to render the data.
+                    </p>
+                    <p>
+                        <!--TODO: place grid example here -->
+                    </p>
+                    <p>
+                        <em>Have a look to the DOM and network-monitor and see that only
+                            necessary items are rendered and requested.
+                        </em>
+                    </p>
+                </div>
+                <div class="span8">
+                    <ui:DataGrid data="{shop.articles}" rowHeight="35"
+                                 selectedItems="{{selectedArticle}}" style="height: 300px">
+                        <ui:DataGridColumn title="ArticleId">
+                            <js:Template name="cell">
+                                {data.id}
+                            </js:Template>
+                        </ui:DataGridColumn>
+                        <ui:DataGridColumn title="Name">
+                            <js:Template name="cell">
+                                {data.name}
+                            </js:Template>
+                        </ui:DataGridColumn>
+                        <ui:DataGridColumn title="Price">
+                            <js:Template name="cell">
+                                {data.price.vatIncluded} €
+                            </js:Template>
+                        </ui:DataGridColumn>
+                        <ui:DataGridColumn>
+                            <js:Template name="cell">
+                                {data.price.vatIncluded} €
+                            </js:Template>
+                        </ui:DataGridColumn>
+
+                    </ui:DataGrid>
+
+
+                    <h3>Code example</h3>
+                    <!--TODO: embed source here -->
+                </div>
+            </div>
+
+            <br/>
+            <h2>TileList</h2>
+            <div class="row">
+                <div class="span6">
+                    <h3>Overview</h3>
+                </div>
+                <div class="span6">
+                    <h3>Code example</h3>
+                </div>
+            </div>
+        </section>
+
 
 
     </js:Content>
-</js:Module>
+</module:UiClass>
