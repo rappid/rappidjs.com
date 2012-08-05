@@ -151,3 +151,7 @@ ol.linenums li {
     margin-bottom: 18px;
     font-weight: 300;
 }
+
+.data-grid-body {
+    height: 365px;
+}
