@@ -3,8 +3,7 @@ define(['js/core/Module', 'sprd/model/Shop'], function (Module, Shop) {
     return Module.inherit("app.module.UiClass", {
 
         defaults: {
-            shop: null,
-            selectedArticle: null
+            shop: null
         },
 
         start: function () {
