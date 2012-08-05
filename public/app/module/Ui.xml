@@ -341,6 +341,7 @@
                     <p>
                         <em>Have a look to the DOM and network-monitor and see that only
                             necessary items are rendered and requested.
+                            Also take note of the debouncing of 500ms.
                         </em>
                     </p>
                 </div>
