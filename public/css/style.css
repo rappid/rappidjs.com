@@ -1,3 +1,34 @@
+/** BOOTSTRAP FIXES **/
+.data-grid-body table td {
+    padding: 0;
+    border:  none;
+}
+
+* {
+    -moz-box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.data-grid-body  {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.data-grid-body  tr.active,
+.data-grid-body tr:hover.active td {
+    background: #303030;
+    color: white;
+}
+
+.data-grid-body table .cell-container {
+    padding: 8px;
+    overflow: hidden;
+    border-top: 1px solid #DDD;
+}
+
+
 #container {
     margin-top: 70px;
 }

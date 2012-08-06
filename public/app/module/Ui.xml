@@ -295,17 +295,9 @@
                         <view:Code>
                             <![CDATA[
                                 <ui:DataGrid data="{shop.articles}" rowHeight="45"
-                                         selectedItems="{{selectedArticle}}">
-                                    <ui:DataGridColumn title="ArticleId" width="90px">
-                                        <js:Template name="cell">
-                                            {data.id}
-                                        </js:Template>
-                                    </ui:DataGridColumn>
-                                    <ui:DataGridColumn title="Name" width="400px">
-                                        <js:Template name="cell">
-                                            {data.name}
-                                        </js:Template>
-                                    </ui:DataGridColumn>
+                                             prefetchItemCount="10">
+                                    <ui:DataGridColumn title="ArticleId" path="id"/>
+                                    <ui:DataGridColumn title="Name" path="name"/>
                                     <ui:DataGridColumn>
                                         <js:Template name="cell">
                                             <ui:Button label="Visit" onclick="visit"/>
@@ -315,34 +307,26 @@
                            ]]>
                         </view:Code>
                     </p>
-
+                    <p>
+                        <em>Have a look to the DOM and network-monitor and see that only
+                            necessary items are rendered and requested.
+                            Also take note of the debouncing of 500ms.
+                        </em>
+                    </p>
                 </div>
                 <div class="span6">
                     <ui:DataGrid data="{shop.articles}" rowHeight="45"
-                                 prefetchItemCount="10">
-                        <ui:DataGridColumn title="ArticleId" width="90px">
-                            <js:Template name="cell">
-                                {data.id}
-                            </js:Template>
-                        </ui:DataGridColumn>
-                        <ui:DataGridColumn title="Name" width="400px">
-                            <js:Template name="cell">
-                                {data.name}
-                            </js:Template>
-                        </ui:DataGridColumn>
+                                 prefetchItemCount="10" cid="grid">
+                        <ui:DataGridColumn title="ArticleId" width="90px" path="id"/>
+                        <ui:DataGridColumn title="Name" width="400px" path="name"/>
                         <ui:DataGridColumn>
                             <js:Template name="cell">
                                 <ui:Button label="Visit" onclick="visit"/>
                             </js:Template>
                         </ui:DataGridColumn>
                     </ui:DataGrid>
-
-                    <br />
                     <p>
-                        <em>Have a look to the DOM and network-monitor and see that only
-                            necessary items are rendered and requested.
-                            Also take note of the debouncing of 500ms.
-                        </em>
+                        Selected {grid.selectedItems.size()} of {shop.articles.size()}
                     </p>
                 </div>
 

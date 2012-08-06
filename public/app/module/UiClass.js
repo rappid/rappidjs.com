@@ -18,7 +18,8 @@ define(['js/core/Module', 'sprd/model/Shop'], function (Module, Shop) {
         },
 
         visit: function(e) {
-            // TODO: http://www.spreadshirt.net/-C4408A{data.id}
+            var data = e.target.find('data');
+            window.open('http://www.spreadshirt.net/-C4408A'+data.$.id);
         }
     });
 });
