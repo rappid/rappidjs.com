@@ -160,7 +160,7 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                     <h3>Application Markup</h3>
                     <p>
                         The application structure is defined with XAML in the <code>App.xml</code> file.
-                        Within the XML file HTML can be combined with rAppid.js components.
+                        Within the XML file standard HTML can be combined with custom components.
                         Each application inherits form <code>js.core.Application</code> or from a Code-Behind file like in this case from
                         <code>AppClass.js</code>.
                     </p>
@@ -171,14 +171,8 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                 <div class="span4">
                     <h3>Application Code-Behind</h3>
                     <p>
-                        rAppid.js is a framework encapsulating complexity into
-                        components which can be used with HTML. The application markup
-                        gets translated into a Shadow DOM which is rendered as valid HTML on the
-                        client-side into the Document. It is completly extendable and
-                        works well with other libraries.
-                    </p>
-                    <p class="buttons">
-                        <a class="btn btn-info" href="#">More about the Shadow DOM</a>
+                        The Code-Behind acts as a kind of a controller for the XML file.
+                        It connects the view with the data model and the business logic.
                     </p>
                 </div>
             </div>
@@ -214,15 +208,15 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                 <div class="span4">
                     <h3>Data-Binding</h3>
                     <p>
-                        In rAppid.js data can be bound to components and html.
-                        There are different types of bindings
+                        In rAppid.js data can be bound to components and normal HTML elements.
+                        There are three different types of bindings
                     </p>
                     <ul>
                         <li>Model-View-Binding</li>
                         <li>Two-Way-Binding</li>
-                        <li>Model-View-Binding</li>
+                        <li>Static Bindings</li>
                     </ul>
-                    <p>It's possible to chain bindings and bind functions.</p>
+                    <p>It's also possible to use paths and functions inside a binding.</p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Bindings">Bindings</a>
                     </p>
@@ -246,7 +240,7 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                     <h3>Event handler</h3>
                     <p>
                         In XAML an event handler is registered declarative with an on<code>eventname</code> attribute.
-                        In Javascript the handler is bound by calling a bind function on the target passing the eventname and the handler as arguments.
+                        In Javascript the handler is bound by calling a bind function on the target passing the event name and the handler as arguments.
                     </p>
                     <p>
                         rAppid.js also supports late binding and events on chained paths.
@@ -297,7 +291,7 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                 <div class="span4">
                     <h3>Use</h3>
                     <p>
-                        Components can be created either declarative using XAML or at runtime with Javascript.
+                        Components can be created either declarative using XAML or at runtime via Javascript.
                     </p>
                     <p>
                         In XAML simply write <code>&lt;prefix:Component /&gt;</code> to create and add a new instance of the component.</p>
