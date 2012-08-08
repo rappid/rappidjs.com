@@ -14,6 +14,12 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .data-grid-body  tr.active,
@@ -185,4 +191,16 @@ ol.linenums li {
 
 .data-grid-body {
     height: 365px;
+}
+
+.article-list {
+
+}
+
+.article-list ul {
+    list-style: none;
+}
+
+.article-list ul li.active {
+    background: rgba(51, 51, 51, 0.15);
 }
