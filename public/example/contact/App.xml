@@ -4,7 +4,7 @@
               xmlns:view="example/contact/view" xmlns:app="example/contact">
     <h2>Contacts</h2>
 
-    <form onsubmit="addContact" action="#">
+    <form onsubmit="addContact">
         <input type="text" placeholder="First name" value="{{p.firstName}}"/>
         <input type="text" placeholder="Last name" value="{{p.lastName}}"/>
         <input type="text" placeholder="Phone" value="{{p.phone}}"/>
