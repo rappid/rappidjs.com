@@ -308,7 +308,7 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                         <a href="http://npmjs.org/doc/publish.html">npm publish</a></code> command.
                     </p>
                     <p>
-                        Creating a <a href="wiki/Project">library project</a>, add the components into a unique package structure and provide the required information in the
+                        Create a <a href="wiki/Project">library project</a>, add the components into a unique package structure and provide the required information in the
                         <code>package.json</code> file.
                     </p>
                 </div>
@@ -368,10 +368,8 @@ sudo ln -s &lt;project dir&gt;/public myApp</pre>
                 <div class="span4">
                     <h3>LocalStorage</h3>
                     <p>
-                        Modern web applications are storing local data on the client-side - without sending them with each request to the server.
-                    </p>
-                    <p>
-                        The LocalStorage-DataSource makes it easy to persistent models, even with a complex schema.
+                        rAppid.js provides a local storage adapter to save data on the client.
+                        The LocalStorage-DataSource makes it easy to persist models, even with a complex schema.
                     </p>
                 </div>
             </div>
