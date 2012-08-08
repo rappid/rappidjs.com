@@ -1,0 +1,13 @@
+<ui:Dialog xmlns="http://www.w3.org/1999/xhtml" xmlns:js="js.core" xmlns:ui="js.ui"
+           title="My Dialog">
+    <js:Content name="body">
+        <input type="text" cid="nameInput" value="Guest"/>
+        <p>
+            Hello {nameInput.value}!
+        </p>
+    </js:Content>
+    <js:Content name="footer">
+        <ui:Button onclick="closeDialog" label="close"/>
+        <ui:Button onclick="confirmDialog" label="Save" type="primary"/>
+    </js:Content>
+</ui:Dialog>
