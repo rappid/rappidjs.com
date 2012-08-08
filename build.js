@@ -30,6 +30,69 @@ function rmdirSyncForce(path) {
     fs.rmdirSync(path);
 }
 
+
+var copyDirectory = function (srcDir, targetDir) {
+    var subDirs = [];
+    if (!fs.existsSync(targetDir)) {
+        fs.mkdirSync(targetDir);
+    }
+    var source, dest;
+    fs.readdirSync(srcDir).forEach(function (name) {
+
+        source = path.join(srcDir, name);
+        dest = path.join(targetDir, name);
+        var stat = fs.statSync(source);
+        if (name.indexOf(".") !== 0) {
+            if (stat.isDirectory()) {
+                subDirs.push(name);
+            } else if (stat.isFile() || stat.isSymbolicLink()) {
+                var inStr = fs.createReadStream(source);
+                var outStr = fs.createWriteStream(dest);
+
+                inStr.pipe(outStr);
+            }
+        }
+    });
+
+    subDirs.forEach(function (dirName) {
+        source = path.join(srcDir, dirName);
+        dest = path.join(targetDir, dirName);
+
+        copyDirectory(source, dest);
+    });
+
+};
+
+var copySymLinkDirs = function(dir, targetDir){
+    if (!fs.existsSync(targetDir)) {
+        fs.mkdirSync(targetDir);
+    }
+
+    var symDirs = [], file;
+    fs.readdirSync(dir).forEach(function (name) {
+
+        file = path.join(dir, name);
+        var stat = fs.statSync(file);
+        if (name.indexOf(".") !== 0) {
+            if (stat.isDirectory() && stat.isSymbolicLink()) {
+                symDirs.push(name);
+            }
+        }
+    });
+
+    symDirs.forEach(function(dirName){
+        copyDirectory(path.join(dir,dirName),path.join(targetDir,dirName));
+    });
+};
+
+var buildDir = 'public-build';
+var buildDirPath = path.join(process.cwd(), buildDir);
+
+// remove the build dir
+if (path.existsSync(buildDirPath)) {
+    rmdirSyncForce(buildDirPath);
+}
+
 var Rewrite = function (from, to) {
     this.$from = from;
     this.$to = to;
@@ -46,8 +109,8 @@ var config = {
                 'inherit',
                 'flow',
                 'underscore',
-                'js/lib/parser',
                 'js/plugins/json',
+                'js/lib/parser',
                 'js/core/Bus',
                 'js/core/Stage',
                 'js/core/WindowManager',
@@ -117,8 +180,9 @@ var config = {
             ]
         }
     ],
-    dir: 'public-build',
-    optimize: 'none',
+    dir: buildDir,
+    optimize: 'uglify',
+    optimizeCss: "standard",
     nodeRequire: require,
     findNestedDependencies: false,
     optimizeAllPluginResources: true,
@@ -179,34 +243,14 @@ var config = {
         new Rewrite(/^js\/html\/(option)$/, "js/html/Option"),
         new Rewrite(/^js\/html\/(.+)$/, "js/html/HtmlElement")
     ],
-    xamlClasses: [
-        "example/basic/App",
-        "example/contact/App",
-        "example/contact/view/Card",
-        "example/todo/App",
-        "js/ui/ButtonGroup",
-        "js/ui/Checkbox",
-        "js/ui/Radio",
-        'js/ui/Field',
-        "js/ui/Link",
-        "js/ui/MenuButton",
-        "js/ui/ScrollView",
-        "js/ui/SplitButton",
-        "js/ui/TabView"],
+    "xamlClasses": ["app/Index", "app/module/Disclaimer", "app/module/Documentation", "app/module/Home", "app/module/License", "app/module/Ui", "app/module/Wiki", "example/basic/App", "example/contact/App", "example/contact/view/Card", "example/todo/App", "example/window/CustomDialog", "js/ui/ButtonGroup", "js/ui/Checkbox", "js/ui/DataGrid", "js/ui/DataGridColumn", "js/ui/DataGridItemsView", "js/ui/Dialog", "js/ui/field/Password", "js/ui/field/RadioGroup", "js/ui/field/Text", "js/ui/Field", "js/ui/GalleryList", "js/ui/Link", "js/ui/MenuButton", "js/ui/Radio", "js/ui/Scrollable", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView", "js/ui/TileList", "sprd/data/SprdApiDataSource", "sprd/view/ColorSelector", "sprd/view/DropDownSizeSelector", "sprd/view/Image", "sprd/view/ImageUpload", "sprd/view/ProductTypeViewSelector", "sprd/view/ProductViewSelector", "sprd/view/SimpleProductViewSelector", "sprd/view/SizeSelector"],
 
     logLevel: 0
 };
 
 global.libxml = require("libxml");
 
-var buildDir = path.join(process.cwd(), config.dir);
-
-
-// remove the build dir
-if (path.existsSync(buildDir)) {
-    rmdirSyncForce(buildDir);
-}
-
+// start optimizing
 requirejs.optimize(config, function (results) {
     console.log(results);
 });
