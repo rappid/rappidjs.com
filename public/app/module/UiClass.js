@@ -1,11 +1,10 @@
-define(['js/core/Module', 'sprd/model/Shop'], function (Module, Shop) {
-
+define(['js/core/Module', 'sprd/model/Shop', 'raw!example/window/CustomDialog.xml'], function (Module, Shop, CustomDialogXML) {
     return Module.inherit("app.module.UiClass", {
 
         defaults: {
-            shop: null
+            shop: null,
+            customDialogExample: ""
         },
-
         start: function () {
 
             if (!this.$.shop) {
@@ -13,13 +12,25 @@ define(['js/core/Module', 'sprd/model/Shop'], function (Module, Shop) {
                 shop.fetch();
                 this.set("shop", shop);
             }
-
+            this.set('customDialogExample', CustomDialogXML);
             this.callBase();
         },
+        _itemClickHandler: function(e){
+            var dataItem = e.target.find('$dataItem');
+            this.visitArticle(dataItem.$.data);
+        },
+        _keyHandler: function(e){
+            if(e.domEvent.keyCode === 13 && e.target.$.selectedItems.size()){
+                this.visitArticle(e.target.$.selectedItems.at(0));
+            }
+        },
+        _openDialog: function(e){
+            this.$.myDialog.showModal(function(){
 
-        visit: function(e) {
-            var data = e.target.find('data');
-            window.open('http://www.spreadshirt.net/-C4408A'+data.$.id);
+            });
+        },
+        visitArticle: function(article){
+            window.open('http://www.spreadshirt.net/-C4408A' + article.$.id);
         }
     });
 });
