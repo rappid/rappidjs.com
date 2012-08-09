@@ -11,7 +11,7 @@
 
         <ui:ListView items="{todoList}" itemKey="todo" class="unstyled">
             <ui:Checkbox label="{$todo.title}"
-                         selected="{{$todo.completed}}"
+                         checked="{{$todo.completed}}"
                          class="{$todo.status()}"/>
         </ui:ListView>
         <form onsubmit="addTodoItem" action="">
