@@ -10,6 +10,10 @@
     box-sizing: inherit;
 }
 
+.data-grid {
+    position: relative;
+}
+
 .data-grid-body  {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
