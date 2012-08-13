@@ -1,0 +1,11 @@
+{
+    "modules" : [
+        "app/Index",
+        "app/module/Home",
+        "app/module/Wiki",
+        "app/module/Ui"
+    ],
+    "indexFile": "index.html",
+    "targetDir" : "public-build",
+    "uglify" : true
+}
