@@ -8,7 +8,7 @@
         <conf:Route onexec="showPage" route="^wiki\/(.+)$"/>
     </js:Router>
 
-    <js:Head title="rAppid.js - Wiki"
+    <js:Head title="Wiki - rAppid.js"
              author="Tony Findeisen &amp; Marcus Krejpowicz"/>
 
     <js:Content name="main">

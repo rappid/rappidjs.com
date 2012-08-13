@@ -15,7 +15,7 @@
         <conf:Route onexec="showClass" route="^api\/(.+)$"/>
     </js:Router>
 
-    <js:Head title="{doc.id} - API Reference - rAppid.js"
+    <js:Head title="{title({doc.id})}"
              author="Tony Findeisen &amp; Marcus Krejpowicz"/>
 
     <js:Content name="main">

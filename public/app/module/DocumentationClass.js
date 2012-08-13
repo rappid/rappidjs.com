@@ -30,7 +30,9 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
         hasCurrentDocumentation: function() {
             return !!this.$.doc;
         }.onChange('doc'),
-
+        title: function(className){
+            return (className ? className + " - " : "") + 'API Reference - rAppid.js';
+        },
         showClass: function(routeContext, fqClassName) {
 
             var self = this;

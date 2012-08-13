@@ -5,6 +5,7 @@
                 xmlns:field="js.ui.field" xmlns:example="example.window">
 
     <sprd:SprdApiDataSource cid="api" gateway="api/v1" endPoint="http://api.spreadshirt.net/api/v1"/>
+    <js:Head title="UI Components - rAppid.js"/>
     <js:Content name="main">
 
         <header class="jumbotron subhead" id="overview">
@@ -311,7 +312,7 @@
                     </p>
                 </div>
                 <div class="span6">
-                    <ui:DataGrid data="{shop.articles}" rowHeight="45"
+                    <ui:DataGrid data="{shop.articles}"
                                  prefetchItemCount="10" cid="grid" onkeydown="_keyHandler">
                         <ui:DataGridColumn title="Id" width="90px" path="id"/>
                         <ui:DataGridColumn title="Name" width="400px" path="name"/>
