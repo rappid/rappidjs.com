@@ -41,7 +41,7 @@
 		"dependencies": {
 			"rAppid.js": "latest",
 			"rAppid.js-sprd": "latest",
-            "rAppid.js-piwik": "latest"
+            "rappidjs-piwik": "latest"
 		}
 	}
 }
