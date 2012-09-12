@@ -6,7 +6,7 @@
 
 
     <data:RestDataSource cid="api" endPoint="http://rappidjs.com/doc" gateway="." suffix="json">
-        <conf:Configuration path="doc" modelClassName="documentation.model.Class" />
+        <conf:DataSource path="doc" modelClassName="documentation.model.Class" />
     </data:RestDataSource>
 
     <data:FilterDataView baseList="{classes}" cid="filteredClasses" filterFnc="{filterDocs}" searchString="{searchString}"/>
