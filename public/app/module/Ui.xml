@@ -193,7 +193,7 @@
                     <p visible="{chkLike.checked}">
                         Thanks for liking us.
                     </p>
-                    <p visible="{not({chkLike.checked})}">
+                    <p visible="{not(chkLike.checked)}">
                         We are sorry. Please try plain Javascript.
                     </p>
                     <p>

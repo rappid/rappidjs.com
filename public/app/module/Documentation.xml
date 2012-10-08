@@ -15,7 +15,7 @@
         <conf:Route onexec="showClass" route="^api\/(.+)$"/>
     </js:Router>
 
-    <js:Head title="{title({doc.id})}"
+    <js:Head title="{title(doc.id)}"
              author="Tony Findeisen &amp; Marcus Krejpowicz"/>
 
     <js:Content name="main">
@@ -103,7 +103,7 @@
                                     <th>Defined by</th>
                                 </tr>
                             </thead>
-                            <ui:ItemsView items="{doc.getMethods({showMethodTypes()},{showInherit.checked})}" itemKey="method" tagName="tbody">
+                            <ui:ItemsView items="{doc.getMethods(showMethodTypes(),showInherit.checked)}" itemKey="method" tagName="tbody">
                                 <js:Template name="item">
                                     <tr>
                                         <td>
