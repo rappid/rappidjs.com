@@ -4,7 +4,7 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function 
 
     var Class = Model.inherit('documentation.model.Class', {
 
-        $schema: {
+        schema: {
             methods: [Method]
         },
 

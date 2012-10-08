@@ -1,7 +1,7 @@
 define(['js/data/Entity', 'documentation/entity/Parameter'], function(Entity, Parameter) {
 
     return Entity.inherit('documentation.entity.Method', {
-        $schema: {
+        schema: {
             parameter: [Parameter]
         },
 
