@@ -1,5 +1,5 @@
 {
-    "fqClassName": "js.conf.Module",
+    "fqClassName": "js.conf.ModuleConfiguration",
     "methods": [],
     "inherit": "js.conf.Configuration",
     "inheritancePath": [

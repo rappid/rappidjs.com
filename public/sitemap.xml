@@ -86,11 +86,11 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://www.rappidjs.com/#!/api/js.conf.Module</loc>
+        <loc>http://www.rappidjs.com/#!/api/js.conf.ModuleConfiguration</loc>
         <priority>0.1</priority>
     </url>
     <url>
-        <loc>http://www.rappidjs.com/#!/api/js.conf.Route</loc>
+        <loc>http://www.rappidjs.com/#!/api/js.conf.RouteConfiguration</loc>
         <priority>0.1</priority>
     </url>
     <url>

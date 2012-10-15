@@ -1,6 +1,6 @@
 [
-    "js.conf.Module",
-    "js.conf.Route",
+    "js.conf.ModuleConfiguration",
+    "js.conf.RouteConfiguration",
     "js.core.Application",
     "js.core.Base",
     "js.core.Bindable",

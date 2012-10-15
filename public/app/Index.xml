@@ -3,7 +3,7 @@
                 xmlns:js="js.core" xmlns:ui="js.ui" xmlns:app="app" xmlns:conf="js.conf" xmlns:piwik="piwik">
 
     <js:Router cid="router">
-        <conf:Route route="^$" onexec="defaultRoute"/>
+        <conf:RouteConfiguration route="^$" onexec="defaultRoute"/>
     </js:Router>
 
     <piwik:Tracker piwikUrl="http://piwik.rappidjs.com" baseUrl="http://www.rappidjs.com"/>
@@ -30,12 +30,12 @@
 
     <js:ModuleLoader router="{router}" cid="moduleLoader">
 
-        <conf:Module name="home" moduleClass="app.module.Home" route="^home.*$"/>
-        <conf:Module name="wiki" moduleClass="app.module.Wiki" route="^wiki.*$"/>
-        <conf:Module name="ui" moduleClass="app.module.Ui" route="^ui.*$"/>
-        <conf:Module name="documentation" moduleClass="app.module.Documentation" route="^api.*$"/>
-        <conf:Module name="license" moduleClass="app.module.License" route="^license$"/>
-        <conf:Module name="disclaimer" moduleClass="app.module.Disclaimer" route="^disclaimer$"/>
+        <conf:ModuleConfiguration name="home" moduleClass="app.module.Home" route="^home.*$"/>
+        <conf:ModuleConfiguration name="wiki" moduleClass="app.module.Wiki" route="^wiki.*$"/>
+        <conf:ModuleConfiguration name="ui" moduleClass="app.module.Ui" route="^ui.*$"/>
+        <conf:ModuleConfiguration name="documentation" moduleClass="app.module.Documentation" route="^api.*$"/>
+        <conf:ModuleConfiguration name="license" moduleClass="app.module.License" route="^license$"/>
+        <conf:ModuleConfiguration name="disclaimer" moduleClass="app.module.Disclaimer" route="^disclaimer$"/>
 
         <div id="container" class="container">
             <ui:ContentPlaceHolder name="main"/>
