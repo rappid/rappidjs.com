@@ -201,7 +201,7 @@
             "parameter": [
                 {
                     "types": [
-                        "js.conf.Module"
+                        "js.conf.ModuleConfiguration"
                     ],
                     "name": "module",
                     "optional": false
@@ -226,7 +226,7 @@
             "parameter": [
                 {
                     "types": [
-                        "js.conf.Module"
+                        "js.conf.ModuleConfiguration"
                     ],
                     "name": "module",
                     "optional": false,

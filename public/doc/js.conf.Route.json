@@ -1,5 +1,5 @@
 {
-    "fqClassName": "js.conf.Route",
+    "fqClassName": "js.conf.RouteConfiguration",
     "methods": [],
     "inherit": "js.conf.Configuration",
     "inheritancePath": [

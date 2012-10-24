@@ -4,8 +4,8 @@
                   xmlns:md="md" xmlns:conf="js.conf">
 
     <js:Router>
-        <conf:Route onexec="defaultRoute" route="^wiki\/?$" />
-        <conf:Route onexec="showPage" route="^wiki\/(.+)$"/>
+        <conf:RouteConfiguration onexec="defaultRoute" route="^wiki\/?$" />
+        <conf:RouteConfiguration onexec="showPage" route="^wiki\/(.+)$"/>
     </js:Router>
 
     <js:Head title="Wiki - rAppid.js"

@@ -12,7 +12,7 @@
     <data:FilterDataView baseList="{classes}" cid="filteredClasses" filterFnc="{filterDocs}" searchString="{searchString}"/>
 
     <js:Router>
-        <conf:Route onexec="showClass" route="^api\/(.+)$"/>
+        <conf:RouteConfiguration onexec="showClass" route="^api\/(.+)$"/>
     </js:Router>
 
     <js:Head title="{title(doc.id)}"
