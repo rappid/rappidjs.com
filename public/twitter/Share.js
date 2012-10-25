@@ -2,8 +2,6 @@ define(['require', 'js/html/HtmlElement'], function(require, HtmlElement){
 
     return HtmlElement.inherit({
 
-        $classAttributes: ['user'],
-
         defaults: {
             tagName: "a",
             "class": "twitter-share-button",
