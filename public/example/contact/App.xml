@@ -16,7 +16,7 @@
 
     <ui:ListView items="{contacts}" itemKey="contact" class="unstyled">
         <js:Template name="item">
-            <view:Card person="{$contact}" />
+            <view:Card person="{contact}" />
         </js:Template>
     </ui:ListView>
 

@@ -30,7 +30,7 @@
                                       class="nav nav-pills nav-stacked" tagName="ul">
                         <js:Template name="item">
                             <li>
-                                <a href="api/{$class.id}">{$class.id}</a>
+                                <a href="api/{class.id}">{class.id}</a>
                             </li>
                         </js:Template>
                     </ui:SelectionView>

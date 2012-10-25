@@ -19,7 +19,7 @@
                                       needsSelection="true" selectedItem="{currentPage()}">
                         <js:Template name="item">
                             <li class="active">
-                                <a href="/${$item.link}">${$item.label}</a>
+                                <a href="/${item.link}">${item.label}</a>
                             </li>
                         </js:Template>
                     </ui:SelectionView>
