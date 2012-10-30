@@ -36,6 +36,7 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
         showClass: function(routeContext, fqClassName) {
 
             var self = this;
+            this.set('doc', null);
             this.$.api.createEntity(Class, fqClassName).fetch(null, function(err, classDoc) {
 
                 self.set('doc', err ? null : classDoc);
