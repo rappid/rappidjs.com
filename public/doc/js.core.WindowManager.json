@@ -3,11 +3,33 @@
     "methods": [
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "type"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_createDOMEventHandler",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "description": "",
             "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_onDomAdded",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "enabled"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderEnabled",
             "visibility": "protected"
         },
         {
@@ -104,17 +126,6 @@
             "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_renderSelected",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderVisible",
             "visibility": "protected"
         },
         {

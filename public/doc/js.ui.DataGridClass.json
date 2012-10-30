@@ -5,11 +5,39 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "type"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_createDOMEventHandler",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_initializationComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "children"
                 }
             ],
             "definedBy": "js.ui.View",
             "name": "_initializeLayoutChildren",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attribute"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_isDOMNodeAttribute",
             "visibility": "protected"
         },
         {
@@ -26,12 +54,19 @@
             "parameter": [
                 {
                     "name": "e"
-                },
-                {
-                    "name": "row"
                 }
             ],
-            "name": "_propagateDblClick",
+            "name": "_onRowClick",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "name": "_onRowDblClick",
             "visibility": "protected"
         },
         {
@@ -43,6 +78,17 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderChild",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "enabled"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderEnabled",
             "visibility": "protected"
         },
         {
@@ -187,17 +233,6 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderVisible",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
                     "types": null,
                     "name": "width",
                     "optional": false,
@@ -253,6 +288,18 @@
                 }
             ],
             "name": "addChild",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "focus",
             "visibility": "public"
         },
         {

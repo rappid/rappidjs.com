@@ -32,6 +32,16 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "model"
+                }
+            ],
+            "name": "_buildUriForModel",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "definedBy": "js.core.Component",
             "overwritesMethod": true,
@@ -79,6 +89,14 @@
                     "name": "attributes",
                     "optional": false,
                     "description": "contains the changed attributes"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "the options passed in the set method"
                 }
             ],
             "description": "called after attributes has set and some of the has been changed",
@@ -412,6 +430,14 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "definedBy": "js.data.DataSource",
+            "overwritesMethod": true,
+            "name": "_validateConfiguration",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
                     "types": [
@@ -427,17 +453,6 @@
             "description": "adds a children",
             "definedBy": "js.core.Component",
             "name": "addChild",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "configuration"
-                }
-            ],
-            "definedBy": "js.data.DataSource",
-            "name": "addTypeConfiguration",
             "visibility": "public"
         },
         {
@@ -498,12 +513,8 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "This method returns a copy of the Object",
-            "returns": {
-                "types": null,
-                "description": "js.core.Bindable a fresh copy of the Bindable"
-            },
             "definedBy": "js.core.Bindable",
+            "overwritesMethod": true,
             "name": "clone",
             "visibility": "public"
         },
@@ -535,18 +546,34 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "factory"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "factory",
+                    "optional": false,
+                    "description": "The factory"
                 },
                 {
-                    "name": "options"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
                 },
                 {
-                    "name": "type"
-                },
-                {
-                    "name": "context"
+                    "types": [
+                        "js.data.DataSource.Context"
+                    ],
+                    "name": "context",
+                    "optional": true
                 }
             ],
+            "description": "Creates a collection by a given factory in a caching context",
+            "returns": {
+                "types": [
+                    "js.data.Collection"
+                ]
+            },
             "definedBy": "js.data.DataSource",
             "name": "createCollection",
             "visibility": "public"
@@ -614,32 +641,34 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "properties"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "factory",
+                    "optional": false
                 },
                 {
-                    "name": "parentProperties"
+                    "types": [
+                        "String",
+                        "Number"
+                    ],
+                    "name": "id",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "js.data.DataSource.Context"
+                    ],
+                    "name": "context",
+                    "optional": true
                 }
             ],
-            "definedBy": "js.data.DataSource",
-            "name": "createContextCacheId",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "factory"
-                },
-                {
-                    "name": "id"
-                },
-                {
-                    "name": "type"
-                },
-                {
-                    "name": "context"
-                }
-            ],
+            "description": "Create an instance of {js.data.Entity}",
+            "returns": {
+                "types": [
+                    "js.data.Entity"
+                ]
+            },
             "definedBy": "js.data.DataSource",
             "name": "createEntity",
             "visibility": "public"
@@ -683,14 +712,42 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "data"
+                    "name": "list"
                 },
                 {
-                    "name": "callback"
+                    "name": "payload"
+                },
+                {
+                    "name": "options"
+                }
+            ],
+            "name": "extractListData",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "list"
+                },
+                {
+                    "name": "payload"
+                },
+                {
+                    "name": "options"
+                }
+            ],
+            "name": "extractListMetaData",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
                 }
             ],
             "definedBy": "js.core.Element",
-            "overwritesMethod": true,
             "name": "find",
             "visibility": "public"
         },
@@ -711,7 +768,8 @@
                         "String"
                     ],
                     "name": "key",
-                    "optional": false
+                    "optional": false,
+                    "description": "or path"
                 }
             ],
             "description": "evaluates a path to retrieve a value",
@@ -727,59 +785,28 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "collectionClassName"
-                }
-            ],
-            "definedBy": "js.data.DataSource",
-            "name": "getAliasForCollectionClassName",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "modelClassName"
-                }
-            ],
-            "definedBy": "js.data.DataSource",
-            "name": "getAliasForModelClassName",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
                     "types": null,
-                    "name": "alias",
+                    "name": "collectionClassName",
                     "optional": false
                 }
             ],
-            "description": "returns a configuration entry by matching the alias",
+            "description": "Returns the configuration for a collectionclass name",
             "returns": {
                 "types": [
                     "*"
                 ]
             },
             "definedBy": "js.data.DataSource",
-            "name": "getConfigurationByAlias",
+            "name": "getConfigurationForCollectionClassName",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [
                 {
-                    "types": null,
-                    "name": "modelClassName",
-                    "optional": false
+                    "name": "modelClass"
                 }
             ],
-            "description": "returns the configuration entry for the model class",
-            "returns": {
-                "types": [
-                    "Configuration"
-                ],
-                "description": "configuration matching the model class name"
-            },
             "definedBy": "js.data.DataSource",
             "name": "getConfigurationForModelClass",
             "visibility": "public"
@@ -788,12 +815,26 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "properties"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "properties",
+                    "optional": false
                 },
                 {
-                    "name": "parentContext"
+                    "types": [
+                        "js.data.DataSource.Context"
+                    ],
+                    "name": "parentContext",
+                    "optional": true
                 }
             ],
+            "description": "Returns the context for a properties object",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Context"
+                ]
+            },
             "definedBy": "js.data.DataSource",
             "name": "getContext",
             "visibility": "public"
@@ -802,9 +843,48 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "action"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "childFactory",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "js.data.Entity",
+                        "js.data.Collection"
+                    ],
+                    "name": "requestor",
+                    "optional": false
                 }
             ],
+            "description": "",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "getContextForChild",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "action",
+                    "optional": true
+                }
+            ],
+            "description": "Returns the format processor",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "definedBy": "js.data.DataSource",
             "name": "getFormatProcessor",
             "visibility": "public"
@@ -823,17 +903,6 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "alias"
-                }
-            ],
-            "definedBy": "js.data.DataSource",
-            "name": "getFqClassName",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
                     "name": "model"
                 }
             ],
@@ -844,14 +913,83 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "model"
+                    "types": [
+                        "js.data.Collection"
+                    ],
+                    "name": "collection",
+                    "optional": false
                 },
                 {
-                    "name": "options"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
                 }
             ],
+            "description": "Returns the correct processor for a collection",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Processor"
+                ],
+                "description": "processor"
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "getProcessorForCollection",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "name": "model",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                }
+            ],
+            "description": "Returns the correct processor for model",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Processor"
+                ],
+                "description": "processor"
+            },
             "definedBy": "js.data.DataSource",
             "name": "getProcessorForModel",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "modelClass"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                }
+            ],
+            "description": "Returns the correct processor for model class",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Processor"
+                ],
+                "description": "processor"
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "getProcessorForModelClass",
             "visibility": "public"
         },
         {
@@ -868,16 +1006,6 @@
                 ]
             },
             "name": "getQueryParameter",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "alias"
-                }
-            ],
-            "name": "getRestPathForAlias",
             "visibility": "public"
         },
         {
@@ -906,9 +1034,19 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "name"
+                    "types": [
+                        "String"
+                    ],
+                    "name": "name",
+                    "optional": false
                 }
             ],
+            "description": "Goes up the tree and searches for a template component with the given name.Returns null if no template was found.",
+            "returns": {
+                "types": [
+                    "js.core.Template"
+                ]
+            },
             "definedBy": "js.core.Component",
             "name": "getTemplate",
             "visibility": "public"
@@ -1026,16 +1164,42 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "isDefined",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "b"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "isEqual",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "page"
                 },
                 {
                     "name": "options",
-                    "types": null,
+                    "types": [
+                        "Object"
+                    ],
                     "optional": false
                 },
                 {
                     "name": "callback",
-                    "types": null,
+                    "types": [
+                        "Function"
+                    ],
                     "optional": false
                 }
             ],
@@ -1131,16 +1295,29 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "model"
+                    "name": "model",
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "optional": false
                 },
                 {
-                    "name": "options"
+                    "name": "options",
+                    "types": [
+                        "Object"
+                    ],
+                    "optional": false
                 },
                 {
-                    "name": "callback"
+                    "name": "callback",
+                    "types": [
+                        "Function"
+                    ],
+                    "optional": false
                 }
             ],
             "definedBy": "js.data.DataSource",
+            "overwritesMethod": true,
             "name": "removeModel",
             "visibility": "public"
         },
@@ -1186,7 +1363,13 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "returns the root context",
+            "description": "Returns the root context of the data source",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Context"
+                ],
+                "description": "context"
+            },
             "definedBy": "js.data.DataSource",
             "name": "root",
             "visibility": "public"
@@ -1209,13 +1392,25 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "model"
+                    "name": "model",
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "optional": false
                 },
                 {
-                    "name": "options"
+                    "name": "options",
+                    "types": [
+                        "Object"
+                    ],
+                    "optional": false
                 },
                 {
-                    "name": "callback"
+                    "name": "callback",
+                    "types": [
+                        "Function"
+                    ],
+                    "optional": false
                 }
             ],
             "definedBy": "js.data.DataSource",
@@ -1252,6 +1447,12 @@
                 }
             ],
             "description": "Sets new values for attributes and notify about changes",
+            "returns": {
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "this"
+            },
             "definedBy": "js.core.Bindable",
             "name": "set",
             "visibility": "public"
@@ -1377,20 +1578,6 @@
             },
             "definedBy": "js.core.Bindable",
             "name": "unset",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "data"
-                },
-                {
-                    "name": "callback"
-                }
-            ],
-            "definedBy": "js.data.DataSource",
-            "name": "update",
             "visibility": "public"
         }
     ],

@@ -3,11 +3,33 @@
     "methods": [
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "type"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_createDOMEventHandler",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "description": "",
             "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_onDomAdded",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "enabled"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderEnabled",
             "visibility": "protected"
         },
         {
@@ -110,17 +132,6 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderVisible",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
                     "types": null,
                     "name": "width",
                     "optional": false,
@@ -213,9 +224,8 @@
             "visibility": "public"
         }
     ],
-    "inherit": "js.core.UIComponent",
+    "inherit": "js.html.HtmlElement",
     "inheritancePath": [
-        "js.core.UIComponent",
         "js.html.HtmlElement",
         "js.core.DomElement"
     ]

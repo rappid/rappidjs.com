@@ -3,8 +3,52 @@
     "methods": [
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "itemA"
+                },
+                {
+                    "name": "itemB"
+                }
+            ],
+            "definedBy": "js.ui.SelectionView",
+            "name": "_areItemsEqual",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "name": "_bindDomEvents",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "item",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "js.core.Component"
+                    ],
+                    "name": "component",
+                    "optional": false
+                }
+            ],
+            "description": "Caches the component to a given item",
+            "returns": {
+                "types": [
+                    "js.core.Component"
+                ],
+                "description": "returns the component"
+            },
+            "private": "",
+            "definedBy": "js.ui.ItemsView",
+            "name": "_cacheComponentForItem",
             "visibility": "protected"
         },
         {
@@ -17,19 +61,53 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "item"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "item",
+                    "optional": false
                 },
                 {
-                    "name": "i"
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "index",
+                    "optional": false
                 }
             ],
+            "description": "Creates a component based on the template for a given item",
+            "returns": {
+                "types": [
+                    "js.core.Component"
+                ],
+                "description": "component"
+            },
+            "private": "",
             "definedBy": "js.ui.ItemsView",
             "name": "_createComponentForItem",
             "visibility": "protected"
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "type"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_createDOMEventHandler",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
+            "description": "Returns the key to access the index in the template",
+            "returns": {
+                "types": [
+                    "String"
+                ]
+            },
+            "private": "",
             "definedBy": "js.ui.ItemsView",
             "name": "_getIndexKey",
             "visibility": "protected"
@@ -37,8 +115,35 @@
         {
             "type": "Method",
             "parameter": [],
+            "description": "Returns the key to access the item in the template",
+            "returns": {
+                "types": [
+                    "String"
+                ]
+            },
+            "private": "",
             "definedBy": "js.ui.ItemsView",
             "name": "_getItemKey",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "item",
+                    "optional": false
+                }
+            ],
+            "description": "Calculates a cache key for a given item.If a keyPath is set, it will return the value of the pathOtherwise if the item is a {js.core.Bindable} it will return the $cidIf no keyPath is set and it's an object it will return null;",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "private": "",
+            "definedBy": "js.ui.ItemsView",
+            "name": "_getKeyForItem",
             "visibility": "protected"
         },
         {
@@ -56,12 +161,22 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "item"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "item",
+                    "optional": false
                 },
                 {
-                    "name": "i"
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "index",
+                    "optional": false
                 }
             ],
+            "description": "Inner render method for an itemCreates a component, caches the component and adds the component to the list of children",
+            "private": "",
             "definedBy": "js.ui.ItemsView",
             "name": "_innerRenderItem",
             "visibility": "protected"
@@ -70,11 +185,29 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "items"
+                    "types": [
+                        "Array"
+                    ],
+                    "name": "items",
+                    "optional": false,
+                    "description": "[]"
                 }
             ],
+            "description": "Inner render method for a list of itemsAll rendered items will be removed and destroyed before rendering",
+            "private": "",
             "definedBy": "js.ui.ItemsView",
             "name": "_innerRenderItems",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attribute"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_isDOMNodeAttribute",
             "visibility": "protected"
         },
         {
@@ -137,6 +270,37 @@
                     "name": "e"
                 }
             ],
+            "definedBy": "js.ui.SelectionView",
+            "name": "_onSelectedItemAdd",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "definedBy": "js.ui.SelectionView",
+            "name": "_onSelectedItemRemove",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.SelectionView",
+            "name": "_onSelectedItemReset",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "event"
+                }
+            ],
+            "description": "This method is called when the sort event is fired,It reorders the items in the list",
+            "private": "",
             "definedBy": "js.ui.ItemsView",
             "name": "_onSort",
             "visibility": "protected"
@@ -145,9 +309,15 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "item"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "item",
+                    "optional": false
                 }
             ],
+            "description": "Removes an item from the list",
+            "private": "",
             "definedBy": "js.ui.ItemsView",
             "name": "_removeRenderedItem",
             "visibility": "protected"
@@ -161,6 +331,17 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderChild",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "enabled"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderEnabled",
             "visibility": "protected"
         },
         {
@@ -209,12 +390,13 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "items"
-                },
-                {
-                    "name": "oldItems"
+                    "types": null,
+                    "name": "items",
+                    "optional": false
                 }
             ],
+            "description": "Renders the given items",
+            "private": "",
             "definedBy": "js.ui.ItemsView",
             "name": "_renderItems",
             "visibility": "protected"
@@ -324,6 +506,9 @@
             "parameter": [
                 {
                     "name": "item"
+                },
+                {
+                    "name": "oldItem"
                 }
             ],
             "definedBy": "js.ui.SelectionView",
@@ -334,11 +519,10 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "items"
+                    "name": "list"
                 }
             ],
             "definedBy": "js.ui.SelectionView",
-            "overwritesMethod": true,
             "name": "_renderSelectedItems",
             "visibility": "protected"
         },
@@ -357,17 +541,6 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderTemplateToPlaceHolder",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderVisible",
             "visibility": "protected"
         },
         {
@@ -423,11 +596,27 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.ItemsView",
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
-                    "name": "item"
+                    "types": null,
+                    "name": "item",
+                    "optional": false
                 }
             ],
+            "description": "Returns the rendered component to a given item",
+            "returns": {
+                "types": [
+                    "js/core/Component"
+                ],
+                "description": "component"
+            },
             "definedBy": "js.ui.ItemsView",
             "name": "getComponentForItem",
             "visibility": "public"

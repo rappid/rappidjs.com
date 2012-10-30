@@ -31,6 +31,14 @@
                     "name": "attributes",
                     "optional": false,
                     "description": "contains the changed attributes"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "the options passed in the set method"
                 }
             ],
             "description": "called after attributes has set and some of the has been changed",
@@ -270,7 +278,8 @@
                         "String"
                     ],
                     "name": "key",
-                    "optional": false
+                    "optional": false,
+                    "description": "or path"
                 }
             ],
             "description": "evaluates a path to retrieve a value",
@@ -303,6 +312,35 @@
             },
             "definedBy": "js.core.Bindable",
             "name": "has",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "item",
+                    "optional": false
+                }
+            ],
+            "description": "Returns the index of the item",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "name": "indexOf",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "b"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "isEqual",
             "visibility": "public"
         },
         {
@@ -452,6 +490,12 @@
                 }
             ],
             "description": "Sets new values for attributes and notify about changes",
+            "returns": {
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "this"
+            },
             "definedBy": "js.core.Bindable",
             "name": "set",
             "visibility": "public"

@@ -5,19 +5,6 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "action"
-                },
-                {
-                    "name": "options"
-                }
-            ],
-            "name": "compose",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
                     "name": "attributes"
                 }
             ],
@@ -42,6 +29,16 @@
                 }
             ],
             "name": "fetch",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "name": "getCollection",
             "visibility": "public"
         },
         {
@@ -86,6 +83,19 @@
             ],
             "description": "persistent the model over the data-source in which it was created",
             "name": "save",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "options"
+                },
+                {
+                    "name": "callback"
+                }
+            ],
+            "name": "validateAndSave",
             "visibility": "public"
         }
     ],

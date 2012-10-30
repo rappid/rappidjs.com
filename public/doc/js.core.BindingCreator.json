@@ -162,6 +162,16 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "text"
+                }
+            ],
+            "name": "parsePath",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "description": "determinate if the application runs in the browser or on node",
             "returns": {

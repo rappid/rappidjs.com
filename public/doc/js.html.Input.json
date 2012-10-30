@@ -19,6 +19,27 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "checked"
+                }
+            ],
+            "name": "_commitChecked",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "type"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_createDOMEventHandler",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "description": "",
             "private": "",
@@ -34,6 +55,18 @@
                 }
             ],
             "name": "_renderChecked",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "enabled"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "overwritesMethod": true,
+            "name": "_renderEnabled",
             "visibility": "protected"
         },
         {
@@ -146,17 +179,6 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderVisible",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
                     "types": null,
                     "name": "width",
                     "optional": false,
@@ -202,6 +224,16 @@
             "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_setAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "value"
+                }
+            ],
+            "name": "_transformValue",
             "visibility": "protected"
         }
     ],

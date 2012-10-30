@@ -5,11 +5,33 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "type"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_createDOMEventHandler",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "children"
                 }
             ],
             "definedBy": "js.ui.View",
             "name": "_initializeLayoutChildren",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attribute"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_isDOMNodeAttribute",
             "visibility": "protected"
         },
         {
@@ -30,6 +52,17 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderChild",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "enabled"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderEnabled",
             "visibility": "protected"
         },
         {
@@ -168,17 +201,6 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderTemplateToPlaceHolder",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderVisible",
             "visibility": "protected"
         },
         {

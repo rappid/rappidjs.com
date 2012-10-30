@@ -5,6 +5,17 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "type"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_createDOMEventHandler",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "descriptor"
                 }
             ],
@@ -20,6 +31,17 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_initializeLayoutChildren",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attribute"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_isDOMNodeAttribute",
             "visibility": "protected"
         },
         {
@@ -58,10 +80,18 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "html"
-                },
+                    "name": "enabled"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderEnabled",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
                 {
-                    "name": "oldString"
+                    "name": "html"
                 }
             ],
             "name": "_renderHTML",
@@ -203,17 +233,6 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderTemplateToPlaceHolder",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderVisible",
             "visibility": "protected"
         },
         {

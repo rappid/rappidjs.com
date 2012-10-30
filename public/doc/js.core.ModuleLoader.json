@@ -4,6 +4,23 @@
         {
             "type": "Method",
             "parameter": [],
+            "name": "_clearContentPlaceHolders",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "type"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_createDOMEventHandler",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
             "name": "_initializationComplete",
             "visibility": "protected"
         },
@@ -14,6 +31,17 @@
             "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_onDomAdded",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "enabled"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderEnabled",
             "visibility": "protected"
         },
         {
@@ -116,11 +144,13 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "visible"
+                    "name": "state"
+                },
+                {
+                    "name": "oldState"
                 }
             ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderVisible",
+            "name": "_renderState",
             "visibility": "protected"
         },
         {
@@ -263,17 +293,10 @@
             },
             "name": "moduleNames",
             "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [],
-            "name": "render",
-            "visibility": "public"
         }
     ],
-    "inherit": "js.core.UIComponent",
+    "inherit": "js.html.HtmlElement",
     "inheritancePath": [
-        "js.core.UIComponent",
         "js.html.HtmlElement",
         "js.core.DomElement"
     ]

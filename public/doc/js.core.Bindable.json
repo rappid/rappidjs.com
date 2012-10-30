@@ -30,6 +30,14 @@
                     "name": "attributes",
                     "optional": false,
                     "description": "contains the changed attributes"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "the options passed in the set method"
                 }
             ],
             "description": "called after attributes has set and some of the has been changed",
@@ -136,11 +144,17 @@
         },
         {
             "type": "Method",
-            "parameter": [],
+            "parameter": [
+                {
+                    "name": "options"
+                }
+            ],
             "description": "This method returns a copy of the Object",
             "returns": {
-                "types": null,
-                "description": "js.core.Bindable a fresh copy of the Bindable"
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "a fresh copy of the Bindable"
             },
             "name": "clone",
             "visibility": "public"
@@ -157,7 +171,7 @@
                     "description": "the default attributes which will be set during instantiation"
                 }
             ],
-            "description": "creates a new instance of bindable, which can be bound to components",
+            "description": "creates a new instance of Bindable, which can be bound to components",
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -194,7 +208,8 @@
                         "String"
                     ],
                     "name": "key",
-                    "optional": false
+                    "optional": false,
+                    "description": "or path"
                 }
             ],
             "description": "evaluates a path to retrieve a value",
@@ -225,6 +240,16 @@
                 "description": "true if attribute is not undefined"
             },
             "name": "has",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "b"
+                }
+            ],
+            "name": "isEqual",
             "visibility": "public"
         },
         {
@@ -297,6 +322,12 @@
                 }
             ],
             "description": "Sets new values for attributes and notify about changes",
+            "returns": {
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "this"
+            },
             "name": "set",
             "visibility": "public"
         },

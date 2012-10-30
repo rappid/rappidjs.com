@@ -31,6 +31,14 @@
                     "name": "attributes",
                     "optional": false,
                     "description": "contains the changed attributes"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "the options passed in the set method"
                 }
             ],
             "description": "called after attributes has set and some of the has been changed",
@@ -105,6 +113,16 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "errors"
+                }
+            ],
+            "name": "_setErrors",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "String"
                     ],
@@ -159,12 +177,15 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "This method returns a copy of the Object",
-            "returns": {
-                "types": null,
-                "description": "js.core.Bindable a fresh copy of the Bindable"
-            },
+            "description": "Clears all errors",
+            "name": "clearErrors",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
             "definedBy": "js.core.Bindable",
+            "overwritesMethod": true,
             "name": "clone",
             "visibility": "public"
         },
@@ -182,7 +203,7 @@
                     "optional": false
                 }
             ],
-            "description": "composes the data for serialisation",
+            "description": "Composes the data. Can pe used to pre compose the data for the processor",
             "returns": {
                 "types": [
                     "Object"
@@ -190,6 +211,34 @@
                 "description": "all data that should be serialized"
             },
             "name": "compose",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "childFactory",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String",
+                        "Number"
+                    ],
+                    "name": "id",
+                    "optional": true
+                }
+            ],
+            "description": "Creates an entity in the context of the given entity",
+            "returns": {
+                "types": [
+                    "js.data.Entity"
+                ]
+            },
+            "name": "createEntity",
             "visibility": "public"
         },
         {
@@ -227,6 +276,16 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "key"
+                }
+            ],
+            "name": "error",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "Object"
                     ],
@@ -240,7 +299,8 @@
                         "String"
                     ],
                     "name": "key",
-                    "optional": false
+                    "optional": false,
+                    "description": "or path"
                 }
             ],
             "description": "evaluates a path to retrieve a value",
@@ -256,10 +316,20 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "childFactory"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "childFactory",
+                    "optional": false
                 }
             ],
-            "name": "getContextForChildren",
+            "description": "Returns the correct context for a child factory",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Context"
+                ]
+            },
+            "name": "getContextForChild",
             "visibility": "public"
         },
         {
@@ -283,6 +353,17 @@
             },
             "definedBy": "js.core.Bindable",
             "name": "has",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "b"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "isEqual",
             "visibility": "public"
         },
         {
@@ -321,27 +402,18 @@
                     "optional": false
                 },
                 {
-                    "name": "action"
+                    "types": null,
+                    "name": "action",
+                    "optional": true
                 },
                 {
-                    "name": "options"
+                    "types": null,
+                    "name": "options",
+                    "optional": true
                 }
             ],
-            "description": "parse the deserializied data",
+            "description": "Parses dataCan be overridden to post change parsed data",
             "name": "parse",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "action"
-                },
-                {
-                    "name": "options"
-                }
-            ],
-            "name": "prepare",
             "visibility": "public"
         },
         {
@@ -387,6 +459,12 @@
                 }
             ],
             "description": "Sets new values for attributes and notify about changes",
+            "returns": {
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "this"
+            },
             "definedBy": "js.core.Bindable",
             "name": "set",
             "visibility": "public"
@@ -512,6 +590,28 @@
             },
             "definedBy": "js.core.Bindable",
             "name": "unset",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": true
+                }
+            ],
+            "description": "",
+            "name": "validate",
             "visibility": "public"
         }
     ],

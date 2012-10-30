@@ -31,6 +31,14 @@
                     "name": "attributes",
                     "optional": false,
                     "description": "contains the changed attributes"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "the options passed in the set method"
                 }
             ],
             "description": "called after attributes has set and some of the has been changed",
@@ -176,11 +184,17 @@
         },
         {
             "type": "Method",
-            "parameter": [],
+            "parameter": [
+                {
+                    "name": "options"
+                }
+            ],
             "description": "This method returns a copy of the Object",
             "returns": {
-                "types": null,
-                "description": "js.core.Bindable a fresh copy of the Bindable"
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "a fresh copy of the Bindable"
             },
             "definedBy": "js.core.Bindable",
             "name": "clone",
@@ -225,7 +239,8 @@
                         "String"
                     ],
                     "name": "key",
-                    "optional": false
+                    "optional": false,
+                    "description": "or path"
                 }
             ],
             "description": "evaluates a path to retrieve a value",
@@ -264,6 +279,17 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "b"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "isEqual",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "String",
                         "Array"
@@ -291,18 +317,38 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "fragment"
+                    "types": [
+                        "String"
+                    ],
+                    "name": "fragment",
+                    "optional": false
                 },
                 {
-                    "name": "createHistoryEntry"
+                    "types": [
+                        "Boolean"
+                    ],
+                    "name": "createHistoryEntry",
+                    "optional": true,
+                    "description": "default true"
                 },
                 {
-                    "name": "triggerRoute"
+                    "types": [
+                        "Boolean"
+                    ],
+                    "name": "triggerRoute",
+                    "optional": true,
+                    "description": "default true"
                 },
                 {
-                    "name": "callback"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false,
+                    "description": "navigate callback"
                 }
             ],
+            "description": "Navigates to a fragment",
             "name": "navigate",
             "visibility": "public"
         },
@@ -349,6 +395,12 @@
                 }
             ],
             "description": "Sets new values for attributes and notify about changes",
+            "returns": {
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "this"
+            },
             "definedBy": "js.core.Bindable",
             "name": "set",
             "visibility": "public"
@@ -371,12 +423,22 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "callback"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false,
+                    "description": "get's called after the navigation is completed"
                 },
                 {
-                    "name": "initialHash"
+                    "types": [
+                        "String"
+                    ],
+                    "name": "initialHash",
+                    "optional": false
                 }
             ],
+            "description": "This method is called to start the history",
             "name": "start",
             "visibility": "public"
         },

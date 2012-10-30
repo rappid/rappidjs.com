@@ -79,6 +79,14 @@
                     "name": "attributes",
                     "optional": false,
                     "description": "contains the changed attributes"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "the options passed in the set method"
                 }
             ],
             "description": "called after attributes has set and some of the has been changed",
@@ -523,11 +531,17 @@
         },
         {
             "type": "Method",
-            "parameter": [],
+            "parameter": [
+                {
+                    "name": "options"
+                }
+            ],
             "description": "This method returns a copy of the Object",
             "returns": {
-                "types": null,
-                "description": "js.core.Bindable a fresh copy of the Bindable"
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "a fresh copy of the Bindable"
             },
             "definedBy": "js.core.Bindable",
             "name": "clone",
@@ -671,7 +685,8 @@
                         "String"
                     ],
                     "name": "key",
-                    "optional": false
+                    "optional": false,
+                    "description": "or path"
                 }
             ],
             "description": "evaluates a path to retrieve a value",
@@ -709,9 +724,19 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "name"
+                    "types": [
+                        "String"
+                    ],
+                    "name": "name",
+                    "optional": false
                 }
             ],
+            "description": "Goes up the tree and searches for a template component with the given name.Returns null if no template was found.",
+            "returns": {
+                "types": [
+                    "js.core.Template"
+                ]
+            },
             "definedBy": "js.core.Component",
             "name": "getTemplate",
             "visibility": "public"
@@ -745,6 +770,28 @@
             "definedBy": "js.core.Element",
             "overwritesMethod": true,
             "name": "initialize",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "isDefined",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "b"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "isEqual",
             "visibility": "public"
         },
         {
@@ -847,6 +894,12 @@
                 }
             ],
             "description": "Sets new values for attributes and notify about changes",
+            "returns": {
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "this"
+            },
             "definedBy": "js.core.Bindable",
             "name": "set",
             "visibility": "public"

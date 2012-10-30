@@ -31,6 +31,20 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "attributes"
+                },
+                {
+                    "name": "opt"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_commitChangedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "data"
                 }
             ],
@@ -43,10 +57,22 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "type"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_createDOMEventHandler",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "attributes"
                 }
             ],
             "definedBy": "js.ui.VirtualItemsView",
+            "overwritesMethod": true,
             "name": "_createRenderer",
             "visibility": "protected"
         },
@@ -96,6 +122,24 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "attribute"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_isDOMNodeAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_isWebkitAndTouch",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "definedBy": "js.ui.VirtualItemsView",
             "name": "_itemsCountChanged",
@@ -115,6 +159,7 @@
                     "name": "e"
                 }
             ],
+            "definedBy": "js.ui.VirtualItemsView",
             "name": "_onKeyDown",
             "visibility": "protected"
         },
@@ -125,11 +170,10 @@
                     "name": "e"
                 },
                 {
-                    "name": "row"
+                    "name": "renderer"
                 }
             ],
             "definedBy": "js.ui.VirtualItemsView",
-            "overwritesMethod": true,
             "name": "_onRendererClick",
             "visibility": "protected"
         },
@@ -140,12 +184,37 @@
                     "name": "e"
                 },
                 {
-                    "name": "row"
+                    "name": "renderer"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_onRendererDblClick",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "startIndex",
+                    "types": null,
+                    "optional": false
+                },
+                {
+                    "name": "endIndex",
+                    "types": null,
+                    "optional": false
                 }
             ],
             "definedBy": "js.ui.VirtualItemsView",
             "overwritesMethod": true,
-            "name": "_onRendererDblClick",
+            "name": "_onVisibleItemsUpdated",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_positionActiveRenderers",
             "visibility": "protected"
         },
         {
@@ -170,11 +239,44 @@
             "type": "Method",
             "parameter": [
                 {
+                    "types": null,
+                    "name": "startIndex",
+                    "optional": true,
+                    "description": "the max startIndex"
+                },
+                {
+                    "types": null,
+                    "name": "endIndex",
+                    "optional": true,
+                    "description": "the min endIndex"
+                }
+            ],
+            "description": "Releases all renderer outside the given indeciesIf no indecies are given, all renderer are released",
+            "private": "",
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_releaseActiveRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "child"
                 }
             ],
             "definedBy": "js.ui.View",
             "name": "_renderChild",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "enabled"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderEnabled",
             "visibility": "protected"
         },
         {
@@ -302,6 +404,17 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "mode"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_renderSelectionMode",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "templateName"
                 },
                 {
@@ -313,17 +426,6 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderTemplateToPlaceHolder",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderVisible",
             "visibility": "protected"
         },
         {
@@ -369,6 +471,17 @@
             "parameter": [
                 {
                     "name": "index"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_scrollToIndex",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "index"
                 },
                 {
                     "name": "shiftDown"
@@ -377,6 +490,7 @@
                     "name": "metaKey"
                 }
             ],
+            "definedBy": "js.ui.VirtualItemsView",
             "name": "_selectItem",
             "visibility": "protected"
         },
@@ -404,34 +518,38 @@
             "type": "Method",
             "parameter": [],
             "definedBy": "js.ui.VirtualItemsView",
-            "name": "_updateVisibleItems",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "startIndex",
-                    "types": null,
-                    "optional": false
-                },
-                {
-                    "name": "endIndex",
-                    "types": null,
-                    "optional": false
-                }
-            ],
-            "definedBy": "js.ui.VirtualItemsView",
-            "overwritesMethod": true,
-            "name": "_updatedVisibleItems",
+            "name": "_syncScrollPosition",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
             "definedBy": "js.ui.VirtualItemsView",
-            "overwritesMethod": true,
+            "name": "_updateSize",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "forceRefresh"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_updateVisibleItems",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.VirtualItemsView",
             "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "focus",
             "visibility": "public"
         },
         {
@@ -493,6 +611,7 @@
                     "name": "data"
                 }
             ],
+            "definedBy": "js.ui.VirtualItemsView",
             "name": "isItemSelected",
             "visibility": "public"
         },

@@ -3,10 +3,30 @@
     "methods": [
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "type"
+                }
+            ],
+            "name": "_createDOMEventHandler",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "description": "",
             "private": "",
             "name": "_onDomAdded",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "enabled"
+                }
+            ],
+            "name": "_renderEnabled",
             "visibility": "protected"
         },
         {
@@ -97,16 +117,6 @@
             "description": "",
             "private": "",
             "name": "_renderSelected",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "visible"
-                }
-            ],
-            "name": "_renderVisible",
             "visibility": "protected"
         },
         {

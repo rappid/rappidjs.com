@@ -79,6 +79,14 @@
                     "name": "attributes",
                     "optional": false,
                     "description": "contains the changed attributes"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "the options passed in the set method"
                 }
             ],
             "description": "called after attributes has set and some of the has been changed",
@@ -412,6 +420,12 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "name": "_validateConfiguration",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
                     "types": [
@@ -427,16 +441,6 @@
             "description": "adds a children",
             "definedBy": "js.core.Component",
             "name": "addChild",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "configuration"
-                }
-            ],
-            "name": "addTypeConfiguration",
             "visibility": "public"
         },
         {
@@ -497,12 +501,8 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "This method returns a copy of the Object",
-            "returns": {
-                "types": null,
-                "description": "js.core.Bindable a fresh copy of the Bindable"
-            },
             "definedBy": "js.core.Bindable",
+            "overwritesMethod": true,
             "name": "clone",
             "visibility": "public"
         },
@@ -534,18 +534,34 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "factory"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "factory",
+                    "optional": false,
+                    "description": "The factory"
                 },
                 {
-                    "name": "options"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
                 },
                 {
-                    "name": "type"
-                },
-                {
-                    "name": "context"
+                    "types": [
+                        "js.data.DataSource.Context"
+                    ],
+                    "name": "context",
+                    "optional": true
                 }
             ],
+            "description": "Creates a collection by a given factory in a caching context",
+            "returns": {
+                "types": [
+                    "js.data.Collection"
+                ]
+            },
             "name": "createCollection",
             "visibility": "public"
         },
@@ -587,12 +603,26 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "properties"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "properties",
+                    "optional": false
                 },
                 {
-                    "name": "parentContext"
+                    "types": [
+                        "js.data.DataSource.Context"
+                    ],
+                    "name": "parentContext",
+                    "optional": true
                 }
             ],
+            "description": "Creates a context with the given properties",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Context"
+                ]
+            },
             "name": "createContext",
             "visibility": "public"
         },
@@ -600,31 +630,34 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "properties"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "factory",
+                    "optional": false
                 },
                 {
-                    "name": "parentProperties"
+                    "types": [
+                        "String",
+                        "Number"
+                    ],
+                    "name": "id",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "js.data.DataSource.Context"
+                    ],
+                    "name": "context",
+                    "optional": true
                 }
             ],
-            "name": "createContextCacheId",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "factory"
-                },
-                {
-                    "name": "id"
-                },
-                {
-                    "name": "type"
-                },
-                {
-                    "name": "context"
-                }
-            ],
+            "description": "Create an instance of {js.data.Entity}",
+            "returns": {
+                "types": [
+                    "js.data.Entity"
+                ]
+            },
             "name": "createEntity",
             "visibility": "public"
         },
@@ -654,14 +687,10 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "data"
-                },
-                {
-                    "name": "callback"
+                    "name": "key"
                 }
             ],
             "definedBy": "js.core.Element",
-            "overwritesMethod": true,
             "name": "find",
             "visibility": "public"
         },
@@ -682,7 +711,8 @@
                         "String"
                     ],
                     "name": "key",
-                    "optional": false
+                    "optional": false,
+                    "description": "or path"
                 }
             ],
             "description": "evaluates a path to retrieve a value",
@@ -698,56 +728,27 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "collectionClassName"
-                }
-            ],
-            "name": "getAliasForCollectionClassName",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "modelClassName"
-                }
-            ],
-            "name": "getAliasForModelClassName",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
                     "types": null,
-                    "name": "alias",
+                    "name": "collectionClassName",
                     "optional": false
                 }
             ],
-            "description": "returns a configuration entry by matching the alias",
+            "description": "Returns the configuration for a collectionclass name",
             "returns": {
                 "types": [
                     "*"
                 ]
             },
-            "name": "getConfigurationByAlias",
+            "name": "getConfigurationForCollectionClassName",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [
                 {
-                    "types": null,
-                    "name": "modelClassName",
-                    "optional": false
+                    "name": "modelClass"
                 }
             ],
-            "description": "returns the configuration entry for the model class",
-            "returns": {
-                "types": [
-                    "Configuration"
-                ],
-                "description": "configuration matching the model class name"
-            },
             "name": "getConfigurationForModelClass",
             "visibility": "public"
         },
@@ -755,12 +756,26 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "properties"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "properties",
+                    "optional": false
                 },
                 {
-                    "name": "parentContext"
+                    "types": [
+                        "js.data.DataSource.Context"
+                    ],
+                    "name": "parentContext",
+                    "optional": true
                 }
             ],
+            "description": "Returns the context for a properties object",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Context"
+                ]
+            },
             "name": "getContext",
             "visibility": "public"
         },
@@ -768,9 +783,47 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "action"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "childFactory",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "js.data.Entity",
+                        "js.data.Collection"
+                    ],
+                    "name": "requestor",
+                    "optional": false
                 }
             ],
+            "description": "",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "name": "getContextForChild",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "action",
+                    "optional": true
+                }
+            ],
+            "description": "Returns the format processor",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "name": "getFormatProcessor",
             "visibility": "public"
         },
@@ -778,23 +831,80 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "alias"
+                    "types": [
+                        "js.data.Collection"
+                    ],
+                    "name": "collection",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
                 }
             ],
-            "name": "getFqClassName",
+            "description": "Returns the correct processor for a collection",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Processor"
+                ],
+                "description": "processor"
+            },
+            "name": "getProcessorForCollection",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [
                 {
-                    "name": "model"
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "name": "model",
+                    "optional": false
                 },
                 {
-                    "name": "options"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
                 }
             ],
+            "description": "Returns the correct processor for model",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Processor"
+                ],
+                "description": "processor"
+            },
             "name": "getProcessorForModel",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "modelClass"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                }
+            ],
+            "description": "Returns the correct processor for model class",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Processor"
+                ],
+                "description": "processor"
+            },
+            "name": "getProcessorForModelClass",
             "visibility": "public"
         },
         {
@@ -823,9 +933,19 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "name"
+                    "types": [
+                        "String"
+                    ],
+                    "name": "name",
+                    "optional": false
                 }
             ],
+            "description": "Goes up the tree and searches for a template component with the given name.Returns null if no template was found.",
+            "returns": {
+                "types": [
+                    "js.core.Template"
+                ]
+            },
             "definedBy": "js.core.Component",
             "name": "getTemplate",
             "visibility": "public"
@@ -884,22 +1004,50 @@
             "type": "Method",
             "parameter": [
                 {
-                    "types": null,
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "isDefined",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "b"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "isEqual",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "js.data.Collection"
+                    ],
                     "name": "list",
                     "optional": false
                 },
                 {
-                    "types": null,
+                    "types": [
+                        "Object"
+                    ],
                     "name": "options",
                     "optional": false
                 },
                 {
-                    "types": null,
+                    "types": [
+                        "Function"
+                    ],
                     "name": "callback",
                     "optional": false
                 }
             ],
-            "description": "",
+            "description": "Same as loadModel, but for a collection page",
             "name": "loadCollectionPage",
             "visibility": "public"
         },
@@ -907,15 +1055,28 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "model"
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "name": "model",
+                    "optional": false
                 },
                 {
-                    "name": "options"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false
                 },
                 {
-                    "name": "callback"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false
                 }
             ],
+            "description": "Loads the data for a given model. (abstract)This method is called by model.fetch()",
             "name": "loadModel",
             "visibility": "public"
         },
@@ -980,15 +1141,28 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "model"
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "name": "model",
+                    "optional": false
                 },
                 {
-                    "name": "options"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false
                 },
                 {
-                    "name": "callback"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false
                 }
             ],
+            "description": "Removes a model",
             "name": "removeModel",
             "visibility": "public"
         },
@@ -1033,7 +1207,13 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "returns the root context",
+            "description": "Returns the root context of the data source",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Context"
+                ],
+                "description": "context"
+            },
             "name": "root",
             "visibility": "public"
         },
@@ -1055,15 +1235,28 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "model"
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "name": "model",
+                    "optional": false
                 },
                 {
-                    "name": "options"
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false
                 },
                 {
-                    "name": "callback"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false
                 }
             ],
+            "description": "Saves a model",
             "name": "saveModel",
             "visibility": "public"
         },
@@ -1096,6 +1289,12 @@
                 }
             ],
             "description": "Sets new values for attributes and notify about changes",
+            "returns": {
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "this"
+            },
             "definedBy": "js.core.Bindable",
             "name": "set",
             "visibility": "public"
@@ -1222,23 +1421,10 @@
             "definedBy": "js.core.Bindable",
             "name": "unset",
             "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "data"
-                },
-                {
-                    "name": "callback"
-                }
-            ],
-            "name": "update",
-            "visibility": "public"
         }
     ],
     "inherit": "js.core.Component",
-    "description": "saves sub models",
+    "description": "Returns all sub models, which should be saved afterwards the model is saved",
     "inheritancePath": [
         "js.core.Component",
         "js.core.Element",

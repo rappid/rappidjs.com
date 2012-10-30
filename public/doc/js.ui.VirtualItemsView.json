@@ -28,10 +28,34 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "attributes"
+                },
+                {
+                    "name": "opt"
+                }
+            ],
+            "name": "_commitChangedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "data"
                 }
             ],
             "name": "_commitData",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "type"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_createDOMEventHandler",
             "visibility": "protected"
         },
         {
@@ -87,6 +111,23 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "attribute"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_isDOMNodeAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_isWebkitAndTouch",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "name": "_itemsCountChanged",
             "visibility": "protected"
@@ -97,6 +138,16 @@
             "definedBy": "js.html.HtmlElement",
             "overwritesMethod": true,
             "name": "_onDomAdded",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "name": "_onKeyDown",
             "visibility": "protected"
         },
         {
@@ -129,6 +180,31 @@
             "type": "Method",
             "parameter": [
                 {
+                    "types": null,
+                    "name": "startIndex",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "endIndex",
+                    "optional": false
+                }
+            ],
+            "abstract": "",
+            "private": "",
+            "name": "_onVisibleItemsUpdated",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_positionActiveRenderers",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "renderer"
                 },
                 {
@@ -142,11 +218,43 @@
             "type": "Method",
             "parameter": [
                 {
+                    "types": null,
+                    "name": "startIndex",
+                    "optional": true,
+                    "description": "the max startIndex"
+                },
+                {
+                    "types": null,
+                    "name": "endIndex",
+                    "optional": true,
+                    "description": "the min endIndex"
+                }
+            ],
+            "description": "Releases all renderer outside the given indeciesIf no indecies are given, all renderer are released",
+            "private": "",
+            "name": "_releaseActiveRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "child"
                 }
             ],
             "definedBy": "js.ui.View",
             "name": "_renderChild",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "enabled"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderEnabled",
             "visibility": "protected"
         },
         {
@@ -274,6 +382,16 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "mode"
+                }
+            ],
+            "name": "_renderSelectionMode",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "templateName"
                 },
                 {
@@ -285,17 +403,6 @@
             ],
             "definedBy": "js.ui.View",
             "name": "_renderTemplateToPlaceHolder",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "visible"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderVisible",
             "visibility": "protected"
         },
         {
@@ -339,6 +446,32 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "index"
+                }
+            ],
+            "name": "_scrollToIndex",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "index"
+                },
+                {
+                    "name": "shiftDown"
+                },
+                {
+                    "name": "metaKey"
+                }
+            ],
+            "name": "_selectItem",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": null,
                     "name": "key",
                     "optional": false
@@ -358,26 +491,23 @@
         {
             "type": "Method",
             "parameter": [],
-            "name": "_updateVisibleItems",
+            "name": "_syncScrollPosition",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_updateSize",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [
                 {
-                    "types": null,
-                    "name": "startIndex",
-                    "optional": false
-                },
-                {
-                    "types": null,
-                    "name": "endIndex",
-                    "optional": false
+                    "name": "forceRefresh"
                 }
             ],
-            "abstract": "",
-            "private": "",
-            "name": "_updatedVisibleItems",
+            "name": "_updateVisibleItems",
             "visibility": "protected"
         },
         {
@@ -423,6 +553,16 @@
                 }
             ],
             "name": "getSizeForItemsCount",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "data"
+                }
+            ],
+            "name": "isItemSelected",
             "visibility": "public"
         },
         {
