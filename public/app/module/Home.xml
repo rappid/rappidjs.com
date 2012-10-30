@@ -129,12 +129,13 @@
                 <div class="span4">
                     <h3>Run the application</h3>
                     <p>
-                        Simply execute the index.html or make the public directory available in your web-server.
+                        Execute the rappidjs server command and view the application in your web browser.
                     </p>
-                    <pre>cd /var/www
-sudo ln -s &lt;project dir&gt;/public myApp</pre>
+                    <pre>cd &lt;targetDirectory&gt;
+rappidjs server .</pre>
+
                     <p>
-                        Than open <a href="http://localhost/myApp">http://localhost/myApp</a> from a browser.
+                        Than open <a href="http://localhost/">http://localhost/</a> in your browser.
                     </p>
                 </div>
             </div>
