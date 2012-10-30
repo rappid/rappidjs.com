@@ -1,0 +1,1481 @@
+{
+    "fqClassName": "srv.data.MongoDataSource",
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "config"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_addConfiguration",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "template"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_addTemplate",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Component",
+            "name": "_bindBus",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Component",
+            "overwritesMethod": true,
+            "name": "_childrenInitialized",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "desc"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_cleanUpDescriptor",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "attribute",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "key",
+                    "optional": false
+                }
+            ],
+            "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_cloneAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "attributes",
+                    "optional": false,
+                    "description": "contains the changed attributes"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "the options passed in the set method"
+                }
+            ],
+            "description": "called after attributes has set and some of the has been changed",
+            "abstract": "",
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_commitChangedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_commitInvalidatedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "DOM"
+                    ],
+                    "name": "node",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "attributes",
+                    "optional": true,
+                    "description": "for new Component"
+                },
+                {
+                    "name": "rootScope"
+                }
+            ],
+            "description": "Create {@link Component} for DOM Node with given attributes",
+            "definedBy": "js.core.Component",
+            "name": "_createComponentForNode",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "id"
+                }
+            ],
+            "name": "_createIdObject",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "node"
+                },
+                {
+                    "name": "rootScope"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_createTextElement",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "",
+            "returns": {
+                "types": [
+                    "Object"
+                ],
+                "description": "returns the default attributes and includes the defaults from base classes"
+            },
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_defaultAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "property",
+                    "optional": false,
+                    "description": "the name of the static property used to find defaults"
+                }
+            ],
+            "description": "generates a default chain containing the values from this instance and base classes",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_generateDefaultsChain",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "descriptor"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "_getAttributesFromDescriptor",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "descriptor",
+                    "optional": false
+                },
+                {
+                    "name": "rootScope"
+                }
+            ],
+            "description": "Converts all child nodes of a descriptor to instances of Components or TextElement",
+            "definedBy": "js.core.Component",
+            "name": "_getChildrenFromDescriptor",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "model"
+                }
+            ],
+            "name": "_getConfigurationForModel",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "eventDefinition"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_getEventName",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "eventName"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_getEventTypeForAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "node"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "_getLocalNameFromNode",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "desc"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "_getTextContentFromDescriptor",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Element",
+            "name": "_initializationComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "creationPolicy",
+                    "optional": false,
+                    "description": "undefinedauto - do not overwrite (default),all - create all childrenTODO none?"
+                },
+                {
+                    "name": "withBindings"
+                }
+            ],
+            "description": "",
+            "definedBy": "js.core.Element",
+            "name": "_initialize",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "attributes",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "definedBy": "js.core.Element",
+            "overwritesMethod": true,
+            "name": "_initializeAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Initialize all Binding and Event attributes",
+            "definedBy": "js.core.Element",
+            "overwritesMethod": true,
+            "name": "_initializeBindings",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "childComponents"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_initializeChildren",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Initializes all internal and external descriptors",
+            "definedBy": "js.core.Element",
+            "overwritesMethod": true,
+            "name": "_initializeDescriptors",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attribute"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "_initializeEventAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "rootScope"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_initializeXamlEventAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Component",
+            "name": "_inject",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Component",
+            "name": "_injectChain",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "event",
+                    "optional": false
+                }
+            ],
+            "description": "Returns true if event is defined in Component event list",
+            "definedBy": "js.core.Component",
+            "name": "_isComponentEvent",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributeName"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_isEventAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributeName"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "_isXamlEventAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "domNode",
+                    "optional": false
+                }
+            ],
+            "description": "IE8 FIXES",
+            "definedBy": "js.core.Component",
+            "name": "_localNameFromDomNode",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Element",
+            "overwritesMethod": true,
+            "name": "_preinitialize",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.data.DataSource",
+            "name": "_validateConfiguration",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "js.core.Element"
+                    ],
+                    "name": "child",
+                    "optional": false
+                },
+                {
+                    "name": "options"
+                }
+            ],
+            "description": "adds a children",
+            "definedBy": "js.core.Component",
+            "name": "addChild",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "path",
+                    "optional": false,
+                    "description": "a binding path e.g. a.b.c"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "event",
+                    "optional": false,
+                    "description": "the type of the event which should be bound"
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false,
+                    "description": "the event handler function"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "thisArg",
+                    "optional": true,
+                    "description": "the thisArg used for calling the event handler"
+                }
+            ],
+            "description": "Binds an event handler function to an EventDispatcher",
+            "definedBy": "js.core.EventDispatcher",
+            "overwritesMethod": true,
+            "name": "bind",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Clears all attributes",
+            "returns": {
+                "types": [
+                    "this"
+                ]
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "clear",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "overwritesMethod": true,
+            "name": "clone",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "callback"
+                }
+            ],
+            "name": "connect",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "path"
+                },
+                {
+                    "name": "callback"
+                },
+                {
+                    "name": "callbackScope"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "createBinding",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Component",
+            "name": "createChildren",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "factory",
+                    "optional": false,
+                    "description": "The factory"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "js.data.DataSource.Context"
+                    ],
+                    "name": "context",
+                    "optional": true
+                }
+            ],
+            "description": "Creates a collection by a given factory in a caching context",
+            "returns": {
+                "types": [
+                    "js.data.Collection"
+                ]
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "createCollection",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "factory",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "attributes",
+                    "optional": true
+                },
+                {
+                    "types": null,
+                    "name": "descriptor",
+                    "optional": true,
+                    "defaultValue": "false"
+                }
+            ],
+            "description": "",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "definedBy": "js.core.Component",
+            "name": "createComponent",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "properties",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "js.data.DataSource.Context"
+                    ],
+                    "name": "parentContext",
+                    "optional": true
+                }
+            ],
+            "description": "Creates a context with the given properties",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Context"
+                ]
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "createContext",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "factory",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String",
+                        "Number"
+                    ],
+                    "name": "id",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "js.data.DataSource.Context"
+                    ],
+                    "name": "context",
+                    "optional": true
+                }
+            ],
+            "description": "Create an instance of {js.data.Entity}",
+            "returns": {
+                "types": [
+                    "js.data.Entity"
+                ]
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "createEntity",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base",
+            "overwritesMethod": true,
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Destroys all event bindings and triggers a destroy event",
+            "returns": {
+                "types": [
+                    "this"
+                ]
+            },
+            "definedBy": "js.core.EventDispatcher",
+            "overwritesMethod": true,
+            "name": "destroy",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "find",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true,
+                    "defaultValue": "this",
+                    "description": "the scope where the path is evaluated"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "key",
+                    "optional": false,
+                    "description": "or path"
+                }
+            ],
+            "description": "evaluates a path to retrieve a value",
+            "returns": {
+                "types": null,
+                "description": "the value for the path or undefined"
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "get",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "collectionClassName",
+                    "optional": false
+                }
+            ],
+            "description": "Returns the configuration for a collectionclass name",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "getConfigurationForCollectionClassName",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "modelClass"
+                }
+            ],
+            "definedBy": "js.data.DataSource",
+            "name": "getConfigurationForModelClass",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "properties",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "js.data.DataSource.Context"
+                    ],
+                    "name": "parentContext",
+                    "optional": true
+                }
+            ],
+            "description": "Returns the context for a properties object",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Context"
+                ]
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "getContext",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "childFactory",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "js.data.Entity",
+                        "js.data.Collection"
+                    ],
+                    "name": "requestor",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "getContextForChild",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "action",
+                    "optional": true
+                }
+            ],
+            "description": "Returns the format processor",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "getFormatProcessor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "js.data.Collection"
+                    ],
+                    "name": "collection",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                }
+            ],
+            "description": "Returns the correct processor for a collection",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Processor"
+                ],
+                "description": "processor"
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "getProcessorForCollection",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "name": "model",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                }
+            ],
+            "description": "Returns the correct processor for model",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Processor"
+                ],
+                "description": "processor"
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "getProcessorForModel",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "modelClass"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                }
+            ],
+            "description": "Returns the correct processor for model class",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Processor"
+                ],
+                "description": "processor"
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "getProcessorForModelClass",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "fncName"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "getScopeForFncName",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "getScopeForKey",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "name",
+                    "optional": false
+                }
+            ],
+            "description": "Goes up the tree and searches for a template component with the given name.Returns null if no template was found.",
+            "returns": {
+                "types": [
+                    "js.core.Template"
+                ]
+            },
+            "definedBy": "js.core.Component",
+            "name": "getTemplate",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "path",
+                    "optional": false,
+                    "description": "to get the value"
+                }
+            ],
+            "description": "determinate if a attribute is available",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if attribute is not undefined"
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "has",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "scope",
+                    "optional": false
+                }
+            ],
+            "description": "This method should overridden by custom components to set initial variables",
+            "definedBy": "js.core.Element",
+            "overwritesMethod": true,
+            "name": "initialize",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.data.DataSource",
+            "name": "initializeFormatProcessors",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.data.DataSource",
+            "name": "initializeProcessors",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.core.Element",
+            "name": "isDefined",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "b"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "isEqual",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "collection"
+                },
+                {
+                    "name": "options",
+                    "types": [
+                        "Object"
+                    ],
+                    "optional": false
+                },
+                {
+                    "name": "callback",
+                    "types": [
+                        "Function"
+                    ],
+                    "optional": false
+                }
+            ],
+            "definedBy": "js.data.DataSource",
+            "overwritesMethod": true,
+            "name": "loadCollectionPage",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "model",
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "optional": false
+                },
+                {
+                    "name": "options",
+                    "types": [
+                        "Object"
+                    ],
+                    "optional": false
+                },
+                {
+                    "name": "callback",
+                    "types": [
+                        "Function"
+                    ],
+                    "optional": false
+                }
+            ],
+            "definedBy": "js.data.DataSource",
+            "overwritesMethod": true,
+            "name": "loadModel",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String",
+                        "Array"
+                    ],
+                    "name": "message",
+                    "optional": false,
+                    "description": "the message to log"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "level",
+                    "optional": true,
+                    "defaultValue": "\"info\"",
+                    "description": "the service level of (debug, info, warn, error)"
+                }
+            ],
+            "description": "logs messages to configured logging functions",
+            "definedBy": "js.core.Base",
+            "name": "log",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "value",
+                    "optional": false
+                }
+            ],
+            "description": "Binding helper to negate a Boolean value",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ]
+            },
+            "definedBy": "js.core.Element",
+            "name": "not",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "removeChild",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "model",
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "optional": false
+                },
+                {
+                    "name": "options",
+                    "types": [
+                        "Object"
+                    ],
+                    "optional": false
+                },
+                {
+                    "name": "callback",
+                    "types": [
+                        "Function"
+                    ],
+                    "optional": false
+                }
+            ],
+            "definedBy": "js.data.DataSource",
+            "overwritesMethod": true,
+            "name": "removeModel",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "name": "model",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "JSON"
+                    ],
+                    "name": "data",
+                    "optional": false,
+                    "description": "deserialized, parsed data"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false,
+                    "description": "function (err, resolvedData)"
+                }
+            ],
+            "description": "resolve references to models and collections",
+            "definedBy": "js.data.DataSource",
+            "name": "resolveReferences",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Returns the root context of the data source",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Context"
+                ],
+                "description": "context"
+            },
+            "definedBy": "js.data.DataSource",
+            "name": "root",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "determinate if the application runs in the browser or on node",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if the application runs in a browser"
+            },
+            "definedBy": "js.core.Base",
+            "name": "runsInBrowser",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "model",
+                    "types": [
+                        "js.data.Model"
+                    ],
+                    "optional": false
+                },
+                {
+                    "name": "options",
+                    "types": [
+                        "Object"
+                    ],
+                    "optional": false
+                },
+                {
+                    "name": "callback",
+                    "types": [
+                        "Function"
+                    ],
+                    "optional": false
+                }
+            ],
+            "definedBy": "js.data.DataSource",
+            "overwritesMethod": true,
+            "name": "saveModel",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "key",
+                    "optional": false,
+                    "description": "The attribute key"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "value",
+                    "optional": false,
+                    "description": "The attribute value"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "A hash of options"
+                }
+            ],
+            "description": "Sets new values for attributes and notify about changes",
+            "returns": {
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "this"
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "set",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "setLater",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Writes attributes back to the source",
+            "definedBy": "js.core.Bindable",
+            "name": "sync",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "eventType",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "EventDispatcher.Event",
+                        "Object"
+                    ],
+                    "name": "event",
+                    "optional": false,
+                    "description": "If you use an Object the object is wrapped in an Event"
+                },
+                {
+                    "types": null,
+                    "name": "target",
+                    "optional": false
+                }
+            ],
+            "description": "Triggers an event",
+            "definedBy": "js.core.EventDispatcher",
+            "name": "trigger",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "path",
+                    "optional": true,
+                    "description": "the path from which the event should be unbound"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "event",
+                    "optional": false,
+                    "description": "the type of the event"
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false,
+                    "description": "the event handler which is currently boundTODO: why a scope is passed here?"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true
+                }
+            ],
+            "description": "Unbinds an bound event handler from an EventDispatcher.",
+            "definedBy": "js.core.EventDispatcher",
+            "overwritesMethod": true,
+            "name": "unbind",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String",
+                        "Object"
+                    ],
+                    "name": "key",
+                    "optional": false,
+                    "description": "the attribute or attributes to unset"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                }
+            ],
+            "description": "Unset attribute on $",
+            "returns": {
+                "types": [
+                    "this"
+                ]
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "unset",
+            "visibility": "public"
+        }
+    ],
+    "inherit": "js.data.DataSource",
+    "inheritancePath": [
+        "js.data.DataSource",
+        "js.core.Component",
+        "js.core.Element",
+        "js.core.Bindable",
+        "js.core.EventDispatcher",
+        "js.core.Base"
+    ]
+}

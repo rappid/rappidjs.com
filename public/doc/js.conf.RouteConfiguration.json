@@ -1,0 +1,8 @@
+{
+    "fqClassName": "js.conf.RouteConfiguration",
+    "methods": [],
+    "inherit": "js.conf.Configuration",
+    "inheritancePath": [
+        "js.conf.Configuration"
+    ]
+}

@@ -1,0 +1,71 @@
+{
+    "fqClassName": "js.conf.ResourceConfiguration",
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_initializationComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_validateConfiguration",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "collectionClassName"
+                }
+            ],
+            "name": "getConfigurationForCollectionClassName",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "modelClass",
+                    "optional": false
+                }
+            ],
+            "description": "Returns configuration for a given modelClass / model factory",
+            "returns": {
+                "types": [
+                    "js.conf.ResourceConfiguration"
+                ]
+            },
+            "name": "getConfigurationForModelClass",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "modelClassName"
+                }
+            ],
+            "name": "getConfigurationForModelClassName",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "path"
+                }
+            ],
+            "name": "getConfigurationForPath",
+            "visibility": "public"
+        }
+    ],
+    "inherit": "js.conf.Configuration",
+    "inheritancePath": [
+        "js.conf.Configuration"
+    ]
+}

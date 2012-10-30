@@ -1,0 +1,79 @@
+{
+    "fqClassName": "js.conf.DataSourceConfiguration",
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.conf.ResourceConfiguration",
+            "name": "_initializationComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.conf.ResourceConfiguration",
+            "overwritesMethod": true,
+            "name": "_validateConfiguration",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "collectionClassName"
+                }
+            ],
+            "definedBy": "js.conf.ResourceConfiguration",
+            "name": "getConfigurationForCollectionClassName",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "modelClass",
+                    "optional": false
+                }
+            ],
+            "description": "Returns configuration for a given modelClass / model factory",
+            "returns": {
+                "types": [
+                    "js.conf.ResourceConfiguration"
+                ]
+            },
+            "definedBy": "js.conf.ResourceConfiguration",
+            "name": "getConfigurationForModelClass",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "modelClassName"
+                }
+            ],
+            "definedBy": "js.conf.ResourceConfiguration",
+            "name": "getConfigurationForModelClassName",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "path"
+                }
+            ],
+            "definedBy": "js.conf.ResourceConfiguration",
+            "name": "getConfigurationForPath",
+            "visibility": "public"
+        }
+    ],
+    "inherit": "js.conf.ResourceConfiguration",
+    "inheritancePath": [
+        "js.conf.ResourceConfiguration",
+        "js.conf.Configuration"
+    ]
+}

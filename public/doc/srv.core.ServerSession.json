@@ -1,0 +1,124 @@
+{
+    "fqClassName": "srv.core.ServerSession",
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                }
+            ],
+            "definedBy": "js.data.Model",
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "options",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false,
+                    "description": "function(err, model, options)"
+                }
+            ],
+            "definedBy": "js.data.Model",
+            "name": "fetch",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "definedBy": "js.data.Model",
+            "name": "getCollection",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "action"
+                }
+            ],
+            "definedBy": "js.data.Model",
+            "name": "prepare",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "options"
+                },
+                {
+                    "name": "callback"
+                }
+            ],
+            "definedBy": "js.data.Model",
+            "name": "remove",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "options",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "callback",
+                    "optional": false
+                }
+            ],
+            "description": "persistent the model over the data-source in which it was created",
+            "definedBy": "js.data.Model",
+            "name": "save",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "callback"
+                }
+            ],
+            "name": "start",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "options"
+                },
+                {
+                    "name": "callback"
+                }
+            ],
+            "definedBy": "js.data.Model",
+            "name": "validateAndSave",
+            "visibility": "public"
+        }
+    ],
+    "inherit": "js.data.Model",
+    "inheritancePath": [
+        "js.data.Model",
+        "js.data.Entity"
+    ]
+}

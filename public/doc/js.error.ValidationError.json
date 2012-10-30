@@ -1,0 +1,27 @@
+{
+    "fqClassName": "js.error.ValidationError",
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "message"
+                },
+                {
+                    "name": "statusCode"
+                },
+                {
+                    "name": "statusText"
+                }
+            ],
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "toString",
+            "visibility": "public"
+        }
+    ]
+}
