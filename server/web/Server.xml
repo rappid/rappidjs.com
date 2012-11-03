@@ -1,0 +1,14 @@
+<Server xmlns="srv.core"
+        xmlns:handler="srv.handler"
+        xmlns:endpoint="srv.endpoint">
+
+    <EndPoints>
+        <endpoint:HttpEndPoint port="8001"/>
+    </EndPoints>
+
+    <Handlers>
+        <handler:NodeRenderingHandler application="app/Index.xml"/>
+        <handler:StaticFileHandler/>
+    </Handlers>
+
+</Server>
