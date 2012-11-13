@@ -4,6 +4,9 @@
                 xmlns:sprdView="sprd.view"
                 xmlns:field="js.ui.field" xmlns:example="example.window">
 
+    <js:Injection cid="injection">
+        <sprd:ImageService endPoint="//image.spreadshirt.com/image-server/v1"/>
+    </js:Injection>
     <sprd:SprdApiDataSource cid="api" gateway="api/v1" endPoint="http://api.spreadshirt.net/api/v1"/>
     <js:Head title="UI Components - rAppid.js"/>
     <js:Content name="main">
