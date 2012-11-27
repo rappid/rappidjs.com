@@ -22,10 +22,6 @@ define(
                 ]);
             },
 
-            render: function() {
-                return this.callBase();
-            },
-
             renderExplanations: function(text) {
 
                 if (this.$children) {
