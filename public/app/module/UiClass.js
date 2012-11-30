@@ -29,6 +29,15 @@ define(['js/core/Module', 'sprd/model/Shop', 'raw!example/window/CustomDialog.xm
 
             });
         },
+
+        queryCreator: function(){
+            return function(searchTerm){
+                return {
+                    query : searchTerm
+                }
+            };
+        },
+
         visitArticle: function(article){
             window.open('http://www.spreadshirt.net/-C4408A' + article.$.id);
         }

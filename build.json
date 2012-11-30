@@ -7,5 +7,6 @@
     ],
     "indexFile": "index.html",
     "targetDir" : "public-build",
-    "uglify" : true
+    "uglify" : true,
+    "usePackageVersion": true
 }

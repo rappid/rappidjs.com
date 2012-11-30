@@ -164,7 +164,10 @@
                 </div>
                 <div class="span6">
                     <h3>Example markup</h3>
-                    <p>You can either use the generic Field component, which renders a container with a label and the the given input, or you can use special fields like Text and Password. More fields are coming soon.</p>
+                    <p>You can either use the generic Field component, which renders a container with a label and the
+                        the given input, or you can use special fields like Text and Password. More fields are coming
+                        soon.
+                    </p>
                     <view:Code data-title="App.xml">
                         <![CDATA[
                             <ui:Field label="Text">
@@ -288,7 +291,8 @@
                         defining how to render the data.
                     </p>
                     <p>All VirtualItemsViews have a selection model and offer key support for selecting items.
-                        Try it by using the keyboard.</p>
+                        Try it by using the keyboard.
+                    </p>
 
                     <h3>Code example</h3>
                     <p>
@@ -317,8 +321,8 @@
                 <div class="span6">
                     <ui:DataGrid data="{shop.articles}"
                                  prefetchItemCount="10" cid="grid" onkeydown="_keyHandler">
-                        <ui:DataGridColumn title="Id" width="90px" path="id"/>
-                        <ui:DataGridColumn title="Name" width="400px" path="name"/>
+                        <ui:DataGridColumn title="Id" width="90" path="id"/>
+                        <ui:DataGridColumn title="Name" width="400" path="name"/>
                         <ui:DataGridColumn>
                             <js:Template name="cell">
                                 <ui:Button label="Visit" onclick="_itemClickHandler"/>
@@ -334,7 +338,8 @@
             <h2>TileList</h2>
             <div class="row">
                 <div class="span6">
-                    The TileList is another implementation of VirtualItemsView which displays data in rows and cols. You can specify a custom renderer for the items.
+                    The TileList is another implementation of VirtualItemsView which displays data in rows and cols. You
+                    can specify a custom renderer for the items.
                     <h3>Code Example</h3>
                     <view:Code>
                         <![CDATA[
@@ -347,7 +352,7 @@
                                     horizontalGap="8">
                                 <js:Template name="renderer">
                                     <sprdView:ArticleImage
-                                        article="{$dataItem.data}" />
+                                        article="{item}" />
                                 </js:Template>
                             </ui:TileList>
                         ]]>
@@ -360,14 +365,62 @@
                                  height="300"
                                  cols="4"
                                  cid="tileList"
-                            verticalGap="6"
-                            horizontalGap="6"
-                            onitemDblClick="_itemClickHandler"
-                            onkeyup="_keyHandler">
+                                 verticalGap="6"
+                                 horizontalGap="6"
+                                 onitemDblClick="_itemClickHandler"
+                                 onkeyup="_keyHandler">
                         <js:Template name="renderer">
-                            <sprdView:ArticleImage width="100" height="100" article="{$dataItem.data}"/>
+                            <sprdView:ArticleImage width="100" height="100" article="{item}"/>
                         </js:Template>
                     </ui:TileList>
+                </div>
+            </div>
+            <br/>
+            <h2>Select</h2>
+            <div class="row">
+                <div class="span4">
+                    <h3>
+                        A simple select component
+                    </h3>
+                    <p>
+                        The Select component let's you filter and browse a collection of items.
+                        (In this example ca. {shop.articles.size()} shop articles).
+                        You can specify a custom renderer for the selected and the list item.
+                    </p>
+                    <ui:Select data="{shop.articles}" cid="articleSelector" queryCreator="{queryCreator()}" itemHeight="30" width="300">
+                        <js:Template name="selectedItem">
+                            <span class="text-item">
+                                {item.name}
+                            </span>
+                        </js:Template>
+                        <js:Template name="renderer">
+                            <a class="text-item">
+                                {item.name}
+                            </a>
+                        </js:Template>
+                    </ui:Select>
+                    <br/>
+                    <!--<sprdView:ArticleImage width="100" height="100" article="{articleSelector.selectedItem}"/>-->
+                </div>
+                <div class="span8">
+                    <h3>Code Example</h3>
+                    <view:Code>
+                        <![CDATA[
+                            <ui:Select data="{shop.articles}" queryCreator="{queryCreator()}" itemHeight="30" width="300">
+                                <js:Template name="selectedItem">
+                                    <span>
+                                        {item.name}
+                                    </span>
+                                </js:Template>
+                                <js:Template name="renderer">
+                                    <a>
+                                        {item.name}
+                                    </a>
+                                </js:Template>
+                            </ui:Select>
+                        ]]>
+                    </view:Code>
+
                 </div>
             </div>
         </section>
@@ -375,18 +428,18 @@
             <div class="page-header">
                 <h1>
                     Windows and Dialogs
-                    <small></small>
                 </h1>
             </div>
             <h2>Dialogs</h2>
             <div class="row">
                 <div class="span3">
-                   <p>
-                    Dialogs can be created by extending the Dialog Component.
-                    You can specify content for the body and the footer.
-                    The dialog can be shown by calling <code>showModal</code>
-                   </p>
-                    <js:Content>
+                    <p>
+                        Dialogs can be created by extending the Dialog Component.
+                        You can specify content for the body and the footer.
+                        The dialog can be shown by calling
+                        <code>showModal</code>
+                    </p>
+                    <js:Content name="wtf">
                         <example:CustomDialog cid="myDialog"/>
                     </js:Content>
                     <ui:Button label="Show Window" size="large" type="primary" onclick="_openDialog"/>
