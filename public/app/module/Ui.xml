@@ -405,7 +405,9 @@
                     <h3>Code Example</h3>
                     <view:Code>
                         <![CDATA[
-                            <ui:Select data="{shop.articles}" queryCreator="{queryCreator()}" itemHeight="30" width="300">
+                            <ui:Select data="{shop.articles}"
+                                       queryCreator="{queryCreator()}"
+                                       itemHeight="30" width="300">
                                 <js:Template name="selectedItem">
                                     <span>
                                         {item.name}
