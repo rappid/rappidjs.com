@@ -386,20 +386,20 @@
                         (In this example ca. {shop.articles.size()} shop articles).
                         You can specify a custom renderer for the selected and the list item.
                     </p>
-                    <!--<ui:Select data="{shop.articles}" cid="articleSelector" queryCreator="{queryCreator()}" itemHeight="30" width="300">-->
-                        <!--<js:Template name="selectedItem">-->
-                            <!--<span class="text-item">-->
-                                <!--{item.name}-->
-                            <!--</span>-->
-                        <!--</js:Template>-->
-                        <!--<js:Template name="renderer">-->
-                            <!--<a class="text-item">-->
-                                <!--{item.name}-->
-                            <!--</a>-->
-                        <!--</js:Template>-->
-                    <!--</ui:Select>-->
+                    <ui:Select data="{shop.articles}" cid="articleSelector" queryCreator="{queryCreator()}" itemHeight="30" width="300">
+                        <js:Template name="selectedItem">
+                            <span class="text-item">
+                                {item.name}
+                            </span>
+                        </js:Template>
+                        <js:Template name="renderer">
+                            <a class="text-item">
+                                {item.name}
+                            </a>
+                        </js:Template>
+                    </ui:Select>
                     <br/>
-                    <!--<sprdView:ArticleImage width="100" height="100" article="{articleSelector.selectedItem}"/>-->
+                    <sprdView:ArticleImage width="100" height="100" article="{articleSelector.selectedItem}" margin-top="20px"/>
                 </div>
                 <div class="span8">
                     <h3>Code Example</h3>
