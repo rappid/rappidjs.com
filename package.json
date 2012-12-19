@@ -1,47 +1,47 @@
 {
-	"name": "rappidjs.com",
-	"preferGlobal": "false",
-	"version": "0.3.3",
-    "author": "rAppid <support@rappidjs.com> (http://rappidjs.com)",
-    "contributors": [
-        "Tony Findeisen <tony@rappidjs.com>",
-        "Marcus Krejpowicz <marcus@rappidjs.com>"
-    ],
-	"description": "rAppid.js project home page",
-	"scripts": {
-		"test": "mocha -R spec"
-	},
-	"bin": {},
-	"lib": "public",
-	"main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/it-ony/rAppid.js.git"
-    },
-	"keywords": [],
-	"dependencies": {
-        "rAppid.js": "0.3.3",
-        "rAppid.js-sprd": "latest"
-    },
-	"devDependencies": {
-		"chai": "*",
-		"mocha": "*"
-	},
-	"license": "MIT",
-	"engine": {
-		"node": ">=0.4"
-	},
-	"engines": {
-		"node": "*"
-	},
-	"homepage": "",
-	"optionalDependencies": {},
-	"rAppid": {
-		"type": "app",
-		"dependencies": {
-			"rAppid.js": "latest",
-			"rAppid.js-sprd": "latest",
-            "rappidjs-piwik": "latest"
-		}
-	}
+  "name": "rappidjs.com",
+  "preferGlobal": "false",
+  "version": "0.5.1",
+  "author": "rAppid <support@rappidjs.com> (http://rappidjs.com)",
+  "contributors": [
+    "Tony Findeisen <tony@rappidjs.com>",
+    "Marcus Krejpowicz <marcus@rappidjs.com>"
+  ],
+  "description": "rAppid.js project home page",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "bin": {},
+  "lib": "public",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/it-ony/rAppid.js.git"
+  },
+  "keywords": [],
+  "dependencies": {
+    "rAppid.js": "0.3.3",
+    "rAppid.js-sprd": "latest"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.4"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "homepage": "",
+  "optionalDependencies": {},
+  "rAppid": {
+    "type": "app",
+    "dependencies": {
+      "rAppid.js": "latest",
+      "rAppid.js-sprd": "latest",
+      "rappidjs-piwik": "latest"
+    }
+  }
 }
