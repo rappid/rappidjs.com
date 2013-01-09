@@ -1,4 +1,4 @@
-define(['js/core/Module', 'sprd/model/Shop', 'raw!example/window/CustomDialog.xml'], function (Module, Shop, CustomDialogXML) {
+define(['js/core/Module', 'sprd/model/Shop', 'js/data/Query','raw!example/window/CustomDialog.xml'], function (Module, Shop, Query, CustomDialogXML) {
     return Module.inherit("app.module.UiClass", {
 
         defaults: {
@@ -32,9 +32,7 @@ define(['js/core/Module', 'sprd/model/Shop', 'raw!example/window/CustomDialog.xm
 
         queryCreator: function(){
             return function(searchTerm){
-                return {
-                    query : searchTerm
-                }
+                return Query.query().eql("s", searchTerm);
             };
         },
 
