@@ -40,9 +40,6 @@
     "Query": {
         "exports": "Query"
     },
-    "js/lib/query/ArrayExecutor": {
-        "exports": "Executor"
-    },
     "JSON": {
         "exports": "JSON"
     },
