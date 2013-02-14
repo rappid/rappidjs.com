@@ -1,5 +1,4 @@
 {"paths": {
-    "text": "js/plugin/text",
     "xaml": "js/plugin/xaml",
     "json": "js/plugin/json",
     "inherit": "js/lib/inherit",
