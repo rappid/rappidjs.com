@@ -182,12 +182,7 @@ rappidjs server .</pre>
                     <div class="tabtable">
                         <ui:TabView>
                             <ui:Tab title="index.html">
-                                <view:Code >${example.basic.Index}
-                                    <view:Explanation title="requirejs library" search="js/lib/require.js">
-                                        Loads requirejs, which is used for loading
-                                        dependencies.
-                                    </view:Explanation>
-                                </view:Code>
+                                <view:Code >${example.basic.Index}</view:Code>
                             </ui:Tab>
                             <ui:Tab title="App.xml">
                                 <view:Code >${example.basic.App}</view:Code>
