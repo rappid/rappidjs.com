@@ -15,14 +15,13 @@
                     &lt;rAppid:js /&gt;
                 </a>
                 <nav>
-                    <ui:SelectionView items="{pages}" tagName="ul" class="nav"
-                                      needsSelection="true" selectedItem="{currentPage()}">
+                    <ui:ItemsView items="{pages}" tagName="ul" class="nav">
                         <js:Template name="item">
-                            <li class="active">
+                            <li selected="{isPageSelected(item)}">
                                 <a href="/${item.link}">${item.label}</a>
                             </li>
                         </js:Template>
-                    </ui:SelectionView>
+                    </ui:ItemsView>
                 </nav>
             </div>
         </div>

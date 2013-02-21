@@ -33,6 +33,14 @@ define(
                     }
                 ]);
             },
+            isPageSelected: function(page){
+                var fragment = this.get('history.fragment()');
+                if (!fragment) {
+                    return false;
+                }
+                return fragment.indexOf(page.link) > -1;
+            }.on(['history','change:fragment']),
+
             /***
              * Starts the application
              * @param parameter
@@ -43,19 +51,8 @@ define(
             },
             defaultRoute: function(routeContext) {
                 routeContext.navigate('home');
-            }.async(),
-            currentPage: function(){
+            }.async()
 
-                var fragment = this.get('history.fragment()');
-                if(!fragment){
-                    return null;
-                }
-                for(var i = 0; i < this.$.pages.length; i++){
-                    if(fragment.indexOf(this.$.pages[i].link) > -1){
-                        return this.$.pages[i];
-                    }
-                }
-            }.on(['history', 'change:fragment'])
         });
     }
 );
