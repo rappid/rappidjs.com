@@ -416,3 +416,7 @@ ol.linenums li {
     overflow: hidden;
     white-space: nowrap;
 }
+
+.days.active {
+    background: gray;
+}
