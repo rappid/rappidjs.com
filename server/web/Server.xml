@@ -8,7 +8,6 @@
 
     <Handlers>
         <handler:NodeRenderingHandler application="app/Index.xml"/>
-        <handler:StaticFileHandler/>
     </Handlers>
 
 </Server>
