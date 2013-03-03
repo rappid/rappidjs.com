@@ -2,12 +2,10 @@
         xmlns:js="js.core"
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:ui="js.ui"
-        xmlns:md="md"
         xmlns:view="app.view"
         xmlns:module="app.module"
         xmlns:basic="example.basic"
         xmlns:todo="example.todo" xmlns:contact="example.contact" xmlns:google="google" xmlns:twitter="twitter">
-
 
     <js:Head title="rAppid.js - the declarative Rich Internet Application Javascript MVC Framework" author="Tony Findeisen &amp; Marcus Krejpowicz" />
 
