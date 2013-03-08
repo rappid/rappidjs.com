@@ -78,7 +78,6 @@ define(
                     nodeText = child.textContent;
                     breakIndex = nodeText.indexOf("\n");
                     isLineBeak = nodeText === "\n";
-                    console.log(nodeText,breakIndex);
                     if(!li || breakIndex === 0){
                         li = this.$stage.$document.createElement("li");
                         this.$el.appendChild(li);
