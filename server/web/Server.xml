@@ -7,7 +7,8 @@
     </EndPoints>
 
     <Handlers>
-        <handler:NodeRenderingHandler application="app/Index.xml"/>
+        <handler:NodeRenderingHandler application="app/Index.xml" usePackageVersion="true"/>
+        <handler:StaticFileHandler />
     </Handlers>
 
 </Server>
