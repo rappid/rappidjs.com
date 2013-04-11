@@ -70,10 +70,8 @@ define(["js/core/TextElement", 'md/lib/marked', 'underscore'], function (TextEle
                     textContent = this.normalizeIndent(textContent);
                 }
 
-                // Indent code between ``` ``` blocks
-
-//                this.$el.innerHTML = this.$converter.makeHtml(textContent.trim());
                 this.$el.innerHTML = marked(textContent.trim());
+
             }
         });
     }
