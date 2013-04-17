@@ -52,6 +52,22 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function 
 
         }.onChange('inheritancePath'),
 
+        dependencies: function() {
+            var ret = [];
+
+            // build the inheritance path with real objects
+            var dependencies = this.$.dependencies;
+
+            if (dependencies) {
+                for (var i = 0; i < dependencies.length; i++) {
+                    ret.push(this.$context.createEntity(Class, dependencies[i]));
+                }
+            }
+
+            return ret;
+
+        }.onChange('dependencies'),
+
         /***
          *
          * @param {String} [type=''] shows either 'all' or 'protected' or 'public' methods
