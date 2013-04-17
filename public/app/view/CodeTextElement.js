@@ -4,7 +4,7 @@ define(
 
 
             _initializeBindings: function(){
-                if(this.$descriptor.nodeType !== 4){
+                if(this.$descriptor && this.$descriptor.nodeType !== 4){
                     this.callBase();
                 }
                 this._initializationComplete();
@@ -89,8 +89,10 @@ define(
                         while(textChild.firstChild){
                             textChild = textChild.firstChild;
                         }
+
+
                         if (textChild.data && textChild.data.indexOf("\n") > -1) {
-                            textChild.data = textChild.data.replace(/\n/g, "");
+                            textChild.data = textChild.data.replace(/\n/g, "").substr(j - 1);
                         }
                         if (breakIndex > 0) {
                             textChild.data = textChild.data.substring(0,breakIndex);
