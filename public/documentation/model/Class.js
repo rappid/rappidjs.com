@@ -1,6 +1,14 @@
 define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function (Model, Method, _) {
 
-    var stripTrainingUnderscore = /^_/;
+    var stripTrainingUnderscore = /^_/,
+        baseUrl = "https://github.com/it-ony/rAppid.js/blob/master",
+        nodeBaseUrl = "https://github.com/joyent/node/tree/master/lib",
+        fileNameMap = {
+            underscore: "js/lib/underscore",
+            flow: "js/lib/flow",
+            inherit: "js/lib/inherit",
+            parser: "js/lib/parser"
+        };
 
     var Class = Model.inherit('documentation.model.Class', {
 
@@ -18,16 +26,59 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function 
             return this.$.id.split('.').pop();
         },
 
-        hasSee: function() {
+        fileName: function () {
+            var path = this.getPath();
+
+            if (this.isNodeModule(path)) {
+                return path;
+            } else {
+                return path.replace(/\./g, "/") + ".js";
+            }
+        }.onChange("id"),
+
+        fileLink: function () {
+            var path = this.getPath();
+
+            if (/^http/.test(path)) {
+                return path;
+            } else if (this.isNodeModule(path)) {
+                return nodeBaseUrl + "/" + path + ".js";
+            } else {
+                return baseUrl + "/" + path.replace(/\./g, "/") + ".js";
+            }
+
+        }.onChange("id"),
+
+        isNodeModule: function (name) {
+            return name.indexOf(".") === -1 && name.indexOf("/") === -1;
+        },
+
+        getPath: function () {
+            var name = this.$.id;
+            return fileNameMap[name] || name;
+        },
+
+        documentationLink: function () {
+            var path = this.getPath();
+
+            if (this.isNodeModule(path)) {
+                return "http://nodejs.org/api/" + path + ".html";
+            } else {
+                return "api/" + this.$.id;
+            }
+
+        }.onChange("id"),
+
+        hasSee: function () {
             return !!(this.$.see && this.$.see.length > 0);
         },
 
-        getSees: function() {
+        getSees: function () {
             var ret = [],
                 self = this;
 
             if (this.$.see) {
-                _.each(this.$.see, function(value) {
+                _.each(this.$.see, function (value) {
                     ret.push(self.$context.createEntity(Class, value));
                 });
             }
@@ -52,7 +103,7 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function 
 
         }.onChange('inheritancePath'),
 
-        dependencies: function() {
+        dependencies: function () {
             var ret = [];
 
             // build the inheritance path with real objects
