@@ -5,7 +5,7 @@ define(
         return View.inherit({
             defaults: {
                 tagName: 'pre',
-                "class": 'prettyprint linenums'
+                "class": 'prettyprint'
             },
             _createTextElement: function (node, rootScope) {
 
