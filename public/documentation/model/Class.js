@@ -32,15 +32,19 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function 
             return this.$.id.split('.').pop();
         },
 
+        fileExtension: function() {
+            return "." + this.$.type;
+        }.onChange("type"),
+
         fileName: function () {
             var path = this.getPath();
 
             if (this.isNodeModule(path)) {
                 return path;
             } else {
-                return path.replace(/\./g, "/") + ".js";
+                return path.replace(/\./g, "/") + this.fileExtension();
             }
-        }.onChange("id"),
+        }.onChange("id", "fileExtension()"),
 
         fileLink: function () {
             var path = this.getPath();
@@ -50,10 +54,10 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function 
             } else if (this.isNodeModule(path)) {
                 return nodeBaseUrl + "/" + path + ".js";
             } else {
-                return baseUrl + "/" + path.replace(/\./g, "/") + ".js";
+                return baseUrl + "/" + path.replace(/\./g, "/") + this.fileExtension();
             }
 
-        }.onChange("id"),
+        }.onChange("id", "fileExtension()"),
 
         isNodeModule: function (name) {
             return name.indexOf(".") === -1 && name.indexOf("/") === -1;
