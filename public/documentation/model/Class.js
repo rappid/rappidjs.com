@@ -8,6 +8,12 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function 
             flow: "js/lib/flow",
             inherit: "js/lib/inherit",
             parser: "js/lib/parser"
+        },
+        documentationMap = {
+            underscore: "http://http://underscorejs.org/",
+            flow: "https://github.com/it-ony/flow.js",
+            require: "http://requirejs.org/",
+            inherit: "https://github.com/it-ony/inherit.js"
         };
 
     var Class = Model.inherit('documentation.model.Class', {
@@ -61,7 +67,10 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function 
         documentationLink: function () {
             var path = this.getPath();
 
-            if (this.isNodeModule(path)) {
+            if (documentationMap.hasOwnProperty(this.$.id)) {
+                return documentationMap[this.$.id];
+            }
+            else if (this.isNodeModule(path)) {
                 return "http://nodejs.org/api/" + path + ".html";
             } else {
                 return "api/" + this.$.id;
