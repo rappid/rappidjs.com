@@ -1,4 +1,6 @@
-<ui:Dialog xmlns="http://www.w3.org/1999/xhtml" xmlns:js="js.core" xmlns:ui="js.ui"
+<ui:Dialog xmlns="http://www.w3.org/1999/xhtml"
+           xmlns:js="js.core"
+           xmlns:ui="js.ui"
            title="My Dialog">
     <js:Content name="body">
         <input type="text" cid="nameInput" value="Guest"/>
