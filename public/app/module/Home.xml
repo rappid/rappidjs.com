@@ -103,7 +103,7 @@
                     <p>
                         rAppid.js is installed using npm with just one command. After the installation succeed the command-line interface is ready to setup projects.
                     </p>
-                    <pre>npm install -d -g rAppid.js</pre>
+                    <pre>sudo npm install -g rAppid.js</pre>
                     <p>Download
                         <a href="http://nodejs.org">node</a> with <a href="http://npmjs.org">npm</a>.
                     </p>
