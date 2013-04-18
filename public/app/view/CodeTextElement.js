@@ -15,7 +15,7 @@ define(
                     this._initialize(this.$creationPolicy);
                 }
 
-                this.$el = this.$stage.$document.createElement('ol');
+                this.$el = this.$stage.$document.createElement('div');
                 if (!_.isUndefined(this.$.textContent)) {
                     this._renderTextContent(this.$.textContent);
                 }
