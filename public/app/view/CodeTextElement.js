@@ -49,11 +49,7 @@ define(
                     textContent = this.$.preRenderText(textContent);
                 }
 
-                var el = this.$stage.$document.createElement("div");
-
-                el.innerHTML = "<div>" + textContent + "</div>";
-
-                this.$el = el;
+                this.$el.innerHTML = "<div>" + textContent + "</div>";
             }
         });
     }
