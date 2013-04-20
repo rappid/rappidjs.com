@@ -1,6 +1,9 @@
 {
     "modules" : [
-        "app/Index",
+        {
+            "name": "app/Index",
+            "include": ["js/conf/DataSourceConfiguration"]
+        },
         "app/module/Home",
         "app/module/Wiki",
         "app/module/Ui",
