@@ -18,7 +18,7 @@
                 </h2>
                 <p>- the way you want to do it -</p>
                 <p>
-                    <a class="btn btn-large btn-primary" href="https://github.com/it-ony/rAppid.js">
+                    <a class="btn btn-large btn-primary" href="https://github.com/rappid/rAppid.js">
                         <em class="icon-download"/>
                         View on GitHub
                     </a>
@@ -31,7 +31,7 @@
                         <a href="http://blog.rappidjs.com">Read the blog</a>
                     </li>
                     <li>
-                        <a href="https://github.com/it-ony/rAppid.js/issues/new" target="_blank">
+                        <a href="https://github.com/rappid/rAppid.js/issues/new" target="_blank">
                             Submit issues
                         </a>
                     </li>
