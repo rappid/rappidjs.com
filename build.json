@@ -3,7 +3,8 @@
         "app/Index",
         "app/module/Home",
         "app/module/Wiki",
-        "app/module/Ui"
+        "app/module/Ui",
+        "app/module/Documentation"
     ],
     "indexFile": "index.html",
     "targetDir" : "public-build",
