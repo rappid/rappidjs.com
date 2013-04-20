@@ -222,7 +222,7 @@
         "js.core.DomElement",
         "underscore"
     ],
-    "description": "Binds the window resize event and sets the size on resize if the policy requires it",
+    "description": "Represents a HTML Element in the DOM",
     "type": "js",
     "inheritancePath": [
         "js.core.DomElement"
