@@ -1,7 +1,7 @@
 define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documentation/entity/Attribute'], function (Model, Method, _, Attribute) {
 
     var stripTrainingUnderscore = /^_/,
-        baseUrl = "https://github.com/it-ony/rAppid.js/blob/master",
+        baseUrl = "https://github.com/rappid/rAppid.js/blob/master",
         nodeBaseUrl = "https://github.com/joyent/node/tree/master/lib",
         fileNameMap = {
             underscore: "js/lib/underscore",
