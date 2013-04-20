@@ -1,15 +1,36 @@
 {
-    "fqClassName": "js.core.Window",
     "methods": [
         {
             "type": "Method",
             "parameter": [
                 {
-                    "name": "type"
+                    "name": "children"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_initializeLayoutChildren",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attribute"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_isDOMNodeAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
                 }
             ],
             "definedBy": "js.html.HtmlElement",
-            "name": "_createDOMEventHandler",
+            "name": "_isStyleAttribute",
             "visibility": "protected"
         },
         {
@@ -19,6 +40,31 @@
             "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_onDomAdded",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderAttributeInternal",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderChild",
             "visibility": "protected"
         },
         {
@@ -67,6 +113,31 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "id"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderId",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "layoutClass"
+                },
+                {
+                    "name": "oldLayoutClass"
+                }
+            ],
+            "definedBy": "js.ui.View",
+            "name": "_renderLayoutClass",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": null,
                     "name": "name",
                     "optional": false
@@ -88,21 +159,6 @@
             "parameter": [
                 {
                     "types": null,
-                    "name": "position",
-                    "optional": false
-                }
-            ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderPosition",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
                     "name": "selectable",
                     "optional": false
                 }
@@ -117,15 +173,17 @@
             "type": "Method",
             "parameter": [
                 {
-                    "types": null,
-                    "name": "selected",
-                    "optional": false
+                    "name": "templateName"
+                },
+                {
+                    "name": "placeholderName"
+                },
+                {
+                    "name": "attributes"
                 }
             ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderSelected",
+            "definedBy": "js.ui.View",
+            "name": "_renderTemplateToPlaceHolder",
             "visibility": "protected"
         },
         {
@@ -163,6 +221,19 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "cls"
+                },
+                {
+                    "name": "oldCls"
+                }
+            ],
+            "name": "_renderWindowClass",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": null,
                     "name": "key",
                     "optional": false
@@ -187,6 +258,13 @@
                 }
             ],
             "name": "close",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.View",
+            "name": "render",
             "visibility": "public"
         },
         {
@@ -227,8 +305,99 @@
             "visibility": "public"
         }
     ],
-    "inherit": "js.html.HtmlElement",
+    "defaults": {
+        "tagName": {
+            "name": "tagName",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "div",
+            "definedBy": "js.ui.View",
+            "overwritesDefault": true
+        },
+        "componentClass": {
+            "name": "componentClass",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "window"
+        },
+        "selected": {
+            "name": "selected",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined the \"active\" CSS class is added",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "selectable": {
+            "name": "selectable",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined a click will set the element to selected",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "namespace": {
+            "name": "namespace",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "enabled": {
+            "name": "enabled",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": true,
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "position": {
+            "name": "position",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "Possible values: \"absolute\", \"relative\"",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "heightUpdatePolicy": {
+            "name": "heightUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "The heightUpdatePolicy configures whether the height of the component isupdated when the DOM node height changes or if the DOM node height is updatedwhen the component height changes.Possible values:- in - \"height\" attribute is determined by DOM nodes offsetHeight- out - DOM node height is determined by the \"height\" attribute- both - both directions",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "widthUpdatePolicy": {
+            "name": "widthUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "The widthUpdatePolicy configures whether the width of the component isupdated when the DOM node width changes or if the DOM node width is updatedwhen the component width changes.Possible values:- in - \"width\" attribute is determined by DOM nodes offsetWidth- out - DOM node width is determined by the \"width\" attribute- both - both directions",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
+    "fqClassName": "js.core.Window",
+    "inherit": "js.ui.View",
+    "dependencies": [
+        "js.ui.View"
+    ],
+    "type": "js",
     "inheritancePath": [
+        "js.ui.View",
         "js.html.HtmlElement",
         "js.core.DomElement"
     ]

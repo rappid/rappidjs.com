@@ -1,78 +1,27 @@
 {
-    "fqClassName": "js.svg.Svg",
     "methods": [
         {
             "type": "Method",
             "parameter": [],
-            "definedBy": "js.svg.SvgElement",
-            "name": "_refreshTransform",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "value"
-                }
-            ],
-            "definedBy": "js.svg.SvgElement",
-            "name": "_renderClass",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "href"
-                },
-                {
-                    "name": "oldHref"
-                }
-            ],
-            "definedBy": "js.svg.SvgElement",
-            "name": "_renderHref",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "transform"
-                }
-            ],
-            "definedBy": "js.svg.SvgElement",
-            "name": "addTransform",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [],
-            "definedBy": "js.svg.SvgElement",
             "name": "ctor",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
-            "definedBy": "js.svg.SvgElement",
-            "name": "resetTransform",
+            "name": "globalToLocalFactor",
             "visibility": "public"
         },
         {
             "type": "Method",
-            "parameter": [
-                {
-                    "name": "r"
-                },
-                {
-                    "name": "x"
-                },
-                {
-                    "name": "y"
-                }
-            ],
-            "definedBy": "js.svg.SvgElement",
-            "name": "rotate",
+            "parameter": [],
+            "name": "localToGlobalFactor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "save",
             "visibility": "public"
         },
         {
@@ -93,25 +42,37 @@
             ],
             "name": "setViewBox",
             "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "x"
-                },
-                {
-                    "name": "y"
-                }
-            ],
-            "definedBy": "js.svg.SvgElement",
-            "name": "translate",
-            "visibility": "public"
         }
     ],
-    "inherit": "js.svg.SvgElement",
-    "inheritancePath": [
+    "defaults": {
+        "tagName": {
+            "name": "tagName",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "svg"
+        },
+        "viewBox": {
+            "name": "viewBox",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "0 0 100 100"
+        },
+        "hidden": {
+            "name": "hidden",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null
+        }
+    },
+    "fqClassName": "js.svg.Svg",
+    "inherit": "xaml!js.svg.SvgDescriptor",
+    "dependencies": [
+        "js.core.Base",
         "js.svg.SvgElement",
-        "js.core.DomElement"
+        "xaml!js.svg.SvgDescriptor"
+    ],
+    "type": "js",
+    "inheritancePath": [
+        "xaml!js.svg.SvgDescriptor"
     ]
 }

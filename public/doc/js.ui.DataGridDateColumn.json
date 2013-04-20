@@ -1,5 +1,4 @@
 {
-    "fqClassName": "js.ui.DataGridDateColumn",
     "methods": [
         {
             "type": "Method",
@@ -8,7 +7,27 @@
             "visibility": "public"
         }
     ],
+    "defaults": {
+        "dateFormat": {
+            "name": "dateFormat",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "MM-DD-YYYY"
+        },
+        "parseFormat": {
+            "name": "parseFormat",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "YYYY-MM-DDTHH:mm:ssZ"
+        }
+    },
+    "fqClassName": "js.ui.DataGridDateColumn",
     "inherit": "xaml!js.ui.DataGridColumn",
+    "dependencies": [
+        "moment",
+        "xaml!js.ui.DataGridColumn"
+    ],
+    "type": "js",
     "inheritancePath": [
         "xaml!js.ui.DataGridColumn"
     ]

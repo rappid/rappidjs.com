@@ -1,6 +1,44 @@
 {
-    "fqClassName": "js.core.Bindable",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_beforeDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_bindBus",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false,
+                    "description": "the function to call"
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": false,
+                    "description": "delay in ms"
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_callFunctionDelayed",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -68,6 +106,19 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_destroyCompleted",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_extract",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
                     "types": [
@@ -86,6 +137,113 @@
             },
             "private": "",
             "name": "_generateDefaultsChain",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "search"
+                }
+            ],
+            "name": "_hasAll",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "search"
+                }
+            ],
+            "name": "_hasSome",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_initializationComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_initialize",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Initialize all Binding and Event attributes",
+            "name": "_initializeBindings",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_initializeBindingsBeforeComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_initializeFromCtor",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_inject",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_injectChain",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "overwritesMethod": true,
+            "name": "_innerDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_postConstruct",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_preDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_setUp",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_tearDown",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_unbindBus",
             "visibility": "protected"
         },
         {
@@ -180,15 +338,16 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "Destroys all event bindings and triggers a destroy event",
-            "returns": {
-                "types": [
-                    "this"
-                ]
-            },
+            "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
             "name": "destroy",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base",
+            "name": "emptyCallback",
             "visibility": "public"
         },
         {
@@ -224,6 +383,26 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "fncName"
+                }
+            ],
+            "name": "getScopeForFncName",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "name": "getScopeForKey",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "String"
                     ],
@@ -240,6 +419,22 @@
                 "description": "true if attribute is not undefined"
             },
             "name": "has",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "initialize",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "b"
+                }
+            ],
+            "name": "isDeepEqual",
             "visibility": "public"
         },
         {
@@ -376,7 +571,7 @@
                     "optional": false
                 }
             ],
-            "description": "Triggers an event",
+            "description": "Triggers a specific event and the * event",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
             "visibility": "public"
@@ -406,7 +601,7 @@
                     ],
                     "name": "callback",
                     "optional": false,
-                    "description": "the event handler which is currently boundTODO: why a scope is passed here?"
+                    "description": "the event handler which is currently bound"
                 },
                 {
                     "types": [
@@ -452,7 +647,17 @@
             "visibility": "public"
         }
     ],
+    "defaults": {},
+    "fqClassName": "js.core.Bindable",
     "inherit": "js.core.EventDispatcher",
+    "dependencies": [
+        "js.core.Binding",
+        "js.core.BindingCreator",
+        "js.core.EventDispatcher",
+        "js.lib.parser",
+        "underscore"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.core.EventDispatcher",
         "js.core.Base"

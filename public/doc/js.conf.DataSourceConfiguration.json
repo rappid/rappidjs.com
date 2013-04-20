@@ -1,5 +1,4 @@
 {
-    "fqClassName": "js.conf.DataSourceConfiguration",
     "methods": [
         {
             "type": "Method",
@@ -15,17 +14,6 @@
             "overwritesMethod": true,
             "name": "_validateConfiguration",
             "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "collectionClassName"
-                }
-            ],
-            "definedBy": "js.conf.ResourceConfiguration",
-            "name": "getConfigurationForCollectionClassName",
-            "visibility": "public"
         },
         {
             "type": "Method",
@@ -71,7 +59,21 @@
             "visibility": "public"
         }
     ],
+    "defaults": {
+        "resourceHandler": {
+            "name": "resourceHandler",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "definedBy": "js.conf.ResourceConfiguration"
+        }
+    },
+    "fqClassName": "js.conf.DataSourceConfiguration",
     "inherit": "js.conf.ResourceConfiguration",
+    "dependencies": [
+        "js.conf.ResourceConfiguration"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.conf.ResourceConfiguration",
         "js.conf.Configuration"

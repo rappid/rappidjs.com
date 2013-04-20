@@ -1,6 +1,38 @@
 {
-    "fqClassName": "js.core.Binding",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_beforeDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false,
+                    "description": "the function to call"
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": false,
+                    "description": "delay in ms"
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_callFunctionDelayed",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [],
@@ -38,6 +70,26 @@
         {
             "type": "Method",
             "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_destroyCompleted",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "scope"
+                },
+                {
+                    "name": "fnc"
+                }
+            ],
+            "name": "_getEventsForFnc",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
             "description": "Returns an array with values of all function parameters",
             "returns": {
                 "types": [
@@ -52,11 +104,56 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "scope"
+                },
+                {
+                    "name": "fnc"
+                }
+            ],
+            "name": "_getOnChangeAttributesForFnc",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Unbinds all events and destroys subBinding...",
+            "definedBy": "js.core.EventDispatcher",
+            "overwritesMethod": true,
+            "name": "_innerDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "e"
                 }
             ],
             "name": "_revCallback",
             "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Bindable"
+                    ],
+                    "name": "targetScope",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String",
+                        "Function"
+                    ],
+                    "name": "key",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "name": "addTarget",
+            "visibility": "public"
         },
         {
             "type": "Method",
@@ -117,10 +214,16 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "Unbinds all events and destroys subBinding...",
+            "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
             "name": "destroy",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base",
+            "name": "emptyCallback",
             "visibility": "public"
         },
         {
@@ -133,6 +236,12 @@
                 ]
             },
             "name": "getContextValue",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "getTargets",
             "visibility": "public"
         },
         {
@@ -151,6 +260,12 @@
             "type": "Method",
             "parameter": [],
             "name": "initialize",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "invalidateValueCache",
             "visibility": "public"
         },
         {
@@ -178,6 +293,29 @@
             "description": "logs messages to configured logging functions",
             "definedBy": "js.core.Base",
             "name": "log",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Bindable"
+                    ],
+                    "name": "targetScope",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String",
+                        "Function"
+                    ],
+                    "name": "key",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "name": "removeTarget",
             "visibility": "public"
         },
         {
@@ -222,11 +360,39 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "eventType",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "EventDispatcher.Event",
+                        "Object"
+                    ],
+                    "name": "event",
+                    "optional": false,
+                    "description": "If you use an Object the object is wrapped in an Event"
+                },
+                {
+                    "types": null,
+                    "name": "target",
+                    "optional": false
+                }
+            ],
+            "description": "Triggers a specific event and the * event",
+            "definedBy": "js.core.EventDispatcher",
+            "name": "trigger",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "description": "This method triggers the binding and syncs the target with the scope",
-            "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
-            "name": "trigger",
+            "name": "triggerBinding",
             "visibility": "public"
         },
         {
@@ -256,8 +422,35 @@
             "visibility": "public"
         }
     ],
+    "defaults": {
+        "event": {
+            "name": "event",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "change"
+        },
+        "path": {
+            "name": "path",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null
+        },
+        "twoWay": {
+            "name": "twoWay",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": false
+        }
+    },
+    "fqClassName": "js.core.Binding",
     "inherit": "js.core.EventDispatcher",
+    "dependencies": [
+        "js.core.EventDispatcher",
+        "js.lib.parser",
+        "underscore"
+    ],
     "description": "Returns false if path includes function",
+    "type": "js",
     "inheritancePath": [
         "js.core.EventDispatcher",
         "js.core.Base"

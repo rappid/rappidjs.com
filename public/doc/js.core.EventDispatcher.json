@@ -1,6 +1,49 @@
 {
-    "fqClassName": "js.core.EventDispatcher",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_beforeDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false,
+                    "description": "the function to call"
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": false,
+                    "description": "delay in ms"
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_callFunctionDelayed",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_destroyCompleted",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_innerDestroy",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -39,7 +82,15 @@
         {
             "type": "Method",
             "parameter": [],
+            "description": "Clears up the instance",
             "name": "destroy",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base",
+            "name": "emptyCallback",
             "visibility": "public"
         },
         {
@@ -108,7 +159,7 @@
                     "optional": false
                 }
             ],
-            "description": "Triggers an event",
+            "description": "Triggers a specific event and the * event",
             "name": "trigger",
             "visibility": "public"
         },
@@ -138,7 +189,13 @@
             "visibility": "public"
         }
     ],
+    "defaults": {},
+    "fqClassName": "js.core.EventDispatcher",
     "inherit": "js.core.Base",
+    "dependencies": [
+        "js.core.Base"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.core.Base"
     ]

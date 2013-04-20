@@ -1,5 +1,4 @@
 {
-    "fqClassName": "js.error.ValidationError",
     "methods": [
         {
             "type": "Method",
@@ -23,5 +22,9 @@
             "name": "toString",
             "visibility": "public"
         }
-    ]
+    ],
+    "defaults": {},
+    "fqClassName": "js.error.ValidationError",
+    "dependencies": [],
+    "type": "js"
 }

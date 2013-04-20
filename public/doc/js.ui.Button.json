@@ -1,5 +1,4 @@
 {
-    "fqClassName": "js.ui.Button",
     "methods": [
         {
             "type": "Method",
@@ -28,7 +27,19 @@
             "visibility": "protected"
         }
     ],
+    "defaults": {
+        "undefined": {
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "btn"
+        }
+    },
+    "fqClassName": "js.ui.Button",
     "inherit": "xaml!js.ui.Link",
+    "dependencies": [
+        "xaml!js.ui.Link"
+    ],
+    "type": "js",
     "inheritancePath": [
         "xaml!js.ui.Link"
     ]

@@ -1,5 +1,4 @@
 {
-    "fqClassName": "js.ui.RadioGroup",
     "methods": [
         {
             "type": "Method",
@@ -9,17 +8,6 @@
                 }
             ],
             "name": "_commitValue",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "type"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_createDOMEventHandler",
             "visibility": "protected"
         },
         {
@@ -46,6 +34,17 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_isStyleAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "description": "",
             "private": "",
@@ -61,6 +60,20 @@
                 }
             ],
             "name": "_onRadioSelected",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderAttributeInternal",
             "visibility": "protected"
         },
         {
@@ -166,21 +179,6 @@
             "parameter": [
                 {
                     "types": null,
-                    "name": "position",
-                    "optional": false
-                }
-            ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderPosition",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
                     "name": "selectable",
                     "optional": false
                 }
@@ -189,21 +187,6 @@
             "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_renderSelectable",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
-                    "name": "selected",
-                    "optional": false
-                }
-            ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderSelected",
             "visibility": "protected"
         },
         {
@@ -298,7 +281,103 @@
             "visibility": "public"
         }
     ],
+    "defaults": {
+        "value": {
+            "name": "value",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null
+        },
+        "componentClass": {
+            "name": "componentClass",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "radio-group"
+        },
+        "tagName": {
+            "name": "tagName",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "div",
+            "definedBy": "js.ui.View"
+        },
+        "selected": {
+            "name": "selected",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined the \"active\" CSS class is added",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "selectable": {
+            "name": "selectable",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined a click will set the element to selected",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "namespace": {
+            "name": "namespace",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "enabled": {
+            "name": "enabled",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": true,
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "position": {
+            "name": "position",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "Possible values: \"absolute\", \"relative\"",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "heightUpdatePolicy": {
+            "name": "heightUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "The heightUpdatePolicy configures whether the height of the component isupdated when the DOM node height changes or if the DOM node height is updatedwhen the component height changes.Possible values:- in - \"height\" attribute is determined by DOM nodes offsetHeight- out - DOM node height is determined by the \"height\" attribute- both - both directions",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "widthUpdatePolicy": {
+            "name": "widthUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "The widthUpdatePolicy configures whether the width of the component isupdated when the DOM node width changes or if the DOM node width is updatedwhen the component width changes.Possible values:- in - \"width\" attribute is determined by DOM nodes offsetWidth- out - DOM node width is determined by the \"width\" attribute- both - both directions",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
+    "fqClassName": "js.ui.RadioGroup",
     "inherit": "js.ui.View",
+    "dependencies": [
+        "js.ui.View",
+        "xaml!js.ui.Radio"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.ui.View",
         "js.html.HtmlElement",

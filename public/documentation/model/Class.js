@@ -1,4 +1,4 @@
-define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function (Model, Method, _) {
+define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documentation/entity/Attribute'], function (Model, Method, _, Attribute) {
 
     var stripTrainingUnderscore = /^_/,
         baseUrl = "https://github.com/it-ony/rAppid.js/blob/master",
@@ -19,7 +19,8 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function 
     var Class = Model.inherit('documentation.model.Class', {
 
         schema: {
-            methods: [Method]
+            methods: [Method],
+            defaults: Object
         },
 
         packageName: function () {
@@ -131,6 +132,24 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore'], function 
             return ret;
 
         }.onChange('dependencies'),
+
+        getDefaults: function(){
+            var ret = [],
+                attribute;
+
+            for(var key in this.$.defaults){
+                if(this.$.defaults.hasOwnProperty(key)){
+                    if(!this.$.defaults[key].definedBy){
+                        attribute = this.$context.createEntity(Attribute, key);
+                        attribute.set(this.$.defaults[key]);
+                        ret.push(attribute);
+                    }
+
+                }
+            }
+            // build the inheritance path with real objects
+            return ret;
+        },
 
         /***
          *

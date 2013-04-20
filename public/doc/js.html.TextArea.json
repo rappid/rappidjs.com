@@ -1,5 +1,4 @@
 {
-    "fqClassName": "js.html.TextArea",
     "methods": [
         {
             "type": "Method",
@@ -11,11 +10,11 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "type"
+                    "name": "key"
                 }
             ],
             "definedBy": "js.html.HtmlElement",
-            "name": "_createDOMEventHandler",
+            "name": "_isStyleAttribute",
             "visibility": "protected"
         },
         {
@@ -25,6 +24,20 @@
             "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_onDomAdded",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderAttributeInternal",
             "visibility": "protected"
         },
         {
@@ -104,21 +117,6 @@
             "parameter": [
                 {
                     "types": null,
-                    "name": "position",
-                    "optional": false
-                }
-            ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderPosition",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
                     "name": "selectable",
                     "optional": false
                 }
@@ -127,21 +125,6 @@
             "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_renderSelectable",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
-                    "name": "selected",
-                    "optional": false
-                }
-            ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderSelected",
             "visibility": "protected"
         },
         {
@@ -206,7 +189,91 @@
             "visibility": "protected"
         }
     ],
+    "defaults": {
+        "updateOnEvent": {
+            "name": "updateOnEvent",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "change"
+        },
+        "selected": {
+            "name": "selected",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined the \"active\" CSS class is added",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "selectable": {
+            "name": "selectable",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined a click will set the element to selected",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "namespace": {
+            "name": "namespace",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "enabled": {
+            "name": "enabled",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": true,
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "position": {
+            "name": "position",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "Possible values: \"absolute\", \"relative\"",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "heightUpdatePolicy": {
+            "name": "heightUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "The heightUpdatePolicy configures whether the height of the component isupdated when the DOM node height changes or if the DOM node height is updatedwhen the component height changes.Possible values:- in - \"height\" attribute is determined by DOM nodes offsetHeight- out - DOM node height is determined by the \"height\" attribute- both - both directions",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "widthUpdatePolicy": {
+            "name": "widthUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "The widthUpdatePolicy configures whether the width of the component isupdated when the DOM node width changes or if the DOM node width is updatedwhen the component width changes.Possible values:- in - \"width\" attribute is determined by DOM nodes offsetWidth- out - DOM node width is determined by the \"width\" attribute- both - both directions",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
+    "fqClassName": "js.html.TextArea",
     "inherit": "js.html.HtmlElement",
+    "dependencies": [
+        "js.core.BindingCreator",
+        "js.core.TextElement",
+        "js.html.HtmlElement"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.html.HtmlElement",
         "js.core.DomElement"

@@ -1,5 +1,4 @@
 {
-    "fqClassName": "js.conf.ResourceConfiguration",
     "methods": [
         {
             "type": "Method",
@@ -12,16 +11,6 @@
             "parameter": [],
             "name": "_validateConfiguration",
             "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "collectionClassName"
-                }
-            ],
-            "name": "getConfigurationForCollectionClassName",
-            "visibility": "public"
         },
         {
             "type": "Method",
@@ -64,7 +53,21 @@
             "visibility": "public"
         }
     ],
+    "defaults": {
+        "resourceHandler": {
+            "name": "resourceHandler",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null
+        }
+    },
+    "fqClassName": "js.conf.ResourceConfiguration",
     "inherit": "js.conf.Configuration",
+    "dependencies": [
+        "js.conf.Configuration",
+        "js.data.Model"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.conf.Configuration"
     ]

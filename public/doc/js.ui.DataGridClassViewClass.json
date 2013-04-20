@@ -1,5 +1,4 @@
 {
-    "fqClassName": "js.ui.DataGridClassViewClass",
     "methods": [
         {
             "type": "Method",
@@ -29,6 +28,15 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "description": "deselect all elements",
+            "private": "",
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_clearSelection",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
                     "name": "attributes"
@@ -51,17 +59,6 @@
             "definedBy": "js.ui.VirtualItemsView",
             "overwritesMethod": true,
             "name": "_commitData",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "type"
-                }
-            ],
-            "definedBy": "js.html.HtmlElement",
-            "name": "_createDOMEventHandler",
             "visibility": "protected"
         },
         {
@@ -133,6 +130,17 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_isStyleAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
             "definedBy": "js.ui.VirtualItemsView",
             "name": "_isWebkitAndTouch",
@@ -147,7 +155,20 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_mouseMove",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
+            "description": "",
+            "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_onDomAdded",
             "visibility": "protected"
@@ -156,9 +177,13 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "e"
+                    "types": null,
+                    "name": "e",
+                    "optional": false
                 }
             ],
+            "description": "handles key down",
+            "private": "",
             "definedBy": "js.ui.VirtualItemsView",
             "name": "_onKeyDown",
             "visibility": "protected"
@@ -189,6 +214,35 @@
             ],
             "definedBy": "js.ui.VirtualItemsView",
             "name": "_onRendererDblClick",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_onSelectedItemsAdd",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "e"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_onSelectedItemsRemove",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "_onSelectedItemsReset",
             "visibility": "protected"
         },
         {
@@ -255,6 +309,20 @@
             "private": "",
             "definedBy": "js.ui.VirtualItemsView",
             "name": "_releaseActiveRenderer",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.html.HtmlElement",
+            "name": "_renderAttributeInternal",
             "visibility": "protected"
         },
         {
@@ -360,21 +428,6 @@
             "parameter": [
                 {
                     "types": null,
-                    "name": "position",
-                    "optional": false
-                }
-            ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderPosition",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
                     "name": "selectable",
                     "optional": false
                 }
@@ -383,21 +436,6 @@
             "private": "",
             "definedBy": "js.html.HtmlElement",
             "name": "_renderSelectable",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
-                    "name": "selected",
-                    "optional": false
-                }
-            ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.html.HtmlElement",
-            "name": "_renderSelected",
             "visibility": "protected"
         },
         {
@@ -481,15 +519,23 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "index"
+                    "types": null,
+                    "name": "index",
+                    "optional": false
                 },
                 {
-                    "name": "shiftDown"
+                    "types": null,
+                    "name": "shiftDown",
+                    "optional": false
                 },
                 {
-                    "name": "metaKey"
+                    "types": null,
+                    "name": "metaKey",
+                    "optional": false
                 }
             ],
+            "description": "selects the item",
+            "private": "",
             "definedBy": "js.ui.VirtualItemsView",
             "name": "_selectItem",
             "visibility": "protected"
@@ -587,6 +633,17 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "item"
+                }
+            ],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "getSelectionKeyForItem",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "count"
                 }
             ],
@@ -606,13 +663,20 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "initialize",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
-                    "name": "data"
+                    "name": "query"
                 }
             ],
             "definedBy": "js.ui.VirtualItemsView",
-            "name": "isItemSelected",
+            "name": "query",
             "visibility": "public"
         },
         {
@@ -632,9 +696,259 @@
             "overwritesMethod": true,
             "name": "render",
             "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "sortParameter",
+                    "optional": false
+                }
+            ],
+            "description": "sorts the bound dataAdapter",
+            "definedBy": "js.ui.VirtualItemsView",
+            "name": "sort",
+            "visibility": "public"
         }
     ],
+    "defaults": {
+        "columns": {
+            "name": "columns",
+            "defaultType": "factory",
+            "visibility": "public"
+        },
+        "_cols": {
+            "name": "_cols",
+            "defaultType": "value",
+            "visibility": "private",
+            "value": 1,
+            "definedBy": "js.ui.VirtualItemsView",
+            "overwritesDefault": true
+        },
+        "_itemWidth": {
+            "name": "_itemWidth",
+            "defaultType": "value",
+            "visibility": "private",
+            "value": null,
+            "definedBy": "js.ui.VirtualItemsView",
+            "overwritesDefault": true
+        },
+        "data": {
+            "name": "data",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "definedBy": "js.ui.VirtualItemsView",
+            "overwritesDefault": true
+        },
+        "prefetchItemCount": {
+            "name": "prefetchItemCount",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 3,
+            "definedBy": "js.ui.VirtualItemsView",
+            "overwritesDefault": true
+        },
+        "scrollTop": {
+            "name": "scrollTop",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 0,
+            "description": " TODO: update positions, after DOM Element scrollLeft and scrollTop changed scroll positions",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "scrollLeft": {
+            "name": "scrollLeft",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 0,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "width": {
+            "name": "width",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 300,
+            "description": " TODO: update width and height, after DOM Element resized",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "height": {
+            "name": "height",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 300,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "_itemHeight": {
+            "name": "_itemHeight",
+            "defaultType": "value",
+            "visibility": "private",
+            "value": 100,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "_rows": {
+            "name": "_rows",
+            "defaultType": "value",
+            "visibility": "private",
+            "value": 3,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "scrollToIndex": {
+            "name": "scrollToIndex",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 0,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "horizontalGap": {
+            "name": "horizontalGap",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 0,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "verticalGap": {
+            "name": "verticalGap",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 0,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "scrollDirection": {
+            "name": "scrollDirection",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "fetchPageDelay": {
+            "name": "fetchPageDelay",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 500,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "fetchWithFullData": {
+            "name": "fetchWithFullData",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": false,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "$dataAdapter": {
+            "name": "$dataAdapter",
+            "defaultType": "value",
+            "visibility": "private",
+            "value": null,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "selectionMode": {
+            "name": "selectionMode",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "multi",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "selectedItems": {
+            "name": "selectedItems",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "hoverItem": {
+            "name": "hoverItem",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "tagName": {
+            "name": "tagName",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "div",
+            "definedBy": "js.ui.View"
+        },
+        "selected": {
+            "name": "selected",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined the \"active\" CSS class is added",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "selectable": {
+            "name": "selectable",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined a click will set the element to selected",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "namespace": {
+            "name": "namespace",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "enabled": {
+            "name": "enabled",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": true,
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "position": {
+            "name": "position",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "Possible values: \"absolute\", \"relative\"",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "heightUpdatePolicy": {
+            "name": "heightUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "The heightUpdatePolicy configures whether the height of the component isupdated when the DOM node height changes or if the DOM node height is updatedwhen the component height changes.Possible values:- in - \"height\" attribute is determined by DOM nodes offsetHeight- out - DOM node height is determined by the \"height\" attribute- both - both directions",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "widthUpdatePolicy": {
+            "name": "widthUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "The widthUpdatePolicy configures whether the width of the component isupdated when the DOM node width changes or if the DOM node width is updatedwhen the component width changes.Possible values:- in - \"width\" attribute is determined by DOM nodes offsetWidth- out - DOM node width is determined by the \"width\" attribute- both - both directions",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
+    "fqClassName": "js.ui.DataGridClassViewClass",
     "inherit": "js.ui.VirtualItemsView",
+    "dependencies": [
+        "js.core.Binding",
+        "js.core.List",
+        "js.ui.VirtualItemsView",
+        "underscore",
+        "xaml!js.ui.DataGridColumn"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.ui.VirtualItemsView",
         "js.ui.View",

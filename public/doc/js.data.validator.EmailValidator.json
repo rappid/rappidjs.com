@@ -1,6 +1,45 @@
 {
-    "fqClassName": "js.data.validator.EmailValidator",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_beforeDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_bindBus",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false,
+                    "description": "the function to call"
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": false,
+                    "description": "delay in ms"
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_callFunctionDelayed",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -57,7 +96,28 @@
         },
         {
             "type": "Method",
-            "parameter": [],
+            "parameter": [
+                {
+                    "name": "code"
+                },
+                {
+                    "name": "message"
+                },
+                {
+                    "name": "field"
+                }
+            ],
+            "definedBy": "js.data.validator.Validator",
+            "name": "_createError",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "field"
+                }
+            ],
             "definedBy": "js.data.validator.Validator",
             "name": "_createFieldError",
             "visibility": "protected"
@@ -79,14 +139,21 @@
         },
         {
             "type": "Method",
-            "parameter": [
-                {
-                    "name": "field"
-                },
-                {
-                    "name": "regEx"
-                }
-            ],
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_destroyCompleted",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_extract",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
             "definedBy": "js.data.validator.Validator",
             "name": "_generateCacheKey",
             "visibility": "protected"
@@ -125,15 +192,149 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "entity",
+                    "name": "attributes"
+                },
+                {
+                    "name": "search"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "_hasAll",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "search"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "_hasSome",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_initializationComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_initialize",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Initialize all Binding and Event attributes",
+            "definedBy": "js.core.Bindable",
+            "name": "_initializeBindings",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_initializeBindingsBeforeComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_initializeFromCtor",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_inject",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_injectChain",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_innerDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_postConstruct",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_preDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_setUp",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_tearDown",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_unbindBus",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "js.data.Entity"
                     ],
+                    "name": "entity",
                     "optional": false
                 }
             ],
+            "description": "performs a synchronous validation",
+            "abstract": "",
+            "private": "",
             "definedBy": "js.data.validator.Validator",
             "name": "_validate",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "entity"
+                }
+            ],
+            "definedBy": "js.data.validator.Validator",
+            "name": "_validationRequired",
             "visibility": "protected"
         },
         {
@@ -143,38 +344,24 @@
                     "types": [
                         "String"
                     ],
-                    "name": "path",
+                    "name": "eventType",
                     "optional": false,
-                    "description": "a binding path e.g. a.b.c"
+                    "description": "The name of the event"
                 },
                 {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "event",
-                    "optional": false,
-                    "description": "the type of the event which should be bound"
-                },
-                {
-                    "types": [
-                        "Function"
-                    ],
-                    "name": "callback",
-                    "optional": false,
-                    "description": "the event handler function"
+                    "name": "callback"
                 },
                 {
                     "types": [
                         "Object"
                     ],
-                    "name": "thisArg",
+                    "name": "scope",
                     "optional": true,
-                    "description": "the thisArg used for calling the event handler"
+                    "description": "This sets the scope for the callback function"
                 }
             ],
-            "description": "Binds an event handler function to an EventDispatcher",
+            "description": "Binds a callback and a scope to a given eventType",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
             "name": "bind",
             "visibility": "public"
         },
@@ -219,15 +406,16 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "Destroys all event bindings and triggers a destroy event",
-            "returns": {
-                "types": [
-                    "this"
-                ]
-            },
+            "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
             "name": "destroy",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base",
+            "name": "emptyCallback",
             "visibility": "public"
         },
         {
@@ -264,6 +452,28 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "fncName"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "getScopeForFncName",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "getScopeForKey",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "String"
                     ],
@@ -281,6 +491,24 @@
             },
             "definedBy": "js.core.Bindable",
             "name": "has",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "initialize",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "b"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "isDeepEqual",
             "visibility": "public"
         },
         {
@@ -421,7 +649,7 @@
                     "optional": false
                 }
             ],
-            "description": "Triggers an event",
+            "description": "Triggers a specific event and the * event",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
             "visibility": "public"
@@ -433,37 +661,22 @@
                     "types": [
                         "String"
                     ],
-                    "name": "path",
-                    "optional": true,
-                    "description": "the path from which the event should be unbound"
-                },
-                {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "event",
-                    "optional": false,
-                    "description": "the type of the event"
+                    "name": "eventType",
+                    "optional": false
                 },
                 {
                     "types": [
                         "Function"
                     ],
                     "name": "callback",
-                    "optional": false,
-                    "description": "the event handler which is currently boundTODO: why a scope is passed here?"
+                    "optional": false
                 },
                 {
-                    "types": [
-                        "Object"
-                    ],
-                    "name": "scope",
-                    "optional": true
+                    "name": "scope"
                 }
             ],
-            "description": "Unbinds an bound event handler from an EventDispatcher.",
+            "description": "Unbinds callbacks for events",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
             "name": "unbind",
             "visibility": "public"
         },
@@ -517,7 +730,64 @@
             "visibility": "public"
         }
     ],
+    "defaults": {
+        "regEx": {
+            "name": "regEx",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": {},
+            "description": " TODO: add umlauts",
+            "definedBy": "js.data.validator.RegExValidator",
+            "overwritesDefault": true
+        },
+        "errorCode": {
+            "name": "errorCode",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "emailError",
+            "definedBy": "js.data.validator.Validator",
+            "overwritesDefault": true
+        },
+        "field": {
+            "name": "field",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "the field of the entity to validate",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.data.validator.Validator"
+        },
+        "errorMessage": {
+            "name": "errorMessage",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "the error message displayed for the user",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.data.validator.Validator"
+        },
+        "condition": {
+            "name": "condition",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "a compare function used for validation",
+            "types": [
+                "Function"
+            ],
+            "definedBy": "js.data.validator.Validator"
+        }
+    },
+    "fqClassName": "js.data.validator.EmailValidator",
     "inherit": "js.data.validator.RegExValidator",
+    "dependencies": [
+        "js.data.validator.RegExValidator"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.data.validator.RegExValidator",
         "js.data.validator.Validator",

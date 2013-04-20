@@ -1,20 +1,19 @@
 {
-    "fqClassName": "js.svg.SvgElement",
     "methods": [
-        {
-            "type": "Method",
-            "parameter": [],
-            "name": "_refreshTransform",
-            "visibility": "protected"
-        },
         {
             "type": "Method",
             "parameter": [
                 {
-                    "name": "value"
+                    "name": "$"
                 }
             ],
-            "name": "_renderClass",
+            "name": "_commitChangedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_refreshTransform",
             "visibility": "protected"
         },
         {
@@ -27,7 +26,14 @@
                     "name": "oldHref"
                 }
             ],
+            "description": " render each href Element in xlink namespace",
             "name": "_renderHref",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "_renderTransform",
             "visibility": "protected"
         },
         {
@@ -37,7 +43,17 @@
                     "name": "transform"
                 }
             ],
-            "name": "addTransform",
+            "name": "_render_transform",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "child"
+                }
+            ],
+            "name": "addChild",
             "visibility": "public"
         },
         {
@@ -49,7 +65,39 @@
         {
             "type": "Method",
             "parameter": [],
-            "name": "resetTransform",
+            "name": "getSvgRoot",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "point"
+                }
+            ],
+            "name": "globalPointToLocal",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "globalToLocalFactor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "point"
+                }
+            ],
+            "name": "localPointToGlobal",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "localToGlobalFactor",
             "visibility": "public"
         },
         {
@@ -72,6 +120,29 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "sx"
+                },
+                {
+                    "name": "sy"
+                }
+            ],
+            "name": "scale",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "transform"
+                }
+            ],
+            "name": "transform",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "x"
                 },
                 {
@@ -82,7 +153,62 @@
             "visibility": "public"
         }
     ],
+    "defaults": {
+        "transformations": {
+            "name": "transformations",
+            "defaultType": "factory",
+            "visibility": "public"
+        },
+        "_transform": {
+            "name": "_transform",
+            "defaultType": "value",
+            "visibility": "private",
+            "value": null
+        },
+        "translateX": {
+            "name": "translateX",
+            "defaultType": "factory",
+            "visibility": "public"
+        },
+        "translateY": {
+            "name": "translateY",
+            "defaultType": "factory",
+            "visibility": "public"
+        },
+        "scaleX": {
+            "name": "scaleX",
+            "defaultType": "factory",
+            "visibility": "public"
+        },
+        "scaleY": {
+            "name": "scaleY",
+            "defaultType": "factory",
+            "visibility": "public"
+        },
+        "rotation": {
+            "name": "rotation",
+            "defaultType": "factory",
+            "visibility": "public"
+        },
+        "rotationX": {
+            "name": "rotationX",
+            "defaultType": "factory",
+            "visibility": "public"
+        },
+        "rotationY": {
+            "name": "rotationY",
+            "defaultType": "factory",
+            "visibility": "public"
+        }
+    },
+    "fqClassName": "js.svg.SvgElement",
     "inherit": "js.core.DomElement",
+    "dependencies": [
+        "js.core.Bindable",
+        "js.core.DomElement",
+        "js.core.List"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.core.DomElement"
     ]

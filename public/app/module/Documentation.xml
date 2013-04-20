@@ -100,6 +100,46 @@
                                 </dl>
                             </div>
                         </div>
+                        <div class="row" visible="{doc.getDefaults().length}">
+                            <div class="span7">
+                                <h2>Attributes</h2>
+
+                            </div>
+                        </div>
+
+                        <table class="table table-striped" visible="{doc.getDefaults().length}">
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Default Value</th>
+                                    <th>Defined By</th>
+                                </tr>
+                            </thead>
+                            <ui:ItemsView items="{doc.getDefaults()}"
+                                          itemKey="item" tagName="tbody">
+                                <js:Template name="item">
+                                    <tr>
+                                        <td>
+                                            <strong>${item.name}</strong> :
+                                            <ui:ItemsView items="${item.types}" itemKey="type" tagName="span">
+                                                <js:Template name="item">
+                                                    <span>${type}</span>
+                                                </js:Template>
+                                            </ui:ItemsView>
+                                            <p>
+                                                ${item.description}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            ${item.value()}
+                                        </td>
+                                        <td>
+                                            <a href="api/${item.definedBy}">${item.definedBy}</a>
+                                        </td>
+                                    </tr>
+                                </js:Template>
+                            </ui:ItemsView>
+                        </table>
 
                         <div class="row">
                             <div class="span7">
