@@ -16,7 +16,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/it-ony/rAppid.js.git"
+    "url": "git://github.com/rappid/rappidjs.com.git"
   },
   "keywords": [],
   "dependencies": {
