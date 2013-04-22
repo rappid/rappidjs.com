@@ -8,13 +8,13 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             searchString: ""
         },
 
-        showMethodTypes: function() {
+        showTypes: function(showPublic, showProtected) {
 
-            var type = (this.get('showPublic.checked') ? 2 : 0) + (this.get('showProtected.checked') ? 1 : 0);
+            var type = (showPublic ? 2 : 0) + (showProtected ? 1 : 0);
 
             return ['', 'protected', 'public', 'all'][type];
 
-        }.on(['showPublic', 'change:checked'], ['showProtected', 'change:checked']),
+        },
 
         _initializationComplete: function() {
             for (var i = 0; i < classIndex.length; i++) {

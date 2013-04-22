@@ -1,7 +1,7 @@
 <module:DocumentationClass xmlns="http://www.w3.org/1999/xhtml"
                            xmlns:js="js.core" xmlns:ui="js.ui"
                            xmlns:conf="js.conf" xmlns:data="js.data"
-                           xmlns:module="app.module">
+                           xmlns:module="app.module" xmlns:md="md">
 
 
     <data:RestDataSource cid="api" endPoint="http://rappidjs.com/doc" gateway="." suffix="json">
@@ -100,27 +100,86 @@
                                 </dl>
                             </div>
                         </div>
-                        <div class="row" visible="{doc.getDefaults().length}">
+                        <div class="row" selectable="true">
                             <div class="span7">
-                                <h2>Attributes</h2>
-
+                                <h2>Default Attributes</h2>
+                                <blockquote>
+                                    <p>
+                                        The default attributes for this component.
+                                    </p>
+                                </blockquote>
+                            </div>
+                            <div class="span2">
+                                <fieldset class="well">
+                                    <ui:Checkbox label="public" cid="publicAttributesCheckbox" checked="true" />
+                                    <ui:Checkbox label="protected" cid="protectedAttributesCheckbox"/>
+                                    <ui:Checkbox label="inherit" cid="inheritedAttributesCheckbox"/>
+                                </fieldset>
                             </div>
                         </div>
-
-                        <table class="table table-striped" visible="{doc.getDefaults().length}">
+                        <table class="table table-striped" visible="{defaultItemsView.items.length}">
                             <thead>
                                 <tr>
-                                    <th>Attribute</th>
-                                    <th>Default Value</th>
-                                    <th>Defined By</th>
+                                    <th width="50%">Attribute</th>
+                                    <th width="30%">Default Value</th>
+                                    <th width="20%">Defined By</th>
                                 </tr>
                             </thead>
-                            <ui:ItemsView items="{doc.getDefaults()}"
+                            <ui:ItemsView cid="defaultItemsView" items="{doc.getDefaults(showTypes(publicAttributesCheckbox.checked, protectedAttributesCheckbox.checked),inheritedAttributesCheckbox.checked)}"
                                           itemKey="item" tagName="tbody">
                                 <js:Template name="item">
                                     <tr>
                                         <td>
                                             <strong>${item.name}</strong> :
+                                            <ui:ItemsView items="${item.types}" itemKey="type" tagName="span">
+                                                <js:Template name="item">
+                                                    <span>${type}</span>
+                                                </js:Template>
+                                            </ui:ItemsView>
+                                            <p>
+                                                <md:View>
+                                                    ${item.description}
+                                                </md:View>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            ${item.value()}
+                                        </td>
+                                        <td>
+                                            <a href="api/${item.definedBy}">${item.definedBy}</a>
+                                        </td>
+                                    </tr>
+                                </js:Template>
+                            </ui:ItemsView>
+                        </table>
+
+                        <div class="row">
+                            <div class="span7">
+                                <h2>Properties</h2>
+                                <blockquote>
+                                    <p>
+                                        The default properties for this class.
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th width="50%">Property</th>
+                                    <th width="30%">Default Value</th>
+                                    <th width="20%">Defined By</th>
+                                </tr>
+                            </thead>
+                            <ui:ItemsView cid="propertiesView"
+                                          items="{doc.getProperties()}"
+                                          itemKey="item" tagName="tbody">
+                                <js:Template name="item">
+                                    <tr>
+                                        <td>
+                                            <strong>${item.name}</strong>
+                                            :
                                             <ui:ItemsView items="${item.types}" itemKey="type" tagName="span">
                                                 <js:Template name="item">
                                                     <span>${type}</span>
@@ -140,6 +199,7 @@
                                 </js:Template>
                             </ui:ItemsView>
                         </table>
+
 
                         <div class="row">
                             <div class="span7">
@@ -180,7 +240,7 @@
                                     <th>Defined by</th>
                                 </tr>
                             </thead>
-                            <ui:ItemsView items="{doc.getMethods(showMethodTypes(),showInherit.checked)}"
+                            <ui:ItemsView items="{doc.getMethods(showTypes(showPublic.checked, showProtected.checked),showInherit.checked)}"
                                           itemKey="method" tagName="tbody">
                                 <js:Template name="item">
                                     <tr>
