@@ -1140,6 +1140,39 @@
             "definedBy": "js.core.Element"
         }
     },
+    "properties": {
+        "$errorAttribute": {
+            "name": "$errorAttribute",
+            "visibility": "private",
+            "propertyType": "value"
+        },
+        "$defaultContentName": {
+            "name": "$defaultContentName",
+            "visibility": "private",
+            "propertyType": "value",
+            "description": "if set all children from the descriptor will be placed into ajs.core.Content block with the name of $defaultContentName"
+        },
+        "$defaultTemplateName": {
+            "name": "$defaultTemplateName",
+            "visibility": "private",
+            "propertyType": "value"
+        },
+        "events": {
+            "name": "events",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " [\n                ]",
+            "description": ""
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
     "fqClassName": "js.core.Component",
     "inherit": "js.core.Element",
     "dependencies": [

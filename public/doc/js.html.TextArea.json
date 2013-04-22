@@ -266,6 +266,30 @@
             "definedBy": "js.html.HtmlElement"
         }
     },
+    "properties": {
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " [\"updateOnEvent\"]",
+            "definedBy": "js.html.HtmlElement",
+            "overwrites": true
+        },
+        "$excludedStyleAttributes": {
+            "name": "$excludedStyleAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['src','content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$renderAsStyleWithPx": {
+            "name": "$renderAsStyleWithPx",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['left', 'top']",
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
     "fqClassName": "js.html.TextArea",
     "inherit": "js.html.HtmlElement",
     "dependencies": [

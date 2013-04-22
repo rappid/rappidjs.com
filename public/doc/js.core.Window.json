@@ -312,7 +312,7 @@
             "visibility": "public",
             "value": "div",
             "definedBy": "js.ui.View",
-            "overwritesDefault": true
+            "overwrites": true
         },
         "componentClass": {
             "name": "componentClass",
@@ -387,6 +387,36 @@
             "types": [
                 "String"
             ],
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
+    "properties": {
+        "$domAttributes": {
+            "name": "$domAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['class', 'id', 'style', 'tabindex']",
+            "definedBy": "js.ui.View"
+        },
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['heightUpdatePolicy', 'widthUpdatePolicy', 'content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$excludedStyleAttributes": {
+            "name": "$excludedStyleAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['src','content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$renderAsStyleWithPx": {
+            "name": "$renderAsStyleWithPx",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['left', 'top']",
             "definedBy": "js.html.HtmlElement"
         }
     },

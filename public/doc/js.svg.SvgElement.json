@@ -201,6 +201,14 @@
             "visibility": "public"
         }
     },
+    "properties": {
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " [\"transformations\", \"translateX\", \"translateY\", \"scaleX\", \"scaleY\", \"rotation\", \"rotationX\", \"rotationY\"]"
+        }
+    },
     "fqClassName": "js.svg.SvgElement",
     "inherit": "js.core.DomElement",
     "dependencies": [

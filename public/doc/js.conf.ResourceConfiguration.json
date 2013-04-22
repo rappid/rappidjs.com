@@ -61,6 +61,7 @@
             "value": null
         }
     },
+    "properties": {},
     "fqClassName": "js.conf.ResourceConfiguration",
     "inherit": "js.conf.Configuration",
     "dependencies": [

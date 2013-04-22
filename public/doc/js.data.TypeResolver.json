@@ -111,6 +111,7 @@
         }
     ],
     "defaults": {},
+    "properties": {},
     "fqClassName": "js.data.TypeResolver",
     "inherit": "js.core.Base",
     "dependencies": [

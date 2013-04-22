@@ -1,6 +1,31 @@
 {
-    "fqClassName": "srv.core.ServerContext",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false,
+                    "description": "the function to call"
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": false,
+                    "description": "delay in ms"
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_callFunctionDelayed",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -14,6 +39,13 @@
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base",
+            "name": "emptyCallback",
             "visibility": "public"
         },
         {
@@ -58,7 +90,15 @@
             "visibility": "public"
         }
     ],
+    "defaults": {},
+    "properties": {},
+    "fqClassName": "srv.core.ServerContext",
     "inherit": "js.core.Base",
+    "dependencies": [
+        "js.core.Base",
+        "js.core.Bus"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.core.Base"
     ]

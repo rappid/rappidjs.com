@@ -766,6 +766,22 @@
             ]
         }
     },
+    "properties": {
+        "$validatorCache": {
+            "name": "$validatorCache",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " {}"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
     "fqClassName": "js.data.validator.Validator",
     "inherit": "js.core.Bindable",
     "dependencies": [

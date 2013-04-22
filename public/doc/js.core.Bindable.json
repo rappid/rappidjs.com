@@ -648,6 +648,15 @@
         }
     ],
     "defaults": {},
+    "properties": {
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected"
+        }
+    },
     "fqClassName": "js.core.Bindable",
     "inherit": "js.core.EventDispatcher",
     "dependencies": [

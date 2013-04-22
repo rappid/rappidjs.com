@@ -490,6 +490,47 @@
             "definedBy": "js.html.HtmlElement"
         }
     },
+    "properties": {
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " [/.+/]",
+            "definedBy": "js.html.HtmlElement",
+            "overwrites": true
+        },
+        "applicationDefaultNamespace": {
+            "name": "applicationDefaultNamespace",
+            "visibility": "public",
+            "propertyType": "value"
+        },
+        "supportEnvironments": {
+            "name": "supportEnvironments",
+            "visibility": "public",
+            "propertyType": "value"
+        },
+        "$domAttributes": {
+            "name": "$domAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['class', 'id', 'style', 'tabindex']",
+            "definedBy": "js.ui.View"
+        },
+        "$excludedStyleAttributes": {
+            "name": "$excludedStyleAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['src','content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$renderAsStyleWithPx": {
+            "name": "$renderAsStyleWithPx",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['left', 'top']",
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
     "fqClassName": "js.core.Application",
     "inherit": "js.core.Window",
     "dependencies": [

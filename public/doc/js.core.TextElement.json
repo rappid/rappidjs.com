@@ -779,6 +779,16 @@
             "definedBy": "js.core.Element"
         }
     },
+    "properties": {
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
     "fqClassName": "js.core.TextElement",
     "inherit": "js.core.Element",
     "dependencies": [

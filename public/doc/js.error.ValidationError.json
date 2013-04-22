@@ -24,6 +24,7 @@
         }
     ],
     "defaults": {},
+    "properties": {},
     "fqClassName": "js.error.ValidationError",
     "dependencies": [],
     "type": "js"

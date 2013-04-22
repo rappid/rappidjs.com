@@ -951,6 +951,44 @@
         }
     ],
     "defaults": {},
+    "properties": {
+        "isEmpty": {
+            "name": "isEmpty",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n            return this.$items.length === 0;\n        }.on('*')",
+            "description": ""
+        },
+        "size": {
+            "name": "size",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n            return this.$items.length;\n        }.on('*')",
+            "description": "Returns the size of the list"
+        },
+        "at": {
+            "name": "at",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function (index) {\n            if (index < this.$items.length && index >= 0) {\n                return this.$items[index];\n            }\n            return null;\n        }.on('*')",
+            "description": "Returns item at a specific index"
+        },
+        "includes": {
+            "name": "includes",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function (item) {\n            var ret = this.each(function (innerItem) {\n                if (innerItem === item) {\n                    this[\"return\"](true);\n                }\n            });\n            if (ret) {\n                return ret;\n            } else {\n                return false;\n            }\n        }.on('*')",
+            "description": "Checks if item is included in List"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
     "fqClassName": "js.core.List",
     "inherit": "js.core.Bindable",
     "dependencies": [

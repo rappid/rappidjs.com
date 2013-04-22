@@ -216,6 +216,26 @@
             ]
         }
     },
+    "properties": {
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['heightUpdatePolicy', 'widthUpdatePolicy', 'content']"
+        },
+        "$excludedStyleAttributes": {
+            "name": "$excludedStyleAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['src','content']"
+        },
+        "$renderAsStyleWithPx": {
+            "name": "$renderAsStyleWithPx",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['left', 'top']"
+        }
+    },
     "fqClassName": "js.html.HtmlElement",
     "inherit": "js.core.DomElement",
     "dependencies": [

@@ -34,6 +34,7 @@
             "value": "btn"
         }
     },
+    "properties": {},
     "fqClassName": "js.ui.Button",
     "inherit": "xaml!js.ui.Link",
     "dependencies": [

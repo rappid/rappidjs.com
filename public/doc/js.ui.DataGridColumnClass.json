@@ -1191,6 +1191,55 @@
             "definedBy": "js.core.Element"
         }
     },
+    "properties": {
+        "isSorted": {
+            "name": "isSorted",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function(){\n            return this.$.sortDirection !== 0;\n        }.onChange('sortDirection')"
+        },
+        "sortDirectionStatus": {
+            "name": "sortDirectionStatus",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function(){\n            return this.$.sortDirection === 1 ? 'up' : 'down';\n        }.onChange('sortDirection')"
+        },
+        "$errorAttribute": {
+            "name": "$errorAttribute",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultContentName": {
+            "name": "$defaultContentName",
+            "visibility": "private",
+            "propertyType": "value",
+            "description": "if set all children from the descriptor will be placed into ajs.core.Content block with the name of $defaultContentName",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultTemplateName": {
+            "name": "$defaultTemplateName",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        },
+        "events": {
+            "name": "events",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " [\n                ]",
+            "description": "",
+            "definedBy": "js.core.Component"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
     "fqClassName": "js.ui.DataGridColumnClass",
     "inherit": "js.core.Component",
     "dependencies": [

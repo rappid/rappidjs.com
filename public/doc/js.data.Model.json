@@ -986,6 +986,118 @@
         }
     ],
     "defaults": {},
+    "properties": {
+        "hrefField": {
+            "name": "hrefField",
+            "visibility": "public",
+            "propertyType": "value"
+        },
+        "updatedField": {
+            "name": "updatedField",
+            "visibility": "public",
+            "propertyType": "value",
+            "description": " contains the href to the resource",
+            "definedBy": "js.data.Entity",
+            "overwrites": true
+        },
+        "createdField": {
+            "name": "createdField",
+            "visibility": "public",
+            "propertyType": "value",
+            "description": " saves/returns the updated date",
+            "definedBy": "js.data.Entity",
+            "overwrites": true
+        },
+        "$isEntity": {
+            "name": "$isEntity",
+            "visibility": "private",
+            "propertyType": "value",
+            "description": " saves/returns the created date",
+            "definedBy": "js.data.Entity",
+            "overwrites": true
+        },
+        "$isDependentObject": {
+            "name": "$isDependentObject",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.data.Entity",
+            "overwrites": true
+        },
+        "_status": {
+            "name": "_status",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " function () {\n            if (this.identifier() === false) {\n                return STATE.DELETED;\n            } else {\n                return this.identifier() ? STATE.CREATED : STATE.NEW;\n            }\n        }.onChange('id')"
+        },
+        "isNew": {
+            "name": "isNew",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n            return this._status() === STATE.NEW;\n        }.onChange('id')"
+        },
+        "isCreated": {
+            "name": "isCreated",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function() {\n            return this._status() === STATE.CREATED;\n        }.onChange('id')"
+        },
+        "validators": {
+            "name": "validators",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " []",
+            "definedBy": "js.data.Entity"
+        },
+        "idField": {
+            "name": "idField",
+            "visibility": "public",
+            "propertyType": "value",
+            "definedBy": "js.data.Entity"
+        },
+        "$context": {
+            "name": "$context",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.data.Entity"
+        },
+        "$dependentObjectContext": {
+            "name": "$dependentObjectContext",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.data.Entity"
+        },
+        "errors": {
+            "name": "errors",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n                return this.$errors;\n            }.on('isValidChanged')",
+            "description": "Returns the errors of the entity",
+            "definedBy": "js.data.Entity"
+        },
+        "fieldError": {
+            "name": "fieldError",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function (field) {\n                return this.$errors.$[field];\n            }.on('isValidChanged')",
+            "definedBy": "js.data.Entity"
+        },
+        "isValid": {
+            "name": "isValid",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function ($) {\n                $ = $ || this.$errors.$;\n                for (var key in $) {\n                    if ($.hasOwnProperty(key)) {\n                        if ($[key]) {\n                            return false;\n                        }\n                    }\n                }\n\n                return true;\n            }.on('isValidChanged')",
+            "description": "",
+            "definedBy": "js.data.Entity"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
     "fqClassName": "js.data.Model",
     "inherit": "js.data.Entity",
     "dependencies": [

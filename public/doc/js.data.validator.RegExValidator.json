@@ -744,7 +744,7 @@
             "visibility": "public",
             "value": "regExError",
             "definedBy": "js.data.validator.Validator",
-            "overwritesDefault": true
+            "overwrites": true
         },
         "regEx": {
             "name": "regEx",
@@ -784,6 +784,23 @@
                 "Function"
             ],
             "definedBy": "js.data.validator.Validator"
+        }
+    },
+    "properties": {
+        "$validatorCache": {
+            "name": "$validatorCache",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " {}",
+            "definedBy": "js.data.validator.Validator"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
         }
     },
     "fqClassName": "js.data.validator.RegExValidator",

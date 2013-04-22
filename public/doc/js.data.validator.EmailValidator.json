@@ -738,7 +738,7 @@
             "value": {},
             "description": " TODO: add umlauts",
             "definedBy": "js.data.validator.RegExValidator",
-            "overwritesDefault": true
+            "overwrites": true
         },
         "errorCode": {
             "name": "errorCode",
@@ -746,7 +746,7 @@
             "visibility": "public",
             "value": "emailError",
             "definedBy": "js.data.validator.Validator",
-            "overwritesDefault": true
+            "overwrites": true
         },
         "field": {
             "name": "field",
@@ -780,6 +780,23 @@
                 "Function"
             ],
             "definedBy": "js.data.validator.Validator"
+        }
+    },
+    "properties": {
+        "$validatorCache": {
+            "name": "$validatorCache",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " {}",
+            "definedBy": "js.data.validator.Validator"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
         }
     },
     "fqClassName": "js.data.validator.EmailValidator",

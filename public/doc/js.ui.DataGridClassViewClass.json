@@ -724,7 +724,7 @@
             "visibility": "private",
             "value": 1,
             "definedBy": "js.ui.VirtualItemsView",
-            "overwritesDefault": true
+            "overwrites": true
         },
         "_itemWidth": {
             "name": "_itemWidth",
@@ -732,7 +732,7 @@
             "visibility": "private",
             "value": null,
             "definedBy": "js.ui.VirtualItemsView",
-            "overwritesDefault": true
+            "overwrites": true
         },
         "data": {
             "name": "data",
@@ -740,7 +740,7 @@
             "visibility": "public",
             "value": null,
             "definedBy": "js.ui.VirtualItemsView",
-            "overwritesDefault": true
+            "overwrites": true
         },
         "prefetchItemCount": {
             "name": "prefetchItemCount",
@@ -748,7 +748,7 @@
             "visibility": "public",
             "value": 3,
             "definedBy": "js.ui.VirtualItemsView",
-            "overwritesDefault": true
+            "overwrites": true
         },
         "scrollTop": {
             "name": "scrollTop",
@@ -936,6 +936,51 @@
             "types": [
                 "String"
             ],
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
+    "properties": {
+        "events": {
+            "name": "events",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " [\"on:itemClick\", \"on:itemDblClick\", \"on:itemMouseOver\", \"on:itemMouseOut\"]",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "isItemSelected": {
+            "name": "isItemSelected",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function (data) {\n                var key = this.getSelectionKeyForItem(data);\n                if(key){\n                    return this.$selectionMap[key] !== undefined;\n                }\n                return false;\n            }.on(\"selectionChanged\")",
+            "description": "determinate if the item is selected",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "$domAttributes": {
+            "name": "$domAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['class', 'id', 'style', 'tabindex']",
+            "definedBy": "js.ui.View"
+        },
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['heightUpdatePolicy', 'widthUpdatePolicy', 'content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$excludedStyleAttributes": {
+            "name": "$excludedStyleAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['src','content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$renderAsStyleWithPx": {
+            "name": "$renderAsStyleWithPx",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['left', 'top']",
             "definedBy": "js.html.HtmlElement"
         }
     },

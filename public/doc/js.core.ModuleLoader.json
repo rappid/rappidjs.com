@@ -374,6 +374,36 @@
             "definedBy": "js.html.HtmlElement"
         }
     },
+    "properties": {
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['router', 'currentModuleName', 'state']",
+            "definedBy": "js.html.HtmlElement",
+            "overwrites": true
+        },
+        "isModuleActive": {
+            "name": "isModuleActive",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function (moduleName) {\n                return this.$.currentModuleName == moduleName;\n            }.onChange('currentModuleName')"
+        },
+        "$excludedStyleAttributes": {
+            "name": "$excludedStyleAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['src','content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$renderAsStyleWithPx": {
+            "name": "$renderAsStyleWithPx",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['left', 'top']",
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
     "fqClassName": "js.core.ModuleLoader",
     "inherit": "js.html.HtmlElement",
     "dependencies": [

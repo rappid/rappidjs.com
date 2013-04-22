@@ -110,6 +110,7 @@
         }
     ],
     "defaults": {},
+    "properties": {},
     "fqClassName": "js.data.AttributeTypeResolver",
     "inherit": "js.data.TypeResolver",
     "dependencies": [

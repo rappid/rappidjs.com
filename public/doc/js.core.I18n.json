@@ -1146,6 +1146,61 @@
             "definedBy": "js.core.Element"
         }
     },
+    "properties": {
+        "t": {
+            "name": "t",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n\n            var args = Array.prototype.slice.call(arguments);\n            var key = args.shift(), isPlural;\n            if (_.isNumber(key)) {\n                isPlural = (key !== 1);\n                key = args.shift();\n            }\n            if (isPlural) {\n                key += \"_plural\";\n            }\n\n            var value = this.$.translations[key] || this.get(this.$.translations, key) || \"\";\n\n            for (var i = 0; i < args.length; i++) {\n                // replace, placeholder\n                value = value.split(\"%\" + i).join(args[i]);\n            }\n\n            return value;\n        }.onChange(\"translations\")"
+        },
+        "ts": {
+            "name": "ts",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function() {\n            var args = Array.prototype.slice.call(arguments),\n                newArgs = [],\n                key = args.shift(),\n                num;\n\n            if (_.isNumber(key)) {\n                num = key;\n                key = args.shift();\n            }\n\n            // key = scope + \".\" + key\n            key += \".\" + args.shift();\n\n            newArgs = num ? [num] : [];\n            newArgs.push(key);\n            newArgs = newArgs.concat(args);\n\n            return this.t.apply(this, newArgs);\n\n        }.onChange(\"translations\")"
+        },
+        "f": {
+            "name": "f",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function (value, format) {\n\n            if (value instanceof Date) {\n                format = format || \"LLL\";\n                return moment(value).format(format);\n            } else if (value instanceof moment) {\n                format = format || \"LLL\";\n                return value.format(format);\n            }\n\n            return value;\n        }.on(\"localeChanged\")"
+        },
+        "$errorAttribute": {
+            "name": "$errorAttribute",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultContentName": {
+            "name": "$defaultContentName",
+            "visibility": "private",
+            "propertyType": "value",
+            "description": "if set all children from the descriptor will be placed into ajs.core.Content block with the name of $defaultContentName",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultTemplateName": {
+            "name": "$defaultTemplateName",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        },
+        "events": {
+            "name": "events",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " [\n                ]",
+            "description": "",
+            "definedBy": "js.core.Component"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
     "fqClassName": "js.core.I18n",
     "inherit": "js.core.Component",
     "dependencies": [

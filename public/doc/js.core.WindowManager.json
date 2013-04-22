@@ -290,6 +290,36 @@
             "definedBy": "js.html.HtmlElement"
         }
     },
+    "properties": {
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " [\"modalActive\"]",
+            "definedBy": "js.html.HtmlElement",
+            "overwrites": true
+        },
+        "modalActiveClass": {
+            "name": "modalActiveClass",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function() {\n            return this.$.modalActive ? \"modal-active\" : \"\";\n        }.onChange(\"modalActive\")"
+        },
+        "$excludedStyleAttributes": {
+            "name": "$excludedStyleAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['src','content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$renderAsStyleWithPx": {
+            "name": "$renderAsStyleWithPx",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['left', 'top']",
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
     "fqClassName": "js.core.WindowManager",
     "inherit": "js.html.HtmlElement",
     "dependencies": [

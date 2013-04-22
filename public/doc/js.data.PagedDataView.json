@@ -1233,7 +1233,7 @@
             "visibility": "public",
             "value": null,
             "definedBy": "js.data.DataView",
-            "overwritesDefault": true
+            "overwrites": true
         },
         "pageSize": {
             "name": "pageSize",
@@ -1258,6 +1258,73 @@
                 "String"
             ],
             "definedBy": "js.core.Element"
+        }
+    },
+    "properties": {
+        "hasPreviousPage": {
+            "name": "hasPreviousPage",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function(){\n            return this.$.page > 0;\n        }.onChange('page')"
+        },
+        "hasNextPage": {
+            "name": "hasNextPage",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function(){\n            return this.hasPage(this.$.page + 1);\n        }.onChange('page','pageSize', 'baseList')"
+        },
+        "previousPageIndex": {
+            "name": "previousPageIndex",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n            return Math.max((this.$.page || 0) - 1, 0);\n        }.onChange('page')"
+        },
+        "nextPageIndex": {
+            "name": "nextPageIndex",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n            // TODO top range\n            return (this.$.page || 0) + 1;\n        }.onChange('page')"
+        },
+        "currentPageIndex": {
+            "name": "currentPageIndex",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function() {\n            return (this.$.page || 0);\n        }.onChange('page')"
+        },
+        "$errorAttribute": {
+            "name": "$errorAttribute",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultContentName": {
+            "name": "$defaultContentName",
+            "visibility": "private",
+            "propertyType": "value",
+            "description": "if set all children from the descriptor will be placed into ajs.core.Content block with the name of $defaultContentName",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultTemplateName": {
+            "name": "$defaultTemplateName",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        },
+        "events": {
+            "name": "events",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " [\n                ]",
+            "description": "",
+            "definedBy": "js.core.Component"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
         }
     },
     "fqClassName": "js.data.PagedDataView",

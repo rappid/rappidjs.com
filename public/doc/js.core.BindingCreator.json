@@ -296,6 +296,7 @@
         }
     ],
     "defaults": {},
+    "properties": {},
     "fqClassName": "js.core.BindingCreator",
     "inherit": "js.core.EventDispatcher",
     "dependencies": [

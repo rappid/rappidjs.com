@@ -78,6 +78,7 @@
         }
     ],
     "defaults": {},
+    "properties": {},
     "fqClassName": "js.core.Base",
     "dependencies": [
         "inherit"

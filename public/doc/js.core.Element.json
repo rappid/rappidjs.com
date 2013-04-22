@@ -790,6 +790,16 @@
             ]
         }
     },
+    "properties": {
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
     "fqClassName": "js.core.Element",
     "inherit": "js.core.Bindable",
     "dependencies": [

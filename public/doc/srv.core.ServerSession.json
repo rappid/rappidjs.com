@@ -1,15 +1,500 @@
 {
-    "fqClassName": "srv.core.ServerSession",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_beforeDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_bindBus",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false,
+                    "description": "the function to call"
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": false,
+                    "description": "delay in ms"
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_callFunctionDelayed",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "attribute",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "key",
+                    "optional": false
+                }
+            ],
+            "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_cloneAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "attributes",
+                    "optional": false,
+                    "description": "contains the changed attributes"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "the options passed in the set method"
+                }
+            ],
+            "description": "called after attributes has set and some of the has been changed",
+            "abstract": "",
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_commitChangedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_commitInvalidatedAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "",
+            "returns": {
+                "types": [
+                    "Object"
+                ],
+                "description": "returns the default attributes and includes the defaults from base classes"
+            },
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_defaultAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_destroyCompleted",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.data.Entity",
+            "name": "_extendSchema",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_extract",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "property",
+                    "optional": false,
+                    "description": "the name of the static property used to find defaults"
+                }
+            ],
+            "description": "generates a default chain containing the values from this instance and base classes",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_generateDefaultsChain",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [
                 {
                     "name": "attributes"
+                },
+                {
+                    "name": "search"
                 }
             ],
+            "definedBy": "js.core.Bindable",
+            "name": "_hasAll",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "search"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "_hasSome",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_initializationComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_initialize",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Initialize all Binding and Event attributes",
+            "definedBy": "js.core.Bindable",
+            "name": "_initializeBindings",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_initializeBindingsBeforeComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_initializeFromCtor",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_inject",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_injectChain",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_innerDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "childFactory"
+                }
+            ],
+            "definedBy": "js.data.Entity",
+            "name": "_isChildFactoryDependentObject",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_postConstruct",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_preDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "field"
+                },
+                {
+                    "name": "error"
+                }
+            ],
+            "description": " TODO: combine _setError and _setErrors",
+            "definedBy": "js.data.Entity",
+            "name": "_setError",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "errors"
+                }
+            ],
+            "definedBy": "js.data.Entity",
+            "name": "_setErrors",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_setUp",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_tearDown",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_unbindBus",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "eventType",
+                    "optional": false,
+                    "description": "The name of the event"
+                },
+                {
+                    "name": "callback"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true,
+                    "description": "This sets the scope for the callback function"
+                }
+            ],
+            "description": "Binds a callback and a scope to a given eventType",
+            "definedBy": "js.core.EventDispatcher",
+            "name": "bind",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Clears all attributes",
+            "returns": {
+                "types": [
+                    "this"
+                ]
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "clear",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Clears all errors",
+            "definedBy": "js.data.Entity",
+            "name": "clearErrors",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "clears all items",
+            "name": "clearItems",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "options"
+                }
+            ],
+            "description": "This method returns a copy of the Object",
+            "returns": {
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "a fresh copy of the Bindable"
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "clone",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "action",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "options",
+                    "optional": false
+                }
+            ],
+            "description": "Composes the data based on the schema.Can pe used to pre compose the data for the processor",
+            "returns": {
+                "types": [
+                    "Object"
+                ],
+                "description": "all data that should be serialized"
+            },
+            "definedBy": "js.data.Entity",
+            "name": "compose",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.data.Entity",
+            "name": "contextModel",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "identifier",
+                    "optional": false
+                }
+            ],
+            "description": "Converts the identifier to the given type in the schema",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
             "definedBy": "js.data.Model",
+            "name": "convertIdentifier",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "childFactory",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String",
+                        "Number"
+                    ],
+                    "name": "id",
+                    "optional": true
+                }
+            ],
+            "description": "Creates an entity in the context of the given entity",
+            "returns": {
+                "types": [
+                    "js.data.Entity"
+                ]
+            },
+            "definedBy": "js.data.Entity",
+            "name": "createEntity",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base",
             "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Clears up the instance",
+            "definedBy": "js.core.EventDispatcher",
+            "name": "destroy",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base",
+            "name": "emptyCallback",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "definedBy": "js.data.Entity",
+            "name": "error",
             "visibility": "public"
         },
         {
@@ -37,11 +522,228 @@
             "type": "Method",
             "parameter": [
                 {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true,
+                    "defaultValue": "this",
+                    "description": "the scope where the path is evaluated"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "key",
+                    "optional": false,
+                    "description": "or path"
+                }
+            ],
+            "description": "evaluates a path to retrieve a value",
+            "returns": {
+                "types": null,
+                "description": "the value for the path or undefined"
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "get",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "key"
                 }
             ],
             "definedBy": "js.data.Model",
             "name": "getCollection",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "childFactory",
+                    "optional": false
+                }
+            ],
+            "description": "Returns the correct context for a child factory",
+            "returns": {
+                "types": [
+                    "js.data.DataSource.Context"
+                ]
+            },
+            "definedBy": "js.data.Entity",
+            "name": "getContextForChild",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "key",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "returns": {
+                "types": [
+                    "*",
+                    "Object",
+                    "*",
+                    "*"
+                ]
+            },
+            "name": "getItem",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "fncName"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "getScopeForFncName",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "getScopeForKey",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "path",
+                    "optional": false,
+                    "description": "to get the value"
+                }
+            ],
+            "description": "determinate if a attribute is available",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if attribute is not undefined"
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "has",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.data.Entity",
+            "name": "identifier",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "callback"
+                }
+            ],
+            "definedBy": "js.data.Entity",
+            "name": "init",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "initialize",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "b"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "isDeepEqual",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "b"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "isEqual",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String",
+                        "Array"
+                    ],
+                    "name": "message",
+                    "optional": false,
+                    "description": "the message to log"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "level",
+                    "optional": true,
+                    "defaultValue": "\"info\"",
+                    "description": "the service level of (debug, info, warn, error)"
+                }
+            ],
+            "description": "logs messages to configured logging functions",
+            "definedBy": "js.core.Base",
+            "name": "log",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "data",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "action",
+                    "optional": true
+                },
+                {
+                    "types": null,
+                    "name": "options",
+                    "optional": true
+                }
+            ],
+            "description": "Parses dataCan be overridden to post change parsed data",
+            "definedBy": "js.data.Entity",
+            "name": "parse",
             "visibility": "public"
         },
         {
@@ -74,6 +776,20 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "description": "determinate if the application runs in the browser or on node",
+            "returns": {
+                "types": [
+                    "Boolean"
+                ],
+                "description": "true if the application runs in a browser"
+            },
+            "definedBy": "js.core.Base",
+            "name": "runsInBrowser",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
                     "types": null,
@@ -95,6 +811,79 @@
             "type": "Method",
             "parameter": [
                 {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "key",
+                    "optional": false,
+                    "description": "The attribute key"
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "value",
+                    "optional": false,
+                    "description": "The attribute value"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": false,
+                    "description": "A hash of options"
+                }
+            ],
+            "description": "Sets new values for attributes and notify about changes",
+            "returns": {
+                "types": [
+                    "js.core.Bindable"
+                ],
+                "description": "this"
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "set",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "key",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "data",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "name": "setItem",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "setLater",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "callback"
                 }
             ],
@@ -103,22 +892,284 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "description": "Writes attributes back to the source",
+            "definedBy": "js.core.Bindable",
+            "name": "sync",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
-                    "name": "options"
+                    "types": [
+                        "String"
+                    ],
+                    "name": "eventType",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "EventDispatcher.Event",
+                        "Object"
+                    ],
+                    "name": "event",
+                    "optional": false,
+                    "description": "If you use an Object the object is wrapped in an Event"
+                },
+                {
+                    "types": null,
+                    "name": "target",
+                    "optional": false
+                }
+            ],
+            "description": "Triggers a specific event and the * event",
+            "definedBy": "js.core.EventDispatcher",
+            "name": "trigger",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "eventType",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false
+                },
+                {
+                    "name": "scope"
+                }
+            ],
+            "description": "Unbinds callbacks for events",
+            "definedBy": "js.core.EventDispatcher",
+            "name": "unbind",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "String",
+                        "Object"
+                    ],
+                    "name": "key",
+                    "optional": false,
+                    "description": "the attribute or attributes to unset"
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                }
+            ],
+            "description": "Unset attribute on $",
+            "returns": {
+                "types": [
+                    "this"
+                ]
+            },
+            "definedBy": "js.core.Bindable",
+            "name": "unset",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "options",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": true
+                }
+            ],
+            "description": "",
+            "definedBy": "js.data.Entity",
+            "name": "validate",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "options",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "callback",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "definedBy": "js.data.Model",
+            "name": "validateAndSave",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "entity"
                 },
                 {
                     "name": "callback"
                 }
             ],
-            "definedBy": "js.data.Model",
-            "name": "validateAndSave",
+            "definedBy": "js.data.Entity",
+            "name": "validateSubEntity",
             "visibility": "public"
         }
     ],
+    "defaults": {
+        "data": {
+            "name": "data",
+            "defaultType": "factory",
+            "visibility": "public"
+        }
+    },
+    "properties": {
+        "idField": {
+            "name": "idField",
+            "visibility": "public",
+            "propertyType": "value",
+            "definedBy": "js.data.Entity",
+            "overwrites": true
+        },
+        "hrefField": {
+            "name": "hrefField",
+            "visibility": "public",
+            "propertyType": "value",
+            "definedBy": "js.data.Model"
+        },
+        "updatedField": {
+            "name": "updatedField",
+            "visibility": "public",
+            "propertyType": "value",
+            "definedBy": "js.data.Entity"
+        },
+        "createdField": {
+            "name": "createdField",
+            "visibility": "public",
+            "propertyType": "value",
+            "definedBy": "js.data.Entity"
+        },
+        "$isEntity": {
+            "name": "$isEntity",
+            "visibility": "private",
+            "propertyType": "value",
+            "description": " TODO: merge this together",
+            "definedBy": "js.data.Entity"
+        },
+        "$isDependentObject": {
+            "name": "$isDependentObject",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.data.Entity"
+        },
+        "_status": {
+            "name": "_status",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " function () {\n            if (this.identifier() === false) {\n                return STATE.DELETED;\n            } else {\n                return this.identifier() ? STATE.CREATED : STATE.NEW;\n            }\n        }.onChange('id')",
+            "definedBy": "js.data.Model"
+        },
+        "isNew": {
+            "name": "isNew",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n            return this._status() === STATE.NEW;\n        }.onChange('id')",
+            "definedBy": "js.data.Model"
+        },
+        "isCreated": {
+            "name": "isCreated",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function() {\n            return this._status() === STATE.CREATED;\n        }.onChange('id')",
+            "definedBy": "js.data.Model"
+        },
+        "validators": {
+            "name": "validators",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " []",
+            "definedBy": "js.data.Entity"
+        },
+        "$context": {
+            "name": "$context",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.data.Entity"
+        },
+        "$dependentObjectContext": {
+            "name": "$dependentObjectContext",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.data.Entity"
+        },
+        "errors": {
+            "name": "errors",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n                return this.$errors;\n            }.on('isValidChanged')",
+            "description": "Returns the errors of the entity",
+            "definedBy": "js.data.Entity"
+        },
+        "fieldError": {
+            "name": "fieldError",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function (field) {\n                return this.$errors.$[field];\n            }.on('isValidChanged')",
+            "definedBy": "js.data.Entity"
+        },
+        "isValid": {
+            "name": "isValid",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function ($) {\n                $ = $ || this.$errors.$;\n                for (var key in $) {\n                    if ($.hasOwnProperty(key)) {\n                        if ($[key]) {\n                            return false;\n                        }\n                    }\n                }\n\n                return true;\n            }.on('isValidChanged')",
+            "description": "",
+            "definedBy": "js.data.Entity"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
+    "fqClassName": "srv.core.ServerSession",
     "inherit": "js.data.Model",
+    "dependencies": [
+        "js.data.Model"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.data.Model",
-        "js.data.Entity"
+        "js.data.Entity",
+        "js.core.Bindable",
+        "js.core.EventDispatcher",
+        "js.core.Base"
     ]
 }

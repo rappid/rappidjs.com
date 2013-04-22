@@ -21,6 +21,7 @@
             "value": "YYYY-MM-DDTHH:mm:ssZ"
         }
     },
+    "properties": {},
     "fqClassName": "js.ui.DataGridDateColumn",
     "inherit": "xaml!js.ui.DataGridColumn",
     "dependencies": [

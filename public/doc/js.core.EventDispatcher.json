@@ -190,6 +190,7 @@
         }
     ],
     "defaults": {},
+    "properties": {},
     "fqClassName": "js.core.EventDispatcher",
     "inherit": "js.core.Base",
     "dependencies": [

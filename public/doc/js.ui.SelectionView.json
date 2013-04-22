@@ -634,7 +634,7 @@
             "defaultType": "factory",
             "visibility": "public",
             "definedBy": "js.ui.ItemsView",
-            "overwritesDefault": true
+            "overwrites": true
         },
         "forceSelectable": {
             "name": "forceSelectable",
@@ -743,6 +743,57 @@
             "types": [
                 "String"
             ],
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
+    "properties": {
+        "$defaultTemplateName": {
+            "name": "$defaultTemplateName",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.ui.ItemsView",
+            "overwrites": true
+        },
+        "hasSelection": {
+            "name": "hasSelection",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n                if (!this.$.selectedItem) {\n                    return false;\n                }\n                var c,\n                    itemKey = this._getItemKey();\n                for (var i = 0; i < this.$renderedChildren.length; i++) {\n                    c = this.$renderedChildren[i].get(itemKey);\n                    if (this._areItemsEqual(c, this.$.selectedItem)) {\n                        return true;\n                    }\n                }\n                return false;\n            }.onChange('selectedItem')"
+        },
+        "isEmpty": {
+            "name": "isEmpty",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n                if (this.$.items) {\n                    return this.$.items.length;\n                }\n                return 0;\n            }.onChange('items')",
+            "description": "Returns true if items are available",
+            "definedBy": "js.ui.ItemsView"
+        },
+        "$domAttributes": {
+            "name": "$domAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['class', 'id', 'style', 'tabindex']",
+            "definedBy": "js.ui.View"
+        },
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['heightUpdatePolicy', 'widthUpdatePolicy', 'content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$excludedStyleAttributes": {
+            "name": "$excludedStyleAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['src','content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$renderAsStyleWithPx": {
+            "name": "$renderAsStyleWithPx",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['left', 'top']",
             "definedBy": "js.html.HtmlElement"
         }
     },

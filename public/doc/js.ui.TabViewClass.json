@@ -679,6 +679,57 @@
             "definedBy": "js.html.HtmlElement"
         }
     },
+    "properties": {
+        "$defaultTemplateName": {
+            "name": "$defaultTemplateName",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.ui.ItemsView",
+            "overwrites": true
+        },
+        "events": {
+            "name": "events",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " ['on:selectTab']"
+        },
+        "isEmpty": {
+            "name": "isEmpty",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function () {\n                if (this.$.items) {\n                    return this.$.items.length;\n                }\n                return 0;\n            }.onChange('items')",
+            "description": "Returns true if items are available",
+            "definedBy": "js.ui.ItemsView"
+        },
+        "$domAttributes": {
+            "name": "$domAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['class', 'id', 'style', 'tabindex']",
+            "definedBy": "js.ui.View"
+        },
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['heightUpdatePolicy', 'widthUpdatePolicy', 'content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$excludedStyleAttributes": {
+            "name": "$excludedStyleAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['src','content']",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "$renderAsStyleWithPx": {
+            "name": "$renderAsStyleWithPx",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " ['left', 'top']",
+            "definedBy": "js.html.HtmlElement"
+        }
+    },
     "fqClassName": "js.ui.TabViewClass",
     "inherit": "js.ui.ItemsView",
     "dependencies": [

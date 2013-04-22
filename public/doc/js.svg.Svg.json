@@ -64,6 +64,14 @@
             "value": null
         }
     },
+    "properties": {
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " [\"defs\", \"hidden\"]"
+        }
+    },
     "fqClassName": "js.svg.Svg",
     "inherit": "xaml!js.svg.SvgDescriptor",
     "dependencies": [

@@ -2036,6 +2036,71 @@
             "definedBy": "js.core.Element"
         }
     },
+    "properties": {
+        "$defaultProcessorFactory": {
+            "name": "$defaultProcessorFactory",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " RestDataProcessor",
+            "definedBy": "js.data.DataSource",
+            "overwrites": true
+        },
+        "$processors": {
+            "name": "$processors",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " {}",
+            "definedBy": "js.data.DataSource"
+        },
+        "$entityFactory": {
+            "name": "$entityFactory",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " Entity",
+            "definedBy": "js.data.DataSource"
+        },
+        "$defaultProcessor": {
+            "name": "$defaultProcessor",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.data.DataSource"
+        },
+        "$errorAttribute": {
+            "name": "$errorAttribute",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultContentName": {
+            "name": "$defaultContentName",
+            "visibility": "private",
+            "propertyType": "value",
+            "description": "if set all children from the descriptor will be placed into ajs.core.Content block with the name of $defaultContentName",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultTemplateName": {
+            "name": "$defaultTemplateName",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        },
+        "events": {
+            "name": "events",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " [\n                ]",
+            "description": "",
+            "definedBy": "js.core.Component"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
     "fqClassName": "js.data.RestDataSource",
     "inherit": "js.data.DataSource",
     "dependencies": [

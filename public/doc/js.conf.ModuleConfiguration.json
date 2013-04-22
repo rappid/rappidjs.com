@@ -1,6 +1,7 @@
 {
     "methods": [],
     "defaults": {},
+    "properties": {},
     "fqClassName": "js.conf.ModuleConfiguration",
     "inherit": "js.conf.Configuration",
     "dependencies": [

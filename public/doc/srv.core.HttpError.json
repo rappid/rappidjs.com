@@ -1,6 +1,15 @@
 {
-    "fqClassName": "srv.core.HttpError",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "context"
+                }
+            ],
+            "name": "_beforeSend",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -23,5 +32,10 @@
             "name": "toString",
             "visibility": "public"
         }
-    ]
+    ],
+    "defaults": {},
+    "properties": {},
+    "fqClassName": "srv.core.HttpError",
+    "dependencies": [],
+    "type": "js"
 }

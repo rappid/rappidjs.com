@@ -1,6 +1,13 @@
 {
-    "fqClassName": "srv.handler.rest.ResourceHandler",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "description": "Returns the ENVIRONMENT object",
+            "definedBy": "js.core.Component",
+            "name": "ENV",
+            "visibility": "public"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -25,9 +32,194 @@
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "name": "model"
+                },
+                {
+                    "name": "context"
+                },
+                {
+                    "name": "callback"
+                }
+            ],
+            "name": "_afterModelCreate",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "model"
+                },
+                {
+                    "name": "context"
+                },
+                {
+                    "name": "callback"
+                }
+            ],
+            "name": "_afterModelRemove",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "model"
+                },
+                {
+                    "name": "context"
+                },
+                {
+                    "name": "callback"
+                }
+            ],
+            "name": "_afterModelSave",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "model"
+                },
+                {
+                    "name": "context"
+                },
+                {
+                    "name": "callback"
+                }
+            ],
+            "name": "_afterModelUpdate",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "valueKey"
+                },
+                {
+                    "name": "context"
+                },
+                {
+                    "name": "model"
+                }
+            ],
+            "name": "_autoGenerateValue",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
-            "definedBy": "js.core.Component",
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_beforeDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "model"
+                },
+                {
+                    "name": "context"
+                },
+                {
+                    "name": "callback"
+                }
+            ],
+            "name": "_beforeModelCreate",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "model"
+                },
+                {
+                    "name": "context"
+                },
+                {
+                    "name": "callback"
+                }
+            ],
+            "name": "_beforeModelRemove",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "model",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "context",
+                    "optional": false
+                },
+                {
+                    "types": null,
+                    "name": "callback",
+                    "optional": false
+                }
+            ],
+            "description": "",
+            "private": "",
+            "name": "_beforeModelSave",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "model"
+                },
+                {
+                    "name": "context"
+                },
+                {
+                    "name": "callback"
+                }
+            ],
+            "name": "_beforeModelUpdate",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
             "name": "_bindBus",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false,
+                    "description": "the function to call"
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": false,
+                    "description": "delay in ms"
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_callFunctionDelayed",
             "visibility": "protected"
         },
         {
@@ -151,6 +343,32 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "context"
+                },
+                {
+                    "name": "parameters"
+                }
+            ],
+            "name": "_createOptionsForCollectionFetch",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "context"
+                },
+                {
+                    "name": "parameters"
+                }
+            ],
+            "name": "_createSortStatement",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "node"
                 },
                 {
@@ -159,6 +377,19 @@
             ],
             "definedBy": "js.core.Component",
             "name": "_createTextElement",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "context"
+                },
+                {
+                    "name": "parameters"
+                }
+            ],
+            "name": "_createWhereStatement",
             "visibility": "protected"
         },
         {
@@ -197,11 +428,50 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_destroyCompleted",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_extract",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [
+                {
+                    "name": "model"
+                },
                 {
                     "name": "context"
                 }
             ],
+            "name": "_fetchAllHrefsForModel",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": null,
+                    "name": "context",
+                    "optional": false
+                },
+                {
+                    "name": "callback"
+                }
+            ],
+            "description": "Returns a collection for this resource in the right context",
+            "returns": {
+                "types": [
+                    "*"
+                ]
+            },
+            "private": "",
             "name": "_findCollection",
             "visibility": "protected"
         },
@@ -233,6 +503,9 @@
             "parameter": [
                 {
                     "name": "descriptor"
+                },
+                {
+                    "name": "rootScope"
                 }
             ],
             "definedBy": "js.core.Element",
@@ -254,6 +527,16 @@
             "description": "Converts all child nodes of a descriptor to instances of Components or TextElement",
             "definedBy": "js.core.Component",
             "name": "_getChildrenFromDescriptor",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "context"
+                }
+            ],
+            "name": "_getCompositionOptions",
             "visibility": "protected"
         },
         {
@@ -299,6 +582,19 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "model"
+                },
+                {
+                    "name": "context"
+                }
+            ],
+            "name": "_getPathForModel",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": [
                         "srv.core.Context"
                     ],
@@ -332,6 +628,34 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "attributes"
+                },
+                {
+                    "name": "search"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "_hasAll",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "search"
+                }
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "_hasSome",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "types": null,
                     "name": "context",
                     "optional": false
@@ -350,25 +674,14 @@
         {
             "type": "Method",
             "parameter": [],
-            "definedBy": "js.core.Element",
+            "definedBy": "js.core.Bindable",
             "name": "_initializationComplete",
             "visibility": "protected"
         },
         {
             "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
-                    "name": "creationPolicy",
-                    "optional": false,
-                    "description": "undefinedauto - do not overwrite (default),all - create all childrenTODO none?"
-                },
-                {
-                    "name": "withBindings"
-                }
-            ],
-            "description": "",
-            "definedBy": "js.core.Element",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
             "name": "_initialize",
             "visibility": "protected"
         },
@@ -376,14 +689,10 @@
             "type": "Method",
             "parameter": [
                 {
-                    "types": null,
-                    "name": "attributes",
-                    "optional": false
+                    "name": "attributes"
                 }
             ],
-            "description": "",
             "definedBy": "js.core.Element",
-            "overwritesMethod": true,
             "name": "_initializeAttributes",
             "visibility": "protected"
         },
@@ -391,9 +700,15 @@
             "type": "Method",
             "parameter": [],
             "description": "Initialize all Binding and Event attributes",
-            "definedBy": "js.core.Element",
-            "overwritesMethod": true,
+            "definedBy": "js.core.Bindable",
             "name": "_initializeBindings",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_initializeBindingsBeforeComplete",
             "visibility": "protected"
         },
         {
@@ -410,9 +725,7 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "Initializes all internal and external descriptors",
             "definedBy": "js.core.Element",
-            "overwritesMethod": true,
             "name": "_initializeDescriptors",
             "visibility": "protected"
         },
@@ -425,6 +738,13 @@
             ],
             "definedBy": "js.core.Element",
             "name": "_initializeEventAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_initializeFromCtor",
             "visibility": "protected"
         },
         {
@@ -444,15 +764,22 @@
         {
             "type": "Method",
             "parameter": [],
-            "definedBy": "js.core.Component",
+            "definedBy": "js.core.Bindable",
             "name": "_inject",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
-            "definedBy": "js.core.Component",
+            "definedBy": "js.core.Bindable",
             "name": "_injectChain",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_innerDestroy",
             "visibility": "protected"
         },
         {
@@ -494,6 +821,17 @@
                 }
             ],
             "definedBy": "js.core.Component",
+            "name": "_isFunctionAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributeName"
+                }
+            ],
+            "definedBy": "js.core.Component",
             "name": "_isXamlEventAttribute",
             "visibility": "protected"
         },
@@ -514,9 +852,29 @@
         {
             "type": "Method",
             "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_postConstruct",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_preDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
             "definedBy": "js.core.Element",
-            "overwritesMethod": true,
             "name": "_preinitialize",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_setUp",
             "visibility": "protected"
         },
         {
@@ -536,6 +894,20 @@
             "description": "",
             "private": "",
             "name": "_show",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_tearDown",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "_unbindBus",
             "visibility": "protected"
         },
         {
@@ -580,42 +952,46 @@
             "type": "Method",
             "parameter": [
                 {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "path",
-                    "optional": false,
-                    "description": "a binding path e.g. a.b.c"
-                },
+                    "name": "path"
+                }
+            ],
+            "definedBy": "js.core.Component",
+            "name": "baseUrl",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
                 {
                     "types": [
                         "String"
                     ],
-                    "name": "event",
+                    "name": "eventType",
                     "optional": false,
-                    "description": "the type of the event which should be bound"
+                    "description": "The name of the event"
                 },
                 {
-                    "types": [
-                        "Function"
-                    ],
-                    "name": "callback",
-                    "optional": false,
-                    "description": "the event handler function"
+                    "name": "callback"
                 },
                 {
                     "types": [
                         "Object"
                     ],
-                    "name": "thisArg",
+                    "name": "scope",
                     "optional": true,
-                    "description": "the thisArg used for calling the event handler"
+                    "description": "This sets the scope for the callback function"
                 }
             ],
-            "description": "Binds an event handler function to an EventDispatcher",
+            "description": "Binds a callback and a scope to a given eventType",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
             "name": "bind",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Component",
+            "name": "bus",
             "visibility": "public"
         },
         {
@@ -709,60 +1085,24 @@
         },
         {
             "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
-                    "name": "attributes",
-                    "optional": false,
-                    "description": "The attributes of the component"
-                },
-                {
-                    "types": [
-                        "Node"
-                    ],
-                    "name": "descriptor",
-                    "optional": false
-                },
-                {
-                    "types": [
-                        "js.core.Stage"
-                    ],
-                    "name": "stage",
-                    "optional": false
-                },
-                {
-                    "types": [
-                        "Element"
-                    ],
-                    "name": "parentScope",
-                    "optional": false
-                },
-                {
-                    "types": [
-                        "Element"
-                    ],
-                    "name": "rootScope",
-                    "optional": false
-                }
-            ],
-            "description": "What up??",
+            "parameter": [],
             "definedBy": "js.core.Base",
-            "overwritesMethod": true,
             "name": "ctor",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
-            "description": "Destroys all event bindings and triggers a destroy event",
-            "returns": {
-                "types": [
-                    "this"
-                ]
-            },
+            "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
             "name": "destroy",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base",
+            "name": "emptyCallback",
             "visibility": "public"
         },
         {
@@ -813,10 +1153,16 @@
                     "name": "context"
                 },
                 {
-                    "name": "childResource"
+                    "name": "resource"
                 }
             ],
             "name": "getDataSource",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "name": "getPath",
             "visibility": "public"
         },
         {
@@ -827,12 +1173,18 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "name": "getRootResource",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
                     "name": "fncName"
                 }
             ],
-            "definedBy": "js.core.Element",
+            "definedBy": "js.core.Bindable",
             "name": "getScopeForFncName",
             "visibility": "public"
         },
@@ -843,7 +1195,7 @@
                     "name": "key"
                 }
             ],
-            "definedBy": "js.core.Element",
+            "definedBy": "js.core.Bindable",
             "name": "getScopeForKey",
             "visibility": "public"
         },
@@ -925,17 +1277,20 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Bindable",
+            "name": "initialize",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
-                    "types": null,
-                    "name": "scope",
-                    "optional": false
+                    "name": "b"
                 }
             ],
-            "description": "This method should overridden by custom components to set initial variables",
-            "definedBy": "js.core.Element",
-            "overwritesMethod": true,
-            "name": "initialize",
+            "definedBy": "js.core.Bindable",
+            "name": "isDeepEqual",
             "visibility": "public"
         },
         {
@@ -958,6 +1313,16 @@
             ],
             "definedBy": "js.core.Bindable",
             "name": "isEqual",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "model"
+                }
+            ],
+            "name": "isResponsibleForModel",
             "visibility": "public"
         },
         {
@@ -1004,6 +1369,13 @@
             },
             "definedBy": "js.core.Element",
             "name": "not",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Component",
+            "name": "removeAllChildren",
             "visibility": "public"
         },
         {
@@ -1117,7 +1489,7 @@
                     "optional": false
                 }
             ],
-            "description": "Triggers an event",
+            "description": "Triggers a specific event and the * event",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
             "visibility": "public"
@@ -1129,37 +1501,22 @@
                     "types": [
                         "String"
                     ],
-                    "name": "path",
-                    "optional": true,
-                    "description": "the path from which the event should be unbound"
-                },
-                {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "event",
-                    "optional": false,
-                    "description": "the type of the event"
+                    "name": "eventType",
+                    "optional": false
                 },
                 {
                     "types": [
                         "Function"
                     ],
                     "name": "callback",
-                    "optional": false,
-                    "description": "the event handler which is currently boundTODO: why a scope is passed here?"
+                    "optional": false
                 },
                 {
-                    "types": [
-                        "Object"
-                    ],
-                    "name": "scope",
-                    "optional": true
+                    "name": "scope"
                 }
             ],
-            "description": "Unbinds an bound event handler from an EventDispatcher.",
+            "description": "Unbinds callbacks for events",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
             "name": "unbind",
             "visibility": "public"
         },
@@ -1194,7 +1551,101 @@
             "visibility": "public"
         }
     ],
+    "defaults": {
+        "autoStartSession": {
+            "name": "autoStartSession",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": true
+        },
+        "defaultSortField": {
+            "name": "defaultSortField",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null
+        },
+        "defaultSortOrder": {
+            "name": "defaultSortOrder",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null
+        },
+        "creationPolicy": {
+            "name": "creationPolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "auto",
+            "description": "Decides if the initialization of the component is started automatically or manually by the application",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.Element"
+        }
+    },
+    "properties": {
+        "$collectionMethodMap": {
+            "name": "$collectionMethodMap",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " {\n            GET: \"_index\",\n            POST: \"_create\"\n        }"
+        },
+        "$modelMethodMap": {
+            "name": "$modelMethodMap",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " {\n            GET: \"_show\",\n            PUT: \"_update\",\n            DELETE: \"_delete\"\n        }"
+        },
+        "$errorAttribute": {
+            "name": "$errorAttribute",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultContentName": {
+            "name": "$defaultContentName",
+            "visibility": "private",
+            "propertyType": "value",
+            "description": "if set all children from the descriptor will be placed into ajs.core.Content block with the name of $defaultContentName",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultTemplateName": {
+            "name": "$defaultTemplateName",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        },
+        "events": {
+            "name": "events",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " [\n                ]",
+            "description": "",
+            "definedBy": "js.core.Component"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
+    "fqClassName": "srv.handler.rest.ResourceHandler",
     "inherit": "js.core.Component",
+    "dependencies": [
+        "JSON",
+        "flow",
+        "js.core.Component",
+        "js.core.List",
+        "js.data.Collection",
+        "js.data.DataSource",
+        "js.data.Model",
+        "require",
+        "srv.core.HttpError",
+        "underscore"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.core.Component",
         "js.core.Element",

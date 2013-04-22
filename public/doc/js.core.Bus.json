@@ -241,6 +241,7 @@
         }
     ],
     "defaults": {},
+    "properties": {},
     "fqClassName": "js.core.Bus",
     "inherit": "js.core.EventDispatcher",
     "dependencies": [

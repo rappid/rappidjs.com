@@ -767,6 +767,23 @@
             "value": 50
         }
     },
+    "properties": {
+        "fragment": {
+            "name": "fragment",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " function() {\n            return this.$fragment;\n        }.on('change:fragment')",
+            "description": " TODO: make this bindable so that i can call this.fragment.triggerChange()"
+        },
+        "inject": {
+            "name": "inject",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " {}",
+            "description": "values to be injected",
+            "definedBy": "js.core.Bindable"
+        }
+    },
     "fqClassName": "js.core.History",
     "inherit": "js.core.Bindable",
     "dependencies": [

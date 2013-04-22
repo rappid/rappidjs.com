@@ -1,6 +1,45 @@
 {
-    "fqClassName": "srv.core.Context",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_beforeDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false,
+                    "description": "the function to call"
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": false,
+                    "description": "delay in ms"
+                }
+            ],
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_callFunctionDelayed",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_destroyCompleted",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -26,6 +65,13 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_innerDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
                     "name": "request"
@@ -36,7 +82,14 @@
         },
         {
             "type": "Method",
-            "parameter": [],
+            "parameter": [
+                {
+                    "name": "request"
+                },
+                {
+                    "name": "endpoint"
+                }
+            ],
             "name": "_parseUrl",
             "visibility": "protected"
         },
@@ -132,8 +185,16 @@
         {
             "type": "Method",
             "parameter": [],
+            "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
             "name": "destroy",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "definedBy": "js.core.Base",
+            "name": "emptyCallback",
             "visibility": "public"
         },
         {
@@ -202,7 +263,7 @@
                     "optional": false
                 }
             ],
-            "description": "Triggers an event",
+            "description": "Triggers a specific event and the * event",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
             "visibility": "public"
@@ -234,7 +295,27 @@
             "visibility": "public"
         }
     ],
+    "defaults": {},
+    "properties": {
+        "$hooks": {
+            "name": "$hooks",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " [\"beginRequest\", \"beforeHeadersSend\", \"endRequest\"]"
+        }
+    },
+    "fqClassName": "srv.core.Context",
     "inherit": "js.core.EventDispatcher",
+    "dependencies": [
+        "flow",
+        "js.core.Base",
+        "js.core.EventDispatcher",
+        "querystring",
+        "srv.core.Identity",
+        "underscore",
+        "url"
+    ],
+    "type": "js",
     "inheritancePath": [
         "js.core.EventDispatcher",
         "js.core.Base"
