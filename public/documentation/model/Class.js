@@ -20,7 +20,8 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
 
         schema: {
             methods: [Method],
-            defaults: Object
+            defaults: Object,
+            properties: Object
         },
 
         packageName: function () {
@@ -33,7 +34,7 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
             return this.$.id.split('.').pop();
         },
 
-        fileExtension: function() {
+        fileExtension: function () {
             return "." + this.$.type;
         }.onChange("type"),
 
@@ -133,20 +134,55 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
 
         }.onChange('dependencies'),
 
-        getDefaults: function(){
+        getDefaults: function (type, showInherit) {
             var ret = [],
-                attribute;
+                attribute,
+                defaultAttribute;
 
-            for(var key in this.$.defaults){
-                if(this.$.defaults.hasOwnProperty(key)){
-                    if(!this.$.defaults[key].definedBy){
-                        attribute = this.$context.createEntity(Attribute, key);
-                        attribute.set(this.$.defaults[key]);
-                        ret.push(attribute);
+            for (var key in this.$.defaults) {
+                if (this.$.defaults.hasOwnProperty(key)) {
+                    defaultAttribute = this.$.defaults[key];
+                    if ((type === 'all' || type === defaultAttribute.visibility)) {
+                        if (showInherit || (!showInherit && !defaultAttribute.hasOwnProperty('definedBy'))) {
+                            attribute = this.$context.createEntity(Attribute, key);
+                            attribute.set(this.$.defaults[key]);
+                            ret.push(attribute);
+                        }
                     }
-
                 }
             }
+
+            ret = ret.sort(function(a, b){
+                return a.$.name > b.$.name ? 1 : -1;
+
+            });
+            // build the inheritance path with real objects
+            return ret;
+        },
+
+        getProperties: function(type, showInherit){
+            type = type || "all";
+            var ret = [],
+                attribute,
+                property;
+
+            for (var key in this.$.properties) {
+                if (this.$.properties.hasOwnProperty(key)) {
+                    property = this.$.properties[key];
+                    if ((type === 'all' || type === property.visibility)) {
+                        if (showInherit || (!showInherit && !property.hasOwnProperty('definedBy'))) {
+                            attribute = this.$context.createEntity(Attribute, key);
+                            attribute.set(this.$.properties[key]);
+                            ret.push(attribute);
+                        }
+                    }
+                }
+            }
+
+            ret = ret.sort(function (a, b) {
+                return a.$.name > b.$.name ? 1 : -1;
+
+            });
             // build the inheritance path with real objects
             return ret;
         },
