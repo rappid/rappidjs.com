@@ -3,6 +3,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.EventDispatcher",
             "name": "_beforeDestroy",
             "visibility": "protected"
@@ -10,34 +11,9 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_bindBus",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "Function"
-                    ],
-                    "name": "fnc",
-                    "optional": false,
-                    "description": "the function to call"
-                },
-                {
-                    "types": [
-                        "Number"
-                    ],
-                    "name": "delay",
-                    "optional": false,
-                    "description": "delay in ms"
-                }
-            ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.core.Base",
-            "name": "_callFunctionDelayed",
             "visibility": "protected"
         },
         {
@@ -54,6 +30,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
             "private": "",
             "definedBy": "js.core.Bindable",
@@ -72,6 +49,7 @@
                     "description": "contains the changed attributes"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "overwritesMethod": true,
             "name": "_commitChangedAttributes",
@@ -80,13 +58,70 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_commitInvalidatedAttributes",
             "visibility": "protected"
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "cacheId",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Array"
+                    ],
+                    "name": "parameters",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "strategy",
+                    "optional": true,
+                    "defaultValue": "loop",
+                    "description": "loop will trigger the function at least every delay, wait will clear the timeout"
+                }
+            ],
+            "annotations": {},
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_debounceFunctionCall",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "",
             "returns": {
                 "types": [
@@ -102,6 +137,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.EventDispatcher",
             "name": "_destroyCompleted",
             "visibility": "protected"
@@ -109,6 +145,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_extract",
             "visibility": "protected"
@@ -125,7 +162,8 @@
                     "description": "the name of the static property used to find defaults"
                 }
             ],
-            "description": "generates a default chain containing the values from this instance and base classes",
+            "annotations": {},
+            "description": "generates a default chain containing the values from this instance and base classes\n",
             "returns": {
                 "types": [
                     "*"
@@ -146,6 +184,7 @@
                     "name": "rootScope"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_getAttributesFromDescriptor",
             "visibility": "protected"
@@ -157,6 +196,7 @@
                     "name": "node"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_getLocalNameFromNode",
             "visibility": "protected"
@@ -168,6 +208,7 @@
                     "name": "desc"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_getTextContentFromDescriptor",
             "visibility": "protected"
@@ -182,6 +223,7 @@
                     "name": "search"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_hasAll",
             "visibility": "protected"
@@ -196,6 +238,7 @@
                     "name": "search"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_hasSome",
             "visibility": "protected"
@@ -203,6 +246,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_initializationComplete",
             "visibility": "protected"
@@ -210,6 +254,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_initialize",
             "visibility": "protected"
@@ -221,6 +266,7 @@
                     "name": "attributes"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_initializeAttributes",
             "visibility": "protected"
@@ -228,6 +274,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Initialize all Binding and Event attributes",
             "definedBy": "js.core.Bindable",
             "name": "_initializeBindings",
@@ -236,6 +283,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_initializeBindingsBeforeComplete",
             "visibility": "protected"
@@ -243,6 +291,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "overwritesMethod": true,
             "name": "_initializeDescriptors",
@@ -255,6 +304,7 @@
                     "name": "attribute"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_initializeEventAttributes",
             "visibility": "protected"
@@ -262,6 +312,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_initializeFromCtor",
             "visibility": "protected"
@@ -269,6 +320,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_inject",
             "visibility": "protected"
@@ -276,6 +328,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_injectChain",
             "visibility": "protected"
@@ -283,6 +336,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.EventDispatcher",
             "name": "_innerDestroy",
             "visibility": "protected"
@@ -290,6 +344,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_postConstruct",
             "visibility": "protected"
@@ -297,6 +352,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_preDestroy",
             "visibility": "protected"
@@ -304,6 +360,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_preinitialize",
             "visibility": "protected"
@@ -315,12 +372,14 @@
                     "name": "textContent"
                 }
             ],
+            "annotations": {},
             "name": "_renderTextContent",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_setUp",
             "visibility": "protected"
@@ -328,6 +387,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_tearDown",
             "visibility": "protected"
@@ -335,6 +395,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_unbindBus",
             "visibility": "protected"
@@ -362,7 +423,8 @@
                     "description": "This sets the scope for the callback function"
                 }
             ],
-            "description": "Binds a callback and a scope to a given eventType",
+            "annotations": {},
+            "description": "Binds a callback and a scope to a given eventType\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "bind",
             "visibility": "public"
@@ -370,6 +432,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Clears all attributes",
             "returns": {
                 "types": [
@@ -387,6 +450,7 @@
                     "name": "options"
                 }
             ],
+            "annotations": {},
             "description": "This method returns a copy of the Object",
             "returns": {
                 "types": [
@@ -401,6 +465,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Base",
             "name": "ctor",
             "visibility": "public"
@@ -408,6 +473,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
             "name": "destroy",
@@ -416,6 +482,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Base",
             "name": "emptyCallback",
             "visibility": "public"
@@ -427,6 +494,7 @@
                     "name": "key"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "find",
             "visibility": "public"
@@ -452,7 +520,8 @@
                     "description": "or path"
                 }
             ],
-            "description": "evaluates a path to retrieve a value",
+            "annotations": {},
+            "description": "evaluates a path to retrieve a value\n",
             "returns": {
                 "types": null,
                 "description": "the value for the path or undefined"
@@ -468,6 +537,7 @@
                     "name": "fncName"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "getScopeForFncName",
             "visibility": "public"
@@ -479,6 +549,7 @@
                     "name": "key"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "getScopeForKey",
             "visibility": "public"
@@ -495,7 +566,8 @@
                     "description": "to get the value"
                 }
             ],
-            "description": "determinate if a attribute is available",
+            "annotations": {},
+            "description": "determinate if a attribute is available\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -509,6 +581,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "initialize",
             "visibility": "public"
@@ -520,6 +593,7 @@
                     "name": "b"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "isDeepEqual",
             "visibility": "public"
@@ -531,6 +605,7 @@
                     "name": "value"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "isDefined",
             "visibility": "public"
@@ -542,6 +617,7 @@
                     "name": "b"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "isEqual",
             "visibility": "public"
@@ -568,7 +644,8 @@
                     "description": "the service level of (debug, info, warn, error)"
                 }
             ],
-            "description": "logs messages to configured logging functions",
+            "annotations": {},
+            "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
             "visibility": "public"
@@ -582,6 +659,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Binding helper to negate a Boolean value",
             "returns": {
                 "types": [
@@ -595,13 +673,15 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "render",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
+            "annotations": {},
+            "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -640,7 +720,8 @@
                     "description": "A hash of options"
                 }
             ],
-            "description": "Sets new values for attributes and notify about changes",
+            "annotations": {},
+            "description": "Sets new values for attributes and notify about changes\n",
             "returns": {
                 "types": [
                     "js.core.Bindable"
@@ -661,6 +742,7 @@
                     "name": "value"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "setLater",
             "visibility": "public"
@@ -668,6 +750,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Writes attributes back to the source",
             "definedBy": "js.core.Bindable",
             "name": "sync",
@@ -698,7 +781,8 @@
                     "optional": false
                 }
             ],
-            "description": "Triggers a specific event and the * event",
+            "annotations": {},
+            "description": "Triggers a specific event and the * event\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
             "visibility": "public"
@@ -724,7 +808,8 @@
                     "name": "scope"
                 }
             ],
-            "description": "Unbinds callbacks for events",
+            "annotations": {},
+            "description": "Unbinds callbacks for events\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "unbind",
             "visibility": "public"
@@ -749,6 +834,7 @@
                     "optional": true
                 }
             ],
+            "annotations": {},
             "description": "Unset attribute on $",
             "returns": {
                 "types": [
@@ -779,16 +865,7 @@
             "definedBy": "js.core.Element"
         }
     },
-    "properties": {
-        "inject": {
-            "name": "inject",
-            "visibility": "public",
-            "propertyType": "complex",
-            "value": " {}",
-            "description": "values to be injected",
-            "definedBy": "js.core.Bindable"
-        }
-    },
+    "properties": {},
     "fqClassName": "js.core.TextElement",
     "inherit": "js.core.Element",
     "dependencies": [
@@ -796,6 +873,8 @@
         "underscore"
     ],
     "type": "js",
+    "file": "js/core/TextElement.js",
+    "package": "js.core",
     "inheritancePath": [
         "js.core.Element",
         "js.core.Bindable",

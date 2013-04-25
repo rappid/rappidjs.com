@@ -13,12 +13,14 @@
                     "name": "statusText"
                 }
             ],
+            "annotations": {},
             "name": "ctor",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "toString",
             "visibility": "public"
         }
@@ -27,5 +29,7 @@
     "properties": {},
     "fqClassName": "js.error.ValidationError",
     "dependencies": [],
-    "type": "js"
+    "type": "js",
+    "file": "js/error/ValidationError.js",
+    "package": "js.error"
 }

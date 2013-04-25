@@ -8,22 +8,51 @@
                         "Function"
                     ],
                     "name": "fnc",
-                    "optional": false,
-                    "description": "the function to call"
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "cacheId",
+                    "optional": true
                 },
                 {
                     "types": [
                         "Number"
                     ],
                     "name": "delay",
-                    "optional": false,
-                    "description": "delay in ms"
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Array"
+                    ],
+                    "name": "parameters",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "strategy",
+                    "optional": true,
+                    "defaultValue": "loop",
+                    "description": "loop will trigger the function at least every delay, wait will clear the timeout"
                 }
             ],
+            "annotations": {},
             "description": "",
             "private": "",
             "definedBy": "js.core.Base",
-            "name": "_callFunctionDelayed",
+            "name": "_debounceFunctionCall",
             "visibility": "protected"
         },
         {
@@ -36,6 +65,7 @@
                     "name": "applicationContext"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -44,6 +74,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Base",
             "name": "emptyCallback",
             "visibility": "public"
@@ -70,7 +101,8 @@
                     "description": "the service level of (debug, info, warn, error)"
                 }
             ],
-            "description": "logs messages to configured logging functions",
+            "annotations": {},
+            "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
             "visibility": "public"
@@ -78,7 +110,8 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
+            "annotations": {},
+            "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -99,6 +132,8 @@
         "js.core.Bus"
     ],
     "type": "js",
+    "file": "srv/core/ServerContext.js",
+    "package": "srv.core",
     "inheritancePath": [
         "js.core.Base"
     ]

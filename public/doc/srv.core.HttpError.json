@@ -7,6 +7,7 @@
                     "name": "context"
                 }
             ],
+            "annotations": {},
             "name": "_beforeSend",
             "visibility": "protected"
         },
@@ -23,12 +24,14 @@
                     "name": "statusText"
                 }
             ],
+            "annotations": {},
             "name": "ctor",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "toString",
             "visibility": "public"
         }
@@ -37,5 +40,7 @@
     "properties": {},
     "fqClassName": "srv.core.HttpError",
     "dependencies": [],
-    "type": "js"
+    "type": "js",
+    "file": "srv/core/HttpError.js",
+    "package": "srv.core"
 }

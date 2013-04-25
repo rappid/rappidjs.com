@@ -8,32 +8,63 @@
                         "Function"
                     ],
                     "name": "fnc",
-                    "optional": false,
-                    "description": "the function to call"
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "cacheId",
+                    "optional": true
                 },
                 {
                     "types": [
                         "Number"
                     ],
                     "name": "delay",
-                    "optional": false,
-                    "description": "delay in ms"
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Array"
+                    ],
+                    "name": "parameters",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "strategy",
+                    "optional": true,
+                    "defaultValue": "loop",
+                    "description": "loop will trigger the function at least every delay, wait will clear the timeout"
                 }
             ],
+            "annotations": {},
             "description": "",
             "private": "",
-            "name": "_callFunctionDelayed",
+            "name": "_debounceFunctionCall",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "ctor",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "emptyCallback",
             "visibility": "public"
         },
@@ -59,14 +90,16 @@
                     "description": "the service level of (debug, info, warn, error)"
                 }
             ],
-            "description": "logs messages to configured logging functions",
+            "annotations": {},
+            "description": "logs messages to configured logging functions\n",
             "name": "log",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
+            "annotations": {},
+            "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -83,5 +116,7 @@
     "dependencies": [
         "inherit"
     ],
-    "type": "js"
+    "type": "js",
+    "file": "js/core/Base.js",
+    "package": "js.core"
 }

@@ -1,0 +1,15 @@
+{
+    "fqClassName": "js.ui.DataGridItemsView",
+    "dependencies": [
+        "js.ui.DataGridItemsViewClass"
+    ],
+    "type": "xml",
+    "inherit": "js.ui.DataGridItemsViewClass",
+    "methods": [],
+    "defaults": {},
+    "file": "js/ui/DataGridItemsView.xml",
+    "package": "js.ui",
+    "inheritancePath": [
+        "js.ui.DataGridItemsViewClass"
+    ]
+}

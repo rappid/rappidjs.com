@@ -3,12 +3,14 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_initializationComplete",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_validateConfiguration",
             "visibility": "protected"
         },
@@ -23,6 +25,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Returns configuration for a given modelClass / model factory",
             "returns": {
                 "types": [
@@ -39,6 +42,7 @@
                     "name": "modelClassName"
                 }
             ],
+            "annotations": {},
             "name": "getConfigurationForModelClassName",
             "visibility": "public"
         },
@@ -49,6 +53,7 @@
                     "name": "path"
                 }
             ],
+            "annotations": {},
             "name": "getConfigurationForPath",
             "visibility": "public"
         }
@@ -69,6 +74,8 @@
         "js.data.Model"
     ],
     "type": "js",
+    "file": "js/conf/ResourceConfiguration.js",
+    "package": "js.conf",
     "inheritancePath": [
         "js.conf.Configuration"
     ]

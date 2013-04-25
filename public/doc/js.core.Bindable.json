@@ -3,6 +3,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.EventDispatcher",
             "name": "_beforeDestroy",
             "visibility": "protected"
@@ -10,33 +11,8 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_bindBus",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "Function"
-                    ],
-                    "name": "fnc",
-                    "optional": false,
-                    "description": "the function to call"
-                },
-                {
-                    "types": [
-                        "Number"
-                    ],
-                    "name": "delay",
-                    "optional": false,
-                    "description": "delay in ms"
-                }
-            ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.core.Base",
-            "name": "_callFunctionDelayed",
             "visibility": "protected"
         },
         {
@@ -53,6 +29,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
             "private": "",
             "name": "_cloneAttribute",
@@ -78,7 +55,8 @@
                     "description": "the options passed in the set method"
                 }
             ],
-            "description": "called after attributes has set and some of the has been changed",
+            "annotations": {},
+            "description": "called after attributes has set and some of the has been changed\n",
             "abstract": "",
             "private": "",
             "name": "_commitChangedAttributes",
@@ -87,12 +65,69 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_commitInvalidatedAttributes",
             "visibility": "protected"
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "cacheId",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Array"
+                    ],
+                    "name": "parameters",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "strategy",
+                    "optional": true,
+                    "defaultValue": "loop",
+                    "description": "loop will trigger the function at least every delay, wait will clear the timeout"
+                }
+            ],
+            "annotations": {},
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_debounceFunctionCall",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "",
             "returns": {
                 "types": [
@@ -107,6 +142,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.EventDispatcher",
             "name": "_destroyCompleted",
             "visibility": "protected"
@@ -114,6 +150,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_extract",
             "visibility": "protected"
         },
@@ -129,7 +166,8 @@
                     "description": "the name of the static property used to find defaults"
                 }
             ],
-            "description": "generates a default chain containing the values from this instance and base classes",
+            "annotations": {},
+            "description": "generates a default chain containing the values from this instance and base classes\n",
             "returns": {
                 "types": [
                     "*"
@@ -149,6 +187,7 @@
                     "name": "search"
                 }
             ],
+            "annotations": {},
             "name": "_hasAll",
             "visibility": "protected"
         },
@@ -162,24 +201,28 @@
                     "name": "search"
                 }
             ],
+            "annotations": {},
             "name": "_hasSome",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_initializationComplete",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_initialize",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Initialize all Binding and Event attributes",
             "name": "_initializeBindings",
             "visibility": "protected"
@@ -187,30 +230,35 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_initializeBindingsBeforeComplete",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_initializeFromCtor",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_inject",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_injectChain",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.EventDispatcher",
             "overwritesMethod": true,
             "name": "_innerDestroy",
@@ -219,30 +267,35 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_postConstruct",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_preDestroy",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_setUp",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_tearDown",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_unbindBus",
             "visibility": "protected"
         },
@@ -282,7 +335,8 @@
                     "description": "the thisArg used for calling the event handler"
                 }
             ],
-            "description": "Binds an event handler function to an EventDispatcher",
+            "annotations": {},
+            "description": "Binds an event handler function to an EventDispatcher\n",
             "definedBy": "js.core.EventDispatcher",
             "overwritesMethod": true,
             "name": "bind",
@@ -291,6 +345,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Clears all attributes",
             "returns": {
                 "types": [
@@ -307,6 +362,7 @@
                     "name": "options"
                 }
             ],
+            "annotations": {},
             "description": "This method returns a copy of the Object",
             "returns": {
                 "types": [
@@ -329,7 +385,8 @@
                     "description": "the default attributes which will be set during instantiation"
                 }
             ],
-            "description": "creates a new instance of Bindable, which can be bound to components",
+            "annotations": {},
+            "description": "creates a new instance of Bindable, which can be bound to components\n",
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -338,6 +395,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
             "name": "destroy",
@@ -346,6 +404,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Base",
             "name": "emptyCallback",
             "visibility": "public"
@@ -371,7 +430,8 @@
                     "description": "or path"
                 }
             ],
-            "description": "evaluates a path to retrieve a value",
+            "annotations": {},
+            "description": "evaluates a path to retrieve a value\n",
             "returns": {
                 "types": null,
                 "description": "the value for the path or undefined"
@@ -386,6 +446,7 @@
                     "name": "fncName"
                 }
             ],
+            "annotations": {},
             "name": "getScopeForFncName",
             "visibility": "public"
         },
@@ -396,6 +457,7 @@
                     "name": "key"
                 }
             ],
+            "annotations": {},
             "name": "getScopeForKey",
             "visibility": "public"
         },
@@ -411,7 +473,8 @@
                     "description": "to get the value"
                 }
             ],
-            "description": "determinate if a attribute is available",
+            "annotations": {},
+            "description": "determinate if a attribute is available\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -424,6 +487,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "initialize",
             "visibility": "public"
         },
@@ -434,6 +498,7 @@
                     "name": "b"
                 }
             ],
+            "annotations": {},
             "name": "isDeepEqual",
             "visibility": "public"
         },
@@ -444,6 +509,7 @@
                     "name": "b"
                 }
             ],
+            "annotations": {},
             "name": "isEqual",
             "visibility": "public"
         },
@@ -469,7 +535,8 @@
                     "description": "the service level of (debug, info, warn, error)"
                 }
             ],
-            "description": "logs messages to configured logging functions",
+            "annotations": {},
+            "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
             "visibility": "public"
@@ -477,7 +544,8 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
+            "annotations": {},
+            "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -516,7 +584,8 @@
                     "description": "A hash of options"
                 }
             ],
-            "description": "Sets new values for attributes and notify about changes",
+            "annotations": {},
+            "description": "Sets new values for attributes and notify about changes\n",
             "returns": {
                 "types": [
                     "js.core.Bindable"
@@ -536,12 +605,14 @@
                     "name": "value"
                 }
             ],
+            "annotations": {},
             "name": "setLater",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Writes attributes back to the source",
             "name": "sync",
             "visibility": "public"
@@ -571,7 +642,8 @@
                     "optional": false
                 }
             ],
-            "description": "Triggers a specific event and the * event",
+            "annotations": {},
+            "description": "Triggers a specific event and the * event\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
             "visibility": "public"
@@ -611,7 +683,8 @@
                     "optional": true
                 }
             ],
-            "description": "Unbinds an bound event handler from an EventDispatcher.",
+            "annotations": {},
+            "description": "Unbinds an bound event handler from an EventDispatcher.\n",
             "definedBy": "js.core.EventDispatcher",
             "overwritesMethod": true,
             "name": "unbind",
@@ -637,6 +710,7 @@
                     "optional": true
                 }
             ],
+            "annotations": {},
             "description": "Unset attribute on $",
             "returns": {
                 "types": [
@@ -648,15 +722,7 @@
         }
     ],
     "defaults": {},
-    "properties": {
-        "inject": {
-            "name": "inject",
-            "visibility": "public",
-            "propertyType": "complex",
-            "value": " {}",
-            "description": "values to be injected"
-        }
-    },
+    "properties": {},
     "fqClassName": "js.core.Bindable",
     "inherit": "js.core.EventDispatcher",
     "dependencies": [
@@ -667,6 +733,8 @@
         "underscore"
     ],
     "type": "js",
+    "file": "js/core/Bindable.js",
+    "package": "js.core",
     "inheritancePath": [
         "js.core.EventDispatcher",
         "js.core.Base"

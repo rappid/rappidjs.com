@@ -3,40 +3,16 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.EventDispatcher",
             "name": "_beforeDestroy",
             "visibility": "protected"
         },
         {
             "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "Function"
-                    ],
-                    "name": "fnc",
-                    "optional": false,
-                    "description": "the function to call"
-                },
-                {
-                    "types": [
-                        "Number"
-                    ],
-                    "name": "delay",
-                    "optional": false,
-                    "description": "delay in ms"
-                }
-            ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.core.Base",
-            "name": "_callFunctionDelayed",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
             "parameter": [],
-            "description": "This method is called, when the value of the current binding changes.It recreates the the subBinding and triggers the binding",
+            "annotations": {},
+            "description": "This method is called, when the value of the current binding changes.\nIt recreates the the subBinding and triggers the binding",
             "private": "",
             "name": "_callback",
             "visibility": "protected"
@@ -50,7 +26,8 @@
                     "optional": false
                 }
             ],
-            "description": "This method is called, when the a change event of an function binding is triggered",
+            "annotations": {},
+            "description": "This method is called, when the a change event of an function binding is triggered\n",
             "private": "",
             "name": "_changeCallback",
             "visibility": "protected"
@@ -58,18 +35,76 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_checkAttributes",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "_createSubBinding",
             "visibility": "protected"
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "cacheId",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Array"
+                    ],
+                    "name": "parameters",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "strategy",
+                    "optional": true,
+                    "defaultValue": "loop",
+                    "description": "loop will trigger the function at least every delay, wait will clear the timeout"
+                }
+            ],
+            "annotations": {},
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_debounceFunctionCall",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.EventDispatcher",
             "name": "_destroyCompleted",
             "visibility": "protected"
@@ -84,12 +119,14 @@
                     "name": "fnc"
                 }
             ],
+            "annotations": {},
             "name": "_getEventsForFnc",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Returns an array with values of all function parameters",
             "returns": {
                 "types": [
@@ -110,12 +147,14 @@
                     "name": "fnc"
                 }
             ],
+            "annotations": {},
             "name": "_getOnChangeAttributesForFnc",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Unbinds all events and destroys subBinding...",
             "definedBy": "js.core.EventDispatcher",
             "overwritesMethod": true,
@@ -129,6 +168,7 @@
                     "name": "e"
                 }
             ],
+            "annotations": {},
             "name": "_revCallback",
             "visibility": "protected"
         },
@@ -137,7 +177,7 @@
             "parameter": [
                 {
                     "types": [
-                        "Bindable"
+                        "js.core.Bindable"
                     ],
                     "name": "targetScope",
                     "optional": false
@@ -151,6 +191,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "",
             "name": "addTarget",
             "visibility": "public"
@@ -178,7 +219,8 @@
                     "description": "This sets the scope for the callback function"
                 }
             ],
-            "description": "Binds a callback and a scope to a given eventType",
+            "annotations": {},
+            "description": "Binds a callback and a scope to a given eventType\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "bind",
             "visibility": "public"
@@ -196,6 +238,7 @@
                     "name": "callback"
                 }
             ],
+            "annotations": {},
             "name": "create",
             "visibility": "public"
         },
@@ -206,6 +249,7 @@
                     "name": "attributes"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -214,6 +258,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
             "name": "destroy",
@@ -222,6 +267,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Base",
             "name": "emptyCallback",
             "visibility": "public"
@@ -229,6 +275,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Returns the value in the context of the surrounding bindings",
             "returns": {
                 "types": [
@@ -241,12 +288,14 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "getTargets",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Returns the transformed value of the binding or null, if the binding path is not present",
             "returns": {
                 "types": [
@@ -259,12 +308,14 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "initialize",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "invalidateValueCache",
             "visibility": "public"
         },
@@ -290,7 +341,8 @@
                     "description": "the service level of (debug, info, warn, error)"
                 }
             ],
-            "description": "logs messages to configured logging functions",
+            "annotations": {},
+            "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
             "visibility": "public"
@@ -300,7 +352,7 @@
             "parameter": [
                 {
                     "types": [
-                        "Bindable"
+                        "js.core.Bindable"
                     ],
                     "name": "targetScope",
                     "optional": false
@@ -314,6 +366,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "",
             "name": "removeTarget",
             "visibility": "public"
@@ -321,7 +374,8 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
+            "annotations": {},
+            "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -335,6 +389,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "toString",
             "visibility": "public"
         },
@@ -345,6 +400,7 @@
                     "name": "val"
                 }
             ],
+            "annotations": {},
             "name": "transform",
             "visibility": "public"
         },
@@ -355,6 +411,7 @@
                     "name": "val"
                 }
             ],
+            "annotations": {},
             "name": "transformBack",
             "visibility": "public"
         },
@@ -383,7 +440,8 @@
                     "optional": false
                 }
             ],
-            "description": "Triggers a specific event and the * event",
+            "annotations": {},
+            "description": "Triggers a specific event and the * event\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
             "visibility": "public"
@@ -391,6 +449,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "This method triggers the binding and syncs the target with the scope",
             "name": "triggerBinding",
             "visibility": "public"
@@ -416,7 +475,8 @@
                     "name": "scope"
                 }
             ],
-            "description": "Unbinds callbacks for events",
+            "annotations": {},
+            "description": "Unbinds callbacks for events\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "unbind",
             "visibility": "public"
@@ -452,6 +512,8 @@
     ],
     "description": "Returns false if path includes function",
     "type": "js",
+    "file": "js/core/Binding.js",
+    "package": "js.core",
     "inheritancePath": [
         "js.core.EventDispatcher",
         "js.core.Base"

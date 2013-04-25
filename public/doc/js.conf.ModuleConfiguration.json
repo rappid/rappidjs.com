@@ -8,6 +8,8 @@
         "js.conf.Configuration"
     ],
     "type": "js",
+    "file": "js/conf/ModuleConfiguration.js",
+    "package": "js.conf",
     "inheritancePath": [
         "js.conf.Configuration"
     ]

@@ -3,6 +3,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Returns the ENVIRONMENT object",
             "definedBy": "js.core.Component",
             "name": "ENV",
@@ -15,6 +16,7 @@
                     "name": "config"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_addConfiguration",
             "visibility": "protected"
@@ -26,6 +28,7 @@
                     "name": "template"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_addTemplate",
             "visibility": "protected"
@@ -43,6 +46,7 @@
                     "name": "callback"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "name": "_afterModelSave",
             "visibility": "protected"
@@ -50,6 +54,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.EventDispatcher",
             "name": "_beforeDestroy",
             "visibility": "protected"
@@ -67,6 +72,7 @@
                     "name": "callback"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "name": "_beforeModelSave",
             "visibility": "protected"
@@ -74,39 +80,15 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_bindBus",
             "visibility": "protected"
         },
         {
             "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "Function"
-                    ],
-                    "name": "fnc",
-                    "optional": false,
-                    "description": "the function to call"
-                },
-                {
-                    "types": [
-                        "Number"
-                    ],
-                    "name": "delay",
-                    "optional": false,
-                    "description": "delay in ms"
-                }
-            ],
-            "description": "",
-            "private": "",
-            "definedBy": "js.core.Base",
-            "name": "_callFunctionDelayed",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
             "parameter": [],
+            "annotations": {},
             "private": "This method is called after all children are initialized",
             "definedBy": "js.core.Component",
             "name": "_childrenInitialized",
@@ -119,6 +101,7 @@
                     "name": "desc"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_cleanUpDescriptor",
             "visibility": "protected"
@@ -137,6 +120,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
             "private": "",
             "definedBy": "js.core.Bindable",
@@ -163,7 +147,8 @@
                     "description": "the options passed in the set method"
                 }
             ],
-            "description": "called after attributes has set and some of the has been changed",
+            "annotations": {},
+            "description": "called after attributes has set and some of the has been changed\n",
             "abstract": "",
             "private": "",
             "definedBy": "js.core.Bindable",
@@ -173,6 +158,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_commitInvalidatedAttributes",
             "visibility": "protected"
@@ -184,6 +170,7 @@
                     "name": "model"
                 }
             ],
+            "annotations": {},
             "name": "_composeContext",
             "visibility": "protected"
         },
@@ -207,6 +194,7 @@
                     "name": "rootScope"
                 }
             ],
+            "annotations": {},
             "description": "Create {@link Component} for DOM Node with given attributes",
             "definedBy": "js.core.Component",
             "name": "_createComponentForNode",
@@ -219,6 +207,7 @@
                     "name": "id"
                 }
             ],
+            "annotations": {},
             "name": "_createIdObject",
             "visibility": "protected"
         },
@@ -232,13 +221,70 @@
                     "name": "rootScope"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_createTextElement",
             "visibility": "protected"
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "cacheId",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Array"
+                    ],
+                    "name": "parameters",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "strategy",
+                    "optional": true,
+                    "defaultValue": "loop",
+                    "description": "loop will trigger the function at least every delay, wait will clear the timeout"
+                }
+            ],
+            "annotations": {},
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_debounceFunctionCall",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "",
             "returns": {
                 "types": [
@@ -254,6 +300,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.EventDispatcher",
             "name": "_destroyCompleted",
             "visibility": "protected"
@@ -261,6 +308,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_extract",
             "visibility": "protected"
@@ -277,7 +325,8 @@
                     "description": "the name of the static property used to find defaults"
                 }
             ],
-            "description": "generates a default chain containing the values from this instance and base classes",
+            "annotations": {},
+            "description": "generates a default chain containing the values from this instance and base classes\n",
             "returns": {
                 "types": [
                     "*"
@@ -298,6 +347,7 @@
                     "name": "rootScope"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_getAttributesFromDescriptor",
             "visibility": "protected"
@@ -314,6 +364,7 @@
                     "name": "rootScope"
                 }
             ],
+            "annotations": {},
             "description": "Converts all child nodes of a descriptor to instances of Components or TextElement",
             "definedBy": "js.core.Component",
             "name": "_getChildrenFromDescriptor",
@@ -326,6 +377,7 @@
                     "name": "model"
                 }
             ],
+            "annotations": {},
             "name": "_getConfigurationForModel",
             "visibility": "protected"
         },
@@ -342,6 +394,7 @@
                     "name": "value"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "_getContext",
@@ -354,6 +407,7 @@
                     "name": "eventDefinition"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_getEventName",
             "visibility": "protected"
@@ -365,6 +419,7 @@
                     "name": "eventName"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_getEventTypeForAttribute",
             "visibility": "protected"
@@ -376,6 +431,7 @@
                     "name": "node"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_getLocalNameFromNode",
             "visibility": "protected"
@@ -387,6 +443,7 @@
                     "name": "desc"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_getTextContentFromDescriptor",
             "visibility": "protected"
@@ -398,6 +455,7 @@
                     "name": "collection"
                 }
             ],
+            "annotations": {},
             "name": "_getWhereConditionForCollection",
             "visibility": "protected"
         },
@@ -408,6 +466,7 @@
                     "name": "model"
                 }
             ],
+            "annotations": {},
             "name": "_getWhereConditionForModel",
             "visibility": "protected"
         },
@@ -421,6 +480,7 @@
                     "name": "search"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_hasAll",
             "visibility": "protected"
@@ -435,6 +495,7 @@
                     "name": "search"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_hasSome",
             "visibility": "protected"
@@ -442,6 +503,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_initializationComplete",
             "visibility": "protected"
@@ -449,6 +511,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_initialize",
             "visibility": "protected"
@@ -460,6 +523,7 @@
                     "name": "attributes"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_initializeAttributes",
             "visibility": "protected"
@@ -467,6 +531,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Initialize all Binding and Event attributes",
             "definedBy": "js.core.Bindable",
             "name": "_initializeBindings",
@@ -475,6 +540,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_initializeBindingsBeforeComplete",
             "visibility": "protected"
@@ -486,6 +552,7 @@
                     "name": "childComponents"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_initializeChildren",
             "visibility": "protected"
@@ -493,6 +560,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_initializeDescriptors",
             "visibility": "protected"
@@ -504,6 +572,7 @@
                     "name": "attribute"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_initializeEventAttributes",
             "visibility": "protected"
@@ -511,6 +580,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_initializeFromCtor",
             "visibility": "protected"
@@ -525,6 +595,7 @@
                     "name": "rootScope"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_initializeXamlEventAttributes",
             "visibility": "protected"
@@ -532,6 +603,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_inject",
             "visibility": "protected"
@@ -539,6 +611,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_injectChain",
             "visibility": "protected"
@@ -546,6 +619,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.EventDispatcher",
             "name": "_innerDestroy",
             "visibility": "protected"
@@ -559,6 +633,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Returns true if event is defined in Component event list",
             "definedBy": "js.core.Component",
             "name": "_isComponentEvent",
@@ -571,6 +646,7 @@
                     "name": "attributeName"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_isEventAttribute",
             "visibility": "protected"
@@ -582,6 +658,7 @@
                     "name": "attributeName"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_isFunctionAttribute",
             "visibility": "protected"
@@ -593,6 +670,7 @@
                     "name": "attributeName"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_isXamlEventAttribute",
             "visibility": "protected"
@@ -606,6 +684,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "IE8 FIXES",
             "definedBy": "js.core.Component",
             "name": "_localNameFromDomNode",
@@ -614,6 +693,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_postConstruct",
             "visibility": "protected"
@@ -621,6 +701,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_preDestroy",
             "visibility": "protected"
@@ -628,6 +709,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_preinitialize",
             "visibility": "protected"
@@ -645,6 +727,7 @@
                     "name": "callback"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "_saveModel",
@@ -653,6 +736,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_setUp",
             "visibility": "protected"
@@ -660,6 +744,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_tearDown",
             "visibility": "protected"
@@ -671,6 +756,7 @@
                     "name": "queryObject"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "name": "_translateQueryObject",
             "visibility": "protected"
@@ -678,6 +764,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_unbindBus",
             "visibility": "protected"
@@ -685,6 +772,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "name": "_validateConfiguration",
             "visibility": "protected"
@@ -703,6 +791,7 @@
                     "name": "options"
                 }
             ],
+            "annotations": {},
             "description": "adds a children",
             "definedBy": "js.core.Component",
             "name": "addChild",
@@ -715,6 +804,7 @@
                     "name": "path"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "baseUrl",
             "visibility": "public"
@@ -742,7 +832,8 @@
                     "description": "This sets the scope for the callback function"
                 }
             ],
-            "description": "Binds a callback and a scope to a given eventType",
+            "annotations": {},
+            "description": "Binds a callback and a scope to a given eventType\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "bind",
             "visibility": "public"
@@ -750,6 +841,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "bus",
             "visibility": "public"
@@ -757,6 +849,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Clears all attributes",
             "returns": {
                 "types": [
@@ -774,6 +867,7 @@
                     "name": "options"
                 }
             ],
+            "annotations": {},
             "description": "This method returns a copy of the Object",
             "returns": {
                 "types": [
@@ -795,6 +889,7 @@
                     "name": "options"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "name": "composeModel",
             "visibility": "public"
@@ -806,6 +901,7 @@
                     "name": "callback"
                 }
             ],
+            "annotations": {},
             "name": "connect",
             "visibility": "public"
         },
@@ -822,6 +918,7 @@
                     "name": "callback"
                 }
             ],
+            "annotations": {},
             "name": "connectCollection",
             "visibility": "public"
         },
@@ -838,6 +935,7 @@
                     "name": "callback"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "countCollection",
@@ -856,6 +954,7 @@
                     "name": "callbackScope"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "createBinding",
             "visibility": "public"
@@ -863,6 +962,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "createChildren",
             "visibility": "public"
@@ -893,6 +993,7 @@
                     "optional": true
                 }
             ],
+            "annotations": {},
             "description": "Creates a collection by a given factory in a caching context",
             "returns": {
                 "types": [
@@ -927,6 +1028,7 @@
                     "defaultValue": "false"
                 }
             ],
+            "annotations": {},
             "description": "",
             "returns": {
                 "types": [
@@ -958,6 +1060,7 @@
                     "optional": true
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "createContext",
@@ -989,6 +1092,7 @@
                     "optional": true
                 }
             ],
+            "annotations": {},
             "description": "Create an instance of {js.data.Entity}",
             "returns": {
                 "types": [
@@ -1002,6 +1106,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Base",
             "name": "ctor",
             "visibility": "public"
@@ -1009,6 +1114,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
             "name": "destroy",
@@ -1017,6 +1123,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Base",
             "name": "emptyCallback",
             "visibility": "public"
@@ -1028,6 +1135,7 @@
                     "name": "key"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "find",
             "visibility": "public"
@@ -1053,7 +1161,8 @@
                     "description": "or path"
                 }
             ],
-            "description": "evaluates a path to retrieve a value",
+            "annotations": {},
+            "description": "evaluates a path to retrieve a value\n",
             "returns": {
                 "types": null,
                 "description": "the value for the path or undefined"
@@ -1071,6 +1180,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Returns the configuration for a collectionclass name",
             "returns": {
                 "types": [
@@ -1088,6 +1198,7 @@
                     "name": "modelClass"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "name": "getConfigurationForModelClass",
             "visibility": "public"
@@ -1117,6 +1228,7 @@
                     "optional": true
                 }
             ],
+            "annotations": {},
             "description": "Returns the context for a properties object",
             "returns": {
                 "types": [
@@ -1146,6 +1258,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "getContextForChild",
@@ -1162,6 +1275,7 @@
                     "optional": true
                 }
             ],
+            "annotations": {},
             "description": "Returns the format processor",
             "returns": {
                 "types": [
@@ -1190,7 +1304,8 @@
                     "optional": true
                 }
             ],
-            "description": "Returns the correct processor for a collection",
+            "annotations": {},
+            "description": "Returns the correct processor for a collection\n",
             "returns": {
                 "types": [
                     "js.data.DataSource.Processor"
@@ -1219,7 +1334,8 @@
                     "optional": true
                 }
             ],
-            "description": "Returns the correct processor for model",
+            "annotations": {},
+            "description": "Returns the correct processor for model\n",
             "returns": {
                 "types": [
                     "js.data.DataSource.Processor"
@@ -1244,7 +1360,8 @@
                     "optional": true
                 }
             ],
-            "description": "Returns the correct processor for model class",
+            "annotations": {},
+            "description": "Returns the correct processor for model class\n",
             "returns": {
                 "types": [
                     "js.data.DataSource.Processor"
@@ -1262,6 +1379,7 @@
                     "name": "fncName"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "getScopeForFncName",
             "visibility": "public"
@@ -1273,6 +1391,7 @@
                     "name": "key"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "getScopeForKey",
             "visibility": "public"
@@ -1288,7 +1407,8 @@
                     "optional": false
                 }
             ],
-            "description": "Goes up the tree and searches for a template component with the given name.Returns null if no template was found.",
+            "annotations": {},
+            "description": "Goes up the tree and searches for a template component with the given name.\nReturns null if no template was found.",
             "returns": {
                 "types": [
                     "js.core.Template"
@@ -1310,7 +1430,8 @@
                     "description": "to get the value"
                 }
             ],
-            "description": "determinate if a attribute is available",
+            "annotations": {},
+            "description": "determinate if a attribute is available\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -1324,6 +1445,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "initialize",
             "visibility": "public"
@@ -1331,6 +1453,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "name": "initializeFormatProcessors",
             "visibility": "public"
@@ -1338,6 +1461,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "name": "initializeProcessors",
             "visibility": "public"
@@ -1349,6 +1473,7 @@
                     "name": "b"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "isDeepEqual",
             "visibility": "public"
@@ -1360,6 +1485,7 @@
                     "name": "value"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "isDefined",
             "visibility": "public"
@@ -1371,6 +1497,7 @@
                     "name": "b"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "isEqual",
             "visibility": "public"
@@ -1396,6 +1523,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "loadCollectionPage",
@@ -1426,6 +1554,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "loadModel",
@@ -1453,7 +1582,8 @@
                     "description": "the service level of (debug, info, warn, error)"
                 }
             ],
-            "description": "logs messages to configured logging functions",
+            "annotations": {},
+            "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
             "visibility": "public"
@@ -1467,6 +1597,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Binding helper to negate a Boolean value",
             "returns": {
                 "types": [
@@ -1490,6 +1621,7 @@
                     "name": "options"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "name": "parseModel",
             "visibility": "public"
@@ -1497,6 +1629,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "removeAllChildren",
             "visibility": "public"
@@ -1508,6 +1641,7 @@
                     "name": "child"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "removeChild",
             "visibility": "public"
@@ -1537,6 +1671,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "removeModel",
@@ -1576,6 +1711,7 @@
                     "description": "function (err, resolvedData)"
                 }
             ],
+            "annotations": {},
             "description": "resolve references to models and collections",
             "definedBy": "js.data.DataSource",
             "name": "resolveReferences",
@@ -1584,6 +1720,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Returns the root context of the data source",
             "returns": {
                 "types": [
@@ -1598,7 +1735,8 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
+            "annotations": {},
+            "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -1634,6 +1772,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Saves a model",
             "definedBy": "js.data.DataSource",
             "name": "saveModel",
@@ -1667,7 +1806,8 @@
                     "description": "A hash of options"
                 }
             ],
-            "description": "Sets new values for attributes and notify about changes",
+            "annotations": {},
+            "description": "Sets new values for attributes and notify about changes\n",
             "returns": {
                 "types": [
                     "js.core.Bindable"
@@ -1688,6 +1828,7 @@
                     "name": "value"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "setLater",
             "visibility": "public"
@@ -1695,6 +1836,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Writes attributes back to the source",
             "definedBy": "js.core.Bindable",
             "name": "sync",
@@ -1725,7 +1867,8 @@
                     "optional": false
                 }
             ],
-            "description": "Triggers a specific event and the * event",
+            "annotations": {},
+            "description": "Triggers a specific event and the * event\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
             "visibility": "public"
@@ -1751,7 +1894,8 @@
                     "name": "scope"
                 }
             ],
-            "description": "Unbinds callbacks for events",
+            "annotations": {},
+            "description": "Unbinds callbacks for events\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "unbind",
             "visibility": "public"
@@ -1776,6 +1920,7 @@
                     "optional": true
                 }
             ],
+            "annotations": {},
             "description": "Unset attribute on $",
             "returns": {
                 "types": [
@@ -1849,6 +1994,16 @@
             "value": "YYYY-MM-DDTHH:mm:ssZ",
             "definedBy": "js.data.DataSource"
         },
+        "cid": {
+            "name": "cid",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "the cid is a unique identifier for the component within a xaml class. \\\nThe corresponding component will be automatically added to the $ of the instance of the xaml class.\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.Component"
+        },
         "creationPolicy": {
             "name": "creationPolicy",
             "defaultType": "value",
@@ -1900,7 +2055,7 @@
             "name": "$defaultContentName",
             "visibility": "private",
             "propertyType": "value",
-            "description": "if set all children from the descriptor will be placed into ajs.core.Content block with the name of $defaultContentName",
+            "description": "if set all children from the descriptor will be placed into a\njs.core.Content block with the name of $defaultContentName",
             "definedBy": "js.core.Component"
         },
         "$defaultTemplateName": {
@@ -1908,22 +2063,6 @@
             "visibility": "private",
             "propertyType": "value",
             "definedBy": "js.core.Component"
-        },
-        "events": {
-            "name": "events",
-            "visibility": "public",
-            "propertyType": "complex",
-            "value": " [\n                ]",
-            "description": "",
-            "definedBy": "js.core.Component"
-        },
-        "inject": {
-            "name": "inject",
-            "visibility": "public",
-            "propertyType": "complex",
-            "value": " {}",
-            "description": "values to be injected",
-            "definedBy": "js.core.Bindable"
         }
     },
     "fqClassName": "srv.data.MongoDataSource",
@@ -1937,8 +2076,10 @@
         "srv.lib.MongoQueryComposer",
         "underscore"
     ],
-    "description": " give entities an ID, so the caching works correctly correct key of id object",
+    "description": " give entities an ID, so the caching works correctly\n correct key of id object",
     "type": "js",
+    "file": "srv/data/MongoDataSource.js",
+    "package": "srv.data",
     "inheritancePath": [
         "js.data.DataSource",
         "js.core.Component",
