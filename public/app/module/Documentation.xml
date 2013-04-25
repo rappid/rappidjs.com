@@ -40,7 +40,7 @@
                         <h1>{doc.id}</h1>
 
                         <p class="lead">
-                            {doc.summery}
+                            {doc.summary}
                         </p>
                         <p>
                             {doc.description}
