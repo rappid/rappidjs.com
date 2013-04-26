@@ -255,6 +255,48 @@
                             </ui:ItemsView>
                         </table>
 
+
+                        <div class="row">
+                            <div class="span7">
+                                <h2>Static Methods</h2>
+                                <blockquote>
+                                    <p>
+                                        Static methods exported by the class
+                                    </p>
+                                </blockquote>
+                            </div>
+                            <div class="span2">
+                                <fieldset class="well">
+                                    <label class="checkbox">
+                                        <input type="checkbox" cid="showPublicStatic" checked="checked"/>
+                                        public
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" cid="showProtectedStatic"/>
+                                        protected
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Method</th>
+                                </tr>
+                            </thead>
+                            <ui:ItemsView items="{doc.getStaticMethods(showTypes(showPublicStatic.checked, showProtectedStatic.checked))}"
+                                          itemKey="method" tagName="tbody">
+                                <js:Template name="item">
+                                    <tr>
+                                        <td>
+                                            <view:MethodView method="{method}"/>
+                                        </td>
+                                    </tr>
+                                </js:Template>
+                            </ui:ItemsView>
+                        </table>
+
                     </div>
                 </div>
             </div>

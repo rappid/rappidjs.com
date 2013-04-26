@@ -20,6 +20,7 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
 
         schema: {
             methods: [Method],
+            staticMethods: [Method],
             defaults: Object,
             properties: Object
         },
@@ -152,7 +153,7 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
                 }
             }
 
-            ret = ret.sort(function(a, b){
+            ret = ret.sort(function (a, b) {
                 return a.$.name > b.$.name ? 1 : -1;
 
             });
@@ -160,7 +161,7 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
             return ret;
         },
 
-        getProperties: function(type, showInherit){
+        getProperties: function (type, showInherit) {
             type = type || "all";
             var ret = [],
                 attribute,
@@ -224,6 +225,34 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
             if (ctor) {
                 ret.unshift(ctor);
             }
+
+            return ret;
+
+        },
+
+        /***
+         *
+         * @param {String} [type=''] shows either 'all' or 'protected' or 'public' methods
+         * @return {Array}
+         */
+        getStaticMethods: function (type) {
+
+
+            var ret = [];
+
+            this.$.staticMethods.each(function (method) {
+                if ((type === 'all' || type === method.$.visibility)) {
+                    ret.push(method);
+                }
+            });
+
+            ret.sort(function (a, b) {
+
+                a = (a.$.name || "").replace(stripTrainingUnderscore, '');
+                b = (b.$.name || "").replace(stripTrainingUnderscore, '');
+
+                return a > b ? 1 : -1;
+            });
 
             return ret;
 
