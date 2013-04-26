@@ -1,7 +1,7 @@
 <module:DocumentationClass xmlns="http://www.w3.org/1999/xhtml"
                            xmlns:js="js.core" xmlns:ui="js.ui"
                            xmlns:conf="js.conf" xmlns:data="js.data"
-                           xmlns:module="app.module" xmlns:md="md">
+                           xmlns:module="app.module" xmlns:md="md" xmlns:view="app.view">
 
 
     <data:RestDataSource cid="api" endPoint="http://rappidjs.com/doc" gateway="." suffix="json">
@@ -245,35 +245,7 @@
                                 <js:Template name="item">
                                     <tr>
                                         <td>
-                                            <strong>${method.name}(
-                                                <ui:ItemsView items="${method.parameter}" itemKey="parameter"
-                                                              class="parameter-list" tagName="span">
-                                                    <js:Template name="item">
-                                                        <span>
-                                                            <span visible="${parameter.optional}">[</span>
-                                                            ${parameter.name}
-                                                            <span visible="${parameter.hasTypeDefinition()}">
-                                                                :
-                                                                <a href="api/${parameter.types[0]}">
-                                                                    ${parameter.getFirstTypeName()}
-                                                                </a>
-                                                            </span>
-                                                            <span visible="${parameter.optional}">
-                                                                ]
-                                                            </span>
-                                                        </span>
-                                                    </js:Template>
-                                                </ui:ItemsView>
-                                                )
-                                                <span visible="${method.hasReturnType()}">
-                                                    :
-                                                    <a href="api/${method.returns.types[0]}">
-                                                        ${method.getFirstReturnTypeName()}
-                                                    </a>
-                                                </span>
-                                            </strong>
-                                            <br/>
-                                            ${method.description}
+                                            <view:MethodView method="{method}"/>
                                         </td>
                                         <td>
                                             <a href="api/${method.definedBy}">${method.definedBy}</a>
