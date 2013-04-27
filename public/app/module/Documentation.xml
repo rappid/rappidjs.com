@@ -300,7 +300,32 @@
 
                         </div>
                     </div>
+                    <div visible="{not(hasCurrentDocumentation())}">
 
+                        <div class="jumbotron">
+                            <h1>API Reference!</h1>
+                            <blockquote>
+                                <p class="lead">
+                                    This api reference has been created using the
+                                    'rappidjs doc' command
+                                    which generated the documentation files by parsing the
+                                    js and xaml source files
+                                    with the help of
+                                    <a href="http://esprima.org/">esprima</a>
+                                    and<a href="https://github.com/jindw/xmldom">
+                                    xmldom</a>.
+                                </p>
+                                <small>
+                                    Tony Findeisen
+                                </small>
+                            </blockquote>
+
+                            <p class="lead">
+                                Select a class from the left side or start with the documentation of
+                                <a href="api/js.core.Application">Application</a>.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
