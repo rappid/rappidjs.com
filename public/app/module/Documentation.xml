@@ -301,7 +301,6 @@
                         </div>
                     </div>
                     <div visible="{not(hasCurrentDocumentation())}">
-
                         <div class="jumbotron">
                             <h1>API Reference!</h1>
                             <blockquote>
