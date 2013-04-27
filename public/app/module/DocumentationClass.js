@@ -1,4 +1,4 @@
-define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/model/Class", "underscore"], function(Module, classIndex, List, Class, _) {
+define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/model/Class", "underscore"], function (Module, classIndex, List, Class, _) {
 
     return Module.inherit("app.module.DocumentationClass", {
 
@@ -8,16 +8,14 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             searchString: ""
         },
 
-
-        showTypes: function(showPublic, showProtected) {
+        showTypes: function (showPublic, showProtected) {
 
             var type = (showPublic ? 2 : 0) + (showProtected ? 1 : 0);
 
             return ['', 'protected', 'public', 'all'][type];
-
         },
 
-        _initializationComplete: function() {
+        _initializationComplete: function () {
             for (var i = 0; i < classIndex.length; i++) {
                 this.$.classes.add(this.$.api.createEntity(Class, classIndex[i]));
             }
@@ -41,17 +39,17 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             this.callBase();
         },
 
-        initialize: function(){
-            this.set('filterDocs', function(doc, index, filterList){
+        initialize: function () {
+            this.set('filterDocs', function (doc, index, filterList) {
                 return !filterList.$.searchString || doc.$.id.toLowerCase().indexOf(filterList.$.searchString.toLowerCase()) > -1;
             });
         },
 
-        hasCurrentDocumentation: function() {
+        hasCurrentDocumentation: function () {
             return !!this.$.doc;
         }.onChange('doc'),
 
-        hasSection: function(what) {
+        hasSection: function (what) {
 
             var doc = this.$.doc;
 
@@ -69,15 +67,15 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
 
         }.onChange('doc'),
 
-        title: function(className){
+        title: function (className) {
             return (className ? className + " - " : "") + 'API Reference - rAppid.js';
         },
 
-        showClass: function(routeContext, fqClassName) {
+        showClass: function (routeContext, fqClassName) {
 
             var self = this;
             this.set('doc', null);
-            this.$.api.createEntity(Class, fqClassName).fetch(null, function(err, classDoc) {
+            this.$.api.createEntity(Class, fqClassName).fetch(null, function (err, classDoc) {
 
                 self.set('doc', err ? null : classDoc);
                 routeContext.callback(err);
