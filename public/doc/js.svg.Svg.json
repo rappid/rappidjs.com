@@ -3,24 +3,28 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "ctor",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "globalToLocalFactor",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "localToGlobalFactor",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "save",
             "visibility": "public"
         },
@@ -40,10 +44,12 @@
                     "name": "height"
                 }
             ],
+            "annotations": {},
             "name": "setViewBox",
             "visibility": "public"
         }
     ],
+    "staticMethods": [],
     "defaults": {
         "tagName": {
             "name": "tagName",
@@ -64,15 +70,26 @@
             "value": null
         }
     },
+    "properties": {
+        "$classAttributes": {
+            "name": "$classAttributes",
+            "visibility": "private",
+            "propertyType": "complex",
+            "value": " [\"defs\", \"hidden\"]"
+        }
+    },
     "fqClassName": "js.svg.Svg",
-    "inherit": "xaml!js.svg.SvgDescriptor",
+    "inherit": "js.svg.SvgDescriptor",
     "dependencies": [
         "js.core.Base",
         "js.svg.SvgElement",
         "xaml!js.svg.SvgDescriptor"
     ],
     "type": "js",
+    "file": "js/svg/Svg.js",
+    "package": "js.svg",
     "inheritancePath": [
-        "xaml!js.svg.SvgDescriptor"
+        "js.svg.SvgDescriptor",
+        "js.svg.SvgClass"
     ]
 }

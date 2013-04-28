@@ -1,0 +1,33 @@
+{
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "hasSortExpressions",
+            "visibility": "public"
+        }
+    ],
+    "staticMethods": [],
+    "defaults": {},
+    "properties": {
+        "ctor": {
+            "name": "ctor",
+            "visibility": "public",
+            "propertyType": "complex",
+            "value": " Query"
+        }
+    },
+    "fqClassName": "js.data.Query",
+    "inherit": "Query",
+    "dependencies": [
+        "Query",
+        "js.core.Bindable"
+    ],
+    "type": "js",
+    "file": "js/data/Query.js",
+    "package": "js.data",
+    "inheritancePath": [
+        "Query"
+    ]
+}

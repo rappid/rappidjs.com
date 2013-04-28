@@ -1,6 +1,14 @@
 {
-    "fqClassName": "srv.core.Handler",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "description": "Returns the ENVIRONMENT object",
+            "definedBy": "js.core.Component",
+            "name": "ENV",
+            "visibility": "public"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -8,6 +16,7 @@
                     "name": "config"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_addConfiguration",
             "visibility": "protected"
@@ -19,6 +28,7 @@
                     "name": "template"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_addTemplate",
             "visibility": "protected"
@@ -26,13 +36,23 @@
         {
             "type": "Method",
             "parameter": [],
-            "definedBy": "js.core.Component",
+            "annotations": {},
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_beforeDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
             "name": "_bindBus",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "private": "This method is called after all children are initialized",
             "definedBy": "js.core.Component",
             "name": "_childrenInitialized",
@@ -45,6 +65,7 @@
                     "name": "desc"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_cleanUpDescriptor",
             "visibility": "protected"
@@ -63,6 +84,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
             "private": "",
             "definedBy": "js.core.Bindable",
@@ -89,7 +111,8 @@
                     "description": "the options passed in the set method"
                 }
             ],
-            "description": "called after attributes has set and some of the has been changed",
+            "annotations": {},
+            "description": "called after attributes has set and some of the has been changed\n",
             "abstract": "",
             "private": "",
             "definedBy": "js.core.Bindable",
@@ -99,6 +122,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "_commitInvalidatedAttributes",
             "visibility": "protected"
@@ -123,6 +147,7 @@
                     "name": "rootScope"
                 }
             ],
+            "annotations": {},
             "description": "Create {@link Component} for DOM Node with given attributes",
             "definedBy": "js.core.Component",
             "name": "_createComponentForNode",
@@ -138,13 +163,70 @@
                     "name": "rootScope"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_createTextElement",
             "visibility": "protected"
         },
         {
             "type": "Method",
+            "parameter": [
+                {
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "fnc",
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "cacheId",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Number"
+                    ],
+                    "name": "delay",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Array"
+                    ],
+                    "name": "parameters",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "strategy",
+                    "optional": true,
+                    "defaultValue": "loop",
+                    "description": "loop will trigger the function at least every delay, wait will clear the timeout"
+                }
+            ],
+            "annotations": {},
+            "description": "",
+            "private": "",
+            "definedBy": "js.core.Base",
+            "name": "_debounceFunctionCall",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "",
             "returns": {
                 "types": [
@@ -159,6 +241,22 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_destroyCompleted",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
+            "name": "_extract",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
                     "types": [
@@ -169,7 +267,8 @@
                     "description": "the name of the static property used to find defaults"
                 }
             ],
-            "description": "generates a default chain containing the values from this instance and base classes",
+            "annotations": {},
+            "description": "generates a default chain containing the values from this instance and base classes\n",
             "returns": {
                 "types": [
                     "*"
@@ -185,8 +284,12 @@
             "parameter": [
                 {
                     "name": "descriptor"
+                },
+                {
+                    "name": "rootScope"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_getAttributesFromDescriptor",
             "visibility": "protected"
@@ -203,6 +306,7 @@
                     "name": "rootScope"
                 }
             ],
+            "annotations": {},
             "description": "Converts all child nodes of a descriptor to instances of Components or TextElement",
             "definedBy": "js.core.Component",
             "name": "_getChildrenFromDescriptor",
@@ -215,6 +319,7 @@
                     "name": "eventDefinition"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_getEventName",
             "visibility": "protected"
@@ -226,6 +331,7 @@
                     "name": "eventName"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_getEventTypeForAttribute",
             "visibility": "protected"
@@ -237,6 +343,7 @@
                     "name": "node"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_getLocalNameFromNode",
             "visibility": "protected"
@@ -248,33 +355,57 @@
                     "name": "desc"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_getTextContentFromDescriptor",
             "visibility": "protected"
         },
         {
             "type": "Method",
-            "parameter": [],
-            "definedBy": "js.core.Element",
-            "overwritesMethod": true,
-            "name": "_initializationComplete",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "search"
+                }
+            ],
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
+            "name": "_hasAll",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [
                 {
-                    "types": null,
-                    "name": "creationPolicy",
-                    "optional": false,
-                    "description": "undefinedauto - do not overwrite (default),all - create all childrenTODO none?"
+                    "name": "attributes"
                 },
                 {
-                    "name": "withBindings"
+                    "name": "search"
                 }
             ],
-            "description": "",
-            "definedBy": "js.core.Element",
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
+            "name": "_hasSome",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
+            "overwritesMethod": true,
+            "name": "_initializationComplete",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "description": "starts the initialization of the `Bindable` if it hasn't initialized yet.\n\nIt calls the following methods:\n\n* initialize();\n* _initializeBindings();\n",
+            "private": "",
+            "definedBy": "js.core.Bindable",
             "name": "_initialize",
             "visibility": "protected"
         },
@@ -282,24 +413,29 @@
             "type": "Method",
             "parameter": [
                 {
-                    "types": null,
-                    "name": "attributes",
-                    "optional": false
+                    "name": "attributes"
                 }
             ],
-            "description": "",
+            "annotations": {},
             "definedBy": "js.core.Element",
-            "overwritesMethod": true,
             "name": "_initializeAttributes",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Initialize all Binding and Event attributes",
-            "definedBy": "js.core.Element",
-            "overwritesMethod": true,
+            "definedBy": "js.core.Bindable",
             "name": "_initializeBindings",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
+            "name": "_initializeBindingsBeforeComplete",
             "visibility": "protected"
         },
         {
@@ -309,6 +445,7 @@
                     "name": "childComponents"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_initializeChildren",
             "visibility": "protected"
@@ -316,9 +453,8 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "Initializes all internal and external descriptors",
+            "annotations": {},
             "definedBy": "js.core.Element",
-            "overwritesMethod": true,
             "name": "_initializeDescriptors",
             "visibility": "protected"
         },
@@ -329,8 +465,19 @@
                     "name": "attribute"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "_initializeEventAttributes",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "description": "\ninvokes the `_initialize` method. This method is a hook function and is overwritten by js.core.Component\n",
+            "private": "",
+            "definedBy": "js.core.Bindable",
+            "name": "_initializeFromCtor",
             "visibility": "protected"
         },
         {
@@ -343,6 +490,7 @@
                     "name": "rootScope"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_initializeXamlEventAttributes",
             "visibility": "protected"
@@ -350,15 +498,32 @@
         {
             "type": "Method",
             "parameter": [],
-            "definedBy": "js.core.Component",
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
             "name": "_inject",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
-            "definedBy": "js.core.Component",
+            "annotations": {},
+            "description": "\nreturns the chained object defining the required injections\n",
+            "returns": {
+                "types": [
+                    "Object"
+                ]
+            },
+            "private": "",
+            "definedBy": "js.core.Bindable",
             "name": "_injectChain",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "definedBy": "js.core.EventDispatcher",
+            "name": "_innerDestroy",
             "visibility": "protected"
         },
         {
@@ -370,6 +535,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Returns true if event is defined in Component event list",
             "definedBy": "js.core.Component",
             "name": "_isComponentEvent",
@@ -382,6 +548,7 @@
                     "name": "attributeName"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_isEventAttribute",
             "visibility": "protected"
@@ -393,6 +560,19 @@
                     "name": "attributeName"
                 }
             ],
+            "annotations": {},
+            "definedBy": "js.core.Component",
+            "name": "_isFunctionAttribute",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributeName"
+                }
+            ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "_isXamlEventAttribute",
             "visibility": "protected"
@@ -406,6 +586,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "IE8 FIXES",
             "definedBy": "js.core.Component",
             "name": "_localNameFromDomNode",
@@ -414,9 +595,38 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
+            "name": "_postConstruct",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
+            "name": "_preDestroy",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Element",
-            "overwritesMethod": true,
             "name": "_preinitialize",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "description": "sets up the Bindable or Component. It will inject the required injections and\nalso will bind the application wide `MessageBus` to all methods annotated with the\n`.bus()` method annotation\n\nFor `Components` the setUp method is invoked automatically during the add of the Component.\nFor non `Components`\n\n",
+            "private": "",
+            "see": [
+                "{js.core.MessageBus}"
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "_setUp",
             "visibility": "protected"
         },
         {
@@ -426,7 +636,29 @@
                     "name": "callback"
                 }
             ],
+            "annotations": {},
             "name": "_start",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "description": "tears down the Bindable or Component. It will remove the injected variables and\nalso will unbind the annotated event handlers from the application wide `MessageBus`\n",
+            "private": "",
+            "see": [
+                "{js.core.MessageBus}"
+            ],
+            "definedBy": "js.core.Bindable",
+            "name": "_tearDown",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
+            "name": "_unbindBus",
             "visibility": "protected"
         },
         {
@@ -443,6 +675,7 @@
                     "name": "options"
                 }
             ],
+            "annotations": {},
             "description": "adds a children",
             "definedBy": "js.core.Component",
             "name": "addChild",
@@ -452,47 +685,55 @@
             "type": "Method",
             "parameter": [
                 {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "path",
-                    "optional": false,
-                    "description": "a binding path e.g. a.b.c"
-                },
+                    "name": "path"
+                }
+            ],
+            "annotations": {},
+            "definedBy": "js.core.Component",
+            "name": "baseUrl",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
                 {
                     "types": [
                         "String"
                     ],
-                    "name": "event",
+                    "name": "eventType",
                     "optional": false,
-                    "description": "the type of the event which should be bound"
+                    "description": "The name of the event"
                 },
                 {
-                    "types": [
-                        "Function"
-                    ],
-                    "name": "callback",
-                    "optional": false,
-                    "description": "the event handler function"
+                    "name": "callback"
                 },
                 {
                     "types": [
                         "Object"
                     ],
-                    "name": "thisArg",
+                    "name": "scope",
                     "optional": true,
-                    "description": "the thisArg used for calling the event handler"
+                    "description": "This sets the scope for the callback function"
                 }
             ],
-            "description": "Binds an event handler function to an EventDispatcher",
+            "annotations": {},
+            "description": "Binds a callback and a scope to a given eventType\n",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
             "name": "bind",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
+            "definedBy": "js.core.Component",
+            "name": "bus",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
             "description": "Clears all attributes",
             "returns": {
                 "types": [
@@ -510,6 +751,7 @@
                     "name": "options"
                 }
             ],
+            "annotations": {},
             "description": "This method returns a copy of the Object",
             "returns": {
                 "types": [
@@ -534,6 +776,7 @@
                     "name": "callbackScope"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "createBinding",
             "visibility": "public"
@@ -541,6 +784,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "createChildren",
             "visibility": "public"
@@ -569,6 +813,7 @@
                     "defaultValue": "false"
                 }
             ],
+            "annotations": {},
             "description": "",
             "returns": {
                 "types": [
@@ -581,60 +826,34 @@
         },
         {
             "type": "Method",
-            "parameter": [
-                {
-                    "types": null,
-                    "name": "attributes",
-                    "optional": false,
-                    "description": "The attributes of the component"
-                },
-                {
-                    "types": [
-                        "Node"
-                    ],
-                    "name": "descriptor",
-                    "optional": false
-                },
-                {
-                    "types": [
-                        "js.core.Stage"
-                    ],
-                    "name": "stage",
-                    "optional": false
-                },
-                {
-                    "types": [
-                        "Element"
-                    ],
-                    "name": "parentScope",
-                    "optional": false
-                },
-                {
-                    "types": [
-                        "Element"
-                    ],
-                    "name": "rootScope",
-                    "optional": false
-                }
-            ],
-            "description": "What up??",
+            "parameter": [],
+            "annotations": {},
             "definedBy": "js.core.Base",
-            "overwritesMethod": true,
             "name": "ctor",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
-            "description": "Destroys all event bindings and triggers a destroy event",
+            "annotations": {},
+            "description": "Clears up the instance",
+            "definedBy": "js.core.EventDispatcher",
+            "name": "destroy",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
             "returns": {
                 "types": [
-                    "this"
-                ]
+                    "Function"
+                ],
+                "description": "a function doing nothing"
             },
-            "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
-            "name": "destroy",
+            "definedBy": "js.core.Base",
+            "name": "emptyCallback",
             "visibility": "public"
         },
         {
@@ -644,6 +863,7 @@
                     "name": "key"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "find",
             "visibility": "public"
@@ -669,7 +889,8 @@
                     "description": "or path"
                 }
             ],
-            "description": "evaluates a path to retrieve a value",
+            "annotations": {},
+            "description": "evaluates a path to retrieve a value\n",
             "returns": {
                 "types": null,
                 "description": "the value for the path or undefined"
@@ -681,6 +902,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "returns an handler instance to process the request",
             "returns": {
                 "types": [
@@ -697,7 +919,8 @@
                     "name": "fncName"
                 }
             ],
-            "definedBy": "js.core.Element",
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
             "name": "getScopeForFncName",
             "visibility": "public"
         },
@@ -708,7 +931,8 @@
                     "name": "key"
                 }
             ],
-            "definedBy": "js.core.Element",
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
             "name": "getScopeForKey",
             "visibility": "public"
         },
@@ -723,7 +947,8 @@
                     "optional": false
                 }
             ],
-            "description": "Goes up the tree and searches for a template component with the given name.Returns null if no template was found.",
+            "annotations": {},
+            "description": "Goes up the tree and searches for a template component with the given name.\nReturns null if no template was found.",
             "returns": {
                 "types": [
                     "js.core.Template"
@@ -752,6 +977,7 @@
                     "description": "callback can be used to report an asynchronous error"
                 }
             ],
+            "annotations": {},
             "description": "handles the request",
             "name": "handleRequest",
             "visibility": "public"
@@ -768,7 +994,8 @@
                     "description": "to get the value"
                 }
             ],
-            "description": "determinate if a attribute is available",
+            "annotations": {},
+            "description": "determinate if a attribute is available\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -781,17 +1008,23 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "description": "the initialize method is a hook function to add a custom logic during the initiation process.",
+            "definedBy": "js.core.Bindable",
+            "name": "initialize",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
-                    "types": null,
-                    "name": "scope",
-                    "optional": false
+                    "name": "b"
                 }
             ],
-            "description": "This method should overridden by custom components to set initial variables",
-            "definedBy": "js.core.Element",
-            "overwritesMethod": true,
-            "name": "initialize",
+            "annotations": {},
+            "definedBy": "js.core.Bindable",
+            "name": "isDeepEqual",
             "visibility": "public"
         },
         {
@@ -801,6 +1034,7 @@
                     "name": "value"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Element",
             "name": "isDefined",
             "visibility": "public"
@@ -812,6 +1046,7 @@
                     "name": "b"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "isEqual",
             "visibility": "public"
@@ -827,6 +1062,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "",
             "returns": {
                 "types": [
@@ -858,7 +1094,8 @@
                     "description": "the service level of (debug, info, warn, error)"
                 }
             ],
-            "description": "logs messages to configured logging functions",
+            "annotations": {},
+            "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
             "visibility": "public"
@@ -872,6 +1109,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Binding helper to negate a Boolean value",
             "returns": {
                 "types": [
@@ -884,11 +1122,20 @@
         },
         {
             "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "definedBy": "js.core.Component",
+            "name": "removeAllChildren",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
             "parameter": [
                 {
                     "name": "child"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Component",
             "name": "removeChild",
             "visibility": "public"
@@ -896,7 +1143,8 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
+            "annotations": {},
+            "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -935,7 +1183,8 @@
                     "description": "A hash of options"
                 }
             ],
-            "description": "Sets new values for attributes and notify about changes",
+            "annotations": {},
+            "description": "Sets new values for attributes and notify about changes\n",
             "returns": {
                 "types": [
                     "js.core.Bindable"
@@ -956,6 +1205,7 @@
                     "name": "value"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Bindable",
             "name": "setLater",
             "visibility": "public"
@@ -974,6 +1224,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "starts the handler",
             "name": "start",
             "visibility": "public"
@@ -985,12 +1236,14 @@
                     "name": "callback"
                 }
             ],
+            "annotations": {},
             "name": "stop",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "description": "Writes attributes back to the source",
             "definedBy": "js.core.Bindable",
             "name": "sync",
@@ -1021,7 +1274,8 @@
                     "optional": false
                 }
             ],
-            "description": "Triggers an event",
+            "annotations": {},
+            "description": "Triggers a specific event and the * event\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
             "visibility": "public"
@@ -1033,37 +1287,23 @@
                     "types": [
                         "String"
                     ],
-                    "name": "path",
-                    "optional": true,
-                    "description": "the path from which the event should be unbound"
-                },
-                {
-                    "types": [
-                        "String"
-                    ],
-                    "name": "event",
-                    "optional": false,
-                    "description": "the type of the event"
+                    "name": "eventType",
+                    "optional": false
                 },
                 {
                     "types": [
                         "Function"
                     ],
                     "name": "callback",
-                    "optional": false,
-                    "description": "the event handler which is currently boundTODO: why a scope is passed here?"
+                    "optional": false
                 },
                 {
-                    "types": [
-                        "Object"
-                    ],
-                    "name": "scope",
-                    "optional": true
+                    "name": "scope"
                 }
             ],
-            "description": "Unbinds an bound event handler from an EventDispatcher.",
+            "annotations": {},
+            "description": "Unbinds callbacks for events\n",
             "definedBy": "js.core.EventDispatcher",
-            "overwritesMethod": true,
             "name": "unbind",
             "visibility": "public"
         },
@@ -1087,6 +1327,7 @@
                     "optional": true
                 }
             ],
+            "annotations": {},
             "description": "Unset attribute on $",
             "returns": {
                 "types": [
@@ -1098,7 +1339,77 @@
             "visibility": "public"
         }
     ],
+    "staticMethods": [],
+    "defaults": {
+        "autoStartSession": {
+            "name": "autoStartSession",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": false
+        },
+        "path": {
+            "name": "path",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "/"
+        },
+        "route": {
+            "name": "route",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null
+        },
+        "cid": {
+            "name": "cid",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "the cid is a unique identifier for the component within a xaml class. \\\nThe corresponding component will be automatically added to the $ of the instance of the xaml class.\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.Component"
+        },
+        "creationPolicy": {
+            "name": "creationPolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "auto",
+            "description": "Decides if the initialization of the component is started automatically or manually by the application",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.Element"
+        }
+    },
+    "properties": {
+        "$errorAttribute": {
+            "name": "$errorAttribute",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultContentName": {
+            "name": "$defaultContentName",
+            "visibility": "private",
+            "propertyType": "value",
+            "description": "if set all children from the descriptor will be placed into a\njs.core.Content block with the name of $defaultContentName",
+            "definedBy": "js.core.Component"
+        },
+        "$defaultTemplateName": {
+            "name": "$defaultTemplateName",
+            "visibility": "private",
+            "propertyType": "value",
+            "definedBy": "js.core.Component"
+        }
+    },
+    "fqClassName": "srv.core.Handler",
     "inherit": "js.core.Component",
+    "dependencies": [
+        "js.core.Component"
+    ],
+    "type": "js",
+    "file": "srv/core/Handler.js",
+    "package": "srv.core",
     "inheritancePath": [
         "js.core.Component",
         "js.core.Element",

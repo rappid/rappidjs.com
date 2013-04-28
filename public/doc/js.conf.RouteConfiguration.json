@@ -1,12 +1,16 @@
 {
     "methods": [],
+    "staticMethods": [],
     "defaults": {},
+    "properties": {},
     "fqClassName": "js.conf.RouteConfiguration",
     "inherit": "js.conf.Configuration",
     "dependencies": [
         "js.conf.Configuration"
     ],
     "type": "js",
+    "file": "js/conf/RouteConfiguration.js",
+    "package": "js.conf",
     "inheritancePath": [
         "js.conf.Configuration"
     ]

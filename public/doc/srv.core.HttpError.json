@@ -1,6 +1,16 @@
 {
-    "fqClassName": "srv.core.HttpError",
     "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "context"
+                }
+            ],
+            "annotations": {},
+            "name": "_beforeSend",
+            "visibility": "protected"
+        },
         {
             "type": "Method",
             "parameter": [
@@ -14,14 +24,24 @@
                     "name": "statusText"
                 }
             ],
+            "annotations": {},
             "name": "ctor",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "toString",
             "visibility": "public"
         }
-    ]
+    ],
+    "staticMethods": [],
+    "defaults": {},
+    "properties": {},
+    "fqClassName": "srv.core.HttpError",
+    "dependencies": [],
+    "type": "js",
+    "file": "srv/core/HttpError.js",
+    "package": "srv.core"
 }

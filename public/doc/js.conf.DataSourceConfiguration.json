@@ -3,6 +3,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.conf.ResourceConfiguration",
             "name": "_initializationComplete",
             "visibility": "protected"
@@ -10,6 +11,7 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "definedBy": "js.conf.ResourceConfiguration",
             "overwritesMethod": true,
             "name": "_validateConfiguration",
@@ -26,6 +28,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "description": "Returns configuration for a given modelClass / model factory",
             "returns": {
                 "types": [
@@ -43,6 +46,7 @@
                     "name": "modelClassName"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.conf.ResourceConfiguration",
             "name": "getConfigurationForModelClassName",
             "visibility": "public"
@@ -54,11 +58,13 @@
                     "name": "path"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.conf.ResourceConfiguration",
             "name": "getConfigurationForPath",
             "visibility": "public"
         }
     ],
+    "staticMethods": [],
     "defaults": {
         "resourceHandler": {
             "name": "resourceHandler",
@@ -68,12 +74,15 @@
             "definedBy": "js.conf.ResourceConfiguration"
         }
     },
+    "properties": {},
     "fqClassName": "js.conf.DataSourceConfiguration",
     "inherit": "js.conf.ResourceConfiguration",
     "dependencies": [
         "js.conf.ResourceConfiguration"
     ],
     "type": "js",
+    "file": "js/conf/DataSourceConfiguration.js",
+    "package": "js.conf",
     "inheritancePath": [
         "js.conf.ResourceConfiguration",
         "js.conf.Configuration"

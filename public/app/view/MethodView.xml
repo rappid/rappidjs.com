@@ -1,0 +1,37 @@
+<ui:View xmlns:ui="js.ui" xmlns:js="js.core" xmlns='http://www.w3.org/1999/xhtml'
+         method="null">
+
+    <strong>${method.name}(
+        <ui:ItemsView items="${method.parameter}" itemKey="parameter"
+                      class="parameter-list" tagName="span">
+            <js:Template name="item">
+                <span>
+                    <span visible="${parameter.optional}">
+                        [
+                    </span>
+                    ${parameter.name}
+                    <span visible="${parameter.hasTypeDefinition()}">
+                        :
+                        <a href="api/${parameter.types[0]}">
+                            ${parameter.getFirstTypeName()}
+                        </a>
+                    </span>
+                    <span visible="${parameter.optional}">
+                        ]
+                    </span>
+                </span>
+            </js:Template>
+        </ui:ItemsView>
+        )
+        <span visible="${method.hasReturnType()}">
+            :
+            <a href="api/${method.returns.types[0]}">
+                ${method.getFirstReturnTypeName()}
+            </a>
+        </span>
+    </strong>
+    <br/>
+    <div class="description">${method.description}</div>
+
+
+</ui:View>

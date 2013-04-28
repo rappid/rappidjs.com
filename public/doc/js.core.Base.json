@@ -8,32 +8,70 @@
                         "Function"
                     ],
                     "name": "fnc",
-                    "optional": false,
-                    "description": "the function to call"
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "cacheId",
+                    "optional": true
                 },
                 {
                     "types": [
                         "Number"
                     ],
                     "name": "delay",
-                    "optional": false,
-                    "description": "delay in ms"
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Array"
+                    ],
+                    "name": "parameters",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "strategy",
+                    "optional": true,
+                    "defaultValue": "loop",
+                    "description": "loop will trigger the function at least every delay, wait will clear the timeout"
                 }
             ],
+            "annotations": {},
             "description": "",
             "private": "",
-            "name": "_callFunctionDelayed",
+            "name": "_debounceFunctionCall",
             "visibility": "protected"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
             "name": "ctor",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
+            "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
+            "returns": {
+                "types": [
+                    "Function"
+                ],
+                "description": "a function doing nothing"
+            },
             "name": "emptyCallback",
             "visibility": "public"
         },
@@ -59,14 +97,16 @@
                     "description": "the service level of (debug, info, warn, error)"
                 }
             ],
-            "description": "logs messages to configured logging functions",
+            "annotations": {},
+            "description": "logs messages to configured logging functions\n",
             "name": "log",
             "visibility": "public"
         },
         {
             "type": "Method",
             "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
+            "annotations": {},
+            "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -77,10 +117,14 @@
             "visibility": "public"
         }
     ],
+    "staticMethods": [],
     "defaults": {},
+    "properties": {},
     "fqClassName": "js.core.Base",
     "dependencies": [
         "inherit"
     ],
-    "type": "js"
+    "type": "js",
+    "file": "js/core/Base.js",
+    "package": "js.core"
 }

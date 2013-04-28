@@ -8,22 +8,51 @@
                         "Function"
                     ],
                     "name": "fnc",
-                    "optional": false,
-                    "description": "the function to call"
+                    "optional": false
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "cacheId",
+                    "optional": true
                 },
                 {
                     "types": [
                         "Number"
                     ],
                     "name": "delay",
-                    "optional": false,
-                    "description": "delay in ms"
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Object"
+                    ],
+                    "name": "scope",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "Array"
+                    ],
+                    "name": "parameters",
+                    "optional": true
+                },
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "name": "strategy",
+                    "optional": true,
+                    "defaultValue": "loop",
+                    "description": "loop will trigger the function at least every delay, wait will clear the timeout"
                 }
             ],
+            "annotations": {},
             "description": "",
             "private": "",
             "definedBy": "js.core.Base",
-            "name": "_callFunctionDelayed",
+            "name": "_debounceFunctionCall",
             "visibility": "protected"
         },
         {
@@ -33,6 +62,7 @@
                     "name": "options"
                 }
             ],
+            "annotations": {},
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -41,6 +71,14 @@
         {
             "type": "Method",
             "parameter": [],
+            "annotations": {},
+            "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
+            "returns": {
+                "types": [
+                    "Function"
+                ],
+                "description": "a function doing nothing"
+            },
             "definedBy": "js.core.Base",
             "name": "emptyCallback",
             "visibility": "public"
@@ -67,7 +105,8 @@
                     "description": "the service level of (debug, info, warn, error)"
                 }
             ],
-            "description": "logs messages to configured logging functions",
+            "annotations": {},
+            "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
             "visibility": "public"
@@ -89,6 +128,7 @@
                     "optional": false
                 }
             ],
+            "annotations": {},
             "definedBy": "js.data.TypeResolver",
             "overwritesMethod": true,
             "name": "resolve",
@@ -97,7 +137,8 @@
         {
             "type": "Method",
             "parameter": [],
-            "description": "determinate if the application runs in the browser or on node",
+            "annotations": {},
+            "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
                     "Boolean"
@@ -109,13 +150,17 @@
             "visibility": "public"
         }
     ],
+    "staticMethods": [],
     "defaults": {},
+    "properties": {},
     "fqClassName": "js.data.AttributeTypeResolver",
     "inherit": "js.data.TypeResolver",
     "dependencies": [
         "js.data.TypeResolver"
     ],
     "type": "js",
+    "file": "js/data/AttributeTypeResolver.js",
+    "package": "js.data",
     "inheritancePath": [
         "js.data.TypeResolver",
         "js.core.Base"
