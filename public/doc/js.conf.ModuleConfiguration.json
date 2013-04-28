@@ -1,5 +1,6 @@
 {
     "methods": [],
+    "staticMethods": [],
     "defaults": {},
     "properties": {},
     "fqClassName": "js.conf.ModuleConfiguration",

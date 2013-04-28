@@ -41,6 +41,7 @@
             "visibility": "public"
         }
     ],
+    "staticMethods": [],
     "defaults": {},
     "properties": {},
     "fqClassName": "srv.error.MethodNotAllowedError",

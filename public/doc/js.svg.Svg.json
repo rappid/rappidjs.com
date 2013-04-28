@@ -49,6 +49,7 @@
             "visibility": "public"
         }
     ],
+    "staticMethods": [],
     "defaults": {
         "tagName": {
             "name": "tagName",

@@ -1,10 +1,10 @@
 {
     "fqClassName": "js.ui.Link",
     "dependencies": [
-        "js.ui.View"
+        "js.ui.LinkClass"
     ],
     "type": "xml",
-    "inherit": "js.ui.View",
+    "inherit": "js.ui.LinkClass",
     "methods": [
         {
             "type": "Method",
@@ -487,6 +487,8 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "starts the initialization of the `Bindable` if it hasn't initialized yet.\n\nIt calls the following methods:\n\n* initialize();\n* _initializeBindings();\n",
+            "private": "",
             "definedBy": "js.core.Bindable",
             "name": "_initialize",
             "visibility": "protected"
@@ -556,6 +558,8 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "\ninvokes the `_initialize` method. This method is a hook function and is overwritten by js.core.Component\n",
+            "private": "",
             "definedBy": "js.core.Bindable",
             "name": "_initializeFromCtor",
             "visibility": "protected"
@@ -611,6 +615,13 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "\nreturns the chained object defining the required injections\n",
+            "returns": {
+                "types": [
+                    "Object"
+                ]
+            },
+            "private": "",
             "definedBy": "js.core.Bindable",
             "name": "_injectChain",
             "visibility": "protected"
@@ -942,12 +953,48 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "href"
+                }
+            ],
+            "annotations": {},
+            "definedBy": "js.ui.LinkClass",
+            "name": "_renderHref",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "iconClass"
+                }
+            ],
+            "annotations": {},
+            "definedBy": "js.ui.LinkClass",
+            "name": "_renderIconClass",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "id"
                 }
             ],
             "annotations": {},
             "definedBy": "js.ui.View",
             "name": "_renderId",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "label"
+                }
+            ],
+            "annotations": {},
+            "definedBy": "js.ui.LinkClass",
+            "name": "_renderLabel",
             "visibility": "protected"
         },
         {
@@ -1040,6 +1087,18 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "title"
+                }
+            ],
+            "annotations": {},
+            "definedBy": "js.ui.LinkClass",
+            "name": "_renderTitle",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "visible"
                 }
             ],
@@ -1120,6 +1179,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "sets up the Bindable or Component. It will inject the required injections and\nalso will bind the application wide `MessageBus` to all methods annotated with the\n`.bus()` method annotation\n\nFor `Components` the setUp method is invoked automatically during the add of the Component.\nFor non `Components`\n\n",
+            "private": "",
+            "see": [
+                "{js.core.MessageBus}"
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_setUp",
             "visibility": "protected"
@@ -1128,6 +1192,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "tears down the Bindable or Component. It will remove the injected variables and\nalso will unbind the annotated event handlers from the application wide `MessageBus`\n",
+            "private": "",
+            "see": [
+                "{js.core.MessageBus}"
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_tearDown",
             "visibility": "protected"
@@ -1371,6 +1440,13 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
+            "returns": {
+                "types": [
+                    "Function"
+                ],
+                "description": "a function doing nothing"
+            },
             "definedBy": "js.core.Base",
             "name": "emptyCallback",
             "visibility": "public"
@@ -1571,6 +1647,7 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "the initialize method is a hook function to add a custom logic during the initiation process.",
             "definedBy": "js.core.Bindable",
             "name": "initialize",
             "visibility": "public"
@@ -1966,6 +2043,39 @@
             "value": "div",
             "definedBy": "js.ui.View"
         },
+        "href": {
+            "name": "href",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "the href of the link element.",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.ui.LinkClass"
+        },
+        "label": {
+            "name": "label",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "",
+            "description": "the label of the Link rendered as text",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.ui.LinkClass"
+        },
+        "target": {
+            "name": "target",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "intern",
+            "description": "the target of the link element identifying how to open the link. If no target \\\nis specified but a protocol for the href (e.g. http://) if will use external by default.\n\n**Possible values**\n\n+ **intern** - opens the link intern without refreshing the page (e.g. #/myLink)\n+ **external** - the link will open external\n+ **_blank** - opens in a new window\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.ui.LinkClass"
+        },
         "selected": {
             "name": "selected",
             "defaultType": "factory",
@@ -2070,6 +2180,7 @@
     "file": "js/ui/Link.xml",
     "package": "js.ui",
     "inheritancePath": [
+        "js.ui.LinkClass",
         "js.ui.View",
         "js.html.HtmlElement",
         "js.core.DomElement",
@@ -2078,5 +2189,6 @@
         "js.core.Bindable",
         "js.core.EventDispatcher",
         "js.core.Base"
-    ]
+    ],
+    "staticMethods": []
 }

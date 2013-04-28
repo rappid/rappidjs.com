@@ -78,6 +78,13 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
+            "returns": {
+                "types": [
+                    "Function"
+                ],
+                "description": "a function doing nothing"
+            },
             "definedBy": "js.core.Base",
             "name": "emptyCallback",
             "visibility": "public"
@@ -123,6 +130,55 @@
             },
             "definedBy": "js.core.Base",
             "name": "runsInBrowser",
+            "visibility": "public"
+        }
+    ],
+    "staticMethods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "color1"
+                },
+                {
+                    "name": "color2"
+                }
+            ],
+            "annotations": {},
+            "name": "calculateColorDistance",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hex"
+                }
+            ],
+            "annotations": {},
+            "name": "fromHex",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "hexString"
+                }
+            ],
+            "annotations": {},
+            "name": "fromHexString",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "color"
+                }
+            ],
+            "annotations": {},
+            "name": "parse",
             "visibility": "public"
         }
     ],

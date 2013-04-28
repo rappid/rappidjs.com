@@ -8,6 +8,7 @@
             "visibility": "public"
         }
     ],
+    "staticMethods": [],
     "defaults": {},
     "properties": {
         "ctor": {

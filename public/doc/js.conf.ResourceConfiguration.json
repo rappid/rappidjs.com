@@ -58,6 +58,7 @@
             "visibility": "public"
         }
     ],
+    "staticMethods": [],
     "defaults": {
         "resourceHandler": {
             "name": "resourceHandler",

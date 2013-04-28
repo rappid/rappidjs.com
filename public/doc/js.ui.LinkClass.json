@@ -951,7 +951,6 @@
                 }
             ],
             "annotations": {},
-            "definedBy": "js.ui.LinkClass",
             "name": "_renderHref",
             "visibility": "protected"
         },
@@ -963,7 +962,6 @@
                 }
             ],
             "annotations": {},
-            "definedBy": "js.ui.LinkClass",
             "name": "_renderIconClass",
             "visibility": "protected"
         },
@@ -987,7 +985,6 @@
                 }
             ],
             "annotations": {},
-            "definedBy": "js.ui.LinkClass",
             "name": "_renderLabel",
             "visibility": "protected"
         },
@@ -1063,20 +1060,6 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "size"
-                },
-                {
-                    "name": "oldSize"
-                }
-            ],
-            "annotations": {},
-            "name": "_renderSize",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
                     "name": "templateName"
                 },
                 {
@@ -1099,22 +1082,7 @@
                 }
             ],
             "annotations": {},
-            "definedBy": "js.ui.LinkClass",
             "name": "_renderTitle",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "type"
-                },
-                {
-                    "name": "oldType"
-                }
-            ],
-            "annotations": {},
-            "name": "_renderType",
             "visibility": "protected"
         },
         {
@@ -2059,18 +2027,13 @@
     ],
     "staticMethods": [],
     "defaults": {
-        "componentClass": {
-            "name": "componentClass",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": "btn"
-        },
         "tagName": {
             "name": "tagName",
             "defaultType": "value",
             "visibility": "public",
-            "value": "div",
-            "definedBy": "js.ui.View"
+            "value": "a",
+            "definedBy": "js.ui.View",
+            "overwrites": true
         },
         "href": {
             "name": "href",
@@ -2080,8 +2043,7 @@
             "description": "the href of the link element.",
             "types": [
                 "String"
-            ],
-            "definedBy": "js.ui.LinkClass"
+            ]
         },
         "label": {
             "name": "label",
@@ -2091,8 +2053,7 @@
             "description": "the label of the Link rendered as text",
             "types": [
                 "String"
-            ],
-            "definedBy": "js.ui.LinkClass"
+            ]
         },
         "target": {
             "name": "target",
@@ -2102,8 +2063,7 @@
             "description": "the target of the link element identifying how to open the link. If no target \\\nis specified but a protocol for the href (e.g. http://) if will use external by default.\n\n**Possible values**\n\n+ **intern** - opens the link intern without refreshing the page (e.g. #/myLink)\n+ **external** - the link will open external\n+ **_blank** - opens in a new window\n",
             "types": [
                 "String"
-            ],
-            "definedBy": "js.ui.LinkClass"
+            ]
         },
         "selected": {
             "name": "selected",
@@ -2261,17 +2221,15 @@
             "definedBy": "js.core.Component"
         }
     },
-    "fqClassName": "js.ui.Button",
-    "inherit": "js.ui.Link",
+    "fqClassName": "js.ui.LinkClass",
+    "inherit": "js.ui.View",
     "dependencies": [
-        "xaml!js.ui.Link"
+        "js.ui.View"
     ],
     "type": "js",
-    "file": "js/ui/Button.js",
+    "file": "js/ui/LinkClass.js",
     "package": "js.ui",
     "inheritancePath": [
-        "js.ui.Link",
-        "js.ui.LinkClass",
         "js.ui.View",
         "js.html.HtmlElement",
         "js.core.DomElement",

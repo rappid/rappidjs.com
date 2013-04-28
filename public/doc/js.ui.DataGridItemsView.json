@@ -11,5 +11,6 @@
     "package": "js.ui",
     "inheritancePath": [
         "js.ui.DataGridItemsViewClass"
-    ]
+    ],
+    "staticMethods": []
 }

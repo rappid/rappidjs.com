@@ -11,5 +11,6 @@
     "package": "js.svg",
     "inheritancePath": [
         "js.svg.SvgClass"
-    ]
+    ],
+    "staticMethods": []
 }

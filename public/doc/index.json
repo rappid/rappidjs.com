@@ -1,5 +1,4 @@
 [
-    "ja.data.QueryDataView",
     "js.conf.DataSourceConfiguration",
     "js.conf.ModuleConfiguration",
     "js.conf.ResourceConfiguration",
@@ -43,6 +42,7 @@
     "js.data.Model",
     "js.data.PagedDataView",
     "js.data.Query",
+    "js.data.QueryDataView",
     "js.data.QueryList",
     "js.data.QueryMapper",
     "js.data.RestDataSource",
@@ -88,6 +88,7 @@
     "js.ui.HTMLView",
     "js.ui.ItemsView",
     "js.ui.Link",
+    "js.ui.LinkClass",
     "js.ui.ListView",
     "js.ui.MenuButton",
     "js.ui.MenuButtonClass",
