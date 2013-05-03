@@ -887,6 +887,12 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "provides access to the MessageBus",
+            "returns": {
+                "types": [
+                    "js.core.MessageBus"
+                ]
+            },
             "definedBy": "js.core.Component",
             "name": "bus",
             "visibility": "public"
@@ -2310,6 +2316,16 @@
     },
     "fqClassName": "js.data.RestDataSource",
     "inherit": "js.data.DataSource",
+    "exports": {
+        "RestContext": {
+            "type": "InnerClass",
+            "fqClassName": "js.data.RestDataSource.RestContext"
+        },
+        "XmlFormatProcessor": {
+            "type": "InnerClass",
+            "fqClassName": "js.data.RestDataSource.XmlFormatProcessor"
+        }
+    },
     "dependencies": [
         "JSON",
         "flow",

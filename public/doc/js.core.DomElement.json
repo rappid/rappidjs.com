@@ -1035,6 +1035,12 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "provides access to the MessageBus",
+            "returns": {
+                "types": [
+                    "js.core.MessageBus"
+                ]
+            },
             "definedBy": "js.core.Component",
             "name": "bus",
             "visibility": "public"
@@ -1855,6 +1861,24 @@
     },
     "fqClassName": "js.core.DomElement",
     "inherit": "js.core.Component",
+    "exports": {
+        "Event": {
+            "type": "InnerClass",
+            "fqClassName": "js.core.DomElement.Event"
+        },
+        "PointerEvent": {
+            "type": "InnerClass",
+            "fqClassName": "js.core.DomElement.PointerEvent"
+        },
+        "EventHandler": {
+            "type": "InnerClass",
+            "fqClassName": "js.core.DomElement.EventHandler"
+        },
+        "PointerEventHandler": {
+            "type": "InnerClass",
+            "fqClassName": "js.core.DomElement.PointerEventHandler"
+        }
+    },
     "dependencies": [
         "inherit",
         "js.core.Base",

@@ -863,6 +863,12 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "provides access to the MessageBus",
+            "returns": {
+                "types": [
+                    "js.core.MessageBus"
+                ]
+            },
             "definedBy": "js.core.Component",
             "name": "bus",
             "visibility": "public"
@@ -2097,6 +2103,12 @@
     },
     "fqClassName": "srv.data.MongoDataSource",
     "inherit": "js.data.DataSource",
+    "exports": {
+        "Context": {
+            "type": "InnerClass",
+            "fqClassName": "srv.data.MongoDataSource.Context"
+        }
+    },
     "dependencies": [
         "flow",
         "js.data.Collection",

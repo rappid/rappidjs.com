@@ -87,6 +87,12 @@
     },
     "fqClassName": "js.svg.Svg",
     "inherit": "js.svg.SvgDescriptor",
+    "exports": {
+        "FontManager": {
+            "type": "InnerClass",
+            "fqClassName": "js.svg.Svg.FontManager"
+        }
+    },
     "dependencies": [
         "js.core.Base",
         "js.svg.SvgElement",

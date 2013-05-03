@@ -1075,6 +1075,12 @@
     },
     "fqClassName": "js.data.Entity",
     "inherit": "js.core.Bindable",
+    "exports": {
+        "SchemaValidator": {
+            "type": "InnerClass",
+            "fqClassName": "js.data.Entity.SchemaValidator"
+        }
+    },
     "dependencies": [
         "flow",
         "js.core.Bindable",

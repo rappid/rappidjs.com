@@ -361,6 +361,12 @@
     },
     "fqClassName": "srv.core.Context",
     "inherit": "js.core.EventDispatcher",
+    "exports": {
+        "CookieManager": {
+            "type": "InnerClass",
+            "fqClassName": "srv.core.Context.CookieManager"
+        }
+    },
     "dependencies": [
         "flow",
         "js.core.Base",

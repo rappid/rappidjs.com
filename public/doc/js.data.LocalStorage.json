@@ -714,6 +714,12 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "provides access to the MessageBus",
+            "returns": {
+                "types": [
+                    "js.core.MessageBus"
+                ]
+            },
             "definedBy": "js.core.Component",
             "name": "bus",
             "visibility": "public"
@@ -1318,6 +1324,16 @@
     },
     "fqClassName": "js.data.LocalStorage",
     "inherit": "js.core.Component",
+    "exports": {
+        "CookieImplementation": {
+            "type": "InnerClass",
+            "fqClassName": "js.data.LocalStorage.CookieImplementation"
+        },
+        "ObjectImplementation": {
+            "type": "InnerClass",
+            "fqClassName": "js.data.LocalStorage.ObjectImplementation"
+        }
+    },
     "dependencies": [
         "inherit",
         "js.core.Component"

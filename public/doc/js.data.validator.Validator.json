@@ -887,6 +887,12 @@
     },
     "fqClassName": "js.data.validator.Validator",
     "inherit": "js.core.Bindable",
+    "exports": {
+        "Error": {
+            "type": "InnerClass",
+            "fqClassName": "js.data.validator.Validator.Error"
+        }
+    },
     "dependencies": [
         "js.core.Base",
         "js.core.Bindable"

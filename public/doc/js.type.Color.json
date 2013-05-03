@@ -186,6 +186,24 @@
     "properties": {},
     "fqClassName": "js.type.Color",
     "inherit": "js.core.Base",
+    "exports": {
+        "RGB": {
+            "type": "InnerClass",
+            "fqClassName": "js.type.Color.RGB"
+        },
+        "HSB": {
+            "type": "InnerClass",
+            "fqClassName": "js.type.Color.HSB"
+        },
+        "XYZ": {
+            "type": "InnerClass",
+            "fqClassName": "js.type.Color.XYZ"
+        },
+        "LAB": {
+            "type": "InnerClass",
+            "fqClassName": "js.type.Color.LAB"
+        }
+    },
     "dependencies": [
         "js.core.Base"
     ],

@@ -703,6 +703,12 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "provides access to the MessageBus",
+            "returns": {
+                "types": [
+                    "js.core.MessageBus"
+                ]
+            },
             "name": "bus",
             "visibility": "public"
         },
@@ -836,7 +842,6 @@
                 }
             ],
             "annotations": {},
-            "description": "What up??",
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -1309,6 +1314,20 @@
     "events": {},
     "fqClassName": "js.core.Component",
     "inherit": "js.core.Element",
+    "exports": {
+        "Template": {
+            "type": "InnerClass",
+            "fqClassName": "js.core.Component.Template"
+        },
+        "Configuration": {
+            "type": "InnerClass",
+            "fqClassName": "js.core.Component.Configuration"
+        },
+        "Content": {
+            "type": "InnerClass",
+            "fqClassName": "js.core.Component.Content"
+        }
+    },
     "dependencies": [
         "js.core.Bindable",
         "js.core.Element",

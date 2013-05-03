@@ -835,6 +835,12 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "provides access to the MessageBus",
+            "returns": {
+                "types": [
+                    "js.core.MessageBus"
+                ]
+            },
             "definedBy": "js.core.Component",
             "name": "bus",
             "visibility": "public"
@@ -2006,6 +2012,12 @@
     },
     "fqClassName": "js.data.LocalStorageDataSource",
     "inherit": "js.data.DataSource",
+    "exports": {
+        "Context": {
+            "type": "InnerClass",
+            "fqClassName": "js.data.LocalStorageDataSource.Context"
+        }
+    },
     "dependencies": [
         "flow",
         "js.data.DataSource",

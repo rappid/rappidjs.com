@@ -1549,6 +1549,12 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "provides access to the MessageBus",
+            "returns": {
+                "types": [
+                    "js.core.MessageBus"
+                ]
+            },
             "definedBy": "js.core.Component",
             "name": "bus",
             "visibility": "public"
@@ -2727,6 +2733,20 @@
     },
     "fqClassName": "js.ui.VirtualItemsView",
     "inherit": "js.ui.View",
+    "exports": {
+        "VirtualDataAdapter": {
+            "type": "InnerClass",
+            "fqClassName": "js.ui.VirtualItemsView.VirtualDataAdapter"
+        },
+        "VirtualCollectionDataAdapter": {
+            "type": "InnerClass",
+            "fqClassName": "js.ui.VirtualItemsView.VirtualCollectionDataAdapter"
+        },
+        "DataItem": {
+            "type": "InnerClass",
+            "fqClassName": "js.ui.VirtualItemsView.DataItem"
+        }
+    },
     "dependencies": [
         "js.core.Bindable",
         "js.core.List",

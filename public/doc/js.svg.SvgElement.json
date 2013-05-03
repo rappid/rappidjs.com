@@ -1101,6 +1101,12 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "provides access to the MessageBus",
+            "returns": {
+                "types": [
+                    "js.core.MessageBus"
+                ]
+            },
             "definedBy": "js.core.Component",
             "name": "bus",
             "visibility": "public"
@@ -2061,6 +2067,28 @@
     },
     "fqClassName": "js.svg.SvgElement",
     "inherit": "js.core.DomElement",
+    "exports": {
+        "TransformBase": {
+            "type": "InnerClass",
+            "fqClassName": "js.svg.SvgElement.TransformBase"
+        },
+        "Transform": {
+            "type": "InnerClass",
+            "fqClassName": "js.svg.SvgElement.Transform"
+        },
+        "Translate": {
+            "type": "InnerClass",
+            "fqClassName": "js.svg.SvgElement.Translate"
+        },
+        "Scale": {
+            "type": "InnerClass",
+            "fqClassName": "js.svg.SvgElement.Scale"
+        },
+        "Rotate": {
+            "type": "InnerClass",
+            "fqClassName": "js.svg.SvgElement.Rotate"
+        }
+    },
     "dependencies": [
         "js.core.Bindable",
         "js.core.DomElement",

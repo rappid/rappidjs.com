@@ -241,6 +241,16 @@
     "properties": {},
     "fqClassName": "js.core.EventDispatcher",
     "inherit": "js.core.Base",
+    "exports": {
+        "Event": {
+            "type": "InnerClass",
+            "fqClassName": "js.core.EventDispatcher.Event"
+        },
+        "EventHandler": {
+            "type": "InnerClass",
+            "fqClassName": "js.core.EventDispatcher.EventHandler"
+        }
+    },
     "dependencies": [
         "js.core.Base"
     ],

@@ -185,6 +185,12 @@
     "properties": {},
     "fqClassName": "srv.core.Identity",
     "inherit": "js.core.Base",
+    "exports": {
+        "AuthenticationRequest": {
+            "type": "InnerClass",
+            "fqClassName": "srv.core.Identity.AuthenticationRequest"
+        }
+    },
     "dependencies": [
         "flow",
         "js.core.Base"
