@@ -5,8 +5,15 @@
     ],
     "type": "xml",
     "inherit": "js.svg.SvgClass",
+    "defaults": {
+        "version": {
+            "name": "version",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "1.2"
+        }
+    },
     "methods": [],
-    "defaults": {},
     "file": "js/svg/SvgDescriptor.xml",
     "package": "js.svg",
     "inheritancePath": [

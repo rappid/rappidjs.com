@@ -1,10 +1,161 @@
 {
     "fqClassName": "js.ui.Field",
     "dependencies": [
-        "js.ui.View"
+        "js.ui.FieldClass"
     ],
     "type": "xml",
-    "inherit": "js.ui.View",
+    "inherit": "js.ui.FieldClass",
+    "defaults": {
+        "componentClass": {
+            "name": "componentClass",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "control-group",
+            "definedBy": "js.core.DomElement",
+            "overwrites": true
+        },
+        "tagName": {
+            "name": "tagName",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "div",
+            "definedBy": "js.ui.View",
+            "overwrites": true
+        },
+        "label": {
+            "name": "label",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "",
+            "definedBy": "js.ui.FieldClass"
+        },
+        "inputId": {
+            "name": "inputId",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "definedBy": "js.ui.FieldClass"
+        },
+        "enabled": {
+            "name": "enabled",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": true,
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "error": {
+            "name": "error",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "definedBy": "js.ui.FieldClass"
+        },
+        "selected": {
+            "name": "selected",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined the \"active\" CSS class is added\n",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "selectable": {
+            "name": "selectable",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined a click will set the element to selected",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "namespace": {
+            "name": "namespace",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "position": {
+            "name": "position",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "Possible values: \"absolute\", \"relative\"",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "heightUpdatePolicy": {
+            "name": "heightUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "\nThe heightUpdatePolicy configures whether the height of the component is\nupdated when the DOM node height changes or if the DOM node height is updated\nwhen the component height changes.\n\n**Possible values:**\n\n+  **in** - \"height\" attribute is determined by DOM nodes offsetHeight\n+  **out** - DOM node height is determined by the \"height\" attribute\n+  **both** - both directions\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "widthUpdatePolicy": {
+            "name": "widthUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "\nThe widthUpdatePolicy configures whether the width of the component is\nupdated when the DOM node width changes or if the DOM node width is updated\nwhen the component width changes.\n\n**Possible values:**\n\n+  **in** - \"width\" attribute is determined by DOM nodes offsetWidth\n+  **out** - DOM node width is determined by the \"width\" attribute\n+  **both** - both directions\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "class": {
+            "name": "class",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "sets the class for the Component.\nThe resulting class attributes is the union from class and componentClass of the Element.\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.DomElement"
+        },
+        "visible": {
+            "name": "visible",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": true,
+            "description": "sets the visibility of an component. If the value is false the component is removed from the DOM.\n",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.core.DomElement"
+        },
+        "cid": {
+            "name": "cid",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "the cid is a unique identifier for the component within a xaml class. \\\nThe corresponding component will be automatically added to the $ of the instance of the xaml class.\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.Component"
+        },
+        "creationPolicy": {
+            "name": "creationPolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "auto",
+            "description": "Decides if the initialization of the component is started automatically or manually by the application",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.Element"
+        }
+    },
     "methods": [
         {
             "type": "Method",
@@ -797,6 +948,21 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "error"
+                },
+                {
+                    "name": "oldError"
+                }
+            ],
+            "annotations": {},
+            "definedBy": "js.ui.FieldClass",
+            "name": "_render$error",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "key"
                 },
                 {
@@ -1478,6 +1644,18 @@
             "type": "Method",
             "parameter": [
                 {
+                    "name": "child"
+                }
+            ],
+            "annotations": {},
+            "definedBy": "js.ui.FieldClass",
+            "name": "getFirstChild",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
                     "name": "name"
                 }
             ],
@@ -1987,118 +2165,10 @@
             "visibility": "public"
         }
     ],
-    "defaults": {
-        "tagName": {
-            "name": "tagName",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": "div",
-            "definedBy": "js.ui.View"
-        },
-        "selected": {
-            "name": "selected",
-            "defaultType": "factory",
-            "visibility": "public",
-            "description": "If not null, false or undefined the \"active\" CSS class is added\n",
-            "types": [
-                "Boolean"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "selectable": {
-            "name": "selectable",
-            "defaultType": "factory",
-            "visibility": "public",
-            "description": "If not null, false or undefined a click will set the element to selected",
-            "types": [
-                "Boolean"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "namespace": {
-            "name": "namespace",
-            "defaultType": "factory",
-            "visibility": "public",
-            "definedBy": "js.html.HtmlElement"
-        },
-        "enabled": {
-            "name": "enabled",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": true,
-            "types": [
-                "Boolean"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "position": {
-            "name": "position",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": null,
-            "description": "Possible values: \"absolute\", \"relative\"",
-            "types": [
-                "String"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "heightUpdatePolicy": {
-            "name": "heightUpdatePolicy",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": "out",
-            "description": "\nThe heightUpdatePolicy configures whether the height of the component is\nupdated when the DOM node height changes or if the DOM node height is updated\nwhen the component height changes.\n\n**Possible values:**\n\n+  **in** - \"height\" attribute is determined by DOM nodes offsetHeight\n+  **out** - DOM node height is determined by the \"height\" attribute\n+  **both** - both directions\n",
-            "types": [
-                "String"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "widthUpdatePolicy": {
-            "name": "widthUpdatePolicy",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": "out",
-            "description": "\nThe widthUpdatePolicy configures whether the width of the component is\nupdated when the DOM node width changes or if the DOM node width is updated\nwhen the component width changes.\n\n**Possible values:**\n\n+  **in** - \"width\" attribute is determined by DOM nodes offsetWidth\n+  **out** - DOM node width is determined by the \"width\" attribute\n+  **both** - both directions\n",
-            "types": [
-                "String"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "visible": {
-            "name": "visible",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": true,
-            "types": [
-                "Boolean"
-            ],
-            "definedBy": "js.core.DomElement"
-        },
-        "cid": {
-            "name": "cid",
-            "defaultType": "factory",
-            "visibility": "public",
-            "description": "the cid is a unique identifier for the component within a xaml class. \\\nThe corresponding component will be automatically added to the $ of the instance of the xaml class.\n",
-            "types": [
-                "String"
-            ],
-            "definedBy": "js.core.Component"
-        },
-        "creationPolicy": {
-            "name": "creationPolicy",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": "auto",
-            "description": "Decides if the initialization of the component is started automatically or manually by the application",
-            "types": [
-                "String"
-            ],
-            "definedBy": "js.core.Element"
-        }
-    },
     "file": "js/ui/Field.xml",
     "package": "js.ui",
     "inheritancePath": [
+        "js.ui.FieldClass",
         "js.ui.View",
         "js.html.HtmlElement",
         "js.core.DomElement",

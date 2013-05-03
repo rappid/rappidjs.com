@@ -852,6 +852,7 @@
                     ]
                 ]
             },
+            "description": "Formats a date value to the given format\n",
             "name": "f",
             "visibility": "public"
         },
@@ -972,6 +973,7 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "description": "Inside the initialize method loadLocale is called",
             "definedBy": "js.core.Bindable",
             "overwritesMethod": true,
             "name": "initialize",
@@ -1017,13 +1019,22 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "locale"
+                    "types": [
+                        "String"
+                    ],
+                    "name": "locale",
+                    "optional": false
                 },
                 {
-                    "name": "callback"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": false
                 }
             ],
             "annotations": {},
+            "description": "Loads the given locale and calls the callback\n",
             "name": "loadLocale",
             "visibility": "public"
         },
@@ -1224,6 +1235,7 @@
                     "translations"
                 ]
             },
+            "description": "\n",
             "name": "ts",
             "visibility": "public"
         },
@@ -1292,30 +1304,49 @@
             "name": "path",
             "defaultType": "value",
             "visibility": "public",
-            "value": "app/locale"
+            "value": "app/locale",
+            "types": [
+                "String"
+            ]
         },
         "locale": {
             "name": "locale",
             "defaultType": "value",
             "visibility": "public",
-            "value": null
+            "value": null,
+            "description": "The default locale\n",
+            "types": [
+                "String"
+            ]
         },
         "suffix": {
             "name": "suffix",
             "defaultType": "value",
             "visibility": "public",
-            "value": ".json"
+            "value": ".json",
+            "description": "The suffix of the locale file\n",
+            "types": [
+                "String"
+            ]
         },
         "translations": {
             "name": "translations",
             "defaultType": "factory",
-            "visibility": "public"
+            "visibility": "public",
+            "description": "An object with all translations read from the locale file",
+            "types": [
+                "Object"
+            ]
         },
         "loadMomentJs": {
             "name": "loadMomentJs",
             "defaultType": "value",
             "visibility": "public",
-            "value": true
+            "value": true,
+            "description": "Decides wether to load momentjs for date formatting and parsing",
+            "types": [
+                "Boolean"
+            ]
         },
         "cid": {
             "name": "cid",

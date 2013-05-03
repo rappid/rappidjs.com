@@ -2066,7 +2066,9 @@
             "name": "componentClass",
             "defaultType": "value",
             "visibility": "public",
-            "value": "btn-group menu-button"
+            "value": "btn-group menu-button",
+            "definedBy": "js.core.DomElement",
+            "overwrites": true
         },
         "menuClassName": {
             "name": "menuClassName",
@@ -2149,11 +2151,23 @@
             ],
             "definedBy": "js.html.HtmlElement"
         },
+        "class": {
+            "name": "class",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "sets the class for the Component.\nThe resulting class attributes is the union from class and componentClass of the Element.\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.DomElement"
+        },
         "visible": {
             "name": "visible",
             "defaultType": "value",
             "visibility": "public",
             "value": true,
+            "description": "sets the visibility of an component. If the value is false the component is removed from the DOM.\n",
             "types": [
                 "Boolean"
             ],
@@ -2213,7 +2227,7 @@
             "name": "$excludedStyleAttributes",
             "visibility": "private",
             "propertyType": "complex",
-            "value": " ['src','content']",
+            "value": " ['src', 'content']",
             "types": [
                 "Array"
             ],

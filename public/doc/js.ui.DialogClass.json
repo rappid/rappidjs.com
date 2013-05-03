@@ -1090,13 +1090,23 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "cls"
+                    "types": [
+                        "String"
+                    ],
+                    "name": "cls",
+                    "optional": false
                 },
                 {
-                    "name": "oldCls"
+                    "types": [
+                        "String"
+                    ],
+                    "name": "oldCls",
+                    "optional": false
                 }
             ],
             "annotations": {},
+            "description": "Renders the window class attribute\n",
+            "private": "",
             "definedBy": "js.core.Window",
             "name": "_renderWindowClass",
             "visibility": "protected"
@@ -1928,7 +1938,8 @@
                         "Function"
                     ],
                     "name": "callback",
-                    "optional": true
+                    "optional": true,
+                    "description": "the callback which is called when the window gets closed."
                 },
                 {
                     "types": [
@@ -2097,7 +2108,7 @@
             "defaultType": "value",
             "visibility": "public",
             "value": "dialog {size}",
-            "definedBy": "js.core.Window",
+            "definedBy": "js.core.DomElement",
             "overwrites": true
         },
         "tagName": {
@@ -2176,11 +2187,23 @@
             ],
             "definedBy": "js.html.HtmlElement"
         },
+        "class": {
+            "name": "class",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "sets the class for the Component.\nThe resulting class attributes is the union from class and componentClass of the Element.\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.DomElement"
+        },
         "visible": {
             "name": "visible",
             "defaultType": "value",
             "visibility": "public",
             "value": true,
+            "description": "sets the visibility of an component. If the value is false the component is removed from the DOM.\n",
             "types": [
                 "Boolean"
             ],
@@ -2240,7 +2263,7 @@
             "name": "$excludedStyleAttributes",
             "visibility": "private",
             "propertyType": "complex",
-            "value": " ['src','content']",
+            "value": " ['src', 'content']",
             "types": [
                 "Array"
             ],

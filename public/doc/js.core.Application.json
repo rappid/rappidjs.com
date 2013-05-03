@@ -1107,13 +1107,23 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "cls"
+                    "types": [
+                        "String"
+                    ],
+                    "name": "cls",
+                    "optional": false
                 },
                 {
-                    "name": "oldCls"
+                    "types": [
+                        "String"
+                    ],
+                    "name": "oldCls",
+                    "optional": false
                 }
             ],
             "annotations": {},
+            "description": "Renders the window class attribute\n",
+            "private": "",
             "definedBy": "js.core.Window",
             "name": "_renderWindowClass",
             "visibility": "protected"
@@ -1355,10 +1365,13 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "state"
+                    "types": null,
+                    "name": "state",
+                    "optional": false
                 }
             ],
             "annotations": {},
+            "description": "Closes the window\n",
             "definedBy": "js.core.Window",
             "name": "close",
             "visibility": "public"
@@ -1963,7 +1976,8 @@
                         "Function"
                     ],
                     "name": "callback",
-                    "optional": true
+                    "optional": true,
+                    "description": "the callback which is called when the window gets closed."
                 },
                 {
                     "types": [
@@ -1988,10 +2002,16 @@
             "type": "Method",
             "parameter": [
                 {
-                    "name": "callback"
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "optional": true,
+                    "description": "the callback which is called when the window gets closed"
                 }
             ],
             "annotations": {},
+            "description": "Calls the show method with modal=true and the callback\n",
             "definedBy": "js.core.Window",
             "name": "showModal",
             "visibility": "public"
@@ -2188,8 +2208,12 @@
             "name": "componentClass",
             "defaultType": "value",
             "visibility": "public",
-            "value": "window",
-            "definedBy": "js.core.Window"
+            "value": null,
+            "description": "sets the componentClass for the Component.\nThe resulting class attributes is the union from class and componentClass of the Element.\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.DomElement"
         },
         "selected": {
             "name": "selected",
@@ -2260,11 +2284,23 @@
             ],
             "definedBy": "js.html.HtmlElement"
         },
+        "class": {
+            "name": "class",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "sets the class for the Component.\nThe resulting class attributes is the union from class and componentClass of the Element.\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.DomElement"
+        },
         "visible": {
             "name": "visible",
             "defaultType": "value",
             "visibility": "public",
             "value": true,
+            "description": "sets the visibility of an component. If the value is false the component is removed from the DOM.\n",
             "types": [
                 "Boolean"
             ],
@@ -2327,7 +2363,7 @@
             "name": "$excludedStyleAttributes",
             "visibility": "private",
             "propertyType": "complex",
-            "value": " ['src','content']",
+            "value": " ['src', 'content']",
             "types": [
                 "Array"
             ],

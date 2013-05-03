@@ -5,6 +5,335 @@
     ],
     "type": "xml",
     "inherit": "js.ui.TileListClass",
+    "defaults": {
+        "componentClass": {
+            "name": "componentClass",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "tile-list",
+            "definedBy": "js.core.DomElement",
+            "overwrites": true
+        },
+        "onkeydown": {
+            "name": "onkeydown",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "_onKeyDown"
+        },
+        "heightUpdatePolicy": {
+            "name": "heightUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "\nThe heightUpdatePolicy configures whether the height of the component is\nupdated when the DOM node height changes or if the DOM node height is updated\nwhen the component height changes.\n\n**Possible values:**\n\n+  **in** - \"height\" attribute is determined by DOM nodes offsetHeight\n+  **out** - DOM node height is determined by the \"height\" attribute\n+  **both** - both directions\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "widthUpdatePolicy": {
+            "name": "widthUpdatePolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "out",
+            "description": "\nThe widthUpdatePolicy configures whether the width of the component is\nupdated when the DOM node width changes or if the DOM node width is updated\nwhen the component width changes.\n\n**Possible values:**\n\n+  **in** - \"width\" attribute is determined by DOM nodes offsetWidth\n+  **out** - DOM node width is determined by the \"width\" attribute\n+  **both** - both directions\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "width": {
+            "name": "width",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 300,
+            "description": " TODO: update width and height, after DOM Element resized",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "scrollContainerClass": {
+            "name": "scrollContainerClass",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "",
+            "definedBy": "js.ui.TileListClass"
+        },
+        "minItemSize": {
+            "name": "minItemSize",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 100,
+            "definedBy": "js.ui.TileListClass"
+        },
+        "maxItemSize": {
+            "name": "maxItemSize",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 150,
+            "definedBy": "js.ui.TileListClass"
+        },
+        "itemWidth": {
+            "name": "itemWidth",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.ui.TileListClass"
+        },
+        "itemHeight": {
+            "name": "itemHeight",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.ui.TileListClass"
+        },
+        "rows": {
+            "name": "rows",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.ui.TileListClass"
+        },
+        "cols": {
+            "name": "cols",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.ui.TileListClass"
+        },
+        "aspectRatio": {
+            "name": "aspectRatio",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 1,
+            "description": " calculates itemHeight, itemWidth if set to AUTO depending on the scrollDirection",
+            "definedBy": "js.ui.TileListClass"
+        },
+        "horizontalGap": {
+            "name": "horizontalGap",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 0,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "verticalGap": {
+            "name": "verticalGap",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 0,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "data": {
+            "name": "data",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": " the data, which should be bound",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "scrollTop": {
+            "name": "scrollTop",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 0,
+            "description": " TODO: update positions, after DOM Element scrollLeft and scrollTop changed\n scroll positions",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "scrollLeft": {
+            "name": "scrollLeft",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 0,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "height": {
+            "name": "height",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 300,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "_itemWidth": {
+            "name": "_itemWidth",
+            "defaultType": "value",
+            "visibility": "private",
+            "value": 100,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "_itemHeight": {
+            "name": "_itemHeight",
+            "defaultType": "value",
+            "visibility": "private",
+            "value": 100,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "_rows": {
+            "name": "_rows",
+            "defaultType": "value",
+            "visibility": "private",
+            "value": 3,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "_cols": {
+            "name": "_cols",
+            "defaultType": "value",
+            "visibility": "private",
+            "value": 3,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "scrollToIndex": {
+            "name": "scrollToIndex",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 0,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "scrollDirection": {
+            "name": "scrollDirection",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "prefetchItemCount": {
+            "name": "prefetchItemCount",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 0,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "fetchPageDelay": {
+            "name": "fetchPageDelay",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": 500,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "fetchWithFullData": {
+            "name": "fetchWithFullData",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": false,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "$dataAdapter": {
+            "name": "$dataAdapter",
+            "defaultType": "value",
+            "visibility": "private",
+            "value": null,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "selectionMode": {
+            "name": "selectionMode",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "multi",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "selectedItems": {
+            "name": "selectedItems",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "hoverItem": {
+            "name": "hoverItem",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "definedBy": "js.ui.VirtualItemsView"
+        },
+        "tagName": {
+            "name": "tagName",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "div",
+            "definedBy": "js.ui.View"
+        },
+        "selected": {
+            "name": "selected",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined the \"active\" CSS class is added\n",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "selectable": {
+            "name": "selectable",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "If not null, false or undefined a click will set the element to selected",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "namespace": {
+            "name": "namespace",
+            "defaultType": "factory",
+            "visibility": "public",
+            "definedBy": "js.html.HtmlElement"
+        },
+        "enabled": {
+            "name": "enabled",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": true,
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "position": {
+            "name": "position",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "Possible values: \"absolute\", \"relative\"",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.html.HtmlElement"
+        },
+        "class": {
+            "name": "class",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "sets the class for the Component.\nThe resulting class attributes is the union from class and componentClass of the Element.\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.DomElement"
+        },
+        "visible": {
+            "name": "visible",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": true,
+            "description": "sets the visibility of an component. If the value is false the component is removed from the DOM.\n",
+            "types": [
+                "Boolean"
+            ],
+            "definedBy": "js.core.DomElement"
+        },
+        "cid": {
+            "name": "cid",
+            "defaultType": "factory",
+            "visibility": "public",
+            "description": "the cid is a unique identifier for the component within a xaml class. \\\nThe corresponding component will be automatically added to the $ of the instance of the xaml class.\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.Component"
+        },
+        "creationPolicy": {
+            "name": "creationPolicy",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "auto",
+            "description": "Decides if the initialization of the component is started automatically or manually by the application",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.Element"
+        }
+    },
     "methods": [
         {
             "type": "Method",
@@ -2435,309 +2764,6 @@
             "visibility": "public"
         }
     ],
-    "defaults": {
-        "heightUpdatePolicy": {
-            "name": "heightUpdatePolicy",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": "out",
-            "description": "\nThe heightUpdatePolicy configures whether the height of the component is\nupdated when the DOM node height changes or if the DOM node height is updated\nwhen the component height changes.\n\n**Possible values:**\n\n+  **in** - \"height\" attribute is determined by DOM nodes offsetHeight\n+  **out** - DOM node height is determined by the \"height\" attribute\n+  **both** - both directions\n",
-            "types": [
-                "String"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "widthUpdatePolicy": {
-            "name": "widthUpdatePolicy",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": "out",
-            "description": "\nThe widthUpdatePolicy configures whether the width of the component is\nupdated when the DOM node width changes or if the DOM node width is updated\nwhen the component width changes.\n\n**Possible values:**\n\n+  **in** - \"width\" attribute is determined by DOM nodes offsetWidth\n+  **out** - DOM node width is determined by the \"width\" attribute\n+  **both** - both directions\n",
-            "types": [
-                "String"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "width": {
-            "name": "width",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 300,
-            "description": " TODO: update width and height, after DOM Element resized",
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "scrollContainerClass": {
-            "name": "scrollContainerClass",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": "",
-            "definedBy": "js.ui.TileListClass"
-        },
-        "minItemSize": {
-            "name": "minItemSize",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 100,
-            "definedBy": "js.ui.TileListClass"
-        },
-        "maxItemSize": {
-            "name": "maxItemSize",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 150,
-            "definedBy": "js.ui.TileListClass"
-        },
-        "itemWidth": {
-            "name": "itemWidth",
-            "defaultType": "factory",
-            "visibility": "public",
-            "definedBy": "js.ui.TileListClass"
-        },
-        "itemHeight": {
-            "name": "itemHeight",
-            "defaultType": "factory",
-            "visibility": "public",
-            "definedBy": "js.ui.TileListClass"
-        },
-        "rows": {
-            "name": "rows",
-            "defaultType": "factory",
-            "visibility": "public",
-            "definedBy": "js.ui.TileListClass"
-        },
-        "cols": {
-            "name": "cols",
-            "defaultType": "factory",
-            "visibility": "public",
-            "definedBy": "js.ui.TileListClass"
-        },
-        "aspectRatio": {
-            "name": "aspectRatio",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 1,
-            "description": " calculates itemHeight, itemWidth if set to AUTO depending on the scrollDirection",
-            "definedBy": "js.ui.TileListClass"
-        },
-        "horizontalGap": {
-            "name": "horizontalGap",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 0,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "verticalGap": {
-            "name": "verticalGap",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 0,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "data": {
-            "name": "data",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": null,
-            "description": " the data, which should be bound",
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "scrollTop": {
-            "name": "scrollTop",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 0,
-            "description": " TODO: update positions, after DOM Element scrollLeft and scrollTop changed\n scroll positions",
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "scrollLeft": {
-            "name": "scrollLeft",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 0,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "height": {
-            "name": "height",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 300,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "_itemWidth": {
-            "name": "_itemWidth",
-            "defaultType": "value",
-            "visibility": "private",
-            "value": 100,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "_itemHeight": {
-            "name": "_itemHeight",
-            "defaultType": "value",
-            "visibility": "private",
-            "value": 100,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "_rows": {
-            "name": "_rows",
-            "defaultType": "value",
-            "visibility": "private",
-            "value": 3,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "_cols": {
-            "name": "_cols",
-            "defaultType": "value",
-            "visibility": "private",
-            "value": 3,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "scrollToIndex": {
-            "name": "scrollToIndex",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 0,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "scrollDirection": {
-            "name": "scrollDirection",
-            "defaultType": "factory",
-            "visibility": "public",
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "prefetchItemCount": {
-            "name": "prefetchItemCount",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 0,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "fetchPageDelay": {
-            "name": "fetchPageDelay",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": 500,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "fetchWithFullData": {
-            "name": "fetchWithFullData",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": false,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "$dataAdapter": {
-            "name": "$dataAdapter",
-            "defaultType": "value",
-            "visibility": "private",
-            "value": null,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "selectionMode": {
-            "name": "selectionMode",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": "multi",
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "selectedItems": {
-            "name": "selectedItems",
-            "defaultType": "factory",
-            "visibility": "public",
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "hoverItem": {
-            "name": "hoverItem",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": null,
-            "definedBy": "js.ui.VirtualItemsView"
-        },
-        "tagName": {
-            "name": "tagName",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": "div",
-            "definedBy": "js.ui.View"
-        },
-        "selected": {
-            "name": "selected",
-            "defaultType": "factory",
-            "visibility": "public",
-            "description": "If not null, false or undefined the \"active\" CSS class is added\n",
-            "types": [
-                "Boolean"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "selectable": {
-            "name": "selectable",
-            "defaultType": "factory",
-            "visibility": "public",
-            "description": "If not null, false or undefined a click will set the element to selected",
-            "types": [
-                "Boolean"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "namespace": {
-            "name": "namespace",
-            "defaultType": "factory",
-            "visibility": "public",
-            "definedBy": "js.html.HtmlElement"
-        },
-        "enabled": {
-            "name": "enabled",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": true,
-            "types": [
-                "Boolean"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "position": {
-            "name": "position",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": null,
-            "description": "Possible values: \"absolute\", \"relative\"",
-            "types": [
-                "String"
-            ],
-            "definedBy": "js.html.HtmlElement"
-        },
-        "visible": {
-            "name": "visible",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": true,
-            "types": [
-                "Boolean"
-            ],
-            "definedBy": "js.core.DomElement"
-        },
-        "cid": {
-            "name": "cid",
-            "defaultType": "factory",
-            "visibility": "public",
-            "description": "the cid is a unique identifier for the component within a xaml class. \\\nThe corresponding component will be automatically added to the $ of the instance of the xaml class.\n",
-            "types": [
-                "String"
-            ],
-            "definedBy": "js.core.Component"
-        },
-        "creationPolicy": {
-            "name": "creationPolicy",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": "auto",
-            "description": "Decides if the initialization of the component is started automatically or manually by the application",
-            "types": [
-                "String"
-            ],
-            "definedBy": "js.core.Element"
-        }
-    },
     "file": "js/ui/TileList.xml",
     "package": "js.ui",
     "inheritancePath": [

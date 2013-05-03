@@ -1988,7 +1988,9 @@
             "name": "class",
             "defaultType": "value",
             "visibility": "public",
-            "value": "window-manager {modalActiveClass()}"
+            "value": "window-manager {modalActiveClass()}",
+            "definedBy": "js.core.DomElement",
+            "overwrites": true
         },
         "selected": {
             "name": "selected",
@@ -2059,11 +2061,23 @@
             ],
             "definedBy": "js.html.HtmlElement"
         },
+        "componentClass": {
+            "name": "componentClass",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "sets the componentClass for the Component.\nThe resulting class attributes is the union from class and componentClass of the Element.\n",
+            "types": [
+                "String"
+            ],
+            "definedBy": "js.core.DomElement"
+        },
         "visible": {
             "name": "visible",
             "defaultType": "value",
             "visibility": "public",
             "value": true,
+            "description": "sets the visibility of an component. If the value is false the component is removed from the DOM.\n",
             "types": [
                 "Boolean"
             ],
@@ -2104,7 +2118,7 @@
             "name": "$excludedStyleAttributes",
             "visibility": "private",
             "propertyType": "complex",
-            "value": " ['src','content']",
+            "value": " ['src', 'content']",
             "types": [
                 "Array"
             ],

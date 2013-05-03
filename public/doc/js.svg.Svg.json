@@ -68,6 +68,13 @@
             "defaultType": "value",
             "visibility": "public",
             "value": null
+        },
+        "version": {
+            "name": "version",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": "1.2",
+            "definedBy": "js.svg.SvgDescriptor"
         }
     },
     "properties": {

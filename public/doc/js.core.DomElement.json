@@ -1774,11 +1774,32 @@
     ],
     "staticMethods": [],
     "defaults": {
+        "class": {
+            "name": "class",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "sets the class for the Component.\nThe resulting class attributes is the union from class and componentClass of the Element.\n",
+            "types": [
+                "String"
+            ]
+        },
+        "componentClass": {
+            "name": "componentClass",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "description": "sets the componentClass for the Component.\nThe resulting class attributes is the union from class and componentClass of the Element.\n",
+            "types": [
+                "String"
+            ]
+        },
         "visible": {
             "name": "visible",
             "defaultType": "value",
             "visibility": "public",
             "value": true,
+            "description": "sets the visibility of an component. If the value is false the component is removed from the DOM.\n",
             "types": [
                 "Boolean"
             ]
