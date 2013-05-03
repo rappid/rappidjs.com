@@ -45,7 +45,7 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
             if (this.isNodeModule(path)) {
                 return path;
             } else {
-                return path.replace(/\./g, "/") + this.fileExtension();
+                return this.$.file;
             }
         }.onChange("id", "fileExtension()"),
 
