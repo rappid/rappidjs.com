@@ -1,0 +1,66 @@
+{
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "clear",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "annotations": {},
+            "name": "getItem",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                }
+            ],
+            "annotations": {},
+            "name": "removeItem",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "key"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            "annotations": {},
+            "name": "setItem",
+            "visibility": "public"
+        }
+    ],
+    "staticMethods": [],
+    "defaults": {},
+    "properties": {},
+    "fqClassName": "js.data.LocalStorage.ObjectImplementation",
+    "dependencies": [
+        "inherit",
+        "js.core.Component"
+    ],
+    "description": " TODO: implement length as getter",
+    "type": "js",
+    "file": "js/data/LocalStorage.js",
+    "package": "js.data"
+}

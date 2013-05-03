@@ -23,7 +23,11 @@
     "properties": {},
     "fqClassName": "js.core.Error",
     "dependencies": [],
+    "inherit": "Error",
     "type": "js",
     "file": "js/core/Error.js",
-    "package": "js.core"
+    "package": "js.core",
+    "inheritancePath": [
+        "Error"
+    ]
 }

@@ -1,0 +1,76 @@
+{
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "sKey"
+                }
+            ],
+            "annotations": {},
+            "name": "getItem",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "nKeyId"
+                }
+            ],
+            "annotations": {},
+            "name": "key",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "sKey"
+                }
+            ],
+            "annotations": {},
+            "name": "removeItem",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "sKey"
+                },
+                {
+                    "name": "sValue"
+                }
+            ],
+            "annotations": {},
+            "name": "setItem",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "size",
+            "visibility": "public"
+        }
+    ],
+    "staticMethods": [],
+    "defaults": {},
+    "properties": {
+        "length": {
+            "name": "length",
+            "visibility": "public",
+            "propertyType": "value"
+        }
+    },
+    "fqClassName": "js.data.LocalStorage.CookieImplementation",
+    "dependencies": [
+        "inherit",
+        "js.core.Component"
+    ],
+    "description": " TODO: implement length as getter",
+    "type": "js",
+    "file": "js/data/LocalStorage.js",
+    "package": "js.data"
+}

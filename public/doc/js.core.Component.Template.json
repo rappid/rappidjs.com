@@ -1,0 +1,61 @@
+{
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "_initializeDescriptors",
+            "visibility": "protected"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "parentScope"
+                },
+                {
+                    "name": "rootScope"
+                }
+            ],
+            "annotations": {},
+            "name": "createComponents",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "attributes"
+                },
+                {
+                    "name": "parentScope"
+                },
+                {
+                    "name": "rootScope"
+                }
+            ],
+            "annotations": {},
+            "name": "createInstance",
+            "visibility": "public"
+        }
+    ],
+    "staticMethods": [],
+    "defaults": {},
+    "properties": {},
+    "fqClassName": "js.core.Component.Template",
+    "dependencies": [
+        "js.core.Bindable",
+        "js.core.Element",
+        "js.core.EventDispatcher",
+        "js.core.TextElement",
+        "require",
+        "underscore"
+    ],
+    "description": "IE8 FIXES",
+    "type": "js",
+    "file": "js/core/Component.js",
+    "package": "js.core"
+}

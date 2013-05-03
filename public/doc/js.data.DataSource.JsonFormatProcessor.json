@@ -1,0 +1,55 @@
+{
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "text"
+                }
+            ],
+            "annotations": {},
+            "name": "deserialize",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "getContentType",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "data"
+                }
+            ],
+            "annotations": {},
+            "name": "serialize",
+            "visibility": "public"
+        }
+    ],
+    "staticMethods": [],
+    "defaults": {},
+    "properties": {},
+    "fqClassName": "js.data.DataSource.JsonFormatProcessor",
+    "dependencies": [
+        "JSON",
+        "flow",
+        "js.conf.DataSourceConfiguration",
+        "js.conf.ResourceConfiguration",
+        "js.core.Base",
+        "js.core.Component",
+        "js.core.List",
+        "js.data.Collection",
+        "js.data.Entity",
+        "js.data.Model",
+        "js.data.TypeResolver",
+        "moment",
+        "underscore"
+    ],
+    "type": "js",
+    "file": "js/data/DataSource.js",
+    "package": "js.data"
+}

@@ -688,7 +688,7 @@
                 }
             ],
             "annotations": {},
-            "description": "IE8 FIXES",
+            "description": "determinate the local-name of a DomNode\n",
             "definedBy": "js.core.Component",
             "name": "_localNameFromDomNode",
             "visibility": "protected"
@@ -2319,7 +2319,7 @@
     "exports": {
         "RestContext": {
             "type": "InnerClass",
-            "fqClassName": "js.data.RestDataSource.RestContext"
+            "fqClassName": "js.data.RestDataSource.Context"
         },
         "XmlFormatProcessor": {
             "type": "InnerClass",

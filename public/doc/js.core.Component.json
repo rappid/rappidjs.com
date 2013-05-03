@@ -577,7 +577,7 @@
                 }
             ],
             "annotations": {},
-            "description": "IE8 FIXES",
+            "description": "determinate the local-name of a DomNode\n",
             "name": "_localNameFromDomNode",
             "visibility": "protected"
         },
@@ -1317,15 +1317,15 @@
     "exports": {
         "Template": {
             "type": "InnerClass",
-            "fqClassName": "js.core.Component.Template"
+            "fqClassName": "js.core.Template"
         },
         "Configuration": {
             "type": "InnerClass",
-            "fqClassName": "js.core.Component.Configuration"
+            "fqClassName": "js.core.Configuration"
         },
         "Content": {
             "type": "InnerClass",
-            "fqClassName": "js.core.Component.Content"
+            "fqClassName": "js.core.Content"
         }
     },
     "dependencies": [

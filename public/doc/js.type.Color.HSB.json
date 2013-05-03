@@ -1,0 +1,80 @@
+{
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "clone",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "h"
+                },
+                {
+                    "name": "s"
+                },
+                {
+                    "name": "b"
+                }
+            ],
+            "annotations": {},
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "toHSB",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "toHexString",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "toLAB",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "toRGB",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "toString",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "toXZY",
+            "visibility": "public"
+        }
+    ],
+    "staticMethods": [],
+    "defaults": {},
+    "properties": {},
+    "fqClassName": "js.type.Color.HSB",
+    "dependencies": [
+        "js.core.Base"
+    ],
+    "type": "js",
+    "file": "js/type/Color.js",
+    "package": "js.type"
+}

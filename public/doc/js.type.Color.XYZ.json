@@ -1,0 +1,52 @@
+{
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "clone",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "x"
+                },
+                {
+                    "name": "y"
+                },
+                {
+                    "name": "z"
+                }
+            ],
+            "annotations": {},
+            "name": "ctor",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "toLAB",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "toXYZ",
+            "visibility": "public"
+        }
+    ],
+    "staticMethods": [],
+    "defaults": {},
+    "properties": {},
+    "fqClassName": "js.type.Color.XYZ",
+    "dependencies": [
+        "js.core.Base"
+    ],
+    "type": "js",
+    "file": "js/type/Color.js",
+    "package": "js.type"
+}

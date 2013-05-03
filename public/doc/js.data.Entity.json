@@ -1078,7 +1078,7 @@
     "exports": {
         "SchemaValidator": {
             "type": "InnerClass",
-            "fqClassName": "js.data.Entity.SchemaValidator"
+            "fqClassName": "js.data.validator.SchemaValidator"
         }
     },
     "dependencies": [

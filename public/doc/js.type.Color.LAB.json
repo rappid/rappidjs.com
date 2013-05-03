@@ -1,0 +1,38 @@
+{
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "clone",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "l"
+                },
+                {
+                    "name": "a"
+                },
+                {
+                    "name": "b"
+                }
+            ],
+            "annotations": {},
+            "name": "ctor",
+            "visibility": "public"
+        }
+    ],
+    "staticMethods": [],
+    "defaults": {},
+    "properties": {},
+    "fqClassName": "js.type.Color.LAB",
+    "dependencies": [
+        "js.core.Base"
+    ],
+    "type": "js",
+    "file": "js/type/Color.js",
+    "package": "js.type"
+}

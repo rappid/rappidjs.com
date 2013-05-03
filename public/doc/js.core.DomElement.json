@@ -686,7 +686,7 @@
                 }
             ],
             "annotations": {},
-            "description": "IE8 FIXES",
+            "description": "determinate the local-name of a DomNode\n",
             "definedBy": "js.core.Component",
             "name": "_localNameFromDomNode",
             "visibility": "protected"
@@ -1872,11 +1872,11 @@
         },
         "EventHandler": {
             "type": "InnerClass",
-            "fqClassName": "js.core.DomElement.EventHandler"
+            "fqClassName": "js.core.DomEvent.EventHandler"
         },
         "PointerEventHandler": {
             "type": "InnerClass",
-            "fqClassName": "js.core.DomElement.PointerEventHandler"
+            "fqClassName": "js.core.DomEvent.PointerEventHandler"
         }
     },
     "dependencies": [

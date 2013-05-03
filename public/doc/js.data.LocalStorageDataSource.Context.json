@@ -1,0 +1,48 @@
+{
+    "methods": [
+        {
+            "type": "Method",
+            "parameter": [
+                {
+                    "name": "factory"
+                },
+                {
+                    "name": "options"
+                },
+                {
+                    "name": "type"
+                }
+            ],
+            "annotations": {},
+            "name": "createCollection",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "getPathComponents",
+            "visibility": "public"
+        },
+        {
+            "type": "Method",
+            "parameter": [],
+            "annotations": {},
+            "name": "getQueryParameters",
+            "visibility": "public"
+        }
+    ],
+    "staticMethods": [],
+    "defaults": {},
+    "properties": {},
+    "fqClassName": "js.data.LocalStorageDataSource.Context",
+    "dependencies": [
+        "flow",
+        "js.data.DataSource",
+        "js.data.LocalStorage",
+        "js.data.Model"
+    ],
+    "type": "js",
+    "file": "js/data/LocalStorageDataSource.js",
+    "package": "js.data"
+}
