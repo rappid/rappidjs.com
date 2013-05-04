@@ -53,10 +53,12 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
 
             var doc = this.$.doc;
 
-            if (what && doc && doc.hasOwnProperty(what)) {
-                var value = doc[what];
+            if (what && doc && doc.$.hasOwnProperty(what)) {
+                var value = doc.$[what];
 
-                if (_.isObject(value)) {
+                if (value instanceof List) {
+                    return value.size() > 0;
+                } else if (_.isObject(value)) {
                     return _.keys(value) > 0;
                 } else if (_.isArray(value)) {
                     return value.length > 0;
