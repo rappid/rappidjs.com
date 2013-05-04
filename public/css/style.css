@@ -420,3 +420,52 @@ ol.linenums li {
 .days.active {
     background: gray;
 }
+
+.method-view {
+    position: relative;
+    padding: 10px 28px;
+    border-bottom: 1px solid #f8f8ff;
+}
+
+.defined-by {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.method-view.active .description {
+    display: block;
+}
+
+.method-view .description {
+    display: none;
+}
+
+.method-name {
+    font-weight: bold;
+}
+
+.side-expandable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 15px;
+    text-align: center;
+    font-size: 15px;
+    background: #EEE;
+    text-indent: -9999px;
+}
+
+.side-expandable span {
+    display: block;
+    width: 10px;
+    height: 13px;
+    background: url(../img/arrows.png) no-repeat;
+    margin-left: 2px;
+    margin-top: 13px;
+}
+
+.side-expandable.active span{
+    background: url(../img/arrows.png) no-repeat -10px 0;
+}

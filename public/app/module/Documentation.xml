@@ -111,7 +111,7 @@
                             </div>
                             <div class="span2">
                                 <fieldset class="well">
-                                    <ui:Checkbox label="public" cid="publicAttributesCheckbox" checked="true" />
+                                    <ui:Checkbox label="public" cid="publicAttributesCheckbox" checked="true"/>
                                     <ui:Checkbox label="protected" cid="protectedAttributesCheckbox"/>
                                     <ui:Checkbox label="inherit" cid="inheritedAttributesCheckbox"/>
                                 </fieldset>
@@ -125,12 +125,14 @@
                                     <th width="20%">Defined By</th>
                                 </tr>
                             </thead>
-                            <ui:ItemsView cid="defaultItemsView" items="{doc.getDefaults(showTypes(publicAttributesCheckbox.checked, protectedAttributesCheckbox.checked),inheritedAttributesCheckbox.checked)}"
+                            <ui:ItemsView cid="defaultItemsView"
+                                          items="{doc.getDefaults(showTypes(publicAttributesCheckbox.checked, protectedAttributesCheckbox.checked),inheritedAttributesCheckbox.checked)}"
                                           itemKey="item" tagName="tbody">
                                 <js:Template name="item">
                                     <tr>
                                         <td>
-                                            <strong>${item.name}</strong> :
+                                            <strong>${item.name}</strong>
+                                            :
                                             <ui:ItemsView items="${item.types}" itemKey="type" tagName="span">
                                                 <js:Template name="item">
                                                     <span>${type}</span>
@@ -233,27 +235,14 @@
                         </div>
 
 
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Method</th>
-                                    <th>Defined by</th>
-                                </tr>
-                            </thead>
-                            <ui:ItemsView items="{doc.getMethods(showTypes(showPublic.checked, showProtected.checked),showInherit.checked)}"
-                                          itemKey="method" tagName="tbody">
-                                <js:Template name="item">
-                                    <tr>
-                                        <td>
-                                            <view:MethodView method="{method}"/>
-                                        </td>
-                                        <td>
-                                            <a href="api/${method.definedBy}">${method.definedBy}</a>
-                                        </td>
-                                    </tr>
-                                </js:Template>
-                            </ui:ItemsView>
-                        </table>
+                        <ui:ItemsView
+                                items="{doc.methods}"
+                                itemKey="method">
+                            <js:Template name="item">
+                                <view:MethodView method="${method}"
+                                                 visible="{isMethodVisible(method,showTypes(showPublic.checked, showProtected.checked),showInherit.checked)}"/>
+                            </js:Template>
+                        </ui:ItemsView>
 
 
                         <div visible="{hasSection('staticMethods')}">
@@ -280,23 +269,13 @@
                                 </div>
                             </div>
 
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Method</th>
-                                    </tr>
-                                </thead>
-                                <ui:ItemsView items="{doc.getStaticMethods(showTypes(showPublicStatic.checked, showProtectedStatic.checked))}"
-                                              itemKey="method" tagName="tbody">
-                                    <js:Template name="item">
-                                        <tr>
-                                            <td>
-                                                <view:MethodView method="{method}"/>
-                                            </td>
-                                        </tr>
-                                    </js:Template>
-                                </ui:ItemsView>
-                            </table>
+                            <ui:ItemsView
+                                    items="{doc.getStaticMethods(showTypes(showPublicStatic.checked, showProtectedStatic.checked))}"
+                                    itemKey="method">
+                                <js:Template name="item">
+                                    <view:MethodView method="{method}"/>
+                                </js:Template>
+                            </ui:ItemsView>
 
                         </div>
                     </div>
