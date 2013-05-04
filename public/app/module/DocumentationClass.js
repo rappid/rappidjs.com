@@ -87,6 +87,22 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
                 }
             })
 
-        }.async()
+        }.async(),
+
+        isMethodVisible: function(method, type, showInherit){
+            if(method.$.name === 'ctor'){
+                return false;
+            }
+
+            if ((type === 'all' || type === method.$.visibility)) {
+                if (showInherit || (!showInherit && !method.$.hasOwnProperty('definedBy'))) {
+                    return true;
+                }
+            }
+
+            return false;
+
+
+        }
     });
 });
