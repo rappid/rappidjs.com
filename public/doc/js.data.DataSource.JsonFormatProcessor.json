@@ -8,6 +8,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                1082,
+                1084
+            ],
             "name": "deserialize",
             "visibility": "public"
         },
@@ -15,6 +20,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                1085,
+                1087
+            ],
             "name": "getContentType",
             "visibility": "public"
         },
@@ -26,6 +36,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                1079,
+                1081
+            ],
             "name": "serialize",
             "visibility": "public"
         }

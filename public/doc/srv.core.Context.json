@@ -4,6 +4,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                197,
+                199
+            ],
             "definedBy": "js.core.EventDispatcher",
             "name": "_beforeDestroy",
             "visibility": "protected"
@@ -57,6 +62,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                80,
+                114
+            ],
             "description": "",
             "private": "",
             "definedBy": "js.core.Base",
@@ -67,6 +77,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                205,
+                211
+            ],
             "definedBy": "js.core.EventDispatcher",
             "name": "_destroyCompleted",
             "visibility": "protected"
@@ -82,6 +97,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                43,
+                51
+            ],
             "name": "_executeHook",
             "visibility": "protected"
         },
@@ -93,6 +113,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                113,
+                127
+            ],
             "name": "_extractCookies",
             "visibility": "protected"
         },
@@ -100,6 +125,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                201,
+                203
+            ],
             "definedBy": "js.core.EventDispatcher",
             "name": "_innerDestroy",
             "visibility": "protected"
@@ -112,6 +142,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                97,
+                111
+            ],
             "name": "_parsePostData",
             "visibility": "protected"
         },
@@ -126,6 +161,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                82,
+                95
+            ],
             "name": "_parseUrl",
             "visibility": "protected"
         },
@@ -137,6 +177,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                53,
+                59
+            ],
             "name": "_registerFilterHooks",
             "visibility": "protected"
         },
@@ -148,6 +193,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                61,
+                80
+            ],
             "name": "_subClassResponse",
             "visibility": "protected"
         },
@@ -168,6 +218,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                38,
+                41
+            ],
             "description": "",
             "name": "addProcessingHook",
             "visibility": "public"
@@ -196,6 +251,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                77,
+                89
+            ],
             "description": "Binds a callback and a scope to a given eventType\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "bind",
@@ -218,6 +278,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                9,
+                31
+            ],
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -227,6 +292,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                184,
+                195
+            ],
             "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
             "name": "destroy",
@@ -236,6 +306,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                37,
+                39
+            ],
             "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
             "returns": {
                 "types": [
@@ -270,6 +345,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                47,
+                68
+            ],
             "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
@@ -279,6 +359,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                21,
+                23
+            ],
             "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
@@ -316,6 +401,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                97,
+                158
+            ],
             "description": "Triggers a specific event and the * event\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
@@ -343,6 +433,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                165,
+                180
+            ],
             "description": "Unbinds callbacks for events\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "unbind",
@@ -355,6 +450,11 @@
         "$hooks": {
             "name": "$hooks",
             "visibility": "private",
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                7,
+                7
+            ],
             "propertyType": "complex",
             "value": " [\"beginRequest\", \"beforeHeadersSend\", \"endRequest\"]"
         }

@@ -49,6 +49,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                80,
+                114
+            ],
             "description": "",
             "private": "",
             "name": "_debounceFunctionCall",
@@ -58,6 +63,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                8,
+                14
+            ],
             "name": "ctor",
             "visibility": "public"
         },
@@ -65,6 +75,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                37,
+                39
+            ],
             "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
             "returns": {
                 "types": [
@@ -98,6 +113,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                47,
+                68
+            ],
             "description": "logs messages to configured logging functions\n",
             "name": "log",
             "visibility": "public"
@@ -106,6 +126,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                21,
+                23
+            ],
             "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [

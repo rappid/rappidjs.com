@@ -49,6 +49,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                80,
+                114
+            ],
             "description": "",
             "private": "",
             "definedBy": "js.core.Base",
@@ -63,6 +68,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/DomElement.js",
+            "lineNumbers": [
+                844,
+                852
+            ],
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -72,6 +82,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                37,
+                39
+            ],
             "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
             "returns": {
                 "types": [
@@ -106,6 +121,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                47,
+                68
+            ],
             "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
@@ -115,6 +135,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                237,
+                249
+            ],
             "description": "Prevent default triggering\n",
             "definedBy": "js.core.EventDispatcher.Event",
             "name": "preventDefault",
@@ -124,6 +149,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                21,
+                23
+            ],
             "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
@@ -139,6 +169,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                261,
+                264
+            ],
             "description": "",
             "definedBy": "js.core.EventDispatcher.Event",
             "name": "stopImmediatePropagation",
@@ -148,6 +183,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                255,
+                257
+            ],
             "description": "Call this to stop propagation\n",
             "definedBy": "js.core.EventDispatcher.Event",
             "name": "stopPropagation",

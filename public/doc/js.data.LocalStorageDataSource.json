@@ -4,6 +4,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                93,
+                95
+            ],
             "description": "Returns the ENVIRONMENT object",
             "definedBy": "js.core.Component",
             "name": "ENV",
@@ -17,6 +22,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                190,
+                192
+            ],
             "definedBy": "js.core.Component",
             "name": "_addConfiguration",
             "visibility": "protected"
@@ -29,6 +39,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                183,
+                188
+            ],
             "definedBy": "js.core.Component",
             "name": "_addTemplate",
             "visibility": "protected"
@@ -47,6 +62,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                965,
+                967
+            ],
             "definedBy": "js.data.DataSource",
             "name": "_afterModelSave",
             "visibility": "protected"
@@ -55,6 +75,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                197,
+                199
+            ],
             "definedBy": "js.core.EventDispatcher",
             "name": "_beforeDestroy",
             "visibility": "protected"
@@ -73,6 +98,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                955,
+                957
+            ],
             "definedBy": "js.data.DataSource",
             "name": "_beforeModelSave",
             "visibility": "protected"
@@ -81,6 +111,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                251,
+                260
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_bindBus",
             "visibility": "protected"
@@ -89,6 +124,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                529,
+                531
+            ],
             "private": "This method is called after all children are initialized",
             "definedBy": "js.core.Component",
             "name": "_childrenInitialized",
@@ -102,6 +142,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                358,
+                375
+            ],
             "definedBy": "js.core.Component",
             "name": "_cleanUpDescriptor",
             "visibility": "protected"
@@ -121,6 +166,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                481,
+                507
+            ],
             "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
             "private": "",
             "definedBy": "js.core.Bindable",
@@ -148,6 +198,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                764,
+                766
+            ],
             "description": "called after attributes has set and some of the has been changed\n",
             "abstract": "",
             "private": "",
@@ -159,6 +214,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                668,
+                671
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_commitInvalidatedAttributes",
             "visibility": "protected"
@@ -184,6 +244,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                439,
+                471
+            ],
             "description": "Create {@link Component} for DOM Node with given attributes",
             "definedBy": "js.core.Component",
             "name": "_createComponentForNode",
@@ -200,6 +265,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                496,
+                504
+            ],
             "definedBy": "js.core.Component",
             "name": "_createTextElement",
             "visibility": "protected"
@@ -253,6 +323,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                80,
+                114
+            ],
             "description": "",
             "private": "",
             "definedBy": "js.core.Base",
@@ -263,6 +338,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                513,
+                515
+            ],
             "description": "",
             "returns": {
                 "types": [
@@ -279,6 +359,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                205,
+                211
+            ],
             "definedBy": "js.core.EventDispatcher",
             "name": "_destroyCompleted",
             "visibility": "protected"
@@ -287,6 +372,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                273,
+                286
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_extract",
             "visibility": "protected"
@@ -304,6 +394,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                524,
+                552
+            ],
             "description": "generates a default chain containing the values from this instance and base classes\n",
             "returns": {
                 "types": [
@@ -326,6 +421,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Element.js",
+            "lineNumbers": [
+                58,
+                102
+            ],
             "definedBy": "js.core.Element",
             "name": "_getAttributesFromDescriptor",
             "visibility": "protected"
@@ -343,6 +443,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                510,
+                524
+            ],
             "description": "Converts all child nodes of a descriptor to instances of Components or TextElement",
             "definedBy": "js.core.Component",
             "name": "_getChildrenFromDescriptor",
@@ -359,6 +464,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                57,
+                71
+            ],
             "name": "_getCollectionData",
             "visibility": "protected"
         },
@@ -376,6 +486,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                1048,
+                1059
+            ],
             "definedBy": "js.data.DataSource",
             "name": "_getContext",
             "visibility": "protected"
@@ -388,6 +503,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                390,
+                392
+            ],
             "definedBy": "js.core.Component",
             "name": "_getEventName",
             "visibility": "protected"
@@ -400,6 +520,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                407,
+                410
+            ],
             "definedBy": "js.core.Component",
             "name": "_getEventTypeForAttribute",
             "visibility": "protected"
@@ -412,6 +537,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Element.js",
+            "lineNumbers": [
+                103,
+                105
+            ],
             "definedBy": "js.core.Element",
             "name": "_getLocalNameFromNode",
             "visibility": "protected"
@@ -420,6 +550,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                30,
+                32
+            ],
             "name": "_getStorage",
             "visibility": "protected"
         },
@@ -431,6 +566,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Element.js",
+            "lineNumbers": [
+                170,
+                183
+            ],
             "definedBy": "js.core.Element",
             "name": "_getTextContentFromDescriptor",
             "visibility": "protected"
@@ -446,6 +586,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                768,
+                777
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_hasAll",
             "visibility": "protected"
@@ -461,6 +606,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                779,
+                788
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_hasSome",
             "visibility": "protected"
@@ -469,6 +619,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                368,
+                379
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_initializationComplete",
             "visibility": "protected"
@@ -477,6 +632,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                164,
+                174
+            ],
             "description": "starts the initialization of the `Bindable` if it hasn't initialized yet.\n\nIt calls the following methods:\n\n* initialize();\n* _initializeBindings();\n",
             "private": "",
             "definedBy": "js.core.Bindable",
@@ -491,6 +651,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Element.js",
+            "lineNumbers": [
+                116,
+                117
+            ],
             "definedBy": "js.core.Element",
             "name": "_initializeAttributes",
             "visibility": "protected"
@@ -499,6 +664,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                291,
+                362
+            ],
             "description": "Initialize all Binding and Event attributes",
             "definedBy": "js.core.Bindable",
             "name": "_initializeBindings",
@@ -508,6 +678,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                364,
+                366
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_initializeBindingsBeforeComplete",
             "visibility": "protected"
@@ -520,6 +695,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                211,
+                216
+            ],
             "definedBy": "js.core.Component",
             "name": "_initializeChildren",
             "visibility": "protected"
@@ -528,6 +708,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Element.js",
+            "lineNumbers": [
+                119,
+                120
+            ],
             "definedBy": "js.core.Element",
             "name": "_initializeDescriptors",
             "visibility": "protected"
@@ -540,6 +725,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Element.js",
+            "lineNumbers": [
+                113,
+                115
+            ],
             "definedBy": "js.core.Element",
             "name": "_initializeEventAttributes",
             "visibility": "protected"
@@ -548,6 +738,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                149,
+                152
+            ],
             "description": "\ninvokes the `_initialize` method. This method is a hook function and is overwritten by js.core.Component\n",
             "private": "",
             "definedBy": "js.core.Bindable",
@@ -565,6 +760,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                412,
+                431
+            ],
             "definedBy": "js.core.Component",
             "name": "_initializeXamlEventAttributes",
             "visibility": "protected"
@@ -573,6 +773,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                224,
+                248
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_inject",
             "visibility": "protected"
@@ -581,6 +786,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                189,
+                191
+            ],
             "description": "\nreturns the chained object defining the required injections\n",
             "returns": {
                 "types": [
@@ -596,6 +806,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                201,
+                203
+            ],
             "definedBy": "js.core.EventDispatcher",
             "name": "_innerDestroy",
             "visibility": "protected"
@@ -610,6 +825,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                398,
+                405
+            ],
             "description": "Returns true if event is defined in Component event list",
             "definedBy": "js.core.Component",
             "name": "_isComponentEvent",
@@ -623,6 +843,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                377,
+                379
+            ],
             "definedBy": "js.core.Component",
             "name": "_isEventAttribute",
             "visibility": "protected"
@@ -635,6 +860,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                382,
+                384
+            ],
             "definedBy": "js.core.Component",
             "name": "_isFunctionAttribute",
             "visibility": "protected"
@@ -647,6 +877,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                386,
+                388
+            ],
             "definedBy": "js.core.Component",
             "name": "_isXamlEventAttribute",
             "visibility": "protected"
@@ -661,6 +896,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                544,
+                559
+            ],
             "description": "determinate the local-name of a DomNode\n",
             "definedBy": "js.core.Component",
             "name": "_localNameFromDomNode",
@@ -670,6 +910,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                381,
+                383
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_postConstruct",
             "visibility": "protected"
@@ -678,6 +923,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                385,
+                387
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_preDestroy",
             "visibility": "protected"
@@ -686,6 +936,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Element.js",
+            "lineNumbers": [
+                166,
+                168
+            ],
             "definedBy": "js.core.Element",
             "name": "_preinitialize",
             "visibility": "protected"
@@ -704,6 +959,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                108,
+                162
+            ],
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "_saveModel",
@@ -713,6 +973,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                213,
+                215
+            ],
             "name": "_saveStorage",
             "visibility": "protected"
         },
@@ -720,6 +985,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                206,
+                209
+            ],
             "description": "sets up the Bindable or Component. It will inject the required injections and\nalso will bind the application wide `MessageBus` to all methods annotated with the\n`.bus()` method annotation\n\nFor `Components` the setUp method is invoked automatically during the add of the Component.\nFor non `Components`\n\n",
             "private": "",
             "see": [
@@ -733,6 +1003,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                219,
+                222
+            ],
             "description": "tears down the Bindable or Component. It will remove the injected variables and\nalso will unbind the annotated event handlers from the application wide `MessageBus`\n",
             "private": "",
             "see": [
@@ -750,6 +1025,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                1061,
+                1063
+            ],
             "definedBy": "js.data.DataSource",
             "name": "_translateQueryObject",
             "visibility": "protected"
@@ -758,6 +1038,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                262,
+                271
+            ],
             "definedBy": "js.core.Bindable",
             "name": "_unbindBus",
             "visibility": "protected"
@@ -766,6 +1051,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                754,
+                756
+            ],
             "definedBy": "js.data.DataSource",
             "name": "_validateConfiguration",
             "visibility": "protected"
@@ -785,6 +1075,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                122,
+                153
+            ],
             "description": "adds a children",
             "definedBy": "js.core.Component",
             "name": "addChild",
@@ -798,6 +1093,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                561,
+                569
+            ],
             "definedBy": "js.core.Component",
             "name": "baseUrl",
             "visibility": "public"
@@ -826,6 +1126,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                77,
+                89
+            ],
             "description": "Binds a callback and a scope to a given eventType\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "bind",
@@ -835,6 +1140,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                101,
+                103
+            ],
             "description": "provides access to the MessageBus",
             "returns": {
                 "types": [
@@ -849,6 +1159,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                805,
+                807
+            ],
             "description": "Clears all attributes",
             "returns": {
                 "types": [
@@ -867,6 +1182,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                454,
+                474
+            ],
             "description": "This method returns a copy of the Object",
             "returns": {
                 "types": [
@@ -889,6 +1209,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                727,
+                731
+            ],
             "definedBy": "js.data.DataSource",
             "name": "composeModel",
             "visibility": "public"
@@ -907,6 +1232,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                926,
+                928
+            ],
             "definedBy": "js.data.DataSource",
             "name": "countCollection",
             "visibility": "public"
@@ -925,6 +1255,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                489,
+                494
+            ],
             "definedBy": "js.core.Component",
             "name": "createBinding",
             "visibility": "public"
@@ -933,6 +1268,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                348,
+                356
+            ],
             "definedBy": "js.core.Component",
             "name": "createChildren",
             "visibility": "public"
@@ -964,6 +1304,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                882,
+                886
+            ],
             "description": "Creates a collection by a given factory in a caching context",
             "returns": {
                 "types": [
@@ -999,6 +1344,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                480,
+                487
+            ],
             "description": "",
             "returns": {
                 "types": [
@@ -1027,6 +1377,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                53,
+                55
+            ],
             "description": "creates the context as RestContext\n",
             "returns": {
                 "types": [
@@ -1065,6 +1420,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                870,
+                873
+            ],
             "description": "Create an instance of {js.data.Entity}",
             "returns": {
                 "types": [
@@ -1079,6 +1439,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                19,
+                29
+            ],
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -1088,6 +1453,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                184,
+                195
+            ],
             "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
             "name": "destroy",
@@ -1097,6 +1467,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                37,
+                39
+            ],
             "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
             "returns": {
                 "types": [
@@ -1116,6 +1491,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Element.js",
+            "lineNumbers": [
+                155,
+                164
+            ],
             "definedBy": "js.core.Element",
             "name": "find",
             "visibility": "public"
@@ -1142,6 +1522,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                680,
+                744
+            ],
             "description": "evaluates a path to retrieve a value\n",
             "returns": {
                 "types": null,
@@ -1161,6 +1546,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                767,
+                769
+            ],
             "description": "Returns the configuration for a collectionclass name",
             "returns": {
                 "types": [
@@ -1179,6 +1569,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                758,
+                760
+            ],
             "definedBy": "js.data.DataSource",
             "name": "getConfigurationForModelClass",
             "visibility": "public"
@@ -1209,6 +1604,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                833,
+                843
+            ],
             "description": "Returns the context for a properties object",
             "returns": {
                 "types": [
@@ -1239,6 +1639,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                776,
+                824
+            ],
             "description": "",
             "returns": {
                 "types": [
@@ -1261,6 +1666,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                33,
+                35
+            ],
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "getFormatProcessor",
@@ -1274,6 +1684,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                36,
+                44
+            ],
             "name": "getPathComponentsForModel",
             "visibility": "public"
         },
@@ -1296,6 +1711,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                1024,
+                1031
+            ],
             "description": "Returns the correct processor for a collection\n",
             "returns": {
                 "types": [
@@ -1326,6 +1746,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                988,
+                995
+            ],
             "description": "Returns the correct processor for model\n",
             "returns": {
                 "types": [
@@ -1352,6 +1777,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                1004,
+                1015
+            ],
             "description": "Returns the correct processor for model class\n",
             "returns": {
                 "types": [
@@ -1371,6 +1801,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                400,
+                409
+            ],
             "definedBy": "js.core.Bindable",
             "name": "getScopeForFncName",
             "visibility": "public"
@@ -1383,6 +1818,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                389,
+                398
+            ],
             "definedBy": "js.core.Bindable",
             "name": "getScopeForKey",
             "visibility": "public"
@@ -1399,6 +1839,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                200,
+                209
+            ],
             "description": "Goes up the tree and searches for a template component with the given name.\nReturns null if no template was found.",
             "returns": {
                 "types": [
@@ -1422,6 +1867,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                752,
+                754
+            ],
             "description": "determinate if a attribute is available\n",
             "returns": {
                 "types": [
@@ -1437,6 +1887,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                179,
+                180
+            ],
             "description": "the initialize method is a hook function to add a custom logic during the initiation process.",
             "definedBy": "js.core.Bindable",
             "name": "initialize",
@@ -1446,6 +1901,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                712,
+                714
+            ],
             "definedBy": "js.data.DataSource",
             "name": "initializeFormatProcessors",
             "visibility": "public"
@@ -1454,6 +1914,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                716,
+                725
+            ],
             "definedBy": "js.data.DataSource",
             "name": "initializeProcessors",
             "visibility": "public"
@@ -1466,6 +1931,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                880,
+                897
+            ],
             "definedBy": "js.core.Bindable",
             "name": "isDeepEqual",
             "visibility": "public"
@@ -1478,6 +1948,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Element.js",
+            "lineNumbers": [
+                192,
+                194
+            ],
             "definedBy": "js.core.Element",
             "name": "isDefined",
             "visibility": "public"
@@ -1490,6 +1965,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                898,
+                900
+            ],
             "definedBy": "js.core.Bindable",
             "name": "isEqual",
             "visibility": "public"
@@ -1516,6 +1996,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                72,
+                107
+            ],
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "loadCollectionPage",
@@ -1547,6 +2032,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                163,
+                191
+            ],
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "loadModel",
@@ -1575,6 +2065,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                47,
+                68
+            ],
             "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
@@ -1590,6 +2085,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Element.js",
+            "lineNumbers": [
+                189,
+                191
+            ],
             "description": "Binding helper to negate a Boolean value",
             "returns": {
                 "types": [
@@ -1614,6 +2114,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                733,
+                738
+            ],
             "definedBy": "js.data.DataSource",
             "name": "parseModel",
             "visibility": "public"
@@ -1622,6 +2127,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                177,
+                181
+            ],
             "definedBy": "js.core.Component",
             "name": "removeAllChildren",
             "visibility": "public"
@@ -1634,6 +2144,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                155,
+                175
+            ],
             "definedBy": "js.core.Component",
             "name": "removeChild",
             "visibility": "public"
@@ -1664,6 +2179,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                192,
+                211
+            ],
             "definedBy": "js.data.DataSource",
             "overwritesMethod": true,
             "name": "removeModel",
@@ -1704,6 +2224,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                895,
+                899
+            ],
             "description": "resolve references to models and collections",
             "definedBy": "js.data.DataSource",
             "name": "resolveReferences",
@@ -1713,6 +2238,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                849,
+                851
+            ],
             "description": "Returns the root context of the data source",
             "returns": {
                 "types": [
@@ -1728,6 +2258,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                21,
+                23
+            ],
             "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
@@ -1765,6 +2300,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                936,
+                953
+            ],
             "description": "Saves a model",
             "definedBy": "js.data.DataSource",
             "name": "saveModel",
@@ -1799,6 +2339,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                564,
+                650
+            ],
             "description": "Sets new values for attributes and notify about changes\n",
             "returns": {
                 "types": [
@@ -1821,6 +2366,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                652,
+                666
+            ],
             "definedBy": "js.core.Bindable",
             "name": "setLater",
             "visibility": "public"
@@ -1829,6 +2379,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                421,
+                449
+            ],
             "description": "Writes attributes back to the source",
             "definedBy": "js.core.Bindable",
             "name": "sync",
@@ -1860,6 +2415,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                97,
+                158
+            ],
             "description": "Triggers a specific event and the * event\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
@@ -1887,6 +2447,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                165,
+                180
+            ],
             "description": "Unbinds callbacks for events\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "unbind",
@@ -1913,6 +2478,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                796,
+                799
+            ],
             "description": "Unset attribute on $",
             "returns": {
                 "types": [
@@ -1930,19 +2500,31 @@
             "name": "name",
             "defaultType": "value",
             "visibility": "public",
-            "value": "default"
+            "value": "default",
+            "lineNumbers": [
+                16,
+                16
+            ]
         },
         "dateFormat": {
             "name": "dateFormat",
             "defaultType": "value",
             "visibility": "public",
             "value": "YYYY-MM-DDTHH:mm:ssZ",
+            "lineNumbers": [
+                697,
+                697
+            ],
             "definedBy": "js.data.DataSource"
         },
         "cid": {
             "name": "cid",
             "defaultType": "factory",
             "visibility": "public",
+            "lineNumbers": [
+                66,
+                66
+            ],
             "description": "the cid is a unique identifier for the component within a xaml class. \\\nThe corresponding component will be automatically added to the $ of the instance of the xaml class.\n",
             "types": [
                 "String"
@@ -1954,6 +2536,10 @@
             "defaultType": "value",
             "visibility": "public",
             "value": "auto",
+            "lineNumbers": [
+                111,
+                111
+            ],
             "description": "Decides if the initialization of the component is started automatically or manually by the application",
             "types": [
                 "String"
@@ -1965,6 +2551,11 @@
         "$defaultProcessorFactory": {
             "name": "$defaultProcessorFactory",
             "visibility": "private",
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                18,
+                18
+            ],
             "propertyType": "complex",
             "value": " LocalStorageProcessor",
             "definedBy": "js.data.DataSource",
@@ -1973,6 +2564,11 @@
         "$processors": {
             "name": "$processors",
             "visibility": "private",
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                691,
+                691
+            ],
             "propertyType": "complex",
             "value": " {}",
             "definedBy": "js.data.DataSource"
@@ -1980,6 +2576,11 @@
         "$entityFactory": {
             "name": "$entityFactory",
             "visibility": "private",
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                692,
+                692
+            ],
             "propertyType": "complex",
             "value": " Entity",
             "definedBy": "js.data.DataSource"
@@ -1987,18 +2588,33 @@
         "$defaultProcessor": {
             "name": "$defaultProcessor",
             "visibility": "private",
+            "definedInFile": "js/data/DataSource.js",
+            "lineNumbers": [
+                694,
+                694
+            ],
             "propertyType": "value",
             "definedBy": "js.data.DataSource"
         },
         "$errorAttribute": {
             "name": "$errorAttribute",
             "visibility": "private",
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                69,
+                69
+            ],
             "propertyType": "value",
             "definedBy": "js.core.Component"
         },
         "$defaultContentName": {
             "name": "$defaultContentName",
             "visibility": "private",
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                74,
+                74
+            ],
             "propertyType": "value",
             "description": "if set all children from the descriptor will be placed into a\njs.core.Content block with the name of $defaultContentName",
             "definedBy": "js.core.Component"
@@ -2006,6 +2622,11 @@
         "$defaultTemplateName": {
             "name": "$defaultTemplateName",
             "visibility": "private",
+            "definedInFile": "js/core/Component.js",
+            "lineNumbers": [
+                76,
+                76
+            ],
             "propertyType": "value",
             "definedBy": "js.core.Component"
         }

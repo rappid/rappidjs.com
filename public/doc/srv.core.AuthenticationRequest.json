@@ -49,6 +49,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                80,
+                114
+            ],
             "description": "",
             "private": "",
             "definedBy": "js.core.Base",
@@ -63,6 +68,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/AuthenticationRequest.js",
+            "lineNumbers": [
+                3,
+                5
+            ],
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -72,6 +82,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                37,
+                39
+            ],
             "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
             "returns": {
                 "types": [
@@ -87,6 +102,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "srv/core/AuthenticationRequest.js",
+            "lineNumbers": [
+                15,
+                17
+            ],
             "name": "isAuthenticationByToken",
             "visibility": "public"
         },
@@ -113,6 +133,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                47,
+                68
+            ],
             "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
@@ -122,6 +147,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                21,
+                23
+            ],
             "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
@@ -141,6 +171,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/AuthenticationRequest.js",
+            "lineNumbers": [
+                7,
+                9
+            ],
             "name": "setAuthenticationData",
             "visibility": "public"
         },
@@ -152,6 +187,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/AuthenticationRequest.js",
+            "lineNumbers": [
+                11,
+                13
+            ],
             "name": "setToken",
             "visibility": "public"
         }

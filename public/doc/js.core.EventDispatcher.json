@@ -4,6 +4,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                197,
+                199
+            ],
             "name": "_beforeDestroy",
             "visibility": "protected"
         },
@@ -56,6 +61,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                80,
+                114
+            ],
             "description": "",
             "private": "",
             "definedBy": "js.core.Base",
@@ -66,6 +76,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                205,
+                211
+            ],
             "name": "_destroyCompleted",
             "visibility": "protected"
         },
@@ -73,6 +88,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                201,
+                203
+            ],
             "name": "_innerDestroy",
             "visibility": "protected"
         },
@@ -100,6 +120,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                77,
+                89
+            ],
             "description": "Binds a callback and a scope to a given eventType\n",
             "name": "bind",
             "visibility": "public"
@@ -108,6 +133,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                66,
+                69
+            ],
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -117,6 +147,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                184,
+                195
+            ],
             "description": "Clears up the instance",
             "name": "destroy",
             "visibility": "public"
@@ -125,6 +160,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                37,
+                39
+            ],
             "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
             "returns": {
                 "types": [
@@ -159,6 +199,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                47,
+                68
+            ],
             "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
@@ -168,6 +213,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                21,
+                23
+            ],
             "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
@@ -205,6 +255,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                97,
+                158
+            ],
             "description": "Triggers a specific event and the * event\n",
             "name": "trigger",
             "visibility": "public"
@@ -231,6 +286,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                165,
+                180
+            ],
             "description": "Unbinds callbacks for events\n",
             "name": "unbind",
             "visibility": "public"

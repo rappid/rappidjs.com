@@ -8,6 +8,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorage.js",
+            "lineNumbers": [
+                50,
+                55
+            ],
             "name": "getItem",
             "visibility": "public"
         },
@@ -19,6 +24,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorage.js",
+            "lineNumbers": [
+                57,
+                59
+            ],
             "name": "key",
             "visibility": "public"
         },
@@ -30,6 +40,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorage.js",
+            "lineNumbers": [
+                75,
+                81
+            ],
             "name": "removeItem",
             "visibility": "public"
         },
@@ -44,6 +59,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorage.js",
+            "lineNumbers": [
+                61,
+                67
+            ],
             "name": "setItem",
             "visibility": "public"
         },
@@ -51,6 +71,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorage.js",
+            "lineNumbers": [
+                71,
+                73
+            ],
             "name": "size",
             "visibility": "public"
         }
@@ -61,6 +86,11 @@
         "length": {
             "name": "length",
             "visibility": "public",
+            "definedInFile": "js/data/LocalStorage.js",
+            "lineNumbers": [
+                69,
+                69
+            ],
             "propertyType": "value"
         }
     },

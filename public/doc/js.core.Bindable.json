@@ -4,6 +4,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                197,
+                199
+            ],
             "definedBy": "js.core.EventDispatcher",
             "name": "_beforeDestroy",
             "visibility": "protected"
@@ -12,6 +17,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                251,
+                260
+            ],
             "name": "_bindBus",
             "visibility": "protected"
         },
@@ -30,6 +40,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                481,
+                507
+            ],
             "description": "Returns a copy of the attribute. This method is a hook for further cloning options",
             "private": "",
             "name": "_cloneAttribute",
@@ -56,6 +71,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                764,
+                766
+            ],
             "description": "called after attributes has set and some of the has been changed\n",
             "abstract": "",
             "private": "",
@@ -66,6 +86,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                668,
+                671
+            ],
             "name": "_commitInvalidatedAttributes",
             "visibility": "protected"
         },
@@ -118,6 +143,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                80,
+                114
+            ],
             "description": "",
             "private": "",
             "definedBy": "js.core.Base",
@@ -128,6 +158,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                513,
+                515
+            ],
             "description": "",
             "returns": {
                 "types": [
@@ -143,6 +178,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                205,
+                211
+            ],
             "definedBy": "js.core.EventDispatcher",
             "name": "_destroyCompleted",
             "visibility": "protected"
@@ -151,6 +191,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                273,
+                286
+            ],
             "name": "_extract",
             "visibility": "protected"
         },
@@ -167,6 +212,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                524,
+                552
+            ],
             "description": "generates a default chain containing the values from this instance and base classes\n",
             "returns": {
                 "types": [
@@ -188,6 +238,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                768,
+                777
+            ],
             "name": "_hasAll",
             "visibility": "protected"
         },
@@ -202,6 +257,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                779,
+                788
+            ],
             "name": "_hasSome",
             "visibility": "protected"
         },
@@ -209,6 +269,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                368,
+                379
+            ],
             "name": "_initializationComplete",
             "visibility": "protected"
         },
@@ -216,6 +281,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                164,
+                174
+            ],
             "description": "starts the initialization of the `Bindable` if it hasn't initialized yet.\n\nIt calls the following methods:\n\n* initialize();\n* _initializeBindings();\n",
             "private": "",
             "name": "_initialize",
@@ -225,6 +295,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                291,
+                362
+            ],
             "description": "Initialize all Binding and Event attributes",
             "name": "_initializeBindings",
             "visibility": "protected"
@@ -233,6 +308,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                364,
+                366
+            ],
             "name": "_initializeBindingsBeforeComplete",
             "visibility": "protected"
         },
@@ -240,6 +320,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                149,
+                152
+            ],
             "description": "\ninvokes the `_initialize` method. This method is a hook function and is overwritten by js.core.Component\n",
             "private": "",
             "name": "_initializeFromCtor",
@@ -249,6 +334,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                224,
+                248
+            ],
             "name": "_inject",
             "visibility": "protected"
         },
@@ -256,6 +346,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                189,
+                191
+            ],
             "description": "\nreturns the chained object defining the required injections\n",
             "returns": {
                 "types": [
@@ -270,6 +365,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                869,
+                878
+            ],
             "definedBy": "js.core.EventDispatcher",
             "overwritesMethod": true,
             "name": "_innerDestroy",
@@ -279,6 +379,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                381,
+                383
+            ],
             "name": "_postConstruct",
             "visibility": "protected"
         },
@@ -286,6 +391,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                385,
+                387
+            ],
             "name": "_preDestroy",
             "visibility": "protected"
         },
@@ -293,6 +403,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                206,
+                209
+            ],
             "description": "sets up the Bindable or Component. It will inject the required injections and\nalso will bind the application wide `MessageBus` to all methods annotated with the\n`.bus()` method annotation\n\nFor `Components` the setUp method is invoked automatically during the add of the Component.\nFor non `Components`\n\n",
             "private": "",
             "see": [
@@ -305,6 +420,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                219,
+                222
+            ],
             "description": "tears down the Bindable or Component. It will remove the injected variables and\nalso will unbind the annotated event handlers from the application wide `MessageBus`\n",
             "private": "",
             "see": [
@@ -317,6 +437,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                262,
+                271
+            ],
             "name": "_unbindBus",
             "visibility": "protected"
         },
@@ -357,6 +482,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                817,
+                837
+            ],
             "description": "Binds an event handler function to an EventDispatcher\n",
             "definedBy": "js.core.EventDispatcher",
             "overwritesMethod": true,
@@ -367,6 +497,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                805,
+                807
+            ],
             "description": "Clears all attributes",
             "returns": {
                 "types": [
@@ -384,6 +519,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                454,
+                474
+            ],
             "description": "This method returns a copy of the Object",
             "returns": {
                 "types": [
@@ -407,6 +547,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                90,
+                134
+            ],
             "description": "creates a new instance of Bindable, which can be bound to components\n",
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
@@ -417,6 +562,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                184,
+                195
+            ],
             "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
             "name": "destroy",
@@ -426,6 +576,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                37,
+                39
+            ],
             "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
             "returns": {
                 "types": [
@@ -459,6 +614,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                680,
+                744
+            ],
             "description": "evaluates a path to retrieve a value\n",
             "returns": {
                 "types": null,
@@ -475,6 +635,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                400,
+                409
+            ],
             "name": "getScopeForFncName",
             "visibility": "public"
         },
@@ -486,6 +651,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                389,
+                398
+            ],
             "name": "getScopeForKey",
             "visibility": "public"
         },
@@ -502,6 +672,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                752,
+                754
+            ],
             "description": "determinate if a attribute is available\n",
             "returns": {
                 "types": [
@@ -516,6 +691,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                179,
+                180
+            ],
             "description": "the initialize method is a hook function to add a custom logic during the initiation process.",
             "name": "initialize",
             "visibility": "public"
@@ -528,6 +708,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                880,
+                897
+            ],
             "name": "isDeepEqual",
             "visibility": "public"
         },
@@ -539,6 +724,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                898,
+                900
+            ],
             "name": "isEqual",
             "visibility": "public"
         },
@@ -565,6 +755,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                47,
+                68
+            ],
             "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
@@ -574,6 +769,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                21,
+                23
+            ],
             "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
@@ -614,6 +814,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                564,
+                650
+            ],
             "description": "Sets new values for attributes and notify about changes\n",
             "returns": {
                 "types": [
@@ -635,6 +840,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                652,
+                666
+            ],
             "name": "setLater",
             "visibility": "public"
         },
@@ -642,6 +852,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                421,
+                449
+            ],
             "description": "Writes attributes back to the source",
             "name": "sync",
             "visibility": "public"
@@ -672,6 +887,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                97,
+                158
+            ],
             "description": "Triggers a specific event and the * event\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
@@ -713,6 +933,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                847,
+                867
+            ],
             "description": "Unbinds an bound event handler from an EventDispatcher.\n",
             "definedBy": "js.core.EventDispatcher",
             "overwritesMethod": true,
@@ -740,6 +965,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Bindable.js",
+            "lineNumbers": [
+                796,
+                799
+            ],
             "description": "Unset attribute on $",
             "returns": {
                 "types": [

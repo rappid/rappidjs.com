@@ -49,6 +49,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                80,
+                114
+            ],
             "description": "",
             "private": "",
             "definedBy": "js.core.Base",
@@ -66,6 +71,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                230,
+                242
+            ],
             "name": "_writeCookiesToHead",
             "visibility": "protected"
         },
@@ -77,6 +87,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                214,
+                220
+            ],
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -86,6 +101,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                37,
+                39
+            ],
             "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
             "returns": {
                 "types": [
@@ -120,6 +140,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                47,
+                68
+            ],
             "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
@@ -133,6 +158,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                226,
+                228
+            ],
             "name": "remove",
             "visibility": "public"
         },
@@ -140,6 +170,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                21,
+                23
+            ],
             "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
@@ -165,6 +200,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/Context.js",
+            "lineNumbers": [
+                222,
+                224
+            ],
             "name": "set",
             "visibility": "public"
         }

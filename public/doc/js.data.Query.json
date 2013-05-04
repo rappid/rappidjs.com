@@ -4,6 +4,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/Query.js",
+            "lineNumbers": [
+                5,
+                7
+            ],
             "name": "hasSortExpressions",
             "visibility": "public"
         }
@@ -14,6 +19,11 @@
         "ctor": {
             "name": "ctor",
             "visibility": "public",
+            "definedInFile": "js/data/Query.js",
+            "lineNumbers": [
+                4,
+                4
+            ],
             "propertyType": "complex",
             "value": " Query"
         }

@@ -4,6 +4,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                197,
+                199
+            ],
             "definedBy": "js.core.EventDispatcher",
             "name": "_beforeDestroy",
             "visibility": "protected"
@@ -12,6 +17,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                307,
+                324
+            ],
             "description": "This method is called, when the value of the current binding changes.\nIt recreates the the subBinding and triggers the binding",
             "private": "",
             "name": "_callback",
@@ -27,6 +37,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                289,
+                301
+            ],
             "description": "This method is called, when the a change event of an function binding is triggered\n",
             "private": "",
             "name": "_changeCallback",
@@ -36,6 +51,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                215,
+                250
+            ],
             "name": "_checkAttributes",
             "visibility": "protected"
         },
@@ -43,6 +63,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                251,
+                273
+            ],
             "name": "_createSubBinding",
             "visibility": "protected"
         },
@@ -95,6 +120,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                80,
+                114
+            ],
             "description": "",
             "private": "",
             "definedBy": "js.core.Base",
@@ -105,6 +135,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                205,
+                211
+            ],
             "definedBy": "js.core.EventDispatcher",
             "name": "_destroyCompleted",
             "visibility": "protected"
@@ -120,6 +155,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                187,
+                213
+            ],
             "name": "_getEventsForFnc",
             "visibility": "protected"
         },
@@ -127,6 +167,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                376,
+                386
+            ],
             "description": "Returns an array with values of all function parameters",
             "returns": {
                 "types": [
@@ -148,6 +193,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                161,
+                185
+            ],
             "name": "_getOnChangeAttributesForFnc",
             "visibility": "protected"
         },
@@ -155,6 +205,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                329,
+                370
+            ],
             "description": "Unbinds all events and destroys subBinding...",
             "definedBy": "js.core.EventDispatcher",
             "overwritesMethod": true,
@@ -169,6 +224,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                274,
+                282
+            ],
             "name": "_revCallback",
             "visibility": "protected"
         },
@@ -192,6 +252,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                462,
+                471
+            ],
             "description": "",
             "name": "addTarget",
             "visibility": "public"
@@ -220,6 +285,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                77,
+                89
+            ],
             "description": "Binds a callback and a scope to a given eventType\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "bind",
@@ -239,6 +309,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                493,
+                519
+            ],
             "name": "create",
             "visibility": "public"
         },
@@ -250,6 +325,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                33,
+                47
+            ],
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
             "name": "ctor",
@@ -259,6 +339,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                184,
+                195
+            ],
             "description": "Clears up the instance",
             "definedBy": "js.core.EventDispatcher",
             "name": "destroy",
@@ -268,6 +353,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                37,
+                39
+            ],
             "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
             "returns": {
                 "types": [
@@ -283,6 +373,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                421,
+                427
+            ],
             "description": "Returns the value in the context of the surrounding bindings",
             "returns": {
                 "types": [
@@ -296,6 +391,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                453,
+                455
+            ],
             "name": "getTargets",
             "visibility": "public"
         },
@@ -303,6 +403,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                391,
+                411
+            ],
             "description": "Returns the transformed value of the binding or null, if the binding path is not present",
             "returns": {
                 "types": [
@@ -316,6 +421,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                57,
+                159
+            ],
             "name": "initialize",
             "visibility": "public"
         },
@@ -323,6 +433,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                413,
+                415
+            ],
             "name": "invalidateValueCache",
             "visibility": "public"
         },
@@ -349,6 +464,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                47,
+                68
+            ],
             "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
@@ -374,6 +494,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                477,
+                491
+            ],
             "description": "",
             "name": "removeTarget",
             "visibility": "public"
@@ -382,6 +507,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                21,
+                23
+            ],
             "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
@@ -397,6 +527,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                449,
+                451
+            ],
             "name": "toString",
             "visibility": "public"
         },
@@ -408,6 +543,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                49,
+                51
+            ],
             "name": "transform",
             "visibility": "public"
         },
@@ -419,6 +559,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                53,
+                55
+            ],
             "name": "transformBack",
             "visibility": "public"
         },
@@ -448,6 +593,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                97,
+                158
+            ],
             "description": "Triggers a specific event and the * event\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "trigger",
@@ -457,6 +607,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Binding.js",
+            "lineNumbers": [
+                431,
+                448
+            ],
             "description": "This method triggers the binding and syncs the target with the scope",
             "name": "triggerBinding",
             "visibility": "public"
@@ -483,6 +638,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/EventDispatcher.js",
+            "lineNumbers": [
+                165,
+                180
+            ],
             "description": "Unbinds callbacks for events\n",
             "definedBy": "js.core.EventDispatcher",
             "name": "unbind",
@@ -495,19 +655,31 @@
             "name": "event",
             "defaultType": "value",
             "visibility": "public",
-            "value": "change"
+            "value": "change",
+            "lineNumbers": [
+                28,
+                28
+            ]
         },
         "path": {
             "name": "path",
             "defaultType": "value",
             "visibility": "public",
-            "value": null
+            "value": null,
+            "lineNumbers": [
+                29,
+                29
+            ]
         },
         "twoWay": {
             "name": "twoWay",
             "defaultType": "value",
             "visibility": "public",
-            "value": false
+            "value": false,
+            "lineNumbers": [
+                30,
+                30
+            ]
         }
     },
     "properties": {},

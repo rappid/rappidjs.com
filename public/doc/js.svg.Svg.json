@@ -4,6 +4,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/svg/Svg.js",
+            "lineNumbers": [
+                14,
+                20
+            ],
             "name": "ctor",
             "visibility": "public"
         },
@@ -11,6 +16,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/svg/Svg.js",
+            "lineNumbers": [
+                39,
+                44
+            ],
             "name": "globalToLocalFactor",
             "visibility": "public"
         },
@@ -18,6 +28,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/svg/Svg.js",
+            "lineNumbers": [
+                32,
+                37
+            ],
             "name": "localToGlobalFactor",
             "visibility": "public"
         },
@@ -25,6 +40,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/svg/Svg.js",
+            "lineNumbers": [
+                46,
+                64
+            ],
             "name": "save",
             "visibility": "public"
         },
@@ -45,6 +65,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/svg/Svg.js",
+            "lineNumbers": [
+                22,
+                30
+            ],
             "name": "setViewBox",
             "visibility": "public"
         }
@@ -55,19 +80,31 @@
             "name": "tagName",
             "defaultType": "value",
             "visibility": "public",
-            "value": "svg"
+            "value": "svg",
+            "lineNumbers": [
+                6,
+                6
+            ]
         },
         "viewBox": {
             "name": "viewBox",
             "defaultType": "value",
             "visibility": "public",
-            "value": "0 0 100 100"
+            "value": "0 0 100 100",
+            "lineNumbers": [
+                7,
+                7
+            ]
         },
         "hidden": {
             "name": "hidden",
             "defaultType": "value",
             "visibility": "public",
-            "value": null
+            "value": null,
+            "lineNumbers": [
+                9,
+                9
+            ]
         },
         "version": {
             "name": "version",
@@ -81,6 +118,11 @@
         "$classAttributes": {
             "name": "$classAttributes",
             "visibility": "private",
+            "definedInFile": "js/svg/Svg.js",
+            "lineNumbers": [
+                12,
+                12
+            ],
             "propertyType": "complex",
             "value": " [\"defs\", \"hidden\"]"
         }

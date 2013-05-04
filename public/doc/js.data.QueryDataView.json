@@ -11,6 +11,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/QueryFilterDataView.js",
+            "lineNumbers": [
+                8,
+                17
+            ],
             "name": "_filterItem",
             "visibility": "protected"
         }
@@ -21,7 +26,11 @@
             "name": "query",
             "defaultType": "value",
             "visibility": "public",
-            "value": null
+            "value": null,
+            "lineNumbers": [
+                5,
+                5
+            ]
         }
     },
     "properties": {},

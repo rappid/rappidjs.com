@@ -14,6 +14,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                240,
+                247
+            ],
             "name": "createCollection",
             "visibility": "public"
         },
@@ -21,6 +26,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                219,
+                238
+            ],
             "name": "getPathComponents",
             "visibility": "public"
         },
@@ -28,6 +38,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/data/LocalStorageDataSource.js",
+            "lineNumbers": [
+                249,
+                251
+            ],
             "name": "getQueryParameters",
             "visibility": "public"
         }

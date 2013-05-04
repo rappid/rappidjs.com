@@ -8,6 +8,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/HttpError.js",
+            "lineNumbers": [
+                14,
+                16
+            ],
             "name": "_beforeSend",
             "visibility": "protected"
         },
@@ -25,6 +30,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "srv/core/HttpError.js",
+            "lineNumbers": [
+                4,
+                12
+            ],
             "name": "ctor",
             "visibility": "public"
         },
@@ -32,6 +42,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "srv/core/HttpError.js",
+            "lineNumbers": [
+                18,
+                27
+            ],
             "name": "toString",
             "visibility": "public"
         }

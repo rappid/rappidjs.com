@@ -4,6 +4,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/conf/ResourceConfiguration.js",
+            "lineNumbers": [
+                9,
+                12
+            ],
             "name": "_initializationComplete",
             "visibility": "protected"
         },
@@ -11,6 +16,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/conf/ResourceConfiguration.js",
+            "lineNumbers": [
+                14,
+                19
+            ],
             "name": "_validateConfiguration",
             "visibility": "protected"
         },
@@ -26,6 +36,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/conf/ResourceConfiguration.js",
+            "lineNumbers": [
+                30,
+                38
+            ],
             "description": "Returns configuration for a given modelClass / model factory",
             "returns": {
                 "types": [
@@ -43,6 +58,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/conf/ResourceConfiguration.js",
+            "lineNumbers": [
+                21,
+                23
+            ],
             "name": "getConfigurationForModelClassName",
             "visibility": "public"
         },
@@ -54,6 +74,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/conf/ResourceConfiguration.js",
+            "lineNumbers": [
+                40,
+                42
+            ],
             "name": "getConfigurationForPath",
             "visibility": "public"
         }
@@ -64,7 +89,11 @@
             "name": "resourceHandler",
             "defaultType": "value",
             "visibility": "public",
-            "value": null
+            "value": null,
+            "lineNumbers": [
+                6,
+                6
+            ]
         }
     },
     "properties": {},

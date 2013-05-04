@@ -4,6 +4,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/ui/VirtualItemsView.js",
+            "lineNumbers": [
+                790,
+                797
+            ],
             "name": "_onReset",
             "visibility": "protected"
         },
@@ -15,6 +20,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/ui/VirtualItemsView.js",
+            "lineNumbers": [
+                772,
+                789
+            ],
             "name": "ctor",
             "visibility": "public"
         },
@@ -26,6 +36,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/ui/VirtualItemsView.js",
+            "lineNumbers": [
+                798,
+                890
+            ],
             "name": "getItemAt",
             "visibility": "public"
         },
@@ -37,6 +52,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/ui/VirtualItemsView.js",
+            "lineNumbers": [
+                901,
+                907
+            ],
             "name": "query",
             "visibility": "public"
         },
@@ -51,6 +71,11 @@
                     ]
                 ]
             },
+            "definedInFile": "js/ui/VirtualItemsView.js",
+            "lineNumbers": [
+                912,
+                914
+            ],
             "returns": {
                 "types": [
                     "Number"
@@ -68,6 +93,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/ui/VirtualItemsView.js",
+            "lineNumbers": [
+                892,
+                899
+            ],
             "name": "sort",
             "visibility": "public"
         }

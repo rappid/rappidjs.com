@@ -14,6 +14,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Error.js",
+            "lineNumbers": [
+                7,
+                13
+            ],
             "name": "ctor",
             "visibility": "public"
         }

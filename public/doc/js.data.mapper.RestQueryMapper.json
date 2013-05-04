@@ -49,6 +49,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                80,
+                114
+            ],
             "description": "",
             "private": "",
             "definedBy": "js.core.Base",
@@ -63,6 +68,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/mapper/RestQueryMapper.js",
+            "lineNumbers": [
+                13,
+                27
+            ],
             "definedBy": "js.data.QueryMapper",
             "overwritesMethod": true,
             "name": "compose",
@@ -72,6 +82,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                8,
+                14
+            ],
             "definedBy": "js.core.Base",
             "name": "ctor",
             "visibility": "public"
@@ -80,6 +95,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                37,
+                39
+            ],
             "description": "this is an empty function doing nothing. It can be used as fallback if a method requires a\ncallback function, which hasn't been passed.\n\n```\nfunction myFunction(callback) {\ncallback = callback || this.emptyCallback;\n}\n```\n",
             "returns": {
                 "types": [
@@ -114,6 +134,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                47,
+                68
+            ],
             "description": "logs messages to configured logging functions\n",
             "definedBy": "js.core.Base",
             "name": "log",
@@ -127,6 +152,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/QueryMapper.js",
+            "lineNumbers": [
+                6,
+                8
+            ],
             "definedBy": "js.data.QueryMapper",
             "name": "parse",
             "visibility": "public"
@@ -135,6 +165,11 @@
             "type": "Method",
             "parameter": [],
             "annotations": {},
+            "definedInFile": "js/core/Base.js",
+            "lineNumbers": [
+                21,
+                23
+            ],
             "description": "determinate if the application runs in the browser or on node\n",
             "returns": {
                 "types": [
@@ -157,6 +192,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/mapper/RestQueryMapper.js",
+            "lineNumbers": [
+                55,
+                61
+            ],
             "name": "translateExpressions",
             "visibility": "public"
         },
@@ -171,6 +211,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/mapper/RestQueryMapper.js",
+            "lineNumbers": [
+                33,
+                53
+            ],
             "name": "translateOperator",
             "visibility": "public"
         },
@@ -182,6 +227,11 @@
                 }
             ],
             "annotations": {},
+            "definedInFile": "js/data/mapper/RestQueryMapper.js",
+            "lineNumbers": [
+                29,
+                31
+            ],
             "name": "translateSort",
             "visibility": "public"
         }
