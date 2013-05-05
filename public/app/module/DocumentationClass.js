@@ -1,9 +1,10 @@
-define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/model/Class", "underscore"], function (Module, classIndex, List, Class, _) {
+define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/model/Class", "underscore", "js/core/Bindable"], function (Module, classIndex, List, Class, _, Bindable) {
 
     return Module.inherit("app.module.DocumentationClass", {
 
         defaults: {
             classes: List,
+            packages: List,
             doc: null,
             searchString: ""
         },
@@ -15,10 +16,72 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             return ['', 'protected', 'public', 'all'][type];
         },
 
-        _initializationComplete: function () {
-            for (var i = 0; i < classIndex.length; i++) {
-                this.$.classes.add(this.$.api.createEntity(Class, classIndex[i]));
+        _insertInPackageTree: function (parts, node, id) {
+            if (parts.length > 0) {
+                var packageName = parts[0];
+
+                if (/^[a-z]/.test(packageName)) {
+                    var tree = node[packageName];
+                    if (!tree) {
+                        tree = {};
+                        node[packageName] = tree;
+                    }
+
+                    parts.shift();
+
+                    this._insertInPackageTree(parts, tree, id);
+                } else {
+                    if (!node.children) {
+                        node.children = [];
+                    }
+                    node.children.push({
+                        id: id,
+                        name: parts.join(".")
+                    });
+                }
+
             }
+        },
+
+        _buildTree: function (hash, list) {
+            if (hash.children) {
+                var child;
+                for (var i = 0; i < hash.children.length; i++) {
+                    child = this.$.api.createEntity(Class, hash.children[i].id);
+                    child.set('name', hash.children[i].name);
+                    list.add(child);
+                }
+            } else {
+                var pack;
+                for (var key in hash) {
+                    if (hash.hasOwnProperty(key)) {
+                        pack = new Bindable({
+                            label: key,
+                            children: new List()
+                        });
+                        list.add(
+                            pack
+                        );
+
+                        this._buildTree(hash[key], pack.$.children);
+                    }
+                }
+            }
+
+        },
+
+        _initializationComplete: function () {
+            var path,
+                className,
+                hashTree = {};
+
+            for (var i = 0; i < classIndex.length; i++) {
+                path = classIndex[i].split(".");
+
+                this._insertInPackageTree(path, hashTree, classIndex[i]);
+            }
+
+            this._buildTree(hashTree, this.$.packages);
 
             if (!this.runsInBrowser()) {
                 var checked = {
@@ -89,8 +152,8 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
 
         }.async(),
 
-        isMethodVisible: function(method, type, showInherit){
-            if(method.$.name === 'ctor'){
+        isMethodVisible: function (method, type, showInherit) {
+            if (method.$.name === 'ctor') {
                 return false;
             }
 

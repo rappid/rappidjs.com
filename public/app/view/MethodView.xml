@@ -37,5 +37,7 @@
             </span>
         </div>
         <a class="defined-by" href="api/${method.definedBy}">${method.definedBy}</a>
-        <p class="description">${method.description}</p>
+        <div class="description-wrapper">
+            <p class="description">${method.description}</p>
+        </div>
 </view:MethodViewClass>

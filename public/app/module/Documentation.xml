@@ -24,16 +24,32 @@
         <div id="documentation">
             <div class="row">
                 <div class="span3 classes">
-                    <input type="text" placeholder="Filter" value="{{searchString}}"/>
-                    <ui:SelectionView items="{filteredClasses.list}" itemKey="$class" selectedItem="{doc}"
-                                      allowDeselection="false"
-                                      class="nav nav-pills nav-stacked" tagName="ul">
+                    <!--<input type="text" placeholder="Filter" value="{{searchString}}"/>-->
+                    <ui:TreeView items="{packages}" itemKey="node">
                         <js:Template name="item">
-                            <li>
-                                <a href="api/{$class.id}">{$class.id}</a>
-                            </li>
+                            <div class="tree-view-item">
+                                <a href="api/${node.id}">
+                                    <i class="icon icon-file"/> ${node.name}
+                                </a>
+                            </div>
                         </js:Template>
-                    </ui:SelectionView>
+                        <js:Template name="node">
+                            <div class="tree-view-item-folder">
+                                <a>
+                                    <i class="icon icon-folder" /> {node.label}
+                                </a>
+                            </div>
+                        </js:Template>
+                    </ui:TreeView>
+                    <!--<ui:SelectionView items="{filteredClasses.list}" itemKey="$class" selectedItem="{doc}"-->
+                                      <!--allowDeselection="false"-->
+                                      <!--class="nav nav-pills nav-stacked" tagName="ul">-->
+                        <!--<js:Template name="item">-->
+                            <!--<li>-->
+                                <!--<a href="api/{$class.id}">{$class.id}</a>-->
+                            <!--</li>-->
+                        <!--</js:Template>-->
+                    <!--</ui:SelectionView>-->
                 </div>
                 <div class="span9 content">
                     <div visible="{hasCurrentDocumentation()}">

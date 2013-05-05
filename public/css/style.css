@@ -433,12 +433,13 @@ ol.linenums li {
     top: 10px;
 }
 
-.method-view.active .description {
-    display: block;
+.method-view.active .description-wrapper {
+    height: auto;
 }
 
-.method-view .description {
-    display: none;
+.method-view .description-wrapper {
+    max-height: 18px;
+    overflow: hidden;
 }
 
 .method-name {
@@ -468,4 +469,48 @@ ol.linenums li {
 
 .side-expandable.active span{
     background: url(../img/arrows.png) no-repeat -10px 0;
+}
+
+.tree-view-item,
+.tree-view-item-folder {
+}
+
+.tree-view-node {
+}
+
+.tree-view-node > .tree-view {
+    display: none;
+    margin-left: 10px;
+}
+
+.tree-view-item-folder > a,
+.tree-view-item > a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 5px 10px;
+}
+
+.tree-view-item-folder > a .icon {
+    background-position: -384px -120px;
+}
+
+.active > .tree-view-item-folder > a .icon {
+    background-position: -408px -120px;
+}
+
+.tree-view-node.active > .tree-view {
+    display: block;
+}
+
+.tree-view-item.active {
+    color: #FFF;
+    background-color: #08C;
+}
+
+.tree-view-item.active .icon {
+    background-image: url("../img/glyphicons-halflings-white.png");
 }
