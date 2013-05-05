@@ -239,19 +239,19 @@
     "exports": {
         "RGB": {
             "type": "InnerClass",
-            "fqClassName": "sprd.type.Color.RGB"
+            "fqClassName": "js.type.Color.RGB"
         },
         "HSB": {
             "type": "InnerClass",
-            "fqClassName": "sprd.type.Color.HSB"
+            "fqClassName": "js.type.Color.HSB"
         },
         "XYZ": {
             "type": "InnerClass",
-            "fqClassName": "sprd.type.Color.XYZ"
+            "fqClassName": "js.type.Color.XYZ"
         },
         "LAB": {
             "type": "InnerClass",
-            "fqClassName": "sprd.type.Color.LAB"
+            "fqClassName": "js.type.Color.LAB"
         }
     },
     "dependencies": [
