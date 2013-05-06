@@ -128,8 +128,8 @@
             "annotations": {},
             "definedInFile": "js/core/ModuleLoader.js",
             "lineNumbers": [
-                229,
-                239
+                237,
+                247
             ],
             "name": "_clearContentPlaceHolders",
             "visibility": "protected"
@@ -647,8 +647,8 @@
             "annotations": {},
             "definedInFile": "js/core/ModuleLoader.js",
             "lineNumbers": [
-                20,
-                30
+                28,
+                38
             ],
             "definedBy": "js.core.Bindable",
             "overwritesMethod": true,
@@ -1375,8 +1375,8 @@
             "annotations": {},
             "definedInFile": "js/core/ModuleLoader.js",
             "lineNumbers": [
-                258,
-                261
+                266,
+                269
             ],
             "name": "_renderState",
             "visibility": "protected"
@@ -1521,8 +1521,8 @@
             "annotations": {},
             "definedInFile": "js/core/ModuleLoader.js",
             "lineNumbers": [
-                77,
-                128
+                85,
+                136
             ],
             "name": "_startModule",
             "visibility": "protected"
@@ -1614,8 +1614,8 @@
             "annotations": {},
             "definedInFile": "js/core/ModuleLoader.js",
             "lineNumbers": [
-                37,
-                75
+                45,
+                83
             ],
             "description": "adds a module to the list of known modules\n",
             "name": "addModule",
@@ -1856,8 +1856,8 @@
             "annotations": {},
             "definedInFile": "js/core/ModuleLoader.js",
             "lineNumbers": [
-                14,
-                18
+                22,
+                26
             ],
             "definedBy": "js.core.Base",
             "overwritesMethod": true,
@@ -2251,8 +2251,8 @@
             },
             "definedInFile": "js/core/ModuleLoader.js",
             "lineNumbers": [
-                225,
-                227
+                233,
+                235
             ],
             "name": "isModuleActive",
             "visibility": "public"
@@ -2300,8 +2300,8 @@
             "annotations": {},
             "definedInFile": "js/core/ModuleLoader.js",
             "lineNumbers": [
-                137,
-                224
+                145,
+                232
             ],
             "description": "loads an module instance into the module loader and starts the module\n",
             "name": "loadModule",
@@ -2363,8 +2363,8 @@
             "annotations": {},
             "definedInFile": "js/core/ModuleLoader.js",
             "lineNumbers": [
-                247,
-                256
+                255,
+                264
             ],
             "description": " TODO: remove this method and make the modules bindable",
             "deprecated": "will be removed soon",
@@ -2818,6 +2818,21 @@
                 11,
                 11
             ]
+        },
+        "router": {
+            "name": "router",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "lineNumbers": [
+                19,
+                19
+            ],
+            "description": "the router used for automatically registering routes from {@link js.conf.ModuleConfiguration}\n",
+            "types": [
+                "js.core.Router"
+            ],
+            "required": ""
         },
         "selected": {
             "name": "selected",
