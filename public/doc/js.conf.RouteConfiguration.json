@@ -1699,6 +1699,35 @@
     ],
     "staticMethods": [],
     "defaults": {
+        "name": {
+            "name": "name",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "lineNumbers": [
+                9,
+                9
+            ],
+            "description": "the name of the route. The name is just used for easier debugging reasons.",
+            "types": [
+                "String"
+            ]
+        },
+        "route": {
+            "name": "route",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "lineNumbers": [
+                21,
+                21
+            ],
+            "description": "a regular expression defining the route for matching the fragment. The starting #/ fragment is stripped from\nthe fragment.\n\nEach matching group is provided in the `onexec` event handler as parameter. The first matching group will become the\nsecond parameter as the first parameter of the event handler is always the routeContext.\n",
+            "types": [
+                "RegExp"
+            ],
+            "required": ""
+        },
         "cid": {
             "name": "cid",
             "defaultType": "factory",
@@ -1763,6 +1792,18 @@
             ],
             "propertyType": "value",
             "definedBy": "js.core.Component"
+        }
+    },
+    "events": {
+        "exec": {
+            "type": "Event",
+            "name": "exec",
+            "visibility": "public",
+            "lineNumbers": [
+                32,
+                32
+            ],
+            "description": "the exec event is dispatched if the route matches the fragment. The event handler is invoked with the routeContext as\nfirst parameter followed by parameters for each matched group of the regular expression.\n\nKeep in mind to annotate the event handler function with the `async()` method annotation if you need to do asynchronous\ncode executing."
         }
     },
     "fqClassName": "js.conf.RouteConfiguration",
