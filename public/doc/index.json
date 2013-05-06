@@ -139,6 +139,7 @@
     "js.ui.Tab",
     "js.ui.TabView",
     "js.ui.TabViewClass",
+    "js.ui.TemplatePlaceHolder",
     "js.ui.TextWrapper",
     "js.ui.TileList",
     "js.ui.TileListClass",
