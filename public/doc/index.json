@@ -1,4 +1,5 @@
 [
+    "js.conf.Configuration",
     "js.conf.DataSourceConfiguration",
     "js.conf.ModuleConfiguration",
     "js.conf.ResourceConfiguration",
@@ -10,7 +11,6 @@
     "js.core.BindingCreator",
     "js.core.Bus",
     "js.core.Component",
-    "js.core.Configuration",
     "js.core.Content",
     "js.core.DomElement",
     "js.core.DomElement.Event",

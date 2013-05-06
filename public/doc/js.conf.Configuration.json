@@ -896,20 +896,6 @@
         },
         {
             "type": "Method",
-            "parameter": [],
-            "annotations": {},
-            "definedInFile": "js/conf/DataSourceConfiguration.js",
-            "lineNumbers": [
-                4,
-                6
-            ],
-            "definedBy": "js.conf.ResourceConfiguration",
-            "overwritesMethod": true,
-            "name": "_validateConfiguration",
-            "visibility": "protected"
-        },
-        {
-            "type": "Method",
             "parameter": [
                 {
                     "types": [
@@ -1260,69 +1246,7 @@
                     "*"
                 ]
             },
-            "definedBy": "js.conf.Configuration",
             "name": "getConfigurationByKeyValue",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "types": [
-                        "Function"
-                    ],
-                    "name": "modelClass",
-                    "optional": false
-                }
-            ],
-            "annotations": {},
-            "definedInFile": "js/conf/ResourceConfiguration.js",
-            "lineNumbers": [
-                30,
-                38
-            ],
-            "description": "Returns configuration for a given modelClass / model factory",
-            "returns": {
-                "types": [
-                    "js.conf.ResourceConfiguration"
-                ]
-            },
-            "definedBy": "js.conf.ResourceConfiguration",
-            "name": "getConfigurationForModelClass",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "modelClassName"
-                }
-            ],
-            "annotations": {},
-            "definedInFile": "js/conf/ResourceConfiguration.js",
-            "lineNumbers": [
-                21,
-                23
-            ],
-            "definedBy": "js.conf.ResourceConfiguration",
-            "name": "getConfigurationForModelClassName",
-            "visibility": "public"
-        },
-        {
-            "type": "Method",
-            "parameter": [
-                {
-                    "name": "path"
-                }
-            ],
-            "annotations": {},
-            "definedInFile": "js/conf/ResourceConfiguration.js",
-            "lineNumbers": [
-                40,
-                42
-            ],
-            "definedBy": "js.conf.ResourceConfiguration",
-            "name": "getConfigurationForPath",
             "visibility": "public"
         },
         {
@@ -1774,17 +1698,6 @@
     ],
     "staticMethods": [],
     "defaults": {
-        "resourceHandler": {
-            "name": "resourceHandler",
-            "defaultType": "value",
-            "visibility": "public",
-            "value": null,
-            "lineNumbers": [
-                6,
-                6
-            ],
-            "definedBy": "js.conf.ResourceConfiguration"
-        },
         "cid": {
             "name": "cid",
             "defaultType": "factory",
@@ -1851,17 +1764,20 @@
             "definedBy": "js.core.Component"
         }
     },
-    "fqClassName": "js.conf.DataSourceConfiguration",
-    "inherit": "js.conf.ResourceConfiguration",
+    "fqClassName": "js.conf.Configuration",
+    "inherit": "js.core.Component",
     "dependencies": [
-        "js.conf.ResourceConfiguration"
+        "js.core.Bindable",
+        "js.core.Element",
+        "js.core.EventDispatcher",
+        "js.core.TextElement",
+        "require",
+        "underscore"
     ],
     "type": "js",
-    "file": "js/conf/DataSourceConfiguration.js",
-    "package": "js.conf",
+    "file": "js/core/Component.js",
+    "package": "js.core",
     "inheritancePath": [
-        "js.conf.ResourceConfiguration",
-        "js.conf.Configuration",
         "js.core.Component",
         "js.core.Element",
         "js.core.Bindable",

@@ -1754,7 +1754,7 @@
         },
         "Configuration": {
             "type": "InnerClass",
-            "fqClassName": "js.core.Configuration"
+            "fqClassName": "js.conf.Configuration"
         },
         "Content": {
             "type": "InnerClass",
