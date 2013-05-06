@@ -1,7 +1,52 @@
 {
     "methods": [],
     "staticMethods": [],
-    "defaults": {},
+    "defaults": {
+        "route": {
+            "name": "route",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "lineNumbers": [
+                8,
+                8
+            ],
+            "description": "a regular expression that will activate the module if the route matches",
+            "types": [
+                "RegExp"
+            ]
+        },
+        "name": {
+            "name": "name",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "lineNumbers": [
+                17,
+                17
+            ],
+            "description": "a unique name of the module so the ModuleLoader can determinate if a Module has been already loaded\nor is currently active\n",
+            "types": [
+                "String"
+            ],
+            "required": ""
+        },
+        "moduleClass": {
+            "name": "moduleClass",
+            "defaultType": "value",
+            "visibility": "public",
+            "value": null,
+            "lineNumbers": [
+                25,
+                25
+            ],
+            "description": "the full qualified name (e.g. app.module.MyModule) of the module to be loaded if the route is executed\nor the ModuleLoader.loadModule method is invoked manually.",
+            "types": [
+                "String"
+            ],
+            "required": ""
+        }
+    },
     "properties": {},
     "fqClassName": "js.conf.ModuleConfiguration",
     "inherit": "js.conf.Configuration",
