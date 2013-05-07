@@ -1,10 +1,11 @@
-define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/model/Class", "underscore", "js/core/Bindable"], function (Module, classIndex, List, Class, _, Bindable) {
+define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/model/Class", "underscore", "js/core/Bindable", "js/ui/tree/TreeNode"], function (Module, classIndex, List, Class, _, Bindable, TreeNode) {
 
     return Module.inherit("app.module.DocumentationClass", {
 
         defaults: {
             classes: List,
             packages: List,
+            packageTree: TreeNode,
             doc: null,
             searchString: ""
         },
@@ -43,27 +44,32 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             }
         },
 
-        _buildTree: function (hash, list) {
+        _buildTree: function (hash, tree) {
             if (hash.children) {
-                var child;
+                var cls;
                 for (var i = 0; i < hash.children.length; i++) {
-                    child = this.$.api.createEntity(Class, hash.children[i].id);
-                    child.set('name', hash.children[i].name);
-                    list.add(child);
+                    cls = this.$.api.createEntity(Class, hash.children[i].id);
+                    cls.set('name', hash.children[i].name);
+
+                    tree.add(new TreeNode([],{
+                        isLeaf: true,
+                        data: cls
+                    }));
                 }
             } else {
                 var pack;
                 for (var key in hash) {
                     if (hash.hasOwnProperty(key)) {
-                        pack = new Bindable({
-                            label: key,
-                            children: new List()
+                        pack = new TreeNode([],{
+                            data: new Bindable({
+                                name: key
+                            })
                         });
-                        list.add(
+                        tree.add(
                             pack
                         );
 
-                        this._buildTree(hash[key], pack.$.children);
+                        this._buildTree(hash[key], pack);
                     }
                 }
             }
@@ -81,7 +87,12 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
                 this._insertInPackageTree(path, hashTree, classIndex[i]);
             }
 
-            this._buildTree(hashTree, this.$.packages);
+            this.$.packageTree.set({
+                expanded: true,
+                isRoot: true
+            });
+
+            this._buildTree(hashTree, this.$.packageTree);
 
             if (!this.runsInBrowser()) {
                 var checked = {
