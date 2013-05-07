@@ -475,11 +475,22 @@ ol.linenums li {
 .tree-view-item-folder {
 }
 
-.tree-view-node {
+.tree-view-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.tree-view-node > .tree-view {
+.tree-view-root {
+    margin:  0;
+}
+
+.tree-view-root > .tree-view-label {
     display: none;
+}
+
+
+.tree-view {
     margin-left: 10px;
 }
 
