@@ -16,11 +16,14 @@
                 <h2 class="sub" style="text-align: center;">the declarative Rich Internet
                     Application Javascript MVC Framework
                 </h2>
-                <p>- the way you want to do it -</p>
+                <p>"It's like Flex or Silverlight for HTML5. Designed for complex web applications!<br />
+                    Developed and based on the standards of the web - XML &amp; Javascript."</p>
                 <p>
-                    <a class="btn btn-large btn-primary" href="https://github.com/rappid/rAppid.js">
-                        <em class="icon-download"/>
-                        View on GitHub
+                    <a class="btn btn-large btn-primary" href="wiki/Installation">
+                        <em class="icon-road"/> Install it.
+                    </a>
+                    <a class="btn btn-large" href="https://github.com/rappid/rAppid.js">
+                        <em class="icon-download"/> View on GitHub
                     </a>
                 </p>
                 <ul class="quick-links">
