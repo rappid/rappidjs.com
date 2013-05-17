@@ -1,0 +1,49 @@
+{
+    "packages": {
+        "rappid": {
+            "name": "rAppid.js",
+            "npm": "rAppid.js",
+            "description": "the core package of rAppid.js",
+            "link": "https://github.com/rappid/rAppid.js",
+            "exports": ["js", "srv"]
+        },
+        "sprd": {
+            "name": "rAppid.js-sprd",
+            "npm": "rAppid.js-sprd",
+            "description": "Spreadshirt components and API adapter",
+            "link": "https://github.com/it-ony/rAppid.js-spd",
+            "exports": ["sprd"],
+            "dependencies": ["rappid"]
+        },
+        "piwik": {
+            "name": "rAppid.js piwik",
+            "npm": "rappidjs-piwik",
+            "description": "Piwik integration for rAppid.js",
+            "link": "https://github.com/rappid/rappidjs-piwik",
+            "exports": ["piwik"],
+            "dependencies": ["rappid"]
+        },
+        "google": {
+            "name": "rappidjs-google",
+            "npm": "rappidjs-google",
+            "description": "Google Analytics integration for rAppid.js",
+            "link": "https://github.com/rappid/rappidjs-google",
+            "exports": ["google"],
+            "dependencies": ["rappid"]
+        }
+    },
+    "globals": [
+            "Array", "Boolean", "Date", "Function", "Iterator", "Number", "Object", "RegExp", "String"
+    ],
+    "externalDocumentation": {
+        "Array": "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Array",
+        "Boolean": "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Boolean",
+        "Date": "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Date",
+        "Function": "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Function",
+        "Iterator": "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Iterator",
+        "Number": "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Number",
+        "Object": "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Object",
+        "RegExp": "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/RegExp",
+        "String": "https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/String"
+    }
+}

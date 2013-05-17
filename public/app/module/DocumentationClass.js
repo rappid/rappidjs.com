@@ -1,4 +1,4 @@
-define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/model/Class", "underscore", "js/core/Bindable", "js/ui/tree/TreeNode"], function (Module, classIndex, List, Class, _, Bindable, TreeNode) {
+define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/model/Class", "documentation/model/Package", "underscore", "js/core/Bindable", "js/ui/tree/TreeNode", "flow"], function (Module, docIndex, List, Class, Package, _, Bindable, TreeNode, flow) {
 
     return Module.inherit("app.module.DocumentationClass", {
 
@@ -7,8 +7,35 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             packages: List,
             packageTree: TreeNode,
             doc: null,
-            searchString: ""
+            searchString: "",
+
+            externalDocumentationSrc: null,
+            currentView: null,
+
+            /***
+             * the module to show documentation about
+             */
+            module: null,
+
+            /***
+             * @codeBehind
+             */
+            moduleView: null,
+
+            /***
+             * @codeBehind
+             */
+            documentationView: null,
+
+            /***
+             * @codeBehind
+             */
+            externalDocumentationView: null
         },
+
+        _isCurrentView: function(view) {
+            return this.$.currentView === view;
+        }.onChange("currentView"),
 
         showTypes: function (showPublic, showProtected) {
 
@@ -78,14 +105,13 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
 
         _initializationComplete: function () {
             var path,
-                className,
                 hashTree = {};
-
-            for (var i = 0; i < classIndex.length; i++) {
-                path = classIndex[i].split(".");
-
-                this._insertInPackageTree(path, hashTree, classIndex[i]);
-            }
+//
+//            for (var i = 0; i < doc.length; i++) {
+//                path = doc[i].split(".");
+//
+//                this._insertInPackageTree(path, hashTree, doc[i]);
+//            }
 
             this.$.packageTree.set({
                 expanded: true,
@@ -147,19 +173,121 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             return (className ? className + " - " : "") + 'API Reference - rAppid.js';
         },
 
-        showClass: function (routeContext, fqClassName) {
+        loadedInIFrame: function(e) {
+            clearTimeout(this.$iFrameTimeout);
+        },
+
+        defaultRoute: function(routeContext) {
+            this.showClass(routeContext);
+        }.async(),
+
+        _showExternalDocumentation: function(externalDocumentation) {
+
+            var url;
+
+            if (_.isString(externalDocumentation)) {
+                url = externalDocumentation;
+            } else {
+                url = externalDocumentation.url;
+            }
+
+            this.set({
+                externalDocumentationSrc: url,
+                currentView: this.$.externalDocumentationView
+            });
+
+            if (this.runsInBrowser()) {
+                this.$iFrameTimeout = setTimeout(function () {
+                    window.location = url;
+                }, 3000);
+            }
+
+        },
+
+        showClass: function (routeContext, module, fqClassName) {
 
             var self = this;
-            this.set('doc', null);
-            this.$.api.createEntity(Class, fqClassName).fetch(null, function (err, classDoc) {
+            docIndex.externalDocumentation = docIndex.externalDocumentation || {};
 
-                self.set('doc', err ? null : classDoc);
-                routeContext.callback(err);
+            if (!module && docIndex.externalDocumentation.hasOwnProperty(fqClassName)) {
+                // external documentation
+                this._showExternalDocumentation(docIndex.externalDocumentation[fqClassName]);
+                routeContext.callback();
+            } else {
 
-                if (self.runsInBrowser()) {
-                    window.scrollTo(window.scrollX, 0);
+                if (!module && !/\./.test(fqClassName)) {
+                    module = fqClassName;
+                    fqClassName = null;
                 }
-            })
+
+                var moduleId = module = module || "rappid";
+                module = docIndex.packages[module];
+
+                if (!module) {
+                    var message = "Module not found";
+                    console.log(message);
+                    routeContext.callback(message);
+                    return;
+                }
+
+                flow()
+                    .seq("module", function(cb) {
+                        var m = self.$.api.createEntity(Package, moduleId);
+                        _.defaults(m.$, module);
+
+                        m.fetch(null, cb);
+                    })
+                    .seq(function() {
+                        // TODO: load dependend modules
+                    })
+                    .seq("doc", function(cb) {
+                        if (fqClassName) {
+                            this.vars.module.$.classes.createItem(fqClassName).fetch(null, cb);
+                        } else {
+                            cb();
+                        }
+                    })
+                    .exec(function(err, results) {
+
+                        if (!err) {
+                            if (results.doc) {
+                                self.set({
+                                    doc: results.doc,
+                                    currentView: self.$.documentationView
+                                });
+                            } else {
+
+                                self.set({
+                                    doc: null,
+                                    module: results.module,
+                                    currentView: self.$.moduleView
+                                });
+                            }
+                        }
+
+                        if (self.runsInBrowser()) {
+                            window.scrollTo(window.scrollX, 0);
+                        } else {
+                            console.error(err);
+                        }
+
+                        routeContext.callback(err);
+                    });
+
+//
+//
+//                this.set('doc', null);
+//                this.$.api.createEntity(Class, fqClassName).fetch(null, function (err, classDoc) {
+//
+//                    self.set('doc', err ? null : classDoc);
+//                    routeContext.callback(err);
+//
+//                    if (self.runsInBrowser()) {
+//                        window.scrollTo(window.scrollX, 0);
+//                    }
+//                })
+
+            }
 
         }.async(),
 
@@ -175,7 +303,6 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             }
 
             return false;
-
 
         }
     });
