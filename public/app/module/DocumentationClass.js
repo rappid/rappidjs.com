@@ -277,7 +277,6 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
                     })
                     .seq(function () {
                         // TODO: load dependend modules
-                        console.log(this.vars["module"]);
                     })
                     .seq("doc", function (cb) {
                         if (fqClassName) {

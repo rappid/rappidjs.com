@@ -7,7 +7,8 @@
         xmlns:basic="example.basic"
         xmlns:todo="example.todo" xmlns:contact="example.contact" xmlns:google="google" xmlns:twitter="twitter">
 
-    <js:Head title="rAppid.js - the declarative Rich Internet Application Javascript MVC Framework" author="Tony Findeisen &amp; Marcus Krejpowicz" />
+    <js:Head title="rAppid.js - the declarative Rich Internet Application Javascript MVC Framework"
+             author="Tony Findeisen &amp; Marcus Krejpowicz"/>
 
     <js:Content name="main">
         <div id="home">
@@ -16,14 +17,18 @@
                 <h2 class="sub" style="text-align: center;">the declarative Rich Internet
                     Application Javascript MVC Framework
                 </h2>
-                <p>"It's like Flex or Silverlight for HTML5. Designed for complex web applications!<br />
-                    Developed and based on the standards of the web - XML &amp; Javascript."</p>
+                <p>"It's like Flex or Silverlight for HTML5. Designed for complex web applications!
+                    <br/>
+                    Developed and based on the standards of the web - XML &amp; Javascript."
+                </p>
                 <p>
                     <a class="btn btn-large btn-primary" href="wiki/Installation">
-                        <em class="icon-road"/> Install it.
+                        <em class="icon-road"/>
+                        Install it.
                     </a>
                     <a class="btn btn-large" href="https://github.com/rappid/rAppid.js">
-                        <em class="icon-download"/> View on GitHub
+                        <em class="icon-download"/>
+                        View on GitHub
                     </a>
                 </p>
                 <ul class="quick-links">
@@ -46,10 +51,10 @@
                 </ul>
                 <ul class="follow">
                     <li>
-                        <google:PlusOne size="small" href="http://www.rappidjs.com/#!/" />
+                        <google:PlusOne size="small" href="http://www.rappidjs.com/#!/"/>
                     </li>
                     <li>
-                        <twitter:Follow user="rappidjs" />
+                        <twitter:Follow user="rappidjs"/>
                     </li>
                     <li>
                         <twitter:Share via="rappidjs" url="http://www.rappidjs.com/#!/"/>
@@ -61,7 +66,8 @@
                 <div class="span4">
                     <h2>Why rAppid.js?</h2>
                     <p>
-                        HTML is great for defining views and CSS is great for styling. But don't repeat yourself by writing many tags to
+                        HTML is great for defining views and CSS is great for styling. But don't repeat yourself by
+                        writing many tags to
                         define your view. rAppidjs let you encapsulate complexity into
                         components which can be easy used like HTML elements in your application. The
                         result is a clean, readable mark-up offering a quick
@@ -74,9 +80,11 @@
                 <div class="span4">
                     <h2>Another MVC Framework</h2>
                     <p>
-                        Most frameworks use templates to describe their views or try to extend the HTML language within the
+                        Most frameworks use templates to describe their views or try to extend the HTML language within
+                        the
                         document markup, which is a dirty style. rAppid.js solves that issue by
-                        introducing an eXtendable Application Markup Language (XAML) for defining the application, MV-Bindings
+                        introducing an eXtendable Application Markup Language (XAML) for defining the application,
+                        MV-Bindings
                         and event handling.
                     </p>
                     <p class="buttons">
@@ -87,7 +95,8 @@
                     <h2>Extensibility</h2>
                     <p>
                         rAppid.js allows you to encapsulate complexity into
-                        components which can be used beside HTML. Therefor rAppid.js uses a Shadow DOM, which is rendered as valid HTML in the document body or a specific target.
+                        components which can be used beside HTML. Therefor rAppid.js uses a Shadow DOM, which is
+                        rendered as valid HTML in the document body or a specific target.
                         It is completely extendable and
                         works well with other libraries.
                     </p>
@@ -200,15 +209,15 @@
                         <ui:TabView>
                             <ui:Tab title="index.html">
                                 <div/>
-                                <!--<view:Code>${example.basic.Index}</view:Code>-->
+                                <view:Code>${example.basic.Index}</view:Code>
                             </ui:Tab>
                             <ui:Tab title="App.xml">
                                 <div/>
-                                <!--<view:Code>${example.basic.App}</view:Code>-->
+                                <view:Code>${example.basic.App}</view:Code>
                             </ui:Tab>
                             <ui:Tab title="AppClass.js">
                                 <div/>
-                                <!--<view:Code>${example.basic.AppClass}</view:Code>-->
+                                <view:Code>${example.basic.AppClass}</view:Code>
                             </ui:Tab>
                         </ui:TabView>
                     </div>
@@ -274,25 +283,25 @@
             <div class="row">
                 <div class="span8">
                     <div class="tabtable">
-                        <!--<ui:TabView>-->
-                        <!--<ui:Tab title="App.xml">-->
-                        <!--<view:Code title="App.xml">${example.todo.App}</view:Code>-->
-                        <!--</ui:Tab>-->
-                        <!--<ui:Tab title="AppClass.js">-->
-                        <!--<view:Code>${example.todo.AppClass}</view:Code>-->
-                        <!--</ui:Tab>-->
-                        <!--<ui:Tab title="model/Todo.js">-->
-                        <!--<view:Code >${example.todo.TodoModel}</view:Code>-->
-                        <!--</ui:Tab>-->
-                        <!--<ui:Tab title="model/TodoList.js">-->
-                        <!--<view:Code >${example.todo.TodoList}</view:Code>-->
-                        <!--</ui:Tab>-->
-                        <!--</ui:TabView>-->
+                        <ui:TabView>
+                            <ui:Tab title="App.xml">
+                                <view:Code title="App.xml">${example.todo.App}</view:Code>
+                            </ui:Tab>
+                            <ui:Tab title="AppClass.js">
+                                <view:Code>${example.todo.AppClass}</view:Code>
+                            </ui:Tab>
+                            <ui:Tab title="model/Todo.js">
+                                <view:Code>${example.todo.TodoModel}</view:Code>
+                            </ui:Tab>
+                            <ui:Tab title="model/TodoList.js">
+                                <view:Code>${example.todo.TodoList}</view:Code>
+                            </ui:Tab>
+                        </ui:TabView>
                     </div>
                 </div>
                 <div class="span4">
                     <div class="well app">
-                        <!--<todo:App/>-->
+                        <todo:App/>
                     </div>
                 </div>
             </div>
@@ -353,20 +362,20 @@
             <div class="row">
                 <div class="span8">
                     <div class="tabtable">
-                        <!--<ui:TabView>-->
-                        <!--<ui:Tab title="view/Card.xml">-->
-                        <!--<view:Code >${example.contact.Card}</view:Code>-->
-                        <!--</ui:Tab>-->
-                        <!--<ui:Tab title="App.xml">-->
-                        <!--<view:Code >${example.contact.App}</view:Code>-->
-                        <!--</ui:Tab>-->
-                        <!--<ui:Tab title="AppClass.js">-->
-                        <!--<view:Code >${example.contact.AppClass}</view:Code>-->
-                        <!--</ui:Tab>-->
-                        <!--<ui:Tab title="model/Person.js">-->
-                        <!--<view:Code >${example.contact.PersonModel}</view:Code>-->
-                        <!--</ui:Tab>-->
-                        <!--</ui:TabView>-->
+                        <ui:TabView>
+                            <ui:Tab title="view/Card.xml">
+                                <view:Code>${example.contact.Card}</view:Code>
+                            </ui:Tab>
+                            <ui:Tab title="App.xml">
+                                <view:Code>${example.contact.App}</view:Code>
+                            </ui:Tab>
+                            <ui:Tab title="AppClass.js">
+                                <view:Code>${example.contact.AppClass}</view:Code>
+                            </ui:Tab>
+                            <ui:Tab title="model/Person.js">
+                                <view:Code>${example.contact.PersonModel}</view:Code>
+                            </ui:Tab>
+                        </ui:TabView>
                     </div>
                 </div>
                 <div class="span4">
@@ -484,7 +493,9 @@
                     </p>
                     <p>
                         The site uses the<code>raw</code>-Plugin to require the source code
-                        of our examples which is shown highlighted in a <code>CodeView</code> component.
+                        of our examples which is shown highlighted in a
+                        <code>CodeView</code>
+                        component.
                     </p>
                     <p>
                         It dynamically loads markdown files from our wiki which is parsed and renderer on the client.
@@ -498,12 +509,15 @@
                         of this page (<code>Ctrl + u</code>) and you'll see what a crawler sees. Almost nothing!
                     </p>
                     <p>
-                        Because this is an ajax page, we use hash-bang urls to tell the crawler the ajax parts of the site.
+                        Because this is an ajax page, we use hash-bang urls to tell the crawler the ajax parts of the
+                        site.
                         The crawler transforms these urls to special requests, which are handled by our
                         <a href="https://github.com/it-ony/rAppid.js-server">rAppid.js-server</a>.
                     </p>
                     <p>
-                        See this page <a href="http://www.rappidjs.com/?_escaped_fragment_=/home">rendered</a> on node with rAppid.js.
+                        See this page
+                        <a href="http://www.rappidjs.com/?_escaped_fragment_=/home">rendered</a>
+                        on node with rAppid.js.
                     </p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Node-Rendering">Node Rendering</a>
@@ -517,7 +531,7 @@
                         <a href="https://github.com/it-ony/rappidjs.com">Github</a>.
                     </p>
                     <p>
-                        Inspired by <a href="http://angularjs.org">angularjs</a>. Styled with
+                        Inspired by<a href="http://angularjs.org">angularjs</a>. Styled with
                         <a href="http://twitter.github.com/bootstrap/">bootstrap</a>.
                     </p>
                 </div>
