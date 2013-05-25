@@ -156,6 +156,34 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
 
         }.onChange('doc'),
 
+        labelForNode: function (node) {
+            if(node.$.isLeaf){
+                return node.get("data").className();
+            } else {
+                return node.get('data.id');
+            }
+        },
+
+        hrefForNode: function (node) {
+            if (node.$.isLeaf) {
+                return "api/" + node.get("data").$context.$contextModel.$.id + "/" + node.get('data.id');
+            } else {
+                return null;
+            }
+        },
+
+        iconClassForNode: function (node, expanded) {
+            if (node.$.isLeaf) {
+                return "file";
+            } else {
+                if(expanded){
+                    return "folder-open";
+                } else {
+                    return "folder-close";
+                }
+            }
+        },
+
         title: function (className) {
             return (className ? className + " - " : "") + 'API Reference - rAppid.js';
         },

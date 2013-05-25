@@ -30,9 +30,9 @@
                     <ui:TreeView node="{packageTree}">
                         <js:Template name="label">
                             <div>
-                                <a href="api/${item.id}">
-                                    <i class="icon icon-file"/>
-                                    ${item.id}
+                                <a href="{hrefForNode(item)}">
+                                    <i class="icon icon-{iconClassForNode(item,item.expanded)}"/>
+                                    {labelForNode(item)}
                                 </a>
                             </div>
                         </js:Template>

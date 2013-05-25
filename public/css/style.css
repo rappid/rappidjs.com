@@ -494,8 +494,7 @@ ol.linenums li {
     margin-left: 10px;
 }
 
-.tree-view-item-folder > a,
-.tree-view-item > a {
+.tree-view-label a {
     display: block;
     color: inherit;
     text-decoration: none;
@@ -503,6 +502,12 @@ ol.linenums li {
     white-space: nowrap;
     text-overflow: ellipsis;
     padding: 5px 10px;
+}
+
+.active > .tree-view-label a {
+    color: #FFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    background-color: #08C;
 }
 
 .tree-view-item-folder > a .icon {
