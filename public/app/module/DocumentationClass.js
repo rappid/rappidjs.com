@@ -1,11 +1,13 @@
 define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/model/Class", "documentation/model/Package", "underscore", "js/core/Bindable", "js/ui/tree/TreeNode", "flow"], function (Module, docIndex, List, Class, Package, _, Bindable, TreeNode, flow) {
 
+    var packageTreeCache = {};
+
     return Module.inherit("app.module.DocumentationClass", {
 
         defaults: {
             classes: List,
             packages: List,
-            packageTree: TreeNode,
+            packageTree: null,
             doc: null,
             searchString: "",
 
@@ -30,10 +32,12 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             /***
              * @codeBehind
              */
-            externalDocumentationView: null
+            externalDocumentationView: null,
+
+            selectedNode: null
         },
 
-        _isCurrentView: function(view) {
+        _isCurrentView: function (view) {
             return this.$.currentView === view;
         }.onChange("currentView"),
 
@@ -44,7 +48,7 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             return ['', 'protected', 'public', 'all'][type];
         },
 
-        _insertInPackageTree: function (parts, node, id) {
+        _insertInPackageTree: function (parts, node, element) {
             if (parts.length > 0) {
                 var packageName = parts[0];
 
@@ -57,13 +61,13 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
 
                     parts.shift();
 
-                    this._insertInPackageTree(parts, tree, id);
+                    this._insertInPackageTree(parts, tree, element);
                 } else {
                     if (!node.children) {
                         node.children = [];
                     }
                     node.children.push({
-                        id: id,
+                        element: element,
                         name: parts.join(".")
                     });
                 }
@@ -75,24 +79,22 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             if (hash.children) {
                 var cls;
                 for (var i = 0; i < hash.children.length; i++) {
-                    cls = this.$.api.createEntity(Class, hash.children[i].id);
-                    cls.set('name', hash.children[i].name);
 
-                    tree.add(new TreeNode([],{
+                    tree.addChild(new TreeNode({
                         isLeaf: true,
-                        data: cls
+                        data: hash.children[i].element
                     }));
                 }
             } else {
                 var pack;
                 for (var key in hash) {
                     if (hash.hasOwnProperty(key)) {
-                        pack = new TreeNode([],{
+                        pack = new TreeNode({
                             data: new Bindable({
-                                name: key
+                                id: key
                             })
                         });
-                        tree.add(
+                        tree.addChild(
                             pack
                         );
 
@@ -104,21 +106,6 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
         },
 
         _initializationComplete: function () {
-            var path,
-                hashTree = {};
-//
-//            for (var i = 0; i < doc.length; i++) {
-//                path = doc[i].split(".");
-//
-//                this._insertInPackageTree(path, hashTree, doc[i]);
-//            }
-
-            this.$.packageTree.set({
-                expanded: true,
-                isRoot: true
-            });
-
-            this._buildTree(hashTree, this.$.packageTree);
 
             if (!this.runsInBrowser()) {
                 var checked = {
@@ -173,15 +160,15 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             return (className ? className + " - " : "") + 'API Reference - rAppid.js';
         },
 
-        loadedInIFrame: function(e) {
+        loadedInIFrame: function (e) {
             clearTimeout(this.$iFrameTimeout);
         },
 
-        defaultRoute: function(routeContext) {
+        defaultRoute: function (routeContext) {
             this.showClass(routeContext);
         }.async(),
 
-        _showExternalDocumentation: function(externalDocumentation) {
+        _showExternalDocumentation: function (externalDocumentation) {
 
             var url;
 
@@ -231,23 +218,47 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
                 }
 
                 flow()
-                    .seq("module", function(cb) {
+                    .seq("module", function (cb) {
                         var m = self.$.api.createEntity(Package, moduleId);
                         _.defaults(m.$, module);
 
                         m.fetch(null, cb);
                     })
-                    .seq(function() {
-                        // TODO: load dependend modules
+                    .seq(function () {
+                        var path,
+                            hashTree = {},
+                            tree,
+                            module = this.vars["module"];
+                        if (!packageTreeCache[module.$.id]) {
+                            module.$.classes.each(function (cls) {
+                                path = cls.$.id.split(".");
+                                self._insertInPackageTree(path, hashTree, cls);
+                            });
+                            // build tree
+                            tree = new TreeNode({
+                                isRoot: true,
+                                expanded: true
+                            });
+                            self._buildTree(hashTree, tree);
+                            packageTreeCache[module.$.id] = tree;
+                        } else {
+                            tree = packageTreeCache[module.$.id];
+                        }
+
+                        self.set('packageTree', tree);
                     })
-                    .seq("doc", function(cb) {
+                    .seq(function () {
+                        // TODO: load dependend modules
+                        console.log(this.vars["module"]);
+                    })
+                    .seq("doc", function (cb) {
                         if (fqClassName) {
                             this.vars.module.$.classes.createItem(fqClassName).fetch(null, cb);
                         } else {
                             cb();
                         }
                     })
-                    .exec(function(err, results) {
+                    .exec(function (err, results) {
 
                         if (!err) {
                             if (results.doc) {
