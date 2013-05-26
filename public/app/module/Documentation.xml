@@ -27,7 +27,7 @@
         <div id="documentation">
             <div class="row">
                 <div class="span3 classes">
-                    <ui:TreeView node="{packageTree}">
+                    <ui:TreeView node="{packageTree}" selectedNode="{selectedNode}">
                         <js:Template name="label">
                             <div>
                                 <a href="{hrefForNode(item)}">

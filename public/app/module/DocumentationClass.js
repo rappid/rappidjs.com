@@ -157,7 +157,7 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
         }.onChange('doc'),
 
         labelForNode: function (node) {
-            if(node.$.isLeaf){
+            if (node.$.isLeaf) {
                 return node.get("data").className();
             } else {
                 return node.get('data.id');
@@ -176,7 +176,7 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             if (node.$.isLeaf) {
                 return "file";
             } else {
-                if(expanded){
+                if (expanded) {
                     return "folder-open";
                 } else {
                     return "folder-close";
@@ -289,7 +289,32 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
 
                         if (!err) {
                             if (results.doc) {
+                                var match = results.doc.$.id.match(/^[a-z\.]+[a-z]/),
+                                    currentNode = self.$.packageTree,
+                                    packages = match[0].split("."),
+                                    currentPackage;
+
+                                while (packages.length) {
+                                    currentPackage = packages.shift();
+                                    currentNode.$.childNodes.each(function (child) {
+                                        if (child.$.data.$.id === currentPackage) {
+                                            currentNode = child;
+                                            this["break"]();
+                                        }
+                                    });
+                                }
+
+                                if (currentNode) {
+                                    currentNode.$.childNodes.each(function (child) {
+                                        if (child.$.data === results.doc) {
+                                            currentNode = child;
+                                            this["break"]();
+                                        }
+                                    })
+                                }
+
                                 self.set({
+                                    selectedNode: currentNode,
                                     doc: results.doc,
                                     currentView: self.$.documentationView
                                 });
