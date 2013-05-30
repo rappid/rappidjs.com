@@ -1,12 +1,14 @@
 <module:DocumentationClass xmlns="http://www.w3.org/1999/xhtml"
                            xmlns:js="js.core" xmlns:ui="js.ui"
                            xmlns:conf="js.conf" xmlns:data="js.data"
-                           xmlns:module="app.module" xmlns:md="md" xmlns:view="app.view" xmlns:ddata="documentation.data">
+                           xmlns:module="app.module" xmlns:md="md" xmlns:view="app.view"
+                           xmlns:ddata="documentation.data">
 
 
     <ddata:DocumentationDataSource cid="api" endPoint="http://rappidjs.com/doc" gateway=".">
         <conf:DataSourceConfiguration>
-            <conf:ResourceConfiguration path="doc" modelClassName="documentation.model.Package" processor="PackageProcessor">
+            <conf:ResourceConfiguration path="doc" modelClassName="documentation.model.Package"
+                                        processor="PackageProcessor">
                 <conf:ResourceConfiguration path="/" modelClassName="documentation.model.Class"/>
             </conf:ResourceConfiguration>
         </conf:DataSourceConfiguration>
@@ -30,9 +32,9 @@
                     <ui:TreeView node="{packageTree}" selectedNode="{selectedNode}">
                         <js:Template name="label">
                             <div>
-                                <a href="{hrefForNode(item)}">
+                                <a href="${hrefForNode(item)}">
                                     <i class="icon icon-{iconClassForNode(item,item.expanded)}"/>
-                                    {labelForNode(item)}
+                                    ${labelForNode(item)}
                                 </a>
                             </div>
                         </js:Template>
@@ -44,7 +46,8 @@
                             <a href="{externalDocumentationSrc}" target="_blank">View documentation in external Window.
                             </a>
                         </p>
-                        <iframe frameborder="0" src="{externalDocumentationSrc}" onload="loadedInIFrame" width="100%" height="600px"/>
+                        <iframe frameborder="0" src="{externalDocumentationSrc}" onload="loadedInIFrame" width="100%"
+                                height="600px"/>
                     </div>
                     <div cid="documentationView" visible="{_isCurrentView(documentationView)}">
                         <h1>{doc.id}</h1>
