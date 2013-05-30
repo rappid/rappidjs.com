@@ -289,9 +289,8 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
 
                         if (!err) {
                             if (results.doc) {
-                                var match = results.doc.$.id.match(/^[a-z\.]+[a-z]/),
-                                    currentNode = self.$.packageTree,
-                                    packages = match[0].split("."),
+                                var currentNode = self.$.packageTree,
+                                    packages = results.doc.$.package.split("."),
                                     currentPackage;
 
                                 while (packages.length) {

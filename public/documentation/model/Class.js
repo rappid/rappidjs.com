@@ -1,4 +1,4 @@
-define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documentation/entity/Attribute'], function (Model, Method, _, Attribute) {
+define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documentation/entity/Attribute', "json!doc/index.json"], function (Model, Method, _, Attribute, docIndex) {
 
     var stripTrainingUnderscore = /^_/,
         baseUrl = "https://github.com/rappid/rAppid.js/blob/master",
@@ -72,15 +72,32 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
         },
 
         documentationLink: function () {
-            var path = this.getPath();
+            var path = this.getPath(),
+                rootPackage = (this.$.package || "").split(".").shift() || this.$.id.split(".").shift();
 
             if (documentationMap.hasOwnProperty(this.$.id)) {
                 return documentationMap[this.$.id];
-            }
-            else if (this.isNodeModule(path)) {
-                return "http://nodejs.org/api/" + path + ".html";
             } else {
-                return "api/" + this.$.id;
+                // search root package in doc Index
+                var packages = docIndex.packages;
+                for (var packageName in packages) {
+                    if (packages.hasOwnProperty(packageName)) {
+                        if (_.indexOf(packages[packageName].exports || [], rootPackage) !== -1) {
+
+                            if (packageName === "rappid") {
+                                return "api/" + this.$.id;
+                            } else {
+                                return "api/" + packageName + "/" + this.$.id;
+                            }
+                        }
+                    }
+                }
+
+                if (this.isNodeModule(path)) {
+                    return "http://nodejs.org/api/" + path + ".html";
+                } else {
+                    return "api/" + this.$.id;
+                }
             }
 
         }.onChange("id"),
