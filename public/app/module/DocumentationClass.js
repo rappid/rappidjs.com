@@ -245,38 +245,54 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
                     return;
                 }
 
+                var modules = [];
+
                 flow()
                     .seq("module", function (cb) {
                         var m = self.$.api.createEntity(Package, moduleId);
                         _.defaults(m.$, module);
 
+                        modules.push(m);
+
                         m.fetch(null, cb);
+                    })
+                    .seq(function (done) {
+                        flow()
+                            .seqEach(this.vars.module.$.dependencies,function (module, cb) {
+                                var m = self.$.api.createEntity(Package, module);
+                                _.defaults(m.$, module);
+
+                                modules.push(m);
+
+                                m.fetch(null, cb);
+                            }).
+                            exec(done);
                     })
                     .seq(function () {
                         var path,
                             hashTree = {},
-                            tree,
-                            module = this.vars["module"];
-                        if (!packageTreeCache[module.$.id]) {
-                            module.$.classes.each(function (cls) {
-                                path = cls.$.id.split(".");
-                                self._insertInPackageTree(path, hashTree, cls);
-                            });
-                            // build tree
-                            tree = new TreeNode({
-                                isRoot: true,
-                                expanded: true
-                            });
-                            self._buildTree(hashTree, tree);
-                            packageTreeCache[module.$.id] = tree;
-                        } else {
-                            tree = packageTreeCache[module.$.id];
+                            tree;
+
+                        for (var i = 0; i < modules.length; i++) {
+                            var module = modules[i];
+                            if (!packageTreeCache[module.$.id]) {
+                                module.$.classes.each(function (cls) {
+                                    path = cls.$.id.split(".");
+                                    self._insertInPackageTree(path, hashTree, cls);
+                                });
+                                // build tree
+                                tree = new TreeNode({
+                                    isRoot: true,
+                                    expanded: true
+                                });
+                                self._buildTree(hashTree, tree);
+                                packageTreeCache[module.$.id] = tree;
+                            } else {
+                                tree = packageTreeCache[module.$.id];
+                            }
                         }
 
                         self.set('packageTree', tree);
-                    })
-                    .seq(function () {
-                        // TODO: load dependend modules
                     })
                     .seq("doc", function (cb) {
                         if (fqClassName) {
