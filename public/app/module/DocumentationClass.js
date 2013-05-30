@@ -352,22 +352,43 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
                         routeContext.callback(err);
                     });
 
-//
-//
-//                this.set('doc', null);
-//                this.$.api.createEntity(Class, fqClassName).fetch(null, function (err, classDoc) {
-//
-//                    self.set('doc', err ? null : classDoc);
-//                    routeContext.callback(err);
-//
-//                    if (self.runsInBrowser()) {
-//                        window.scrollTo(window.scrollX, 0);
-//                    }
-//                })
-
             }
 
         }.async(),
+
+        getDocumentationLink: function(fqClassName) {
+
+            if (!fqClassName) {
+                return null;
+            }
+
+            var rootPackage = fqClassName.split(".").shift();
+
+            // search root package in doc Index
+            var packages = docIndex.packages;
+            for (var packageName in packages) {
+                if (packages.hasOwnProperty(packageName)) {
+                    if (_.indexOf(packages[packageName].exports || [], rootPackage) !== -1) {
+                        break;
+                    }
+                }
+            }
+
+            if (packageName) {
+                if (packageName === "rappid") {
+                    return "api/" + fqClassName;
+                } else {
+                    return "api/" + packageName + "/" + fqClassName;
+                }
+            }
+
+            if (this.isNodeModule(path)) {
+                return "http://nodejs.org/api/" + path + ".html";
+            } else {
+                return "api/" + fqClassName;
+            }
+
+        },
 
         isMethodVisible: function (method, type, showInherit) {
             if (method.$.name === 'ctor') {
