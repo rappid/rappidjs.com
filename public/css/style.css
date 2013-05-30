@@ -510,6 +510,10 @@ ol.linenums li {
     background-color: #08C;
 }
 
+.active > .tree-view-label > a > .icon {
+    background-image: url("../img/glyphicons-halflings-white.png");
+}
+
 .tree-view-item-folder > a .icon {
     background-position: -384px -120px;
 }

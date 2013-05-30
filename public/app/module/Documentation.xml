@@ -31,12 +31,10 @@
                 <div class="span3 classes">
                     <ui:TreeView node="{packageTree}" selectedNode="{selectedNode}">
                         <js:Template name="label">
-                            <div>
-                                <a href="${hrefForNode(item)}">
-                                    <i class="icon icon-{iconClassForNode(item,item.expanded)}"/>
-                                    ${labelForNode(item)}
-                                </a>
-                            </div>
+                            <a href="${hrefForNode(item)}">
+                                <i class="icon icon-{iconClassForNode(item,item.expanded)}"/>
+                                ${labelForNode(item)}
+                            </a>
                         </js:Template>
                     </ui:TreeView>
                 </div>
