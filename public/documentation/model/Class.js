@@ -32,7 +32,7 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
         },
 
         className: function () {
-            return this.$.id.replace(/^[a-z\.]+/,"");
+            return this.$.id.replace(/^[a-z\.]+/, "");
         },
 
         fileExtension: function () {
@@ -54,10 +54,23 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
 
             if (/^http/.test(path)) {
                 return path;
-            } else if (this.isNodeModule(path)) {
-                return nodeBaseUrl + "/" + path + ".js";
             } else {
-                return baseUrl + "/" + path.replace(/\./g, "/") + this.fileExtension();
+
+                var packageName = this.getPackageName();
+
+                if (packageName) {
+                    var url = docIndex.packages[packageName].link;
+
+                    if (url && /github/.test(url)) {
+                        return url + "/blob/master/" + path.replace(/\./g, "/") + this.fileExtension();
+                    }
+                }
+
+                if (this.isNodeModule(path)) {
+                    return nodeBaseUrl + "/" + path + ".js";
+                } else {
+                    return baseUrl + "/" + path.replace(/\./g, "/") + this.fileExtension();
+                }
             }
 
         }.onChange("id", "fileExtension()"),
@@ -71,25 +84,36 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
             return fileNameMap[name] || name;
         },
 
+        getPackageName: function () {
+
+            var rootPackage = (this.$.package || "").split(".").shift() || this.$.id.split(".").shift();
+
+            // search root package in doc Index
+            var packages = docIndex.packages;
+            for (var packageName in packages) {
+                if (packages.hasOwnProperty(packageName)) {
+                    if (_.indexOf(packages[packageName].exports || [], rootPackage) !== -1) {
+                        return packageName;
+                    }
+                }
+            }
+
+            return null;
+        },
+
         documentationLink: function () {
-            var path = this.getPath(),
-                rootPackage = (this.$.package || "").split(".").shift() || this.$.id.split(".").shift();
+            var path = this.getPath();
 
             if (documentationMap.hasOwnProperty(this.$.id)) {
                 return documentationMap[this.$.id];
             } else {
-                // search root package in doc Index
-                var packages = docIndex.packages;
-                for (var packageName in packages) {
-                    if (packages.hasOwnProperty(packageName)) {
-                        if (_.indexOf(packages[packageName].exports || [], rootPackage) !== -1) {
+                var packageName = this.getPackageName();
 
-                            if (packageName === "rappid") {
-                                return "api/" + this.$.id;
-                            } else {
-                                return "api/" + packageName + "/" + this.$.id;
-                            }
-                        }
+                if (packageName) {
+                    if (packageName === "rappid") {
+                        return "api/" + this.$.id;
+                    } else {
+                        return "api/" + packageName + "/" + this.$.id;
                     }
                 }
 
