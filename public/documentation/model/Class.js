@@ -32,7 +32,10 @@ define(['js/data/Model', 'documentation/entity/Method', 'underscore', 'documenta
         },
 
         className: function () {
-            return this.$.id.replace(/^[a-z\.]+/,"");
+            if (/[A-Z]/.test(this.$.id)) {
+                return this.$.id.replace(/^[a-z\.]+/, "");
+            }
+            return this.$.id;
         },
 
         fileExtension: function () {
