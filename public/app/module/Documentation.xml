@@ -4,22 +4,24 @@
                            xmlns:module="app.module" xmlns:md="md" xmlns:view="app.view"
                            xmlns:ddata="documentation.data">
 
+    <js:Injection>
+        <ddata:DocumentationDataSource cid="api" endPoint="http://rappidjs.com/doc" gateway=".">
+            <conf:DataSourceConfiguration>
+                <conf:ResourceConfiguration path="doc" modelClassName="documentation.model.Package"
+                                            processor="PackageProcessor">
+                    <conf:ResourceConfiguration path="/" modelClassName="documentation.model.Class"/>
+                </conf:ResourceConfiguration>
+            </conf:DataSourceConfiguration>
+        </ddata:DocumentationDataSource>
+    </js:Injection>
 
-    <ddata:DocumentationDataSource cid="api" endPoint="http://rappidjs.com/doc" gateway=".">
-        <conf:DataSourceConfiguration>
-            <conf:ResourceConfiguration path="doc" modelClassName="documentation.model.Package"
-                                        processor="PackageProcessor">
-                <conf:ResourceConfiguration path="/" modelClassName="documentation.model.Class"/>
-            </conf:ResourceConfiguration>
-        </conf:DataSourceConfiguration>
-    </ddata:DocumentationDataSource>
 
     <data:FilterDataView baseList="{classes}" cid="filteredClasses" filterFnc="{filterDocs}"
                          searchString="{searchString}"/>
 
     <js:Router>
         <conf:RouteConfiguration onexec="defaultRoute" route="^api$"/>
-        <conf:RouteConfiguration onexec="showClass" route="^api\/(?:([^/]+)\/)?(.+)$"/>
+        <conf:RouteConfiguration onexec="showClass" route="^api\/(?:([^/]+)\/)?\/?(.+)$"/>
     </js:Router>
 
     <js:Head title="{title(doc.id)} - rAppidjs API Reference"
@@ -70,7 +72,7 @@
                                     <dd>
                                         <ui:ListView items="{doc.inheritancePath()}" class="inheritance">
                                             <js:Template name="item">
-                                                <a href="api/{item.id}">
+                                                <a href="{item.documentationLink()}">
                                                     {item.className()}
                                                 </a>
                                             </js:Template>
@@ -255,7 +257,7 @@
                                 items="{doc.methods}"
                                 itemKey="method">
                             <js:Template name="item">
-                                <view:MethodView method="${method}"
+                                <view:MethodView method="${method}" definedByLink="{getDocumentationLink(method.definedBy)}"
                                                  visible="{isMethodVisible(method,showTypes(showPublic.checked, showProtected.checked),showInherit.checked)}"/>
                             </js:Template>
                         </ui:ItemsView>

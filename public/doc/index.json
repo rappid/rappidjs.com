@@ -11,7 +11,7 @@
             "name": "rAppid.js-sprd",
             "npm": "rAppid.js-sprd",
             "description": "Spreadshirt components and API adapter",
-            "link": "https://github.com/it-ony/rAppid.js-spd",
+            "link": "https://github.com/spreadshirt/rAppid.js-sprd",
             "exports": ["sprd"],
             "dependencies": ["rappid"]
         },

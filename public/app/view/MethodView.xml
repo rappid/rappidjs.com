@@ -36,7 +36,7 @@
                 </a>
             </span>
         </div>
-        <a class="defined-by" href="api/${method.definedBy}">${method.definedBy}</a>
+        <a class="defined-by" href="{definedByLink}">${method.definedBy}</a>
         <div class="description-wrapper">
             <p class="description">${method.description}</p>
         </div>

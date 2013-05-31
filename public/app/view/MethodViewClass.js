@@ -1,8 +1,14 @@
-define(["js/ui/View"], function (View) {
+define(["js/ui/View", "documentation/data/DocumentationDataSource"], function (View, DocumentationDataSource) {
 
     return View.inherit({
         defaults: {
-            method: null
+            method: null,
+
+            definedByLink: null
+        },
+
+        inject: {
+            dataSource: DocumentationDataSource
         },
 
         methodCSSClasses: function () {
@@ -13,6 +19,10 @@ define(["js/ui/View"], function (View) {
             }
 
             return ret.join(" ");
+        },
+
+        getClass: function(fqClassName) {
+
         }
     });
 });
