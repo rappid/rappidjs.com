@@ -1,20 +1,27 @@
 <module:DocumentationClass xmlns="http://www.w3.org/1999/xhtml"
                            xmlns:js="js.core" xmlns:ui="js.ui"
                            xmlns:conf="js.conf" xmlns:data="js.data"
-                           xmlns:module="app.module" xmlns:md="md" xmlns:view="app.view">
+                           xmlns:module="app.module" xmlns:md="md" xmlns:view="app.view"
+                           xmlns:ddata="documentation.data">
 
+    <js:Injection>
+        <ddata:DocumentationDataSource cid="api" endPoint="http://rappidjs.com/doc" gateway=".">
+            <conf:DataSourceConfiguration>
+                <conf:ResourceConfiguration path="doc" modelClassName="documentation.model.Package"
+                                            processor="PackageProcessor">
+                    <conf:ResourceConfiguration path="/" modelClassName="documentation.model.Class"/>
+                </conf:ResourceConfiguration>
+            </conf:DataSourceConfiguration>
+        </ddata:DocumentationDataSource>
+    </js:Injection>
 
-    <data:RestDataSource cid="api" endPoint="http://rappidjs.com/doc" gateway="." suffix="json">
-        <conf:DataSourceConfiguration>
-            <conf:ResourceConfiguration path="doc" modelClassName="documentation.model.Class"/>
-        </conf:DataSourceConfiguration>
-    </data:RestDataSource>
 
     <data:FilterDataView baseList="{classes}" cid="filteredClasses" filterFnc="{filterDocs}"
                          searchString="{searchString}"/>
 
     <js:Router>
-        <conf:RouteConfiguration onexec="showClass" route="^api\/(.+)$"/>
+        <conf:RouteConfiguration onexec="defaultRoute" route="^api$"/>
+        <conf:RouteConfiguration onexec="showClass" route="^api\/(?:([^/]+)\/)?\/?(.+)$"/>
     </js:Router>
 
     <js:Head title="{title(doc.id)} - rAppidjs API Reference"
@@ -24,19 +31,25 @@
         <div id="documentation">
             <div class="row">
                 <div class="span3 classes">
-                    <input type="text" placeholder="Filter" value="{{searchString}}"/>
-                    <ui:SelectionView items="{filteredClasses.list}" itemKey="$class" selectedItem="{doc}"
-                                      allowDeselection="false"
-                                      class="nav nav-pills nav-stacked" tagName="ul">
-                        <js:Template name="item">
-                            <li>
-                                <a href="api/{$class.id}">{$class.id}</a>
-                            </li>
+                    <ui:TreeView node="{packageTree}" selectedNode="{selectedNode}">
+                        <js:Template name="label">
+                            <a href="${hrefForNode(item)}">
+                                <i class="icon icon-{iconClassForNode(item,item.expanded)}"/>
+                                ${labelForNode(item)}
+                            </a>
                         </js:Template>
-                    </ui:SelectionView>
+                    </ui:TreeView>
                 </div>
                 <div class="span9 content">
-                    <div visible="{hasCurrentDocumentation()}">
+                    <div cid="externalDocumentationView" visible="{_isCurrentView(externalDocumentationView)}">
+                        <p>
+                            <a href="{externalDocumentationSrc}" target="_blank">View documentation in external Window.
+                            </a>
+                        </p>
+                        <iframe frameborder="0" src="{externalDocumentationSrc}" onload="loadedInIFrame" width="100%"
+                                height="600px"/>
+                    </div>
+                    <div cid="documentationView" visible="{_isCurrentView(documentationView)}">
                         <h1>{doc.id}</h1>
 
                         <p class="lead">
@@ -59,7 +72,7 @@
                                     <dd>
                                         <ui:ListView items="{doc.inheritancePath()}" class="inheritance">
                                             <js:Template name="item">
-                                                <a href="api/{item.id}">
+                                                <a href="{item.documentationLink()}">
                                                     {item.className()}
                                                 </a>
                                             </js:Template>
@@ -111,7 +124,7 @@
                             </div>
                             <div class="span2">
                                 <fieldset class="well">
-                                    <ui:Checkbox label="public" cid="publicAttributesCheckbox" checked="true" />
+                                    <ui:Checkbox label="public" cid="publicAttributesCheckbox" checked="true"/>
                                     <ui:Checkbox label="protected" cid="protectedAttributesCheckbox"/>
                                     <ui:Checkbox label="inherit" cid="inheritedAttributesCheckbox"/>
                                 </fieldset>
@@ -125,12 +138,14 @@
                                     <th width="20%">Defined By</th>
                                 </tr>
                             </thead>
-                            <ui:ItemsView cid="defaultItemsView" items="{doc.getDefaults(showTypes(publicAttributesCheckbox.checked, protectedAttributesCheckbox.checked),inheritedAttributesCheckbox.checked)}"
+                            <ui:ItemsView cid="defaultItemsView"
+                                          items="{doc.getDefaults(showTypes(publicAttributesCheckbox.checked, protectedAttributesCheckbox.checked),inheritedAttributesCheckbox.checked)}"
                                           itemKey="item" tagName="tbody">
                                 <js:Template name="item">
                                     <tr>
                                         <td>
-                                            <strong>${item.name}</strong> :
+                                            <strong>${item.name}</strong>
+                                            :
                                             <ui:ItemsView items="${item.types}" itemKey="type" tagName="span">
                                                 <js:Template name="item">
                                                     <span>${type}</span>
@@ -146,7 +161,9 @@
                                             ${item.value()}
                                         </td>
                                         <td>
-                                            <a href="api/${item.definedBy}">${item.definedBy}</a>
+                                            <a href="api/${item.definedBy}">
+                                                ${item.definedBy}
+                                            </a>
                                         </td>
                                     </tr>
                                 </js:Template>
@@ -193,7 +210,9 @@
                                             ${item.value()}
                                         </td>
                                         <td>
-                                            <a href="api/${item.definedBy}">${item.definedBy}</a>
+                                            <a href="api/${item.definedBy}">
+                                                ${item.definedBy}
+                                            </a>
                                         </td>
                                     </tr>
                                 </js:Template>
@@ -206,7 +225,8 @@
                                 <h2>Methods</h2>
                                 <blockquote>
                                     <p>
-                                        A method is a piece of code that is called by name that is associated with an
+                                        A method is a piece of code that is called by name
+                                        that is associated with an
                                         object.
                                     </p>
                                     <small>
@@ -233,27 +253,14 @@
                         </div>
 
 
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Method</th>
-                                    <th>Defined by</th>
-                                </tr>
-                            </thead>
-                            <ui:ItemsView items="{doc.getMethods(showTypes(showPublic.checked, showProtected.checked),showInherit.checked)}"
-                                          itemKey="method" tagName="tbody">
-                                <js:Template name="item">
-                                    <tr>
-                                        <td>
-                                            <view:MethodView method="{method}"/>
-                                        </td>
-                                        <td>
-                                            <a href="api/${method.definedBy}">${method.definedBy}</a>
-                                        </td>
-                                    </tr>
-                                </js:Template>
-                            </ui:ItemsView>
-                        </table>
+                        <ui:ItemsView
+                                items="{doc.methods}"
+                                itemKey="method">
+                            <js:Template name="item">
+                                <view:MethodView method="${method}" definedByLink="{getDocumentationLink(method.definedBy)}"
+                                                 visible="{isMethodVisible(method,showTypes(showPublic.checked, showProtected.checked),showInherit.checked)}"/>
+                            </js:Template>
+                        </ui:ItemsView>
 
 
                         <div visible="{hasSection('staticMethods')}">
@@ -280,30 +287,28 @@
                                 </div>
                             </div>
 
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Method</th>
-                                    </tr>
-                                </thead>
-                                <ui:ItemsView items="{doc.getStaticMethods(showTypes(showPublicStatic.checked, showProtectedStatic.checked))}"
-                                              itemKey="method" tagName="tbody">
-                                    <js:Template name="item">
-                                        <tr>
-                                            <td>
-                                                <view:MethodView method="{method}"/>
-                                            </td>
-                                        </tr>
-                                    </js:Template>
-                                </ui:ItemsView>
-                            </table>
+                            <ui:ItemsView
+                                    items="{doc.getStaticMethods(showTypes(showPublicStatic.checked, showProtectedStatic.checked))}"
+                                    itemKey="method">
+                                <js:Template name="item">
+                                    <view:MethodView method="{method}"/>
+                                </js:Template>
+                            </ui:ItemsView>
 
                         </div>
                     </div>
-                    <div visible="{not(hasCurrentDocumentation())}">
+                    <div cid="moduleView" visible="{_isCurrentView(moduleView)}">
                         <div class="jumbotron">
-                            <h1>API Reference!</h1>
-                            <blockquote>
+                            <h1>API Reference for {module.name}</h1>
+
+                            <h2 class="sub" visible="{module.title}">
+                                {module.title}
+                            </h2>
+                            <blockquote visible="{module.description}">
+                                <p>{module.description}</p>
+                            </blockquote>
+
+                            <blockquote visible="{not(module.description)}">
                                 <p class="lead">
                                     This api reference has been created using the
                                     'rappidjs doc' command
@@ -320,8 +325,10 @@
                             </blockquote>
 
                             <p class="lead">
-                                Select a class from the left side or start with the documentation of
-                                <a href="api/js.core.Application">Application</a>.
+                                Select a class from the left side or start with the
+                                documentation of
+                                <a href="api/{module.id()}/{module.firstClass()}">
+                                    {module.firstClass()}</a>.
                             </p>
                         </div>
                     </div>

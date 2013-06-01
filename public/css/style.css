@@ -420,3 +420,117 @@ ol.linenums li {
 .days.active {
     background: gray;
 }
+
+.method-view {
+    position: relative;
+    padding: 10px 28px;
+    border-bottom: 1px solid #f8f8ff;
+}
+
+.defined-by {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.method-view.active .description-wrapper {
+    height: auto;
+}
+
+.method-view .description-wrapper {
+    max-height: 18px;
+    overflow: hidden;
+}
+
+.method-name {
+    font-weight: bold;
+}
+
+.side-expandable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 15px;
+    text-align: center;
+    font-size: 15px;
+    background: #EEE;
+    text-indent: -9999px;
+}
+
+.side-expandable span {
+    display: block;
+    width: 10px;
+    height: 13px;
+    background: url(../img/arrows.png) no-repeat;
+    margin-left: 2px;
+    margin-top: 13px;
+}
+
+.side-expandable.active span{
+    background: url(../img/arrows.png) no-repeat -10px 0;
+}
+
+.tree-view-item,
+.tree-view-item-folder {
+}
+
+.tree-view-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tree-view-root {
+    margin:  0;
+}
+
+.tree-view-root > .tree-view-label {
+    display: none;
+}
+
+
+.tree-view {
+    margin-left: 10px;
+}
+
+.tree-view-label a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 5px 10px;
+}
+
+.active > .tree-view-label a {
+    color: #FFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    background-color: #08C;
+}
+
+.active > .tree-view-label > a > .icon {
+    background-image: url("../img/glyphicons-halflings-white.png");
+}
+
+.tree-view-item-folder > a .icon {
+    background-position: -384px -120px;
+}
+
+.active > .tree-view-item-folder > a .icon {
+    background-position: -408px -120px;
+}
+
+.tree-view-node.active > .tree-view {
+    display: block;
+}
+
+.tree-view-item.active {
+    color: #FFF;
+    background-color: #08C;
+}
+
+.tree-view-item.active .icon {
+    background-image: url("../img/glyphicons-halflings-white.png");
+}

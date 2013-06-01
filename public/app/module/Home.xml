@@ -7,7 +7,8 @@
         xmlns:basic="example.basic"
         xmlns:todo="example.todo" xmlns:contact="example.contact" xmlns:google="google" xmlns:twitter="twitter">
 
-    <js:Head title="rAppid.js - the declarative Rich Internet Application Javascript MVC Framework" author="Tony Findeisen &amp; Marcus Krejpowicz" />
+    <js:Head title="rAppid.js - the declarative Rich Internet Application Javascript MVC Framework"
+             author="Tony Findeisen &amp; Marcus Krejpowicz"/>
 
     <js:Content name="main">
         <div id="home">
@@ -16,11 +17,18 @@
                 <h2 class="sub" style="text-align: center;">the declarative Rich Internet
                     Application Javascript MVC Framework
                 </h2>
-                <p>"It's like Flex or Silverlight for HTML5. Designed for complex web applications!<br />
-                    Developed and based on the standards of the web - XML &amp; Javascript."</p>
+                <p>"It's like Flex or Silverlight for HTML5. Designed for complex web applications!
+                    <br/>
+                    Developed and based on the standards of the web - XML &amp; Javascript."
+                </p>
                 <p>
                     <a class="btn btn-large btn-primary" href="wiki/Installation">
-                        <em class="icon-road"/> Install it.
+                        <em class="icon-road"/>
+                        Install it.
+                    </a>
+                    <a class="btn btn-large" href="https://github.com/rappid/rAppid.js">
+                        <em class="icon-download"/>
+                        View on GitHub
                     </a>
                     <a class="btn btn-large" href="https://github.com/rappid/rAppid.js">
                         <em class="icon-download"/> View on GitHub
@@ -46,10 +54,10 @@
                 </ul>
                 <ul class="follow">
                     <li>
-                        <google:PlusOne size="small" href="http://www.rappidjs.com/#!/" />
+                        <google:PlusOne size="small" href="http://www.rappidjs.com/#!/"/>
                     </li>
                     <li>
-                        <twitter:Follow user="rappidjs" />
+                        <twitter:Follow user="rappidjs"/>
                     </li>
                     <li>
                         <twitter:Share via="rappidjs" url="http://www.rappidjs.com/#!/"/>
@@ -61,7 +69,8 @@
                 <div class="span4">
                     <h2>Why rAppid.js?</h2>
                     <p>
-                        HTML is great for defining views and CSS is great for styling. But don't repeat yourself by writing many tags to
+                        HTML is great for defining views and CSS is great for styling. But don't repeat yourself by
+                        writing many tags to
                         define your view. rAppidjs let you encapsulate complexity into
                         components which can be easy used like HTML elements in your application. The
                         result is a clean, readable mark-up offering a quick
@@ -74,9 +83,11 @@
                 <div class="span4">
                     <h2>Another MVC Framework</h2>
                     <p>
-                        Most frameworks use templates to describe their views or try to extend the HTML language within the
+                        Most frameworks use templates to describe their views or try to extend the HTML language within
+                        the
                         document markup, which is a dirty style. rAppid.js solves that issue by
-                        introducing an eXtendable Application Markup Language (XAML) for defining the application, MV-Bindings
+                        introducing an eXtendable Application Markup Language (XAML) for defining the application,
+                        MV-Bindings
                         and event handling.
                     </p>
                     <p class="buttons">
@@ -87,7 +98,8 @@
                     <h2>Extensibility</h2>
                     <p>
                         rAppid.js allows you to encapsulate complexity into
-                        components which can be used beside HTML. Therefor rAppid.js uses a Shadow DOM, which is rendered as valid HTML in the document body or a specific target.
+                        components which can be used beside HTML. Therefor rAppid.js uses a Shadow DOM, which is
+                        rendered as valid HTML in the document body or a specific target.
                         It is completely extendable and
                         works well with other libraries.
                     </p>
@@ -104,11 +116,13 @@
                 <div class="span4">
                     <h3>Installation</h3>
                     <p>
-                        rAppid.js is installed using npm with just one command. After the installation succeed the command-line interface is ready to setup projects.
+                        rAppid.js is installed using npm with just one command. After the installation succeed the
+                        command-line interface is ready to setup projects.
                     </p>
                     <pre>sudo npm install -g rAppid.js</pre>
                     <p>Download
-                        <a href="http://nodejs.org">node</a> with <a href="http://npmjs.org">npm</a>.
+                        <a href="http://nodejs.org">node</a>
+                        with<a href="http://npmjs.org">npm</a>.
                     </p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Installation">Installation</a>
@@ -117,11 +131,13 @@
                 <div class="span4">
                     <h3>Setup a project</h3>
                     <p>
-                        <code>rappidjs</code> is a command-line interface shipped with rAppid.js
+                        <code>rappidjs</code>
+                        is a command-line interface shipped with rAppid.js
                         helping to manage projects.
                     </p>
                     <pre>rappidjs create app &lt;Name&gt;
-[&lt;targetDirectory&gt;]</pre>
+                        [&lt;targetDirectory&gt;]
+                    </pre>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Project">Project structure</a>
                         <a class="btn btn-info" href="/wiki/Command-Line-Interface">Commmand-line</a>
@@ -133,10 +149,13 @@
                         Execute the rappidjs server command and view the application in your web browser.
                     </p>
                     <pre>cd &lt;targetDirectory&gt;
-rappidjs server .</pre>
+                        rappidjs server .
+                    </pre>
 
                     <p>
-                        Than open <a href="http://localhost/">http://localhost/</a> in your browser.
+                        Than open
+                        <a href="http://localhost/">http://localhost/</a>
+                        in your browser.
                     </p>
                 </div>
             </div>
@@ -146,14 +165,19 @@ rappidjs server .</pre>
                 <div class="span4">
                     <h3>Start</h3>
                     <p>
-                        The <code>index.html</code> is the start file of a rAppid.js application.
+                        The
+                        <code>index.html</code>
+                        is the start file of a rAppid.js application.
                         The application gets:
                     </p>
-                        <ol>
-                            <li><code>bootStrap</code>ped</li>
-                            <li><code>start</code>ed and after completing this</li>
-                            <li><code>render</code>ed into the body.</li>
-                        </ol>
+                    <ol>
+                        <li><code>bootStrap</code>ped
+                        </li>
+                        <li><code>start</code>ed and after completing this
+                        </li>
+                        <li><code>render</code>ed into the body.
+                        </li>
+                    </ol>
                     <p class="buttons">
                         <a class="btn btn-info" href="#">View details</a>
                     </p>
@@ -161,9 +185,13 @@ rappidjs server .</pre>
                 <div class="span4">
                     <h3>Application Markup</h3>
                     <p>
-                        The application structure is defined with XAML in the <code>App.xml</code> file.
+                        The application structure is defined with XAML in the
+                        <code>App.xml</code>
+                        file.
                         Within the XML file standard HTML can be combined with custom components.
-                        Each application inherits form <code>js.core.Application</code> or from a Code-Behind file like in this case from
+                        Each application inherits form
+                        <code>js.core.Application</code>
+                        or from a Code-Behind file like in this case from
                         <code>AppClass.js</code>.
                     </p>
                     <p class="buttons">
@@ -183,12 +211,15 @@ rappidjs server .</pre>
                     <div class="tabtable">
                         <ui:TabView>
                             <ui:Tab title="index.html">
-                                <view:Code >${example.basic.Index}</view:Code>
+                                <div/>
+                                <view:Code>${example.basic.Index}</view:Code>
                             </ui:Tab>
                             <ui:Tab title="App.xml">
-                                <view:Code >${example.basic.App}</view:Code>
+                                <div/>
+                                <view:Code>${example.basic.App}</view:Code>
                             </ui:Tab>
                             <ui:Tab title="AppClass.js">
+                                <div/>
                                 <view:Code>${example.basic.AppClass}</view:Code>
                             </ui:Tab>
                         </ui:TabView>
@@ -221,11 +252,13 @@ rappidjs server .</pre>
                 <div class="span4">
                     <h3>Business logic</h3>
                     <p>
-                        The complex business logic of an application is split and encapsulated into small pieces of easy to understandable code - the
+                        The complex business logic of an application is split and encapsulated into small pieces of easy
+                        to understandable code - the
                         <code>Entity</code>.
                     </p>
                     <p>
-                        Entities are storing data which could be bound to components. Entities, that can be loaded and persistent are called
+                        Entities are storing data which could be bound to components. Entities, that can be loaded and
+                        persistent are called
                         <code>Model</code>s.
                     </p>
                     <p class="buttons">
@@ -236,8 +269,11 @@ rappidjs server .</pre>
                 <div class="span4">
                     <h3>Event handler</h3>
                     <p>
-                        In XAML an event handler is registered declarative with an on<code>eventname</code> attribute.
-                        In Javascript the handler is bound by calling a bind function on the target passing the event name and the handler as arguments.
+                        In XAML an event handler is registered declarative with an on
+                        <code>eventname</code>
+                        attribute.
+                        In Javascript the handler is bound by calling a bind function on the target passing the event
+                        name and the handler as arguments.
                     </p>
                     <p>
                         rAppid.js also supports late binding and events on chained paths.
@@ -258,10 +294,10 @@ rappidjs server .</pre>
                                 <view:Code>${example.todo.AppClass}</view:Code>
                             </ui:Tab>
                             <ui:Tab title="model/Todo.js">
-                                <view:Code >${example.todo.TodoModel}</view:Code>
+                                <view:Code>${example.todo.TodoModel}</view:Code>
                             </ui:Tab>
                             <ui:Tab title="model/TodoList.js">
-                                <view:Code >${example.todo.TodoList}</view:Code>
+                                <view:Code>${example.todo.TodoList}</view:Code>
                             </ui:Tab>
                         </ui:TabView>
                     </div>
@@ -279,10 +315,14 @@ rappidjs server .</pre>
                 <div class="span4">
                     <h3>Create</h3>
                     <p>
-                        A component is a class defined in a package which inherits from <code>js.core.Component</code>. It can be declared either in Javascript or with XAML.
+                        A component is a class defined in a package which inherits from<code>js.core.Component</code>.
+                        It can be declared either in Javascript or with XAML.
                     </p>
                     <p>
-                        Components can be either visible at runtime and interact with the user or invisible providing services like <code>I18n</code> or <code>RestDataSource</code>.
+                        Components can be either visible at runtime and interact with the user or invisible providing
+                        services like
+                        <code>I18n</code>
+                        or<code>RestDataSource</code>.
                     </p>
                 </div>
                 <div class="span4">
@@ -291,22 +331,33 @@ rappidjs server .</pre>
                         Components can be created either declarative using XAML or at runtime via Javascript.
                     </p>
                     <p>
-                        In XAML simply write <code>&lt;prefix:Component /&gt;</code> to create and add a new instance of the component.</p>
+                        In XAML simply write
+                        <code>&lt;prefix:Component /&gt;</code>
+                        to create and add a new instance of the component.
+                    </p>
                     <p>
-                        At runtime use the <code>createComponent</code>
-                        command to instantiate the component and add it with the <code>addChild</code> method.
+                        At runtime use the
+                        <code>createComponent</code>
+                        command to instantiate the component and add it with the
+                        <code>addChild</code>
+                        method.
                     </p>
 
                 </div>
                 <div class="span4">
                     <h3>Publish</h3>
                     <p>
-                        Components can be easily published as rAppid.js module using <code>
-                        <a href="http://npmjs.org/doc/publish.html">npm publish</a></code> command.
+                        Components can be easily published as rAppid.js module using
+                        <code>
+                            <a href="http://npmjs.org/doc/publish.html">npm publish</a>
+                        </code>
+                        command.
                     </p>
                     <p>
-                        Create a <a href="wiki/Project">library project</a>, add the components into a unique package structure and provide the required information in the
-                        <code>package.json</code> file.
+                        Create a<a href="wiki/Project">library project</a>, add the components into a unique package
+                        structure and provide the required information in the
+                        <code>package.json</code>
+                        file.
                     </p>
                 </div>
             </div>
@@ -316,16 +367,16 @@ rappidjs server .</pre>
                     <div class="tabtable">
                         <ui:TabView>
                             <ui:Tab title="view/Card.xml">
-                                <view:Code >${example.contact.Card}</view:Code>
+                                <view:Code>${example.contact.Card}</view:Code>
                             </ui:Tab>
                             <ui:Tab title="App.xml">
-                                <view:Code >${example.contact.App}</view:Code>
+                                <view:Code>${example.contact.App}</view:Code>
                             </ui:Tab>
                             <ui:Tab title="AppClass.js">
-                                <view:Code >${example.contact.AppClass}</view:Code>
+                                <view:Code>${example.contact.AppClass}</view:Code>
                             </ui:Tab>
                             <ui:Tab title="model/Person.js">
-                                <view:Code >${example.contact.PersonModel}</view:Code>
+                                <view:Code>${example.contact.PersonModel}</view:Code>
                             </ui:Tab>
                         </ui:TabView>
                     </div>
@@ -346,7 +397,8 @@ rappidjs server .</pre>
                         Data is loaded, updated and deleted with the Active-Record-Pattern via methods of the model.
                     </p>
                     <p>
-                        rAppid.js support Single-Instance-Pattern, schemas, format processors and provides an interface to define how to handle sub-models.
+                        rAppid.js support Single-Instance-Pattern, schemas, format processors and provides an interface
+                        to define how to handle sub-models.
                     </p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Datasource">Data source</a>
@@ -355,11 +407,13 @@ rappidjs server .</pre>
                 <div class="span4">
                     <h3>REST</h3>
                     <p>
-                        The RestDataSource is a common implementation to access RESTful web-services. Configure the target API, define
+                        The RestDataSource is a common implementation to access RESTful web-services. Configure the
+                        target API, define
                         your models paths and start accessing remote data.
                     </p>
                     <p>
-                        Define processors for special serializing and deserializing of the model data or choose between JSON and XML as exchange format.
+                        Define processors for special serializing and deserializing of the model data or choose between
+                        JSON and XML as exchange format.
                     </p>
                 </div>
                 <div class="span4">
@@ -376,10 +430,12 @@ rappidjs server .</pre>
                 <div class="span4">
                     <h3>History</h3>
                     <p>
-                        Navigate back and forth, do internal redirects and process deeplinks from outside - that's what the history do.
+                        Navigate back and forth, do internal redirects and process deeplinks from outside - that's what
+                        the history do.
                     </p>
                     <p>
-                        The history listen to hash-change-events from the browser and does a fallback polling mechanism for older browsers.
+                        The history listen to hash-change-events from the browser and does a fallback polling mechanism
+                        for older browsers.
                     </p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/History">History</a>
@@ -388,7 +444,8 @@ rappidjs server .</pre>
                 <div class="span4">
                     <h3>Router</h3>
                     <p>
-                        The router processes changes from the history using routes and executes handler functions, which also can be asynchronous or interrupted.
+                        The router processes changes from the history using routes and executes handler functions, which
+                        also can be asynchronous or interrupted.
                     </p>
                     <p>
                         The idea is to pass a callback from the application start to all
@@ -403,10 +460,14 @@ rappidjs server .</pre>
                     <h3>ModuleLoader</h3>
 
                     <p>
-                        With the ModuleLoader - modules can loaded dynamically when the are needed to reduce the size and loading time of a complex application.
+                        With the ModuleLoader - modules can loaded dynamically when the are needed to reduce the size
+                        and loading time of a complex application.
                     </p>
                     <p>
-                        The ModuleLoader interacts with the <code>Router</code> and also executes routes defined in a loaded module after it has been started. This is modularization!
+                        The ModuleLoader interacts with the
+                        <code>Router</code>
+                        and also executes routes defined in a loaded module after it has been started. This is
+                        modularization!
                     </p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/ModuleLoader">ModuleLoader</a>
@@ -435,7 +496,9 @@ rappidjs server .</pre>
                     </p>
                     <p>
                         The site uses the<code>raw</code>-Plugin to require the source code
-                        of our examples which is shown highlighted in a <code>CodeView</code> component.
+                        of our examples which is shown highlighted in a
+                        <code>CodeView</code>
+                        component.
                     </p>
                     <p>
                         It dynamically loads markdown files from our wiki which is parsed and renderer on the client.
@@ -449,12 +512,15 @@ rappidjs server .</pre>
                         of this page (<code>Ctrl + u</code>) and you'll see what a crawler sees. Almost nothing!
                     </p>
                     <p>
-                        Because this is an ajax page, we use hash-bang urls to tell the crawler the ajax parts of the site.
+                        Because this is an ajax page, we use hash-bang urls to tell the crawler the ajax parts of the
+                        site.
                         The crawler transforms these urls to special requests, which are handled by our
                         <a href="https://github.com/it-ony/rAppid.js-server">rAppid.js-server</a>.
                     </p>
                     <p>
-                        See this page <a href="http://www.rappidjs.com/?_escaped_fragment_=/home">rendered</a> on node with rAppid.js.
+                        See this page
+                        <a href="http://www.rappidjs.com/?_escaped_fragment_=/home">rendered</a>
+                        on node with rAppid.js.
                     </p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Node-Rendering">Node Rendering</a>
@@ -468,7 +534,7 @@ rappidjs server .</pre>
                         <a href="https://github.com/it-ony/rappidjs.com">Github</a>.
                     </p>
                     <p>
-                        Inspired by <a href="http://angularjs.org">angularjs</a>. Styled with
+                        Inspired by<a href="http://angularjs.org">angularjs</a>. Styled with
                         <a href="http://twitter.github.com/bootstrap/">bootstrap</a>.
                     </p>
                 </div>
