@@ -135,8 +135,7 @@
                         is a command-line interface shipped with rAppid.js
                         helping to manage projects.
                     </p>
-                    <pre>rappidjs create app &lt;Name&gt;
-                        [&lt;targetDirectory&gt;]
+                    <pre>rappidjs create app &lt;Name&gt;<br/>[&lt;targetDirectory&gt;]
                     </pre>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Project">Project structure</a>
@@ -148,9 +147,7 @@
                     <p>
                         Execute the rappidjs server command and view the application in your web browser.
                     </p>
-                    <pre>cd &lt;targetDirectory&gt;
-                        rappidjs server .
-                    </pre>
+                    <pre>cd &lt;targetDirectory&gt; <br/>rappidjs server .</pre>
 
                     <p>
                         Than open
