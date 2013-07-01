@@ -128,7 +128,7 @@
                 <div class="span4">
                     <h3>Setup a project</h3>
                     <p>
-                        Use the <code>rappidjs</code> command to setup a project in a specific target dir.
+                        Use the <code>rappidjs</code> command to create a project in a specific target dir.
                     </p>
                     <pre>rappidjs create app &lt;Name&gt; [&lt;targetDir&gt;]</pre>
                     <p class="buttons">
