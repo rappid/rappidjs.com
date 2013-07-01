@@ -111,15 +111,15 @@
 
             <div class="row with-buttons">
                 <div class="span4">
-                    <h3>Installation</h3>
+                    <h3>Install the rappidjs command</h3>
                     <p>
-                        rAppid.js is installed using npm with just one command. After the installation succeed the
-                        command-line interface is ready to setup projects.
+                        rAppid.js is installed using <a href="http://npmjs.org">npm</a> with just one command.
+                        After the installation the <code>rappidjs</code> command-line-interface is ready for use.
                     </p>
                     <pre>sudo npm install -g rAppid.js</pre>
                     <p>Download
                         <a href="http://nodejs.org">node</a>
-                        with<a href="http://npmjs.org">npm</a>.
+                        with <a href="http://npmjs.org">npm</a>.
                     </p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Installation">Installation</a>
@@ -128,13 +128,9 @@
                 <div class="span4">
                     <h3>Setup a project</h3>
                     <p>
-                        <code>rappidjs</code>
-                        is a command-line interface shipped with rAppid.js
-                        helping to manage projects.
+                        Use the <code>rappidjs</code> command to setup a project in a specific target dir.
                     </p>
-                    <pre>rappidjs create app &lt;Name&gt;
-                        [&lt;targetDirectory&gt;]
-                    </pre>
+                    <pre>rappidjs create app &lt;Name&gt; [&lt;targetDir&gt;]</pre>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Project">Project structure</a>
                         <a class="btn btn-info" href="/wiki/Command-Line-Interface">Commmand-line</a>
@@ -143,14 +139,13 @@
                 <div class="span4">
                     <h3>Run the application</h3>
                     <p>
-                        Execute the rappidjs server command and view the application in your web browser.
+                        Execute the <code>rappidjs server</code> command and view the application in your web browser.
                     </p>
-                    <pre>cd &lt;targetDirectory&gt;
-                        rappidjs server .
-                    </pre>
+                    <pre>cd &lt;targetDir&gt;
+rappidjs server .</pre>
 
                     <p>
-                        Than open
+                        Then open
                         <a href="http://localhost/">http://localhost/</a>
                         in your browser.
                     </p>
@@ -168,12 +163,9 @@
                         The application gets:
                     </p>
                     <ol>
-                        <li><code>bootStrap</code>ped
-                        </li>
-                        <li><code>start</code>ed and after completing this
-                        </li>
-                        <li><code>render</code>ed into the body.
-                        </li>
+                        <li>bootStrapped</li>
+                        <li>started and after completing this</li>
+                        <li>rendered into the body.</li>
                     </ol>
                     <p class="buttons">
                         <a class="btn btn-info" href="#">View details</a>
@@ -196,9 +188,9 @@
                     </p>
                 </div>
                 <div class="span4">
-                    <h3>Application Code-Behind</h3>
+                    <h3>Application Code-Behind file</h3>
                     <p>
-                        The Code-Behind acts as a kind of a controller for the XML file.
+                        The Code-Behind file <code>AppClass.js</code> acts as a kind of a controller for the XAML file.
                         It connects the view with the data model and the business logic.
                     </p>
                 </div>
@@ -249,14 +241,11 @@
                 <div class="span4">
                     <h3>Business logic</h3>
                     <p>
-                        The complex business logic of an application is split and encapsulated into small pieces of easy
-                        to understandable code - the
-                        <code>Entity</code>.
+                        The business logic of an rAppid.js application is split and encapsulated into entities, models, collections and injectable
+                        services.
                     </p>
                     <p>
-                        Entities are storing data which could be bound to components. Entities, that can be loaded and
-                        persistent are called
-                        <code>Model</code>s.
+                        Through this encapsulation your view and controller stays clean and understandable.
                     </p>
                     <p class="buttons">
                         <a class="btn btn-info" href="/wiki/Bindable">Bindable</a>
@@ -264,19 +253,19 @@
                     </p>
                 </div>
                 <div class="span4">
-                    <h3>Event handler</h3>
+                    <h3>Event handlers</h3>
                     <p>
-                        In XAML an event handler is registered declarative with an on
+                        In XAML an event handler is registered like in HTML with an on
                         <code>eventname</code>
                         attribute.
-                        In Javascript the handler is bound by calling a bind function on the target passing the event
-                        name and the handler as arguments.
+                        In Javascript event handlers can be registered with the <code>bind</code> method.
                     </p>
                     <p>
-                        rAppid.js also supports late binding and events on chained paths.
+                        rAppid.js also supports binding to events on non-existing or changing objects.
                     </p>
                     <p class="buttons">
-                        <a class="btn btn-info" href="/wiki/Events">Events</a>
+                        <!--TODO: add event handler wiki page-->
+                        <!--<a class="btn btn-info" href="/wiki/Events">Events</a>-->
                     </p>
                 </div>
             </div>
@@ -308,7 +297,7 @@
 
 
             <h2>Components</h2>
-            <div class="row">
+            <div class="row with-buttons">
                 <div class="span4">
                     <h3>Create</h3>
                     <p>
@@ -321,6 +310,11 @@
                         <code>I18n</code>
                         or<code>RestDataSource</code>.
                     </p>
+
+                    <p class="buttons">
+                        <a class="btn btn-info" href="/wiki/Bindable">Create custom view components</a>
+                    </p>
+
                 </div>
                 <div class="span4">
                     <h3>Use</h3>
@@ -351,7 +345,7 @@
                         command.
                     </p>
                     <p>
-                        Create a<a href="wiki/Project">library project</a>, add the components into a unique package
+                        Create a <a href="wiki/Project">library project</a>, add the components into a unique package
                         structure and provide the required information in the
                         <code>package.json</code>
                         file.
