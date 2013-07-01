@@ -486,7 +486,7 @@ rappidjs server .</pre>
                         This project site has been developed completely with rAppid.js to show how powerful it is.
                     </p>
                     <p>
-                        The site uses the<code>raw</code>-Plugin to require the source code
+                        The site uses the <code>raw</code>-Plugin to require the source code
                         of our examples which is shown highlighted in a
                         <code>CodeView</code>
                         component.
@@ -525,7 +525,7 @@ rappidjs server .</pre>
                         <a href="https://github.com/it-ony/rappidjs.com">Github</a>.
                     </p>
                     <p>
-                        Inspired by<a href="http://angularjs.org">angularjs</a>. Styled with
+                        Inspired by <a href="http://angularjs.org">angularjs</a>. Styled with
                         <a href="http://twitter.github.com/bootstrap/">bootstrap</a>.
                     </p>
                 </div>
