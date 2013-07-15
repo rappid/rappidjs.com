@@ -255,9 +255,9 @@
 
                         <ui:ItemsView
                                 items="{doc.methods}"
-                                itemKey="method">
+                                itemKey="methodItem">
                             <js:Template name="item">
-                                <view:MethodView method="${method}" definedByLink="{getDocumentationLink(method.definedBy)}"
+                                <view:MethodView method="${methodItem}" definedByLink="{getDocumentationLink(method.definedBy)}"
                                                  visible="{isMethodVisible(method,showTypes(showPublic.checked, showProtected.checked),showInherit.checked)}"/>
                             </js:Template>
                         </ui:ItemsView>
@@ -289,9 +289,9 @@
 
                             <ui:ItemsView
                                     items="{doc.getStaticMethods(showTypes(showPublicStatic.checked, showProtectedStatic.checked))}"
-                                    itemKey="method">
+                                    itemKey="methodItem">
                                 <js:Template name="item">
-                                    <view:MethodView method="{method}"/>
+                                    <view:MethodView method="{methodItem}"/>
                                 </js:Template>
                             </ui:ItemsView>
 
