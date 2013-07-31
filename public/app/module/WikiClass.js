@@ -14,7 +14,7 @@ define(['js/core/Module'], function(Module) {
 
         showPage: function(routeContext, page) {
 
-            var url = decodeURIComponent("wiki/" + page + ".md"),
+            var url = decodeURIComponent("/wiki/" + page + ".md"),
                 self = this;
 
             url = url.replace('%20', '-');
