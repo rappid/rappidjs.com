@@ -24,6 +24,9 @@ define(
                     },{
                         label: 'API',
                         link: 'api'
+                    }, {
+                        label: 'Try it',
+                        link: 'http://try.rappidjs.com'
                     },{
                         label: 'License',
                         link: 'license'

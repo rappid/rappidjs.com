@@ -26,6 +26,10 @@
                         <em class="icon-road"/>
                         Install it.
                     </a>
+                    <a class="btn btn-large" href="http://try.rappidjs.com">
+                        <em class="icon-globe"/>
+                        Try it online.
+                    </a>
                     <a class="btn btn-large" href="https://github.com/rappid/rAppid.js">
                         <em class="icon-download"/>
                         View on GitHub

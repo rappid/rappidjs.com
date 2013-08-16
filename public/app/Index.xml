@@ -18,7 +18,7 @@
                     <ui:ItemsView items="{pages}" tagName="ul" class="nav">
                         <js:Template name="item">
                             <li selected="{isPageSelected(item)}">
-                                <a href="/${item.link}">${item.label}</a>
+                                <a href="${item.link}">${item.label}</a>
                             </li>
                         </js:Template>
                     </ui:ItemsView>
