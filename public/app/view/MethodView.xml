@@ -39,5 +39,14 @@
         <a class="defined-by" href="{definedByLink}">${method.definedBy}</a>
         <div class="description-wrapper">
             <p class="description">${method.description}</p>
+            <ul class="parameters ">
+                <js:Repeat items="${method.parameter}" itemKey="parameter">
+                    <li>
+                        <span class="parameter-name">${parameter.name}</span>
+                        <span visible="${parameter.hasTypeDefinition()}">: ${parameter.getFirstTypeName()}</span>
+                        <span visible="${parameter.description}" class="parameter-description"> - ${parameter.description} </span>
+                    </li>
+                </js:Repeat>
+            </ul>
         </div>
 </view:MethodViewClass>
