@@ -52,7 +52,7 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             if (parts.length > 0) {
                 var packageName = parts[0];
 
-                if (/^[a-z]/.test(packageName)) {
+                if (/^[a-z]/.test(packageName) && packageName !== "a") {
                     var tree = node[packageName];
                     if (!tree) {
                         tree = {};
@@ -76,6 +76,21 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
         },
 
         _buildTree: function (hash, tree) {
+            var pack;
+            for (var key in hash) {
+                if (hash.hasOwnProperty(key) && key != "children") {
+                    pack = new TreeNode({
+                        data: new Bindable({
+                            id: key
+                        })
+                    });
+                    tree.addChild(
+                        pack
+                    );
+
+                    this._buildTree(hash[key], pack);
+                }
+            }
             if (hash.children) {
                 var cls;
                 for (var i = 0; i < hash.children.length; i++) {
@@ -85,23 +100,8 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
                         data: hash.children[i].element
                     }));
                 }
-            } else {
-                var pack;
-                for (var key in hash) {
-                    if (hash.hasOwnProperty(key)) {
-                        pack = new TreeNode({
-                            data: new Bindable({
-                                id: key
-                            })
-                        });
-                        tree.addChild(
-                            pack
-                        );
-
-                        this._buildTree(hash[key], pack);
-                    }
-                }
             }
+
 
         },
 
