@@ -52,7 +52,7 @@ define(['js/core/Module', "json!doc/index.json", "js/core/List", "documentation/
             if (parts.length > 0) {
                 var packageName = parts[0];
 
-                if (/^[a-z]/.test(packageName) && packageName !== "a") {
+                if (/^[a-z]/.test(packageName)) {
                     var tree = node[packageName];
                     if (!tree) {
                         tree = {};
