@@ -45,6 +45,7 @@
                         <span class="parameter-name">${parameter.name}</span>
                         <span visible="${parameter.hasTypeDefinition()}">: ${parameter.getFirstTypeName()}</span>
                         <span visible="${parameter.description}" class="parameter-description"> - ${parameter.description} </span>
+                        <strong visible="${parameter.optional}">(optional)</strong>
                     </li>
                 </js:Repeat>
             </ul>
