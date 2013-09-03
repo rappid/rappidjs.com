@@ -433,13 +433,24 @@ ol.linenums li {
     top: 10px;
 }
 
-.method-view.active .description-wrapper {
-    height: auto;
+
+.method-view {
 }
 
-.method-view .description-wrapper {
-    max-height: 18px;
-    overflow: hidden;
+.method-view .parameters {
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    max-height: 0;
+    opacity: 0;
+}
+
+.method-view.active .parameters {
+    opacity: 1;
+    max-height: 300px;
+}
+
+.method-view .parameter-name {
+    font-weight: bold;
 }
 
 .method-name {
