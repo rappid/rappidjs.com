@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 # stop if we have some error
 set -e
@@ -7,9 +7,9 @@ WORKSPACE=`pwd`
 DEPENDENCIES="$WORKSPACE/dependencies"
 REPOSITORY=/local/repository/rappidjs.com
 
-rm -rf public-build
-# git reset --hard HEAD
-# git pull;
+rm -rf public public-build
+git reset --hard HEAD
+git pull origin dev;
 
 # npm install
 
@@ -53,8 +53,12 @@ echo "VERSION: $VERSION"
 
 $RAPPIDJS build --version $VERSION
 
-cd public-build/$VERSION
+cd public-build/
+cp index.html $VERSION/
 
-$REPO=$REPOSITORY/$VERSION;
-
+REPO=$REPOSITORY/$VERSION;
 mkdir -p $REPO;
+
+tar -czf $REPO/client.tar.gz index.html $VERSION
+
+echo $VERSION > /local/version/rappidjs.com.version
