@@ -8,10 +8,10 @@ DEPENDENCIES="$WORKSPACE/dependencies"
 REPOSITORY=/local/repository/rappidjs.com
 
 rm -rf public-build
-git reset --hard HEAD
-git pull;
+# git reset --hard HEAD
+# git pull;
 
-npm install
+# npm install
 
 echo "Dependencies: $DEPENDENCIES"
 
