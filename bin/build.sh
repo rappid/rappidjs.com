@@ -83,7 +83,6 @@ cp -r -L server tmp
 cp -r ${DEPENDENCIES}/rAppid.js tmp
 cp -r public/ tmp/
 cp index.js tmp
-mv node_modules/ tmp/
 
 cd tmp/public
 rm -f js
