@@ -6,9 +6,7 @@ set -e
 WORKSPACE=`pwd`
 DEPENDENCIES="${WORKSPACE}/dependencies"
 REPOSITORY=/local/repository/rappidjs.com
-VERSION=${BUILD_NUMBER}
 BRANCH=${GIT_BRANCH};
-REPO=${REPOSITORY}/${VERSION};
 
 if [ -z BRANCH ]; then
     # branch not set from jenkins, get it from the git commandline
@@ -61,6 +59,7 @@ RAPPIDJS="${DEPENDENCIES}/rAppid.js/bin/rappidjs"
 chmod +x ${RAPPIDJS}
 
 VERSION="`$RAPPIDJS version`-$BUILD_NUMBER";
+REPO=${REPOSITORY}/${VERSION};
 
 echo "VERSION: $VERSION"
 
