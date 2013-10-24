@@ -15,7 +15,7 @@ if [ -z BRANCH ]; then
     BRANCH=`git status | grep "On branch" | cut -d' '  -f 4`
 fi
 
-rm -rf public public-build
+rm -rf public public-build server
 git reset --hard HEAD
 git pull origin dev;
 
