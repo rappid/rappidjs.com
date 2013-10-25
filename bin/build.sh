@@ -63,7 +63,7 @@ REPO=${REPOSITORY}/${VERSION};
 
 echo "VERSION: $VERSION"
 
-$RAPPIDJS build --version ${VERSION}
+${RAPPIDJS} build --version ${VERSION}
 
 cd public-build/
 cp index.html ${VERSION}/
@@ -84,6 +84,7 @@ cp -r public/ tmp/
 cp index.js tmp
 cp public/config.json tmp/server/
 cp package.json tmp
+${RAPPIDJS} version --version ${VERSION} tmp/package.json
 
 cd tmp/public
 rm -f js
