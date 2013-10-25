@@ -55,6 +55,8 @@ ln -s ../public/app
 
 cd ${WORKSPACE}
 
+sass --scss public/css/try.scss public/css/try.css
+
 RAPPIDJS="${DEPENDENCIES}/rAppid.js/bin/rappidjs"
 chmod +x ${RAPPIDJS}
 
