@@ -103,5 +103,5 @@ tar -czf ${REPO}/server.tar.gz -C ${WORKSPACE}/tmp .
 echo ${VERSION} > /local/version/rappidjs.com.version
 
 if [ $USER == "jenkins" ]; then
-    sudo /local/www/rappidjs/bin/update beta ${VERSION}
+    sudo /local/www/rappidjs.com/bin/update beta ${VERSION}
 fi
