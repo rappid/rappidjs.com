@@ -1,15 +1,16 @@
 package com.rappidjs.webtest;
 
+import com.rappidjs.webtest.model.Person;
 import com.rappidjs.webtest.module.HomeModule;
 import io.rappid.webtest.common.WebElementPanel;
 import io.rappid.webtest.testng.TestDevelopment;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -33,7 +34,6 @@ public class HomeTest extends RappidJsWebTest {
     }
 
     @Test()
-    @TestDevelopment()
     public void TodoListTest() {
         HomeModule.TodoApp todoApp = getHomeModule().getTodoApp();
 
@@ -89,6 +89,44 @@ public class HomeTest extends RappidJsWebTest {
 
         Assert.assertEquals(todoApp.openItems(), uncheckedList.size());
         Assert.assertEquals(todoApp.totalItems(), uncheckedList.size());
+    }
+
+    @Test()
+    @TestDevelopment()
+    public void ContactsTest() {
+        HomeModule.ContactsApp app = getHomeModule().getContactsApp();
+
+
+        Random random = new Random();
+        int itemCount = random.nextInt(10) + 5;
+
+        ArrayList<Person> contacts = new ArrayList<Person>();
+
+
+        for (int i = 0; i < itemCount; i++) {
+            Assert.assertFalse(app.previewIsVisible());
+            Person p = new Person(new BigInteger(50, random).toString(32), new BigInteger(70, random).toString(32), new BigInteger(10, random).toString());
+            contacts.add(p);
+
+            app.firstName().setValue(p.getFirstName());
+            app.lastName().setValue(p.getLastName());
+            app.phone().setValue(p.getPhone());
+
+            Assert.assertTrue(app.previewIsVisible());
+
+            Assert.assertTrue(app.preview().shows(p));
+            app.phone().pressEnter();
+            Assert.assertFalse(app.previewIsVisible());
+        }
+
+        // check cards
+        List<HomeModule.ContactsApp.Card> cards = app.cards();
+        Assert.assertEquals(contacts.size(), cards.size());
+
+        for (int i = 0; i < cards.size(); i++) {
+            Assert.assertTrue(cards.get(i).shows(contacts.get(i)));
+        }
+
     }
 
     private HomeModule getHomeModule() {
