@@ -4,6 +4,12 @@
         <listener class-name="io.rappid.webtest.testng.TestResultPrinter" />
     </listeners>
 
+    <method-selectors>
+        <method-selector>
+            <selector-class name="io.rappid.webtest.testng.MethodSelector" />
+        </method-selector>
+    </method-selectors>
+
     <parameter name="browser" value="${browser}"/>
 
     <parameter name="grid.port" value="${grid.port}"/>
