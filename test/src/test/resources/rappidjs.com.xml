@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Ivo" parallel="tests" thread-count="${threadCount}" time-out="60000">
+    <listeners>
+        <listener class-name="io.rappid.webtest.testng.TestResultPrinter" />
+    </listeners>
+
+    <parameter name="browser" value="${browser}"/>
+
+    <parameter name="grid.port" value="${grid.port}"/>
+    <parameter name="grid.host" value="${grid.host}"/>
+
+    <parameter name="startUrl" value="${startUrl}"/>
+
+    <test name="integration-tests">
+        <classes>
+            <class name="com.rappidjs.webtest.HomeTest"/>
+        </classes>
+    </test>
+</suite>
