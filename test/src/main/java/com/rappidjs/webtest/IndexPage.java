@@ -2,7 +2,6 @@ package com.rappidjs.webtest;
 
 import com.rappidjs.webtest.module.HomeModule;
 import io.rappid.webtest.common.PageObject;
-import org.openqa.selenium.By;
 
 /**
  * User: tony
