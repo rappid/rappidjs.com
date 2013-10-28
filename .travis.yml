@@ -2,7 +2,7 @@ language: java
 install:
   - git clone https://github.com/rappid/webtest.git /tmp/webtest && mvn -f /tmp/webtest/pom.xml clean install
 before_script:
-  - chmod +x bin/sauce_connect_setup.sh && bin/sauce_connect_setup.sh
+  - chmod +x bin/sauce_connect_setup.sh && bin/sauce_connect_setup.sh > /dev/null
 script:
   - "mvn -f test/pom.xml clean integration-test -Dbrowser=chrome -Dgrid.port=4445 -DthreadCount=1 -DstartUrl=http://preview.rappidjs.com"
 env:
