@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Ivo" parallel="tests" thread-count="${threadCount}" time-out="60000">
+<suite name="Ivo" parallel="tests" thread-count="${threadCount}" time-out="600000">
     <listeners>
         <listener class-name="io.rappid.webtest.testng.TestResultPrinter"/>
     </listeners>
