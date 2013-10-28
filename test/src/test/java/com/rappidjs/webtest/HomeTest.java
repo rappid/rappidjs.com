@@ -98,7 +98,7 @@ public class HomeTest extends RappidJsWebTest {
 
 
         Random random = new Random();
-        int itemCount = random.nextInt(10) + 5;
+        int itemCount = random.nextInt(3) + 5;
 
         ArrayList<Person> contacts = new ArrayList<Person>();
 
