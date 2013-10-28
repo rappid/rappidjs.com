@@ -1,6 +1,6 @@
 language: java
 install:
-
+  - git clone https://github.com/rappid/webtest.git /tmp/webtest && mvn -f /tmp/webtest/pom.xml clean install
 before_script:
   - chmod +x bin/sauce_connect_setup.sh && bin/sauce_connect_setup.sh
 script:
