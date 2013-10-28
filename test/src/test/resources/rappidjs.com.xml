@@ -20,6 +20,7 @@
     <test name="integration-tests">
         <classes>
             <class name="com.rappidjs.webtest.HomeTest"/>
+            <class name="com.rappidjs.webtest.UiTest"/>
         </classes>
     </test>
 </suite>

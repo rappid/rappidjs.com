@@ -92,7 +92,6 @@ public class HomeTest extends RappidJsWebTest {
     }
 
     @Test()
-    @TestDevelopment()
     public void ContactsTest() {
         HomeModule.ContactsApp app = getHomeModule().getContactsApp();
 

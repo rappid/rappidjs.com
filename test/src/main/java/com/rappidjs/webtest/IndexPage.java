@@ -1,6 +1,7 @@
 package com.rappidjs.webtest;
 
 import com.rappidjs.webtest.module.HomeModule;
+import com.rappidjs.webtest.module.UiModule;
 import io.rappid.webtest.common.PageObject;
 
 /**
@@ -15,5 +16,10 @@ public class IndexPage extends PageObject {
 
     public HomeModule getHomeModule() {
         return new HomeModule();
+    }
+
+    public UiModule getUiModule() {
+        navigateToHash("/ui");
+        return new UiModule();
     }
 }
