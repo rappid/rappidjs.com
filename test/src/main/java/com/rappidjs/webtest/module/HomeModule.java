@@ -88,7 +88,7 @@ public class HomeModule extends Content {
         }
     }
 
-    public class ContactsApp extends WebElementPanel{
+    public class ContactsApp extends WebElementPanel {
         public ContactsApp(WebElement element) {
             super(element);
         }
@@ -120,14 +120,14 @@ public class HomeModule extends Content {
         public List<Card> cards() {
             ArrayList<Card> cards = new ArrayList<Card>();
 
-            for (WebElement card: getChildren("ul .card")) {
+            for (WebElement card : getChildren("ul .card")) {
                 cards.add(new Card(card));
             }
 
             return cards;
         }
 
-        public class Card extends WebElementPanel{
+        public class Card extends WebElementPanel {
             public Card(WebElement element) {
                 super(element);
             }

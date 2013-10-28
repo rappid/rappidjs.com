@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Ivo" parallel="tests" thread-count="${threadCount}" time-out="60000">
     <listeners>
-        <listener class-name="io.rappid.webtest.testng.TestResultPrinter" />
+        <listener class-name="io.rappid.webtest.testng.TestResultPrinter"/>
     </listeners>
 
     <method-selectors>
         <method-selector>
-            <selector-class name="io.rappid.webtest.testng.MethodSelector" />
+            <selector-class name="io.rappid.webtest.testng.MethodSelector"/>
         </method-selector>
     </method-selectors>
 
