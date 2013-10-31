@@ -25,7 +25,6 @@ public class UiTest extends RappidJsWebTest {
     }
 
     @Test()
-    @TestDevelopment
     public void TestMenuButtons() {
         UiModule uiModule = getUiModule();
 
