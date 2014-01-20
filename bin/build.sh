@@ -36,7 +36,7 @@ cd ${DEPENDENCIES}
 
 git clone https://github.com/spreadshirt/rAppid.js-sprd.git
 cd rAppid.js-sprd
-git checkout dev
+git checkout develop
 
 cd ${DEPENDENCIES}
 
