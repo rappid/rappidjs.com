@@ -171,9 +171,6 @@ rappidjs server .</pre>
                         <li>started and after completing this</li>
                         <li>rendered into the body.</li>
                     </ol>
-                    <p class="buttons">
-                        <a class="btn btn-info" href="#">View details</a>
-                    </p>
                 </div>
                 <div class="span4">
                     <h3>Application Markup</h3>
@@ -188,7 +185,7 @@ rappidjs server .</pre>
                         <code>AppClass.js</code>.
                     </p>
                     <p class="buttons">
-                        <a class="btn btn-info" href="#">XAML</a>
+                        <a class="btn btn-info" href="/wiki/XAML">XAML</a>
                     </p>
                 </div>
                 <div class="span4">
