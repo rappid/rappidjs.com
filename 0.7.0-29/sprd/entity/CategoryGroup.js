@@ -1,0 +1,1 @@
+define(["js/core/List"],function(e){return e.inherit("sprd.entity.CategoryGroup",{includesDepartment:function(e){return!e||!1},getCategoryByDepartment:function(t){var n=new e;return this.each(function(e){e.$parent===t&&n.add(e)}),n},getId:function(){var e=[];return this.each(function(t){e.push(t.$.id)}),e.join("")}})});

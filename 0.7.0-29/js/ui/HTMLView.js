@@ -1,0 +1,1 @@
+define(["js/ui/View"],function(e){return e.inherit({defaults:{html:null},_getChildrenFromDescriptor:function(){return[]},render:function(){var e=this.callBase();while(this.$descriptor.childNodes.length)e.appendChild(this.$descriptor.unshift());return e},_renderChildren:function(){},_renderContentChildren:function(){},_renderHtml:function(e){e=e||"",this.$el.innerHTML=e}})});

@@ -1,0 +1,10 @@
+<ui:View xmlns="http://www.w3.org/1999/xhtml"
+         xmlns:js="js.core" xmlns:ui="js.ui"
+         componentClass="card" person="">
+    <p>
+        <small>Name:</small> {person.fullName()}
+    </p>
+    <p>
+        <small>Phone:</small> {person.phone}
+    </p>
+</ui:View>

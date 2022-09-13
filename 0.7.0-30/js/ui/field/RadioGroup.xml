@@ -1,0 +1,5 @@
+<field:RadioGroupClass xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="js.ui" xmlns:js="js.core" xmlns:field="js.ui.field">
+    <js:Content name="controls">
+        <ui:RadioGroup cid="$radioGroup" value="{{value}}" />
+    </js:Content>
+</field:RadioGroupClass>

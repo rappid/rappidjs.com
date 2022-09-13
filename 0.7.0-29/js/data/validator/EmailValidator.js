@@ -1,0 +1,1 @@
+define(["js/data/validator/RegExValidator"],function(e){return e.inherit("js.data.validator.EmailValidator",{defaults:{regEx:/^([a-zA-Z0-9_\.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,errorCode:"emailError"}})});

@@ -1,0 +1,1 @@
+define(["sprd/data/SprdModel"],function(e){return e.inherit("sprd.model.ConcreteModel",{defaults:{selectedAppearance:null,selectedSize:null,product:null}})});

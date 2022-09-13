@@ -1,0 +1,12 @@
+<ui:DialogClass xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="js.ui">
+
+    <div class="modal-header">
+        <button type="button" class="close" onclick="closeDialog" visible="{closable}">×</button>
+        <h3>{title}</h3>
+    </div>
+
+    <ui:ContentPlaceHolder name="body" class="modal-body" />
+
+    <ui:ContentPlaceHolder name="footer" class="modal-footer" />
+
+</ui:DialogClass>

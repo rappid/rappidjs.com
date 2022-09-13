@@ -1,0 +1,1 @@
+define(["js/html/HtmlElement"],function(e){return e.inherit("js.html.Option",{_renderSelected:function(e){this.$el.selected=e},_renderEnabled:function(e){e?this.$el.removeAttribute("disabled"):this.$el.setAttribute("disabled","disabled")}})});

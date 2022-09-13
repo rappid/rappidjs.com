@@ -1,0 +1,486 @@
+<module:UiClass xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:js="js.core" xmlns:ui="js.ui"
+                xmlns:view="app.view" xmlns:sprd="sprd.data" xmlns:module="app.module"
+                xmlns:sprdView="sprd.view"
+                xmlns:field="js.ui.field" xmlns:example="example.window">
+
+    <js:Injection cid="injection">
+        <sprd:ImageService endPoint="//image.spreadshirt.com/image-server/v1"/>
+    </js:Injection>
+    <sprd:SprdApiDataSource cid="api" gateway="api/v1" endPoint="http://api.spreadshirt.net/api/v1"/>
+    <js:Head title="UI Components - rAppid.js"/>
+    <js:Content name="main">
+
+        <header class="jumbotron subhead" id="overview">
+            <h1>UI Components</h1>
+            <p class="lead">
+                rAppid:js encapsulates the most common UI components based on the popular
+                bootstrap framework.
+            </p>
+        </header>
+
+        <section>
+            <div class="page-header">
+                <h1>
+                    Buttons
+                </h1>
+            </div>
+
+            <h2>Simple Buttons</h2>
+            <div class="row">
+                <div class="span4">
+                    <h3>Overview and examples</h3>
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <ui:Button label="Action"/>
+                        </div>
+
+                        <div class="btn-group">
+                            <ui:Button label="Danger" type="danger"/>
+                        </div>
+                        <div class="btn-group">
+                            <ui:Button label="Success" type="success"/>
+                        </div>
+                        <div class="btn-group">
+                            <ui:Button label="Info" type="info" iconClass="icon-white icon-info-sign"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="span8">
+                    <h3>Example markup</h3>
+                    <view:Code data-title="App.xml">
+                        <![CDATA[
+                            <ui:Button label="Info" iconClass="icon-white icon-info" type="info" />
+                        ]]>
+                    </view:Code>
+                </div>
+            </div>
+
+            <br/>
+            <h2>Menu Buttons</h2>
+            <div class="row">
+                <div class="span4">
+                    <h3>Overview and examples</h3>
+                    <div class="btn-toolbar">
+                        <ui:MenuButton label="Show" type="info">
+                            <div>
+                                Hello Menu Button :)
+                            </div>
+                        </ui:MenuButton>
+                        <ui:MenuButton label="Click Me" type="inverse">
+                            <ul class="unstyled">
+                                <li>
+                                    <a href="#">Action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Something else here</a>
+                                </li>
+                                <li class="divider"/>
+                                <li>
+                                    <a href="#">Separated link</a>
+                                </li>
+                            </ul>
+                        </ui:MenuButton>
+                    </div>
+                </div>
+                <div class="span8">
+                    <h3>Example markup</h3>
+                    <view:Code data-title="App.xml">
+                        <![CDATA[
+                        <ui:MenuButton label="Show" type="info">
+                            <div>
+                                Hello Menu Button :)
+                            </div>
+                        </ui:MenuButton>
+                    ]]>
+                    </view:Code>
+                </div>
+            </div>
+
+            <br/>
+            <h2>Split Menu Buttons</h2>
+            <div class="row">
+                <div class="span4">
+                    <h3>Overview and examples</h3>
+                    <div class="btn-toolbar">
+                        <ui:SplitButton label="Account">
+                            Some account options
+                        </ui:SplitButton>
+                        <ui:SplitButton label="Show" type="info" iconClass="icon-info-sign icon-white">
+                            Some Menu content
+                        </ui:SplitButton>
+
+                    </div>
+                </div>
+                <div class="span8">
+                    <h3>Example markup</h3>
+                    <view:Code data-title="App.xml">
+                        <![CDATA[
+                       <ui:SplitButton label="Show" type="info" iconClass="icon-add">
+                            Some Menu content
+                        </ui:SplitButton>
+                    ]]>
+                    </view:Code>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="page-header">
+                <h1>
+                    Forms
+                    <small>Create clear forms - in code and UI</small>
+                </h1>
+            </div>
+
+            <blockquote>
+                <p>
+                    Write a few tags, annotate some bindings and it works.
+                </p>
+                <small>Marcus Krejpowicz</small>
+            </blockquote>
+
+            <h2>Html Elements</h2>
+            <div class="row">
+                <div class="span3">
+                    <h3>Form fields</h3>
+                    <field:Text label="Text" value="some text" cid="textInput"/>
+                    <field:Password label="Text" value="mypass" cid="passwordInput"/>
+                </div>
+                <div class="span3">
+                    <h3>Output</h3>
+                    <p>
+                        <strong>Text Input:</strong>
+                        {textInput.value}
+                    </p>
+                    <p>
+                        <strong>Password Input:</strong>
+                        {passwordInput.value}
+                    </p>
+                </div>
+                <div class="span6">
+                    <h3>Example markup</h3>
+                    <p>You can either use the generic Field component, which renders a container with a label and the
+                        the given input, or you can use special fields like Text and Password. More fields are coming
+                        soon.
+                    </p>
+                    <view:Code data-title="App.xml">
+                        <![CDATA[
+                            <ui:Field label="Text">
+                                <input type="text" value="some text"/>
+                            </ui:Field>
+                            <field:Text label="Text" value="some text"/>
+                            <field:Password label="Text" value=""/>
+                        ]]>
+                    </view:Code>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span3">
+                    <h3>Selections</h3>
+                    <p>
+                        <ui:Checkbox label="I like rAppidJs" cid="chkLike" checked="true"/>
+                    </p>
+                    <p>
+                        <ui:RadioGroup cid="radioGender" value="male">
+                            <ui:Radio label="Male" value="male"/>
+                            <ui:Radio label="Female" value="female"/>
+                        </ui:RadioGroup>
+                    </p>
+
+                </div>
+                <div class="span3">
+                    <h3>Output</h3>
+                    <p visible="{chkLike.checked}">
+                        Thanks for liking us.
+                    </p>
+                    <p visible="{not(chkLike.checked)}">
+                        We are sorry. Please try plain Javascript.
+                    </p>
+                    <p>
+                        You're a {radioGender.value}.
+                    </p>
+                </div>
+                <div class="span6">
+                    <h3>Example markup</h3>
+                    <view:Code data-title="App.xml">
+                        <![CDATA[
+                            <ui:Checkbox label="I like rAppidJs" checked="true"/>
+                            <ui:RadioGroup cid="radioGender" value="male">
+                                <ui:Radio label="Male" value="male"/>
+                                <ui:Radio label="Female" value="female"/>
+                            </ui:RadioGroup>
+                        ]]>
+                    </view:Code>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="page-header">
+                <h1>
+                    TabView
+                    <small>A simple way to use Tabs</small>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="span4">
+                    <h3>Simple Tab View</h3>
+                    <ui:TabView>
+                        <ui:Tab title="Tab A">
+                            <p>A Tab View renders it's children as Tabs.</p>
+                        </ui:Tab>
+                        <ui:Tab title="Tab B">
+                            Tab Content B
+                        </ui:Tab>
+                        <ui:Tab title="Tab C">
+                            Tab Content C
+                        </ui:Tab>
+                    </ui:TabView>
+                </div>
+                <div class="span8">
+                    <h3>Example Markup</h3>
+                    <view:Code>
+                        <![CDATA[
+                            <ui:TabView>
+                                <ui:Tab title="Tab A">
+                                    <p>A Tab View renders it's children as Tabs.</p>
+                                </ui:Tab>
+                                <ui:Tab title="Tab B">
+                                    Tab Content B
+                                </ui:Tab>
+                                <ui:Tab title="Tab C">
+                                    Tab Content C
+                                </ui:Tab>
+                            </ui:TabView>
+                         ]]>
+                    </view:Code>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="page-header">
+                <h1>
+                    VirtualItemsView
+                    <small>Display huge amounts of data in high-performance</small>
+                </h1>
+            </div>
+            <blockquote>
+                <p>
+                    They just render data that is visible in the current view-port and
+                    also fetches only necessary data-pages from the server.
+                </p>
+                <small>Tony Findeisen</small>
+            </blockquote>
+
+
+            <h2>DataGrid</h2>
+            <div class="row">
+                <div class="span6">
+                    <p>
+                        The DataGrid is a table based component rendering bindable data in
+                        columns.
+                        Each column can be set up with a
+                        <code>Template</code>
+                        defining how to render the data.
+                    </p>
+                    <p>All VirtualItemsViews have a selection model and offer key support for selecting items.
+                        Try it by using the keyboard.
+                    </p>
+
+                    <h3>Code example</h3>
+                    <p>
+                        <view:Code>
+                            <![CDATA[
+                                <ui:DataGrid data="{shop.articles}" rowHeight="45"
+                                             prefetchItemCount="10">
+                                    <ui:DataGridColumn title="Id" path="id"/>
+                                    <ui:DataGridColumn title="Name" path="name"/>
+                                    <ui:DataGridColumn>
+                                      <js:Template name="cell">
+                                        <ui:Button label="Visit" onclick="visit"/>
+                                      </js:Template>
+                                    </ui:DataGridColumn>
+                                </ui:DataGrid>
+                           ]]>
+                        </view:Code>
+                    </p>
+                    <p>
+                        <em>Have a look to the DOM and network-monitor and see that only
+                            necessary items are rendered and requested.
+                            Also take note of the debouncing of 500ms.
+                        </em>
+                    </p>
+                </div>
+                <div class="span6">
+                    <ui:DataGrid data="{shop.articles}"
+                                 prefetchItemCount="10" cid="grid" onkeydown="_keyHandler">
+                        <ui:DataGridColumn title="Id" width="90" path="id"/>
+                        <ui:DataGridColumn title="Name" width="400" path="name"/>
+                        <ui:DataGridColumn>
+                            <js:Template name="cell">
+                                <ui:Button label="Visit" onclick="_itemClickHandler"/>
+                            </js:Template>
+                        </ui:DataGridColumn>
+                    </ui:DataGrid>
+                    <p>
+                        Selected {grid.selectedItems.size()} of {shop.articles.size()}
+                    </p>
+                </div>
+            </div>
+            <br/>
+            <h2>TileList</h2>
+            <div class="row">
+                <div class="span6">
+                    The TileList is another implementation of VirtualItemsView which displays data in rows and cols. You
+                    can specify a custom renderer for the items.
+                    <h3>Code Example</h3>
+                    <view:Code>
+                        <![CDATA[
+                            <ui:TileList class="article-list"
+                                    data="{shop.articles}"
+                                    prefetchItemCount="10"
+                                    height="300"
+                                    cols="4"
+                                    verticalGap="8"
+                                    horizontalGap="8">
+                                <js:Template name="renderer">
+                                    <sprdView:ArticleImage
+                                        article="{item}" />
+                                </js:Template>
+                            </ui:TileList>
+                        ]]>
+                    </view:Code>
+                </div>
+                <div class="span6">
+                    <ui:TileList class="article-list"
+                                 data="{shop.articles}"
+                                 prefetchItemCount="10"
+                                 height="300"
+                                 cid="tileList"
+                                 verticalGap="6"
+                                 horizontalGap="6"
+                                 onitemDblClick="_itemClickHandler"
+                                 onkeyup="_keyHandler">
+                        <js:Template name="renderer">
+                            <sprdView:ArticleImage width="100" height="100" article="{item}"/>
+                        </js:Template>
+                    </ui:TileList>
+                </div>
+            </div>
+            <br/>
+            <h2>Select</h2>
+            <div class="row">
+                <div class="span4">
+                    <h3>
+                        A simple select component
+                    </h3>
+                    <p>
+                        The Select component let's you filter and browse a collection of items.
+                        (In this example ca. {shop.articles.size()} shop articles).
+                        You can specify a custom renderer for the selected and the list item.
+                    </p>
+                    <ui:Select data="{shop.articles}" cid="articleSelector" queryCreator="{queryCreator()}"
+                               itemHeight="30" width="300">
+                        <js:Template name="selectedItem">
+                            <span class="text-item">
+                                {item.name}
+                            </span>
+                        </js:Template>
+                        <js:Template name="renderer">
+                            <a class="text-item">
+                                {item.name}
+                            </a>
+                        </js:Template>
+                    </ui:Select>
+
+
+                    <br/>
+                    <sprdView:ArticleImage width="100" height="100" article="{articleSelector.selectedItem}"
+                                           margin-top="20px"/>
+                </div>
+                <div class="span8">
+                    <h3>Code Example</h3>
+                    <view:Code>
+                        <![CDATA[
+                            <ui:Select data="{shop.articles}"
+                                       queryCreator="{queryCreator()}"
+                                       itemHeight="30" width="300">
+                                <js:Template name="selectedItem">
+                                    <span>
+                                        {item.name}
+                                    </span>
+                                </js:Template>
+                                <js:Template name="renderer">
+                                    <a>
+                                        {item.name}
+                                    </a>
+                                </js:Template>
+                            </ui:Select>
+                        ]]>
+                    </view:Code>
+
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="page-header">
+                <h1>
+                    Windows and Dialogs
+                </h1>
+            </div>
+            <h2>Dialogs</h2>
+            <div class="row">
+                <div class="span3">
+                    <p>
+                        Dialogs can be created by extending the Dialog Component.
+                        You can specify content for the body and the footer.
+                        The dialog can be shown by calling
+                        <code>showModal</code>
+                    </p>
+                    <js:Content name="wtf">
+                        <example:CustomDialog cid="myDialog"/>
+                    </js:Content>
+                    <ui:Button label="Show Window" size="large" type="primary" onclick="_openDialog"/>
+                </div>
+                <div class="span9">
+                    <ui:TabView>
+                        <ui:Tab title="CustomDialog.xml">
+                            <view:Code>{customDialogExample}</view:Code>
+                        </ui:Tab>
+                        <ui:Tab title="Dialog Integration">
+                            <view:Code>
+                                <![CDATA[
+                                    <js:Content>
+                                     <example:CustomDialog cid="myDialog"/>
+                                    </js:Content>
+                                    <ui:Button label="Show Window" onclick="_openDialog"/>
+                                ]]>
+                            </view:Code>
+                        </ui:Tab>
+
+                        <ui:Tab title="Show Dialog">
+                            <view:Code>
+                                <![CDATA[
+                                    _openDialog: function(e){
+                                        this.$.myDialog.showModal(function(){
+                                            // handle close
+                                        });
+                                    }
+                                ]]>
+                            </view:Code>
+                        </ui:Tab>
+                    </ui:TabView>
+                </div>
+
+            </div>
+        </section>
+    </js:Content>
+</module:UiClass>

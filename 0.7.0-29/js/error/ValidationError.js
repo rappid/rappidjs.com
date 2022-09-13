@@ -1,0 +1,1 @@
+define([],function(){return Error.inherit("js.error.ValidationError",{ctor:function(e,t,n){Error.prototype.constructor.call(this,e,t),this.message=e,this.statusCode=t,this.statusText=n},toString:function(){var e=this.message,t=this.stack;return t&&(e+="<pre>"+t+"</pre>"),e}})});

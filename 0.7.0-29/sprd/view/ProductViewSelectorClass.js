@@ -1,0 +1,1 @@
+define(["js/ui/SelectionView"],function(e){return e.inherit("sprd.view.ProductViewSelectorClass",{hasErrorClass:function(e){return e?"error":""}})});

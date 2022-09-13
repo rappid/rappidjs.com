@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# doc/{package} -> doc/package/index.json
+RewriteRule ^([^/]+)$ $1/index.json [L]
+
+# doc/{package}/some.doc -> # doc/{package}/some.doc.json
+RewriteCond %{REQUEST_URI} !\.json$
+RewriteRule ^[^/]+\/[^/]+$ $0.json

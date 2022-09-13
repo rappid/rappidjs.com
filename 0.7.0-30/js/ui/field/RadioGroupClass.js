@@ -1,0 +1,1 @@
+define(["xaml!js/ui/Field"],function(e){return e.inherit("js.ui.field.RadioGroupClass",{defaults:{$radioGroup:null},$defaultContentName:null,addChild:function(e){this.$.$radioGroup?this.$.$radioGroup.addChild(e):this.callBase()}})});

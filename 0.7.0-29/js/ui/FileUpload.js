@@ -1,0 +1,1 @@
+define(["js/html/HtmlElement"],function(e){return e.inherit({defaults:{tagName:"input",multiSelect:!1,type:"file",accept:null},_renderMultiSelect:function(e){var t="multiple";!e&&this.$el.removeAttribute(t),e&&this.$el.setAttribute(t,t)}})});

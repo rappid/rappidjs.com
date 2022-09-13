@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ui:ProgressBarClass xmlns="http://www.w3.org/1999/xhtml" xmlns:js="js.core" xmlns:ui="js.ui" componentClass="progress">
+    <js:Template name="layout">
+        <div class="bar" width="{_barWidth()}"/>
+    </js:Template>
+</ui:ProgressBarClass>

@@ -1,0 +1,340 @@
+<module:DocumentationClass xmlns="http://www.w3.org/1999/xhtml"
+                           xmlns:js="js.core" xmlns:ui="js.ui"
+                           xmlns:conf="js.conf" xmlns:data="js.data"
+                           xmlns:module="app.module" xmlns:md="md" xmlns:view="app.view"
+                           xmlns:ddata="documentation.data">
+
+    <js:Injection>
+        <ddata:DocumentationDataSource cid="api" endPoint="http://rappidjs.com/doc" gateway=".">
+            <conf:DataSourceConfiguration>
+                <conf:ResourceConfiguration path="doc" modelClassName="documentation.model.Package"
+                                            processor="PackageProcessor">
+                    <conf:ResourceConfiguration path="/" modelClassName="documentation.model.Class"/>
+                </conf:ResourceConfiguration>
+            </conf:DataSourceConfiguration>
+        </ddata:DocumentationDataSource>
+    </js:Injection>
+
+
+    <data:FilterDataView baseList="{classes}" cid="filteredClasses" filterFnc="{filterDocs}"
+                         searchString="{searchString}"/>
+
+    <js:Router>
+        <conf:RouteConfiguration onexec="defaultRoute" route="^api$"/>
+        <conf:RouteConfiguration onexec="showClass" route="^api\/(?:([^/]+)\/)?\/?(.+)$"/>
+    </js:Router>
+
+    <js:Head title="{title(doc.id)} - rAppidjs API Reference"
+             author="Tony Findeisen &amp; Marcus Krejpowicz"/>
+
+    <js:Content name="main">
+        <div id="documentation">
+            <div class="row">
+                <div class="span3 classes">
+                    <ui:TreeView node="{packageTree}" selectedNode="{selectedNode}">
+                        <js:Template name="label">
+                            <a href="${hrefForNode(item)}">
+                                <i class="icon icon-{iconClassForNode(item,item.expanded)}"/>
+                                ${labelForNode(item)}
+                            </a>
+                        </js:Template>
+                    </ui:TreeView>
+                </div>
+                <div class="span9 content">
+                    <div cid="externalDocumentationView" visible="{_isCurrentView(externalDocumentationView)}">
+                        <p>
+                            <a href="{externalDocumentationSrc}" target="_blank">View documentation in external Window.
+                            </a>
+                        </p>
+                        <iframe frameborder="0" src="{externalDocumentationSrc}" onload="loadedInIFrame" width="100%"
+                                height="600px"/>
+                    </div>
+                    <div cid="documentationView" visible="{_isCurrentView(documentationView)}">
+                        <h1>{doc.id}</h1>
+
+                        <p class="lead">
+                            {doc.summary}
+                        </p>
+                        <p>
+                            {doc.description}
+                        </p>
+
+                        <div class="row">
+                            <div class="span3">
+                                <dl class="dl-horizontal">
+                                    <dt>Package</dt>
+                                    <dd>{doc.packageName()}</dd>
+
+                                    <dt>Class</dt>
+                                    <dd>{doc.className()}</dd>
+
+                                    <dt>Inheritance</dt>
+                                    <dd>
+                                        <ui:ListView items="{doc.inheritancePath()}" class="inheritance">
+                                            <js:Template name="item">
+                                                <a href="{item.documentationLink()}">
+                                                    {item.className()}
+                                                </a>
+                                            </js:Template>
+                                        </ui:ListView>
+                                    </dd>
+                                    <dt visible="{doc.hasSee()}">See</dt>
+                                    <dd visible="{doc.hasSee()}">
+                                        <ui:ListView items="{doc.getSees()}">
+                                            <js:Template name="item">
+                                                <a href="{item.documentationLink()}">
+                                                    {item.className()}
+                                                </a>
+                                            </js:Template>
+                                        </ui:ListView>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="span3">
+                                <dl class="dl-horizontal">
+                                    <dt>Dependencies</dt>
+                                    <dd>
+                                        <ui:ListView items="{doc.dependencies()}" class="dependencies">
+                                            <js:Template name="item">
+                                                <a href="{item.documentationLink()}">
+                                                    {item.className()}
+                                                </a>
+                                            </js:Template>
+                                        </ui:ListView>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="span3">
+                                <dl class="dl-horizontal">
+                                    <dt>File</dt>
+                                    <dd>
+                                        <a href="{doc.fileLink()}">{doc.fileName()}</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row" selectable="true">
+                            <div class="span7">
+                                <h2>Default Attributes</h2>
+                                <blockquote>
+                                    <p>
+                                        The default attributes for this component.
+                                    </p>
+                                </blockquote>
+                            </div>
+                            <div class="span2">
+                                <fieldset class="well">
+                                    <ui:Checkbox label="public" cid="publicAttributesCheckbox" checked="true"/>
+                                    <ui:Checkbox label="protected" cid="protectedAttributesCheckbox"/>
+                                    <ui:Checkbox label="inherit" cid="inheritedAttributesCheckbox"/>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <table class="table table-striped" visible="{defaultItemsView.items.length}">
+                            <thead>
+                                <tr>
+                                    <th width="50%">Attribute</th>
+                                    <th width="30%">Default Value</th>
+                                    <th width="20%">Defined By</th>
+                                </tr>
+                            </thead>
+                            <ui:ItemsView cid="defaultItemsView"
+                                          items="{doc.getDefaults(showTypes(publicAttributesCheckbox.checked, protectedAttributesCheckbox.checked),inheritedAttributesCheckbox.checked)}"
+                                          itemKey="item" tagName="tbody">
+                                <js:Template name="item">
+                                    <tr>
+                                        <td>
+                                            <strong>${item.name}</strong>
+                                            :
+                                            <ui:ItemsView items="${item.types}" itemKey="type" tagName="span">
+                                                <js:Template name="item">
+                                                    <span>${type}</span>
+                                                </js:Template>
+                                            </ui:ItemsView>
+                                            <p>
+                                                <md:View>
+                                                    ${item.description}
+                                                </md:View>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            ${item.value()}
+                                        </td>
+                                        <td>
+                                            <a href="api/${item.definedBy}">
+                                                ${item.definedBy}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </js:Template>
+                            </ui:ItemsView>
+                        </table>
+
+                        <div class="row">
+                            <div class="span7">
+                                <h2>Properties</h2>
+                                <blockquote>
+                                    <p>
+                                        The default properties for this class.
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th width="50%">Property</th>
+                                    <th width="30%">Default Value</th>
+                                    <th width="20%">Defined By</th>
+                                </tr>
+                            </thead>
+                            <ui:ItemsView cid="propertiesView"
+                                          items="{doc.getProperties()}"
+                                          itemKey="item" tagName="tbody">
+                                <js:Template name="item">
+                                    <tr>
+                                        <td>
+                                            <strong>${item.name}</strong>
+                                            :
+                                            <ui:ItemsView items="${item.types}" itemKey="type" tagName="span">
+                                                <js:Template name="item">
+                                                    <span>${type}</span>
+                                                </js:Template>
+                                            </ui:ItemsView>
+                                            <p>
+                                                ${item.description}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            ${item.value()}
+                                        </td>
+                                        <td>
+                                            <a href="api/${item.definedBy}">
+                                                ${item.definedBy}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </js:Template>
+                            </ui:ItemsView>
+                        </table>
+
+
+                        <div class="row">
+                            <div class="span7">
+                                <h2>Methods</h2>
+                                <blockquote>
+                                    <p>
+                                        A method is a piece of code that is called by name
+                                        that is associated with an
+                                        object.
+                                    </p>
+                                    <small>
+                                        Andrew Edgecombe
+                                    </small>
+                                </blockquote>
+                            </div>
+                            <div class="span2">
+                                <fieldset class="well">
+                                    <label class="checkbox">
+                                        <input type="checkbox" cid="showPublic" checked="checked"/>
+                                        public
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" cid="showProtected"/>
+                                        protected
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" cid="showInherit"/>
+                                        inherit
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+
+
+                        <ui:ItemsView
+                                items="{doc.methods}"
+                                itemKey="methodItem">
+                            <js:Template name="item">
+                                <view:MethodView method="${methodItem}" definedByLink="{getDocumentationLink(method.definedBy)}"
+                                                 visible="{isMethodVisible(method,showTypes(showPublic.checked, showProtected.checked),showInherit.checked)}"/>
+                            </js:Template>
+                        </ui:ItemsView>
+
+
+                        <div visible="{hasSection('staticMethods')}">
+                            <div class="row">
+                                <div class="span7">
+                                    <h2>Static Methods</h2>
+                                    <blockquote>
+                                        <p>
+                                            Static methods exported by the class
+                                        </p>
+                                    </blockquote>
+                                </div>
+                                <div class="span2">
+                                    <fieldset class="well">
+                                        <label class="checkbox">
+                                            <input type="checkbox" cid="showPublicStatic" checked="checked"/>
+                                            public
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" cid="showProtectedStatic"/>
+                                            protected
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <ui:ItemsView
+                                    items="{doc.getStaticMethods(showTypes(showPublicStatic.checked, showProtectedStatic.checked))}"
+                                    itemKey="methodItem">
+                                <js:Template name="item">
+                                    <view:MethodView method="{methodItem}"/>
+                                </js:Template>
+                            </ui:ItemsView>
+
+                        </div>
+                    </div>
+                    <div cid="moduleView" visible="{_isCurrentView(moduleView)}">
+                        <div class="jumbotron">
+                            <h1>API Reference for {module.name}</h1>
+
+                            <h2 class="sub" visible="{module.title}">
+                                {module.title}
+                            </h2>
+                            <blockquote visible="{module.description}">
+                                <p>{module.description}</p>
+                            </blockquote>
+
+                            <blockquote visible="{not(module.description)}">
+                                <p class="lead">
+                                    This api reference has been created using the
+                                    'rappidjs doc' command
+                                    which generated the documentation files by parsing the
+                                    js and xaml source files
+                                    with the help of
+                                    <a href="http://esprima.org/">esprima</a>
+                                    and<a href="https://github.com/jindw/xmldom">
+                                    xmldom</a>.
+                                </p>
+                                <small>
+                                    Tony Findeisen
+                                </small>
+                            </blockquote>
+
+                            <p class="lead">
+                                Select a class from the left side or start with the
+                                documentation of
+                                <a href="api/{module.id()}/{module.firstClass()}">
+                                    {module.firstClass()}</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </js:Content>
+</module:DocumentationClass>

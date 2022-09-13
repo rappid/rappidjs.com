@@ -1,0 +1,1 @@
+define(["js/core/Base"],function(e){return e.inherit("js.data.QueryMapper",{parse:function(e){},compose:function(e){return e.toObject()}})});

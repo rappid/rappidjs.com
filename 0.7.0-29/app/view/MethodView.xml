@@ -1,0 +1,54 @@
+<view:MethodViewClass xmlns:ui="js.ui" xmlns:js="js.core" xmlns='http://www.w3.org/1999/xhtml'
+                      componentClass="method-view"
+                      class="{methodCSSClasses()}"
+                      selected="{expandable.selected}"
+                      method="null" xmlns:view="app.view">
+        <a class="side-expandable" selectable="true" cid="expandable">
+            <span/>
+        </a>
+        <div class="method-signature">
+            <span class="method-name">${method.name}</span>(
+            <ui:ItemsView items="${method.parameter}" itemKey="parameter"
+                          class="parameter-list" tagName="span">
+                <js:Template name="item">
+                    <span>
+                        <span visible="${parameter.optional}">
+                            [
+                        </span>
+                        ${parameter.name}
+                        <span visible="${parameter.hasTypeDefinition()}">
+                            :
+                            <a href="api/${parameter.types[0]}">
+                                ${parameter.getFirstTypeName()}
+                            </a>
+                        </span>
+                        <span visible="${parameter.optional}">
+                            ]
+                        </span>
+                    </span>
+                </js:Template>
+            </ui:ItemsView>
+            )
+            <span visible="${method.hasReturnType()}">
+                :
+                <a href="api/${method.returns.types[0]}">
+                    ${method.getFirstReturnTypeName()}
+                </a>
+            </span>
+        </div>
+        <a class="defined-by" href="{definedByLink}">${method.definedBy}</a>
+        <div class="description-wrapper">
+            <p class="description">${method.description}</p>
+            <ul class="parameters ">
+                <js:Repeat items="${method.parameter}" itemKey="parameter">
+                    <li>
+                        <span visible="${parameter.optional}">[</span>
+                        <span class="parameter-name">${parameter.name}</span>
+                        <span visible="${parameter.hasTypeDefinition()}">: ${parameter.getFirstTypeName()}</span>
+                        <span visible="${parameter.optional}">]</span>
+                        <span visible="${parameter.description}" class="parameter-description"> - ${parameter.description} </span>
+                    </li>
+                </js:Repeat>
+            </ul>
+        </div>
+</view:MethodViewClass>

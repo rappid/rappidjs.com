@@ -1,0 +1,1 @@
+define(["js/data/Entity"],function(e){return e.inherit("sprd.entity.MessageContent",{type:"sprd:"})});

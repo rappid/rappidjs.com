@@ -1,0 +1,1 @@
+define(["js/data/Model"],function(e){return e.inherit("js.data.Authentication",{schema:{username:String,password:String,data:{type:Object,required:!1},userId:{type:Object,required:!1}},idField:"token"})});

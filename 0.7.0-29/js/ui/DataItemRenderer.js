@@ -1,0 +1,1 @@
+define(["js/ui/View"],function(e){return e.inherit("js.ui.DataItemRenderer",{defaults:{dataItem:null}})});

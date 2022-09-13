@@ -1,0 +1,1 @@
+define(["sprd/data/SprdModel","js/data/Collection","sprd/model/Shop","sprd/model/Design","sprd/model/ProductType","sprd/model/Product"],function(e,t,n,r,i,s){return e.inherit("sprd.model.User",{schema:{shops:t.of(n),designs:t.of(r),products:t.of(s),productTypes:t.of(i)}})});

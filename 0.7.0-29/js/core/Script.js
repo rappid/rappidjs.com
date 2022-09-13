@@ -1,0 +1,1 @@
+define(["js/core/Element"],function(Element){return Element.inherit("js.core.Script",{evaluate:function(imports){var textContent=this._getTextContentFromDescriptor(this.$descriptor),fn=eval("this.javascript = ("+textContent+")");return fn.apply(this,imports)}})});

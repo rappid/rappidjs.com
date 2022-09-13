@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ui:SplitButtonClass xmlns="http://www.w3.org/1999/xhtml" xmlns:js="js.core" xmlns:ui="js.ui">
+    <js:Template name="layout">
+        <ui:Button class="btn"/>
+        <ui:Button class="btn dropdown-toggle">
+            <js:Template name="layout">
+                <span class="caret"/>
+            </js:Template>
+        </ui:Button>
+        <ui:ContentPlaceHolder tagName="div" name="menu" class="{menuClassName}" onclick="_preventDefault"/>
+    </js:Template>
+
+</ui:SplitButtonClass>

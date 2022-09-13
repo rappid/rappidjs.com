@@ -1,0 +1,1 @@
+define(["js/core/Component"],function(e){return e.inherit("sprd.manager.IBasketManager",{initBasket:function(e){var t=this;this.$basketInitialized?e&&e():this._initBasket(function(n){n||(t.$basketInitialized=!0),e&&e(n)})},_initBasket:function(e){e&&e()},addElementToBasket:function(e,t,n){n&&n()}})});

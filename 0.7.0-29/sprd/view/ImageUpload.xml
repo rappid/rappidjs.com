@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<view:ImageUploadClass xmlns="http://www.w3.org/1999/xhtml"
+                       xmlns:js="js.core"
+                       xmlns:ui="js.ui" xmlns:view="sprd.view"
+
+                       ondragenter="dragEnter" ondragexit="dragExit" ondrop="dropImage" ondragover="dragOver"
+                       componentClass="image-upload">
+
+    <div class="upload-notice" visible="{displayNotice()}">{notice}</div>
+
+    <js:Content name="list">
+        <ui:ListView tagName="ul" items="{items}">
+            <js:Template name="item">
+                <div class="image-container">
+                    <img src="{item.image.url}" alt="{item.image.name}"/>
+                </div>
+                <input type="text" value="{{item.image.name}}"/>
+                <ui:ProgressBar value="{item.uploadProgress}"/>
+            </js:Template>
+        </ui:ListView>
+    </js:Content>
+
+    <ui:ContentPlaceHolder name="list"/>
+
+</view:ImageUploadClass>

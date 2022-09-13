@@ -1,0 +1,1 @@
+define(["xaml!js/ui/Field"],function(e){return e.inherit("js.ui.field.TextAreaClass",{defaults:{value:"",size:"large",placeholder:""},$classAttributes:["size","type"],$defaultContentName:"additionalControls"})});

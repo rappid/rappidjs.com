@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<app:AppClass xmlns="http://www.w3.org/1999/xhtml"
+               xmlns:js="js.core" xmlns:ui="js.ui" xmlns:app="example.todo">
+    <h2>Todo</h2>
+
+    <div>
+        <span>{todoList.numOpenTodos()} of {todoList.size()} remaining </span>
+        <span visible="{todoList.hasCompletedTodos()}">
+            (<a href="" onclick="archiveCompletedItems">archive</a>)
+        </span>
+
+        <ui:ListView items="{todoList}" itemKey="todo" class="unstyled">
+            <ui:Checkbox label="{todo.title}"
+                         checked="{{todo.completed}}"
+                         class="{todo.status()}"/>
+        </ui:ListView>
+        <form onsubmit="addTodoItem" action="">
+            <input type="text" size="30" placeholder="add new todo here"
+                   value="{{newTodo.title}}"/>
+            <input class="btn-primary" type="submit" value="add"/>
+        </form>
+    </div>
+</app:AppClass>

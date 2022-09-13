@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ui:ScrollViewClass xmlns="http://www.w3.org/1999/xhtml" xmlns:js="js.core" xmlns:ui="js.ui" overflow="hidden">
+    <div cid="container"  class="scrollview-container">
+        <ui:ContentPlaceHolder name="content"/>
+    </div>
+</ui:ScrollViewClass>

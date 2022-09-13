@@ -1,0 +1,8 @@
+<ui:FieldClass xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="js.ui"
+               componentClass="control-group" tagName="div">
+    <label class="control-label" for="{inputId}">{label}</label>
+    <ui:ContentPlaceHolder class="controls" name="controls" tagName="div"/>
+    <div class="error" visible="{error}">
+        {errorProvider.getErrorMessage(error)}
+    </div>
+</ui:FieldClass>

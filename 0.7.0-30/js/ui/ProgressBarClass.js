@@ -1,0 +1,1 @@
+define(["js/ui/View"],function(e){return e.inherit("js.ui.ProgressBarClass",{defaults:{min:0,max:100,value:0},_barWidth:function(){if(this.$.min>=this.$.max)return 0;var e=this.$.value/(this.$.max-this.$.min)*100;return e=Math.round(e*100)/100,e+"%"}.onChange("min","max","value")})});
